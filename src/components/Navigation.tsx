@@ -22,7 +22,19 @@ export default function Navigation() {
             EXAMPLE CASES
             <span className="material-symbols-outlined text-[14px]">expand_more</span>
           </button>
-          <div className="absolute left-0 mt-0 w-56 bg-[#1D2026] border border-[#363940] hidden group-hover:block z-50">
+          <div className="absolute left-0 mt-0 w-72 bg-[#1D2026] border border-[#363940] hidden group-hover:block z-50">
+            <a href={withBase('')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+              Home
+            </a>
+            <a href={withBase('about/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+              About Us
+            </a>
+            <a href={withBase('integrations/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+              Integrations
+            </a>
+            <a href={withBase('security-trust/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+              Security and Trust
+            </a>
             <a href={withBase('pharma/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
               Pharmaceutical Supply
             </a>
@@ -31,6 +43,15 @@ export default function Navigation() {
             </a>
             <a href={withBase('enterprise-console/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
               Enterprise Console
+            </a>
+            <a href={withBase('data-analysis/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+              Data Analysis Automation
+            </a>
+            <a href={withBase('automated-planning/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+              Automated Planning Layer
+            </a>
+            <a href={withBase('book-a-demo/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+              Contact Us
             </a>
           </div>
         </div>
