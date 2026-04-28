@@ -3,7 +3,7 @@ const navLinkClass =
 
 export default function Navigation() {
   const baseUrl = import.meta.env.BASE_URL;
-  const withBase = (path: string) => `${baseUrl}${path.replace(/^\/+/, '')}`;
+  const withBase = (path: string) => `${baseUrl.replace(/\/?$/, '/')}${path.replace(/^\/+/, '')}`;
 
   return (
     <nav className="bg-[#0B0E14] text-[#F37221] fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
