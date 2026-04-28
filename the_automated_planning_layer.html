@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CERES | THE SOVEREIGN CONSOLE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-variant": "#253741", "on-error": "#690005", "tertiary-fixed-dim": "#acccd5", "surface-container-lowest": "#001019", "surface-tint": "#ffb691", "primary-fixed-dim": "#ffb691", "on-tertiary-fixed-variant": "#2d4b53", "tertiary-fixed": "#c8e8f1", "surface-container-high": "#1a2c36", tertiary: "#acccd5", "surface-container-highest": "#253741", secondary: "#b5cacf", "on-tertiary-container": "#15343c", "on-tertiary": "#15353c", "surface-bright": "#2a3b45", "on-tertiary-fixed": "#001f26", "secondary-fixed-dim": "#b5cacf", "inverse-primary": "#9e4200", primary: "#ffb691", "on-primary-fixed-variant": "#793100", "primary-fixed": "#ffdbcb", error: "#ffb4ab", "tertiary-container": "#7e9da6", "surface-container": "#10222b", "on-secondary-fixed": "#0a1e22", "on-background": "#d2e5f2", "secondary-container": "#394c51", "on-surface-variant": "#dfc0b2", "primary-container": "#f37221", "error-container": "#93000a", surface: "#03151e", "inverse-surface": "#d2e5f2", "surface-dim": "#03151e", "on-surface": "#d2e5f2", "on-primary-fixed": "#341100", "secondary-fixed": "#d1e6eb", "on-secondary-fixed-variant": "#374a4e", "outline-variant": "#584237", "on-primary": "#552000", "inverse-on-surface": "#21333c", "on-primary-container": "#552000", "on-secondary-container": "#a7bcc1", "surface-container-low": "#0b1e27", "on-secondary": "#203337", outline: "#a78b7e", background: "#03151e", "on-error-container": "#ffdad6"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, fontFamily: {headline: ["Space Grotesk"], body: ["Inter"], label: ["Inter"], "body-lg": ["Inter"], h1: ["Inter"], h2: ["Inter"], "body-md": ["Inter"], h3: ["Inter"], "data-tabular": ["Inter"], "label-caps": ["Inter"], display: ["Space Grotesk"]}, fontSize: {"body-lg": ["18px", {lineHeight: "1.7", letterSpacing: "0", fontWeight: "400"}], h1: ["48px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800"}], h2: ["32px", {lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700"}], "body-md": ["16px", {lineHeight: "1.7", letterSpacing: "0", fontWeight: "400"}], h3: ["24px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600"}], "data-tabular": ["14px", {lineHeight: "1.4", letterSpacing: "0", fontWeight: "400"}], "label-caps": ["12px", {lineHeight: "1.2", letterSpacing: "0.1em", fontWeight: "600"}]}, spacing: {margin: "32px", unit: "4px", gutter: "16px", "container-max": "1440px"}}}};</script>
+<style>
+      body { background-color: #0b0e14; color: #e1e2eb; font-family: 'Inter', sans-serif; }
+      .machined-gradient { background: linear-gradient(145deg, #272a31 0%, #0b0e14 100%); }
+      .ghost-border { outline: 1px solid rgba(69, 71, 75, 0.2); }
+      .data-mono { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- ========== NAVIGATION BAR ========== -->
+  <nav class="bg-[#0B0E14] text-[#F37221] font-['Inter'] tracking-tight font-semibold uppercase text-xs fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
+    <div class="text-xl font-black tracking-tighter text-[#F37221]">CERES TECHNOLOGY</div>
+    
+    <div class="hidden md:flex gap-8 items-center">
+      <!-- Example Cases Dropdown -->
+      <div class="relative group">
+        <button class="text-[#8A8D91] hover:text-white transition-colors flex items-center gap-2">
+          EXAMPLE CASES
+          <span class="material-symbols-outlined text-[14px]">expand_more</span>
+        </button>
+        <div class="absolute left-0 mt-0 w-96 bg-[#1D2026] border border-[#363940] hidden group-hover:block">
+          <a href="index.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Home</a>
+          <a href="about_story_leadership.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">About / Story / Leadership</a>
+          <a href="enterprise_decision_console.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Enterprise Decision Console</a>
+          <a href="data_analysis_automation_v2.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Data Analysis Automation</a>
+          <a href="the_automated_planning_layer.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Automated Planning Layer</a>
+          <a href="integrations_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Integrations</a>
+          <a href="security_trust_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Security & Trust</a>
+          <a href="ceres_for_investment_firms_external_signals_for_research_risk_and_portfolio.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Investment Firms</a>
+          <a href="ceres_for_pharma_better_supply_foresight.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Pharma Supply Foresight</a>
+          <a href="PharmaceuticalCompanies.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Pharmaceutical Companies</a>
+          <a href="book_a_demo_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Book a Demo</a>
+        </div>
+      </div>
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Resources</a>
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Company</a>
+    </div>
+    
+    <div class="flex items-center gap-4">
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="https://nxt.cerestech.co">Login</a>
+      <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-bold">REQUEST DEMO</a>
+    </div>
+  </nav>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative pt-20 pb-12 px-6 lg:px-12 border-b border-outline-variant/10">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-7">
+<div class="flex items-center gap-2 mb-6">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="text-[10px] font-bold tracking-[0.2em] uppercase text-primary" style="">System Ready: Industrial Grade</span>
+</div>
+<h1 class="text-4xl lg:text-6xl font-extrabold tracking-tighter text-on-surface leading-[0.9] mb-8 uppercase" style="">
+                        Automate Demand Planning to Cut <span class="text-primary" style="">Analysis Time by 95%</span>
+</h1>
+<p class="text-lg text-on-surface-variant font-medium leading-tight max-w-2xl mb-10" style="">
+                        You have an ERP, but your planning still happens in fragile spreadsheets. Ceres normalizes messy customer data, catches exceptions automatically, and builds accurate AI forecasts—so you stop fighting Excel and start making decisions.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-bold uppercase tracking-tight text-sm hover:brightness-110 active:scale-95 transition-all" style="">
+                            Book a Custom Demo
+                        </button>
+</div>
+<div class="mt-16 grid grid-cols-3 gap-8 border-t border-outline-variant/20 pt-8">
+<div>
+<div class="text-2xl font-black data-mono text-on-surface" style="">95%</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-outline" style="">Time Compression</div>
+</div>
+<div>
+<div class="text-2xl font-black data-mono text-on-surface" style="">2.5x</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-outline" style="">Planner Productivity</div>
+</div>
+<div>
+<div class="text-2xl font-black data-mono text-on-surface" style="">0ms</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-outline" style="">Manual Reconciliation</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative group">
+<div class="bg-surface-container p-1 ghost-border machined-gradient">
+<div class="bg-surface-container-lowest overflow-hidden border border-outline-variant/30 relative">
+<div class="h-8 bg-surface-container-high flex items-center px-3 justify-between">
+<div class="flex gap-1.5">
+<div class="w-2 h-2 bg-on-surface-variant/20"></div>
+<div class="w-2 h-2 bg-on-surface-variant/20"></div>
+<div class="w-2 h-2 bg-on-surface-variant/20"></div>
+</div>
+<span class="text-[9px] uppercase font-bold tracking-tighter text-outline" style="">Terminal View: Global_O_Status_Rel_04</span>
+</div>
+<div class="aspect-square bg-surface relative">
+<img alt="Complex data visualization screen" class="w-full h-full object-cover opacity-60 mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL_UCIYRIdOGHRAI7klIipZqdWn2_c6OB40-GNULrinhOcyS2tJu80Bp6aRlwWGb4u8ITppmLSpT2TMDMrz7dxc4wv8WiJ1rzyOfuprka5Y2HCFDDqRCKH3I_dTVEYrlrFqmyEITrvJaSGC8lvY-JxoFvGjuCjq0zC1_x7OQCcaBu3jJFSpqsRaqOUWY9bUVzXUv0NFEkhZzYasEhMFgNmuvStol31pMDzub49r4mcDLPfnC6GZxsQZoaVP5EclHbRwUgbHWjCXhk" style=""/>
+<div class="absolute inset-0 p-4 pointer-events-none">
+<div class="w-48 bg-surface-container/90 p-3 ghost-border">
+<div class="text-[10px] text-primary font-bold uppercase mb-2" style="">Demand Signals</div>
+<div class="space-y-2">
+<div class="h-1 w-full bg-primary/20"></div>
+<div class="h-1 w-2/3 bg-primary/20"></div>
+<div class="h-1 w-3/4 bg-primary/20"></div>
+</div>
+</div>
+<div class="absolute bottom-4 right-4 bg-surface-container/90 p-3 ghost-border">
+<div class="text-[10px] text-on-surface-variant font-bold uppercase" style="">Forecast Sync</div>
+<div class="text-xl font-black data-mono text-on-surface" style="">ACTIVE</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Problem Section -->
+<section class="py-24 px-6 lg:px-12 bg-surface-container-low border-b border-outline-variant/10">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-3xl font-black uppercase tracking-tighter mb-6" style="">The Problem: <span class="text-primary" style="">The Costly Planning Gap</span></h2>
+<p class="text-on-surface-variant font-medium leading-relaxed mb-8" style="">
+                            Between your SAP system and your actual supply chain decisions lies a massive gap. Right now, your team fills that gap by stitching together data by hand. When you supply multiple OEMs, manual planning breaks down.
+                        </p>
+<div class="space-y-6">
+<div class="flex gap-4 group">
+<div class="h-10 w-1 bg-primary group-hover:w-2 transition-all"></div>
+<div>
+<h4 class="font-bold uppercase tracking-tight text-on-surface text-sm" style="">Mismatched Data</h4>
+<p class="text-xs text-outline" style="">Every customer sends demand in different formats, cadences, and time horizons.</p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="h-10 w-1 bg-primary group-hover:w-2 transition-all"></div>
+<div>
+<h4 class="font-bold uppercase tracking-tight text-on-surface text-sm" style="">High-SKU Complexity</h4>
+<p class="text-xs text-outline" style="">Managing thousands of part-customer-plant combinations crashes traditional spreadsheets.</p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="h-10 w-1 bg-primary group-hover:w-2 transition-all"></div>
+<div>
+<h4 class="font-bold uppercase tracking-tight text-on-surface text-sm" style="">Constant Fire Drills</h4>
+<p class="text-xs text-outline" style="">Unflagged demand shifts and missing data cause severe schedule volatility.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-8 ghost-border">
+<div class="aspect-video bg-[#0B0E14] flex flex-col items-center justify-center p-6 border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="grid grid-cols-12 h-full w-full">
+<div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div><div class="border-r border-outline h-full"></div>
+</div>
+</div>
+<div class="text-[10px] font-black uppercase text-error mb-4" style="">CRITICAL SYSTEM OVERLOAD</div>
+<div class="w-full h-2 bg-error-container relative mb-2">
+<div class="absolute inset-y-0 left-0 bg-error w-full animate-pulse"></div>
+</div>
+<div class="text-[9px] font-bold text-outline uppercase tracking-widest" style="">Excel Memory Limit Exceeded | Manual Override Required</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Solution Section -->
+<section class="py-24 px-6 lg:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-3xl font-black uppercase tracking-tighter mb-4" style="">The Solution: <span class="text-primary" style="">An Automated Planning Layer</span></h2>
+<p class="text-on-surface-variant font-medium leading-relaxed max-w-3xl" style="">
+                        Ceres replaces your manual spreadsheets. We bring customer demand signals, ERP data, and historical demand into one intelligent system.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Feature 1 -->
+<div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
+<span class="material-symbols-outlined text-primary mb-6" style='font-variation-settings: "FILL" 1;'>input</span>
+<h3 class="text-sm font-bold uppercase tracking-tight text-on-surface mb-3" style="">Ingest &amp; Normalize</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-6 flex-grow" style="">
+                            Automatically pull in EDI signals, customer releases, and SAP snapshots to create one unified baseline.
+                        </p>
+<div class="text-[9px] font-black data-mono text-primary uppercase tracking-widest border-t border-outline-variant/20 pt-4" style="">Outcome: Stop manually reconciling files</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
+<span class="material-symbols-outlined text-primary mb-6" style='font-variation-settings: "FILL" 1;'>warning</span>
+<h3 class="text-sm font-bold uppercase tracking-tight text-on-surface mb-3" style="">Catch Exceptions</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-6 flex-grow" style="">
+                            Automatically detect new part numbers, double plannings, and anomalous demand shifts that human eyes miss.
+                        </p>
+<div class="text-[9px] font-black data-mono text-primary uppercase tracking-widest border-t border-outline-variant/20 pt-4" style="">Outcome: Surface critical changes instantly</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
+<span class="material-symbols-outlined text-primary mb-6" style='font-variation-settings: "FILL" 1;'>psychology</span>
+<h3 class="text-sm font-bold uppercase tracking-tight text-on-surface mb-3" style="">AI Forecasting</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-6 flex-grow" style="">
+                            Build accurate forecasts across every active part, customer, and plant combination at massive scale.
+                        </p>
+<div class="text-[9px] font-black data-mono text-primary uppercase tracking-widest border-t border-outline-variant/20 pt-4" style="">Outcome: Never skip a planning period</div>
+</div>
+<!-- Feature 4 -->
+<div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
+<span class="material-symbols-outlined text-primary mb-6" style='font-variation-settings: "FILL" 1;'>science</span>
+<h3 class="text-sm font-bold uppercase tracking-tight text-on-surface mb-3" style="">Test Scenarios</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-6 flex-grow" style="">
+                            Model the exact operational impact of new tariffs, logistics disruptions, or material shortages.
+                        </p>
+<div class="text-[9px] font-black data-mono text-primary uppercase tracking-widest border-t border-outline-variant/20 pt-4" style="">Outcome: Protect margins from chaos</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Outcomes Section -->
+<section class="py-24 px-6 lg:px-12 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-end justify-between mb-12">
+<div>
+<h2 class="text-3xl font-black uppercase tracking-tighter mb-2" style="">The Outcomes: <span class="text-primary" style="">Measurable ROI</span></h2>
+<div class="h-1 w-24 bg-primary"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-8 border border-outline-variant/20">
+<div class="text-4xl font-black text-on-surface mb-4" style="">95%</div>
+<h4 class="text-sm font-bold uppercase tracking-widest text-primary mb-3" style="">Less Analysis Time</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed" style="">Eliminate the manual grind of manipulating EDI files and weekly snapshots.</p>
+</div>
+<div class="bg-surface-container-low p-8 border border-outline-variant/20">
+<div class="text-4xl font-black text-on-surface mb-4" style="">2.5x</div>
+<h4 class="text-sm font-bold uppercase tracking-widest text-primary mb-3" style="">Planner Productivity</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed" style="">Scale your operations and handle massive SKU complexity without adding headcount.</p>
+</div>
+<div class="bg-surface-container-low p-8 border border-outline-variant/20">
+<div class="text-4xl font-black text-on-surface mb-4" style="">0</div>
+<h4 class="text-sm font-bold uppercase tracking-widest text-primary mb-3" style="">Costly Surprises</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed" style="">Spot changes before they create expedited air freight, excess inventory, or capacity problems.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Fit Section -->
+<section class="py-24 px-6 lg:px-12 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2">
+<img alt="High-precision manufacturing" class="w-full grayscale brightness-50 contrast-125 ghost-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVxOCb7zEnrL4jXs6pqxWLcqNmAPgeMvN3Ciykpu1eeKMtEuCgonvu5ZcTyfMeX-YBerpNzJfp5zLAn4-ZNA5yLZ9g1rx64yZHAftLLe72mZy6XWr5gGcxwsDFaAKNi2tvZMlXEX4FHl76JFVJydW781mCGICDwaWrnkKgWLBP0XO6wIGk977JObDeWq3A1PXfqTJlZShxpf3Fe-eWYxYF4ITHkzNPvIfpsy1tRJ0ygZxPqTfr6alSj7vQVd6EvWI-PueBJ3Li1MQ" style=""/>
+</div>
+<div class="w-full md:w-1/2 space-y-8">
+<h2 class="text-4xl font-black uppercase tracking-tighter text-on-surface leading-none" style="">
+                        THE FIT: <br/> <span class="text-primary" style="">BUILT FOR COMPLEXITY</span>
+</h2>
+<p class="text-on-surface-variant font-medium leading-relaxed" style="">
+                        Ceres is not a generic tool. It is designed specifically for supplier-side manufacturers managing multiple large customers, unpredictable demand formats, and extreme part-count complexity.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-surface-container-low p-4">
+<span class="material-symbols-outlined text-outline" style='font-variation-settings: "FILL" 1;'>hub</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface" style="">Multi-OEM Environment Native</span>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-4">
+<span class="material-symbols-outlined text-outline" style='font-variation-settings: "FILL" 1;'>precision_manufacturing</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface" style="">Tier 1 &amp; 2 Industrial Protocol</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Call to System -->
+<section class="py-32 px-6 bg-[#0B0E14] text-center border-t border-outline-variant/10">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-4xl lg:text-5xl font-black tracking-tighter uppercase mb-6 leading-none" style="">Close the gap between <br/> your ERP and your decisions.</h2>
+<p class="text-on-surface-variant font-medium text-lg mb-12 max-w-2xl mx-auto" style="">See how Ceres helps planning teams move faster, catch issues earlier, and make better decisions.</p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<a href="book_a_demo_ceres_technology.html" class="bg-primary text-on-primary px-12 py-5 font-black uppercase tracking-tighter text-lg hover:brightness-110 active:scale-95 transition-all" style="">
+                        See Ceres in Action — Book a Demo
+                    </a>
+</div>
+<p class="text-outline uppercase text-[9px] font-bold tracking-[0.4em] mt-12" style="">Authorized Access Only | Industrial Protocol Required</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0B0E14] w-full border-t-2 border-[#1D2026] flex flex-col md:flex-row justify-between items-center px-8 py-6 gap-4">
+<div class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold text-[#45474B]" style="">
+            © 2024 CERES TECHNOLOGY. ALL SYSTEMS OPERATIONAL.
+        </div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold text-[#45474B] hover:text-[#F37221] underline-offset-4 transition-opacity duration-150" href="#" style="">System Status</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold text-[#45474B] hover:text-[#F37221] underline-offset-4 transition-opacity duration-150" href="#" style="">API Docs</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold text-[#45474B] hover:text-[#F37221] underline-offset-4 transition-opacity duration-150" href="#" style="">Privacy Protocol</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold text-[#45474B] hover:text-[#F37221] underline-offset-4 transition-opacity duration-150" href="#" style="">Security Shell</a>
+</div>
+</footer>
+</body></html>

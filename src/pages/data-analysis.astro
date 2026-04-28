@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Automated Planning Layer | Ceres Technology">
+  <main class="flex-grow flex flex-col items-center justify-start w-full bg-surface-container-lowest">
+
+    <!-- HERO -->
+    <section class="w-full max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-16">
+      <div class="w-full md:w-1/2 flex flex-col items-start gap-8 z-10 relative">
+        <div class="absolute -top-12 -left-8 w-24 h-24 border-t border-l border-primary/30 z-0"></div>
+        <h1 class="text-5xl md:text-6xl font-black tracking-tighter text-on-surface leading-tight font-headline z-10">
+          Map external data onto your internal records to automate complex analysis.
+        </h1>
+        <p class="text-lg text-on-surface-variant font-medium leading-relaxed max-w-2xl border-l-4 border-primary pl-6 py-2">
+          We help enterprise operations, risk, and planning teams connect their internal systems to real-world geospatial, demographic, and market signals. Ceres automatically merges your data to build scorecards, map exposures, and classify records without weeks of manual spreadsheet work.
+        </p>
+        <div class="flex gap-4 pt-4">
+          <a href="/book-a-demo" class="bg-primary text-on-primary font-bold uppercase tracking-tight px-8 py-4 hover:bg-primary-fixed transition-colors inline-flex items-center gap-2">
+            Book a Demo
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </a>
+          <button class="bg-surface-container text-on-surface border border-outline-variant/50 font-bold uppercase tracking-tight px-8 py-4 hover:bg-surface-container-high transition-colors">
+            View Architecture
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 relative min-h-[500px]">
+        <div class="absolute inset-0 machined-gradient border border-outline-variant/30 overflow-hidden flex items-center justify-center">
+          <div class="w-full h-full opacity-20 relative">
+            <div class="absolute inset-0" style="background-image: linear-gradient(#45474B 1px, transparent 1px), linear-gradient(90deg, #45474B 1px, transparent 1px); background-size: 20px 20px;"></div>
+          </div>
+          <div class="absolute top-1/4 left-1/4 bg-surface-container-high border border-outline-variant p-4 industrial-shadow z-10 w-48">
+            <div class="text-xs font-mono text-on-surface-variant mb-1">INTERNAL_DB_01</div>
+            <div class="text-sm font-bold text-on-surface">Asset Records</div>
+            <div class="h-1 w-full bg-surface-container-low mt-2"><div class="h-full bg-primary w-3/4"></div></div>
+          </div>
+          <div class="absolute bottom-1/3 right-1/4 bg-surface-container-high border border-outline-variant p-4 industrial-shadow z-10 w-48">
+            <div class="text-xs font-mono text-on-surface-variant mb-1">EXT_SIGNAL_WX</div>
+            <div class="text-sm font-bold text-on-surface">Weather Data</div>
+            <div class="flex gap-1 mt-2">
+              <span class="h-2 w-2 bg-primary"></span>
+              <span class="h-2 w-2 bg-primary"></span>
+              <span class="h-2 w-2 bg-surface-container-low"></span>
+            </div>
+          </div>
+          <svg class="absolute inset-0 w-full h-full z-0" pointer-events="none">
+            <path d="M 150 150 C 250 150, 250 350, 350 350" fill="none" opacity="0.6" stroke="#F37221" stroke-dasharray="4 4" stroke-width="2"></path>
+          </svg>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-surface border border-primary p-6 industrial-shadow z-20 flex flex-col items-center">
+            <span class="material-symbols-outlined text-primary text-3xl mb-2">hub</span>
+            <div class="text-xs font-mono font-bold text-primary tracking-widest">CERES_ENGINE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="w-full bg-surface py-24 border-t border-outline-variant/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-12 border-b border-outline-variant/20 pb-6 flex justify-between items-end">
+          <div>
+            <div class="text-primary font-mono text-xs tracking-widest mb-2 uppercase">System_Failure_Points</div>
+            <h2 class="text-3xl font-black tracking-tighter text-on-surface uppercase">The Manual Bottleneck</h2>
+          </div>
+          <p class="text-sm text-on-surface-variant font-mono hidden md:block">ERR_CODE: MANUAL_RECONCILIATION</p>
+        </div>
+        <p class="text-lg text-on-surface-variant mb-12 max-w-3xl">
+          Analyzing your records against outside data is a massive manual bottleneck. Your internal assets live in your database, but the external data (weather, demographics, etc.) lives everywhere else.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-surface-container p-6 border-l-2 border-outline-variant hover:border-primary hover:bg-surface-container-high transition-colors flex flex-col gap-4">
+            <div class="bg-surface-container-lowest w-10 h-10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-on-surface">engineering</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface">Trapped Analysts</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Analysts are trapped in endless manual cycles of data compilation instead of driving strategic insights.</p>
+            <div class="mt-auto pt-4 border-t border-outline-variant/20 font-mono text-[10px] text-error">STATUS: CRITICAL_DRAIN</div>
+          </div>
+          <div class="bg-surface-container p-6 border-l-2 border-outline-variant hover:border-primary hover:bg-surface-container-high transition-colors flex flex-col gap-4">
+            <div class="bg-surface-container-lowest w-10 h-10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-on-surface">map</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface">Stale Data Artifacts</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Maps and scorecards become outdated the moment they are generated due to disconnected data sources.</p>
+            <div class="mt-auto pt-4 border-t border-outline-variant/20 font-mono text-[10px] text-error">STATUS: HIGH_LATENCY</div>
+          </div>
+          <div class="bg-surface-container p-6 border-l-2 border-outline-variant hover:border-primary hover:bg-surface-container-high transition-colors flex flex-col gap-4">
+            <div class="bg-surface-container-lowest w-10 h-10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-on-surface">find_in_page</span>
+            </div>
+            <h3 class="text-lg font-bold text-on-surface">Unstructured Grind</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Manual review processes for unstructured records introduce human error and limit scalability.</p>
+            <div class="mt-auto pt-4 border-t border-outline-variant/20 font-mono text-[10px] text-error">STATUS: NON_SCALABLE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE SOLUTION (BENTO GRID) -->
+    <section class="w-full bg-surface-container-lowest py-24 border-t border-outline-variant/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-12 border-b border-outline-variant/20 pb-6">
+          <div class="text-primary font-mono text-xs tracking-widest mb-2 uppercase">Resolution_Protocol</div>
+          <h2 class="text-3xl font-black tracking-tighter text-on-surface uppercase">Connect Signals in Minutes</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
+          <div class="md:col-span-2 md:row-span-2 bg-surface-container p-8 relative overflow-hidden group hover:bg-surface-container-high transition-colors">
+            <div class="absolute top-0 right-0 p-4">
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-4xl">merge_type</span>
+            </div>
+            <div class="h-full flex flex-col justify-end z-10 relative">
+              <h3 class="text-2xl font-bold text-on-surface mb-2">Automate Data Blending</h3>
+              <p class="text-sm text-on-surface-variant">Seamlessly merge disparate internal datasets with complex external feeds without writing custom ETL pipelines.</p>
+            </div>
+            <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-surface-container-high to-transparent opacity-50"></div>
+          </div>
+          <div class="md:col-span-2 bg-surface-container p-6 relative group hover:bg-surface-container-high transition-colors flex flex-col justify-between border-b-2 border-transparent hover:border-primary">
+            <div class="flex justify-between items-start">
+              <h3 class="text-lg font-bold text-on-surface">Overlay External Signals</h3>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">layers</span>
+            </div>
+            <p class="text-sm text-on-surface-variant">Instantly map demographic, geospatial, and market data onto your existing records.</p>
+          </div>
+          <div class="md:col-span-1 bg-surface-container p-6 relative group hover:bg-surface-container-high transition-colors border-l-2 border-transparent hover:border-primary">
+            <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors mb-4 block">score</span>
+            <h3 class="text-base font-bold text-on-surface mb-2">Dynamic Scorecards</h3>
+            <p class="text-xs text-on-surface-variant">Generate real-time risk and opportunity scores.</p>
+          </div>
+          <div class="md:col-span-1 bg-surface-container p-6 relative group hover:bg-surface-container-high transition-colors border-l-2 border-transparent hover:border-primary">
+            <span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors mb-4 block">science</span>
+            <h3 class="text-base font-bold text-on-surface mb-2">What-If Scenarios</h3>
+            <p class="text-xs text-on-surface-variant">Run simulations based on shifting external variables.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAMPLES -->
+    <section class="w-full bg-surface py-24 border-t border-outline-variant/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-12 border-b border-outline-variant/20 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="text-primary font-mono text-xs tracking-widest mb-2 uppercase">Application_Vectors</div>
+            <h2 class="text-3xl font-black tracking-tighter text-on-surface uppercase">Replacing Spreadsheets</h2>
+          </div>
+          <button class="bg-surface-container text-on-surface text-xs font-bold uppercase tracking-tight px-4 py-2 hover:bg-surface-container-high transition-colors border border-outline-variant/50 self-start md:self-auto">
+            View All Cases
+          </button>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
+            <div class="flex items-center gap-4 mb-2 md:mb-0">
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">inventory</span>
+              <span class="font-bold text-on-surface">Supply Risk Scorecards</span>
+            </div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: VENDOR_METRICS</div>
+          </div>
+          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
+            <div class="flex items-center gap-4 mb-2 md:mb-0">
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">public</span>
+              <span class="font-bold text-on-surface">Portfolio Exposure Mapping</span>
+            </div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: GEO_RISK</div>
+          </div>
+          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
+            <div class="flex items-center gap-4 mb-2 md:mb-0">
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">track_changes</span>
+              <span class="font-bold text-on-surface">Geospatial Audience Targeting</span>
+            </div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: DEMO_OVERLAY</div>
+          </div>
+          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
+            <div class="flex items-center gap-4 mb-2 md:mb-0">
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">subject</span>
+              <span class="font-bold text-on-surface">Text Categorization</span>
+            </div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: NLP_CLASSIFY</div>
+          </div>
+          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
+            <div class="flex items-center gap-4 mb-2 md:mb-0">
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">trending_up</span>
+              <span class="font-bold text-on-surface">Demand Forecasting</span>
+            </div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: PREDICTIVE_MOD</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEASURABLE RESULTS -->
+    <section class="w-full bg-surface-container-lowest py-24 border-t border-outline-variant/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-12 border-b border-outline-variant/20 pb-6 text-center">
+          <div class="text-primary font-mono text-xs tracking-widest mb-2 uppercase">Telemetry_Data</div>
+          <h2 class="text-3xl font-black tracking-tighter text-on-surface uppercase">Measurable Results</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
+          <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+            <div class="text-3xl md:text-4xl font-black text-primary font-mono mb-2 tracking-tighter">Wk→Min</div>
+            <div class="text-xs text-on-surface-variant font-bold uppercase tracking-widest text-center">Processing Time</div>
+          </div>
+          <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+            <div class="text-3xl md:text-4xl font-black text-on-surface font-mono mb-2 tracking-tighter">
+              <span class="material-symbols-outlined text-4xl">bolt</span>
+            </div>
+            <div class="text-xs text-on-surface-variant font-bold uppercase tracking-widest text-center">Instant Categorization</div>
+          </div>
+          <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+            <div class="text-3xl md:text-4xl font-black text-on-surface font-mono mb-2 tracking-tighter">TB+</div>
+            <div class="text-xs text-on-surface-variant font-bold uppercase tracking-widest text-center">Massive Scale</div>
+          </div>
+          <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+            <div class="text-3xl md:text-4xl font-black text-on-surface font-mono mb-2 tracking-tighter">API/DB</div>
+            <div class="text-xs text-on-surface-variant font-bold uppercase tracking-widest text-center">Seamless Integration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="w-full bg-surface py-32 border-t-4 border-primary">
+      <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+        <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-on-surface uppercase mb-6">
+          Ready to see it work with your data?
+        </h2>
+        <p class="text-xl text-on-surface-variant font-medium mb-10 max-w-2xl">
+          Stop losing days to manual data reconciliation. Initialize your automated planning layer today.
+        </p>
+        <a href="/book-a-demo" class="bg-primary text-on-primary font-black uppercase tracking-widest px-12 py-5 hover:bg-primary-fixed transition-colors text-lg shadow-[0_0_20px_rgba(243,114,33,0.3)] hover:shadow-[0_0_30px_rgba(243,114,33,0.5)]">
+          Book a Demo
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>

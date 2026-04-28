@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book a Demo - Sovereign Console</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"error-container": "#93000a", "tertiary-fixed-dim": "#acccd5", "surface-container-high": "#1a2c36", "outline-variant": "#584237", "primary-container": "#f37221", "on-secondary": "#203337", "inverse-surface": "#d2e5f2", "on-surface-variant": "#dfc0b2", "on-tertiary-fixed": "#001f26", secondary: "#b5cacf", "primary-fixed": "#ffdbcb", "on-surface": "#d2e5f2", "secondary-container": "#394c51", "surface-container": "#10222b", "secondary-fixed": "#d1e6eb", outline: "#a78b7e", "inverse-primary": "#9e4200", "tertiary-container": "#7e9da6", "secondary-fixed-dim": "#b5cacf", "surface-container-highest": "#253741", "on-error-container": "#ffdad6", tertiary: "#acccd5", "surface-variant": "#253741", "surface-tint": "#ffb691", surface: "#03151e", "on-background": "#d2e5f2", "surface-bright": "#2a3b45", "primary-fixed-dim": "#ffb691", background: "#03151e", "on-secondary-container": "#a7bcc1", "on-secondary-fixed-variant": "#374a4e", "on-secondary-fixed": "#0a1e22", primary: "#ffb691", "on-tertiary": "#15353c", "tertiary-fixed": "#c8e8f1", "surface-dim": "#03151e", "on-tertiary-container": "#15343c", "on-primary": "#552000", "surface-container-low": "#0b1e27", "on-primary-fixed-variant": "#793100", "surface-container-lowest": "#001019", "on-primary-fixed": "#341100", "inverse-on-surface": "#21333c", error: "#ffb4ab", "on-error": "#690005", "on-primary-container": "#552000", "on-tertiary-fixed-variant": "#2d4b53"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, fontFamily: {headline: ["Space Grotesk"], body: ["Inter"], label: ["Inter"], display: ["Space Grotesk"]}, fontSize: {}}}};</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-machined-gradient {
+            background: linear-gradient(145deg, #272a31 0%, #0b0e14 100%);
+        }
+        .industrial-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- ========== NAVIGATION BAR ========== -->
+  <nav class="bg-[#0B0E14] text-[#F37221] font-['Inter'] tracking-tight font-semibold uppercase text-xs fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
+    <div class="text-xl font-black tracking-tighter text-[#F37221]">CERES TECHNOLOGY</div>
+    
+    <div class="hidden md:flex gap-8 items-center">
+      <!-- Example Cases Dropdown -->
+      <div class="relative group">
+        <button class="text-[#8A8D91] hover:text-white transition-colors flex items-center gap-2">
+          EXAMPLE CASES
+          <span class="material-symbols-outlined text-[14px]">expand_more</span>
+        </button>
+        <div class="absolute left-0 mt-0 w-96 bg-[#1D2026] border border-[#363940] hidden group-hover:block">
+          <a href="index.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Home</a>
+          <a href="about_story_leadership.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">About / Story / Leadership</a>
+          <a href="enterprise_decision_console.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Enterprise Decision Console</a>
+          <a href="data_analysis_automation_v2.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Data Analysis Automation</a>
+          <a href="the_automated_planning_layer.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Automated Planning Layer</a>
+          <a href="integrations_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Integrations</a>
+          <a href="security_trust_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Security & Trust</a>
+          <a href="ceres_for_investment_firms_external_signals_for_research_risk_and_portfolio.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Investment Firms</a>
+          <a href="ceres_for_pharma_better_supply_foresight.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Pharma Supply Foresight</a>
+          <a href="PharmaceuticalCompanies.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Pharmaceutical Companies</a>
+          <a href="book_a_demo_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Book a Demo</a>
+        </div>
+      </div>
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Resources</a>
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Company</a>
+    </div>
+    
+    <div class="flex items-center gap-4">
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="https://nxt.cerestech.co">Login</a>
+      <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-bold">REQUEST DEMO</a>
+    </div>
+  </nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col">
+<!-- Hero Section -->
+<section class="bg-surface-container-lowest pt-24 pb-16 px-6 lg:px-12 border-b border-surface-container relative overflow-hidden">
+<!-- Decorative elements -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-machined-gradient opacity-20 pointer-events-none"></div>
+<div class="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<h1 class="text-5xl lg:text-6xl font-extrabold tracking-tighter text-on-surface mb-6 leading-tight">
+                        Book a Ceres walkthrough
+                    </h1>
+<p class="text-lg text-on-surface-variant font-medium leading-relaxed max-w-xl">
+                        Tell us a little about your business and your current bottlenecks. We will use the conversation to understand your workflows, discuss where decisions are slowing down, and show how Ceres can merge internal records with external signals in a way your team can actually use.
+                    </p>
+</div>
+<!-- Embedded Form Card -->
+<div class="bg-surface-container border border-outline-variant/20 p-8 industrial-shadow relative">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<h2 class="text-xl font-bold text-on-surface mb-6 tracking-tight">Schedule your conversation</h2>
+<form class="space-y-5">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-2">First Name</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors text-sm placeholder-outline" placeholder="Enter first name" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-2">Last Name</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors text-sm placeholder-outline" placeholder="Enter last name" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-2">Work Email</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors text-sm placeholder-outline" placeholder="name@company.com" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-2">Company Size</label>
+<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors text-sm appearance-none">
+<option>Select size...</option>
+<option>1-50 Employees</option>
+<option>51-200 Employees</option>
+<option>201-1000 Employees</option>
+<option>1000+ Employees</option>
+</select>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-on-primary font-bold py-4 text-center hover:opacity-90 transition-opacity active:scale-95 duration-75 uppercase tracking-wider text-sm flex justify-center items-center gap-2" type="button">
+                                Request Walkthrough
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<p class="text-xs text-on-surface-variant/60 text-center mt-4">By submitting, you agree to our Terms of Operation and Privacy Policy.</p>
+</form>
+</div>
+</div>
+</section>
+<!-- Process Details Section -->
+<section class="bg-surface py-20 px-6 lg:px-12 border-b border-surface-container">
+<div class="max-w-5xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- What to Expect Column -->
+<div class="md:col-span-2">
+<h2 class="text-2xl font-bold tracking-tight text-on-surface mb-8 border-l-4 border-primary pl-4">What to Expect</h2>
+<div class="space-y-6">
+<div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container-lowest flex items-center justify-center font-mono font-bold text-primary text-xl border border-outline-variant/30">01</div>
+<div>
+<h3 class="text-lg font-semibold text-on-surface mb-2">We learn how your team works.</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Before we show you software, we map your current operational topography. We need to understand the structural realities of your data flow.</p>
+</div>
+</div>
+<div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container-lowest flex items-center justify-center font-mono font-bold text-primary text-xl border border-outline-variant/30">02</div>
+<div>
+<h3 class="text-lg font-semibold text-on-surface mb-2">We focus on the decision problem.</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">We identify the specific inflection points where your team lacks the merged context required to act definitively.</p>
+</div>
+</div>
+<div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container-lowest flex items-center justify-center font-mono font-bold text-primary text-xl border border-outline-variant/30">03</div>
+<div>
+<h3 class="text-lg font-semibold text-on-surface mb-2">We show how Ceres can help.</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">A targeted demonstration mapping your specific bottlenecks to our protocol's capability to ingest, normalize, and surface actionable intelligence.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Why Book Time Sidebar -->
+<div class="md:col-span-1">
+<div class="bg-surface-container-low p-8 border border-outline-variant/20 h-full flex flex-col justify-center">
+<h2 class="text-xl font-bold tracking-tight text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                                Why Book Time
+                            </h2>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                This is not a standard software pitch. Ceres is a structural implementation designed for complex operational environments.
+                            </p>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                                A live walkthrough allows us to determine if our architecture aligns with your specific technical debt and analytical requirements before engaging in a proof of concept.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="bg-surface-container-lowest py-20 px-6 lg:px-12">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface mb-4">Built for teams that need clarity, trust, and practical implementation</h2>
+<p class="text-primary font-mono text-sm tracking-widest uppercase">Verified Deployments</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container p-8 border border-outline-variant/20 flex flex-col justify-between">
+<p class="text-on-surface-variant text-base leading-relaxed mb-8 italic">"The initial consultation wasn't about selling licenses; it was a diagnostic of our entire supply chain data model. By the time we saw the console, we already knew it solved our latency issue."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">factory</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Director of Operations</p>
+<p class="text-xs text-on-surface-variant font-mono">Global Logistics Firm</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 border border-outline-variant/20 flex flex-col justify-between">
+<p class="text-on-surface-variant text-base leading-relaxed mb-8 italic">"Ceres didn't ask us to change our existing systems. They mapped out how their protocol could sit on top and finally give our analysts a unified, trusted view of risk."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">account_balance</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Head of Risk Analytics</p>
+<p class="text-xs text-on-surface-variant font-mono">Tier 1 Financial Institution</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Reassurance -->
+<section class="bg-machined-gradient py-12 px-6 border-t border-outline-variant/30 text-center">
+<p class="text-on-surface font-bold tracking-widest uppercase text-sm flex justify-center items-center gap-3">
+<span class="w-8 h-px bg-primary"></span>
+                Built for serious teams with real operating needs
+                <span class="w-8 h-px bg-primary"></span>
+</p>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0B0E14] dark:bg-[#0B0E14] docked full-width border-t-0 tonal-shift bg-[#0B0E14] flat no shadows flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 gap-6 font-['Inter'] text-[12px] uppercase tracking-widest text-slate-500">
+<div class="hidden">Brand Logo</div>
+<div>
+            © 2024 Industrial Data Systems. All rights reserved. Precision Protocol Active.
+        </div>
+<nav class="flex gap-6">
+<a class="text-slate-500 hover:text-[#F37221] transition-colors" href="#">Security</a>
+<a class="text-slate-500 hover:text-[#F37221] transition-colors" href="#">API Reference</a>
+<a class="text-slate-500 hover:text-[#F37221] transition-colors" href="#">Terms of Operation</a>
+<a class="text-slate-500 hover:text-[#F37221] transition-colors" href="#">System Status</a>
+</nav>
+</footer>
+</body></html>

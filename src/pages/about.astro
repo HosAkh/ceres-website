@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Us | Ceres Technology">
+  <main class="flex-grow flex flex-col gap-4 p-4 md:p-8 max-w-[1600px] mx-auto w-full pt-20">
+
+    <!-- HERO -->
+    <section class="machined-gradient p-8 md:p-16 flex flex-col gap-6 ghost-border">
+      <h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-[-0.01em] text-on-surface uppercase max-w-4xl leading-none">
+        We built Ceres to help enterprises turn outside chaos into usable decisions.
+      </h1>
+      <p class="font-body font-normal text-lg text-on-surface-variant max-w-3xl leading-[1.7]">
+        Ceres was founded by operators who saw firsthand how hard it was to connect real-world events to the records and systems businesses rely on every day. We built Ceres to close that gap.
+      </p>
+      <div class="mt-4">
+        <a href="/book-a-demo" class="bg-primary text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 inline-flex items-center gap-2 hover:brightness-110 transition-all">
+          Book a Demo
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT GRID -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+      <!-- LEFT COLUMN -->
+      <div class="lg:col-span-2 flex flex-col gap-4">
+
+        <!-- Our Story -->
+        <section class="bg-surface-container p-8 ghost-border">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="material-symbols-outlined text-primary">history</span>
+            <h2 class="font-headline text-lg font-bold tracking-[0.015em] uppercase text-on-surface">Built from a real operating problem</h2>
+          </div>
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-1 text-base text-on-surface-variant space-y-4">
+              <p>Ceres was born out of sheer frustration. Founders Bobby Katoli and Trey Hoobler were managing complex coffee supply chains when the COVID-19 pandemic hit.</p>
+              <p>They quickly realized that while they had plenty of internal data—ERP records, spreadsheets, historical logs—they had zero connected context regarding real-world disruptions affecting their shipments.</p>
+              <p>The realization was simple but profound: businesses don't lack records; they lack the situational awareness to act on those records before it's too late.</p>
+            </div>
+            <div class="flex-1 bg-surface-container-lowest h-48 ghost-border relative overflow-hidden flex items-center justify-center">
+              <img alt="Industrial supply chain shipping containers" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhMHUeRNT2_VMgAS_aO0j8iJlMq4RySGtt6O3TubXV7JHqgNKDDQ4zN2OqhuVVe33x54CHbNhodWSzOgo5nPT96BRK4iA04927dpN94cWMbyNAJShv5srOaIR5AvDFHSRvtqY2UualhGQNEnVdaxNKGn-qwsSbpNYTIrYd-dMQWKi5ccaSQxqHaTZax8SLIeIld6pGbUslPsulcUwVmmL9Rp1Cg9mUtyPW0gjRqG0ivlioZ9DZGkzWRSKPuXvzIle9nTEQWVY2TDk"/>
+              <div class="relative z-10 text-center p-4 border border-outline-variant/30 bg-surface/80 backdrop-blur-sm">
+                <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary block mb-1">INCIDENT_LOG_2020</span>
+                <span class="font-mono font-normal text-[10px] tracking-[0.18em] uppercase text-on-surface">SUPPLY_CHAIN_DISRUPTION_DETECTED</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- What We Believe -->
+        <section class="bg-surface-container p-8 ghost-border">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="material-symbols-outlined text-primary">psychology</span>
+            <h2 class="font-headline text-lg font-bold tracking-[0.015em] uppercase text-on-surface">Better decisions come from better context</h2>
+          </div>
+          <p class="font-body font-normal text-base text-on-surface-variant mb-6 leading-[1.7]">Organizations suffer from a shortage of connected context, not a shortage of records. We build systems that bridge this gap.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-lowest p-6 border-l-2 border-outline-variant">
+              <h3 class="font-headline font-bold text-on-surface mb-2 text-base uppercase tracking-[0.015em]">The Old Way</h3>
+              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Relying on stale, disconnected spreadsheets and delayed reporting. Reacting to events after they have already impacted the bottom line.</p>
+            </div>
+            <div class="bg-surface-container-lowest p-6 border-l-2 border-primary">
+              <h3 class="font-headline font-bold text-on-surface mb-2 text-base uppercase tracking-[0.015em] text-primary">The Ceres Way</h3>
+              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Injecting live, contextual intelligence directly into existing operational workflows. Anticipating friction before it becomes failure.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- System Capabilities -->
+        <section class="bg-surface-container p-8 ghost-border">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="material-symbols-outlined text-primary">hub</span>
+            <h2 class="font-headline text-lg font-bold tracking-[0.015em] uppercase text-on-surface">System Capabilities</h2>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+            <div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+              <span class="material-symbols-outlined text-outline">fact_check</span>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface">SCORECARDS</span>
+            </div>
+            <div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+              <span class="material-symbols-outlined text-outline">map</span>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface">EXPOSURE MAPPING</span>
+            </div>
+            <div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+              <span class="material-symbols-outlined text-outline">category</span>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface">CLASSIFICATION</span>
+            </div>
+            <div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+              <span class="material-symbols-outlined text-outline">trending_up</span>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface">FORECASTING</span>
+            </div>
+            <div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+              <span class="material-symbols-outlined text-outline">science</span>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface">SCENARIO ANALYSIS</span>
+            </div>
+            <div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+              <span class="material-symbols-outlined text-primary">monitoring</span>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface">OPERATIONAL MONITORING</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="flex flex-col gap-4">
+
+        <!-- Operating Principles -->
+        <section class="bg-surface-container p-6 ghost-border flex-grow">
+          <div class="flex items-center gap-3 mb-6 border-b border-outline-variant/30 pb-4">
+            <span class="material-symbols-outlined text-primary">terminal</span>
+            <h2 class="font-headline text-sm font-bold tracking-[0.015em] uppercase text-on-surface">Operating Principles</h2>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="font-mono text-[10px] tracking-[0.18em] text-primary mt-1">01</span>
+              <p class="font-headline font-bold text-sm text-on-surface uppercase tracking-[0.015em]">Work with what already exists</p>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-mono text-[10px] tracking-[0.18em] text-primary mt-1">02</span>
+              <p class="font-headline font-bold text-sm text-on-surface uppercase tracking-[0.015em]">Focus on the workflow</p>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-mono text-[10px] tracking-[0.18em] text-primary mt-1">03</span>
+              <p class="font-headline font-bold text-sm text-on-surface uppercase tracking-[0.015em]">Make outputs easier to explain</p>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="font-mono text-[10px] tracking-[0.18em] text-primary mt-1">04</span>
+              <p class="font-headline font-bold text-sm text-on-surface uppercase tracking-[0.015em]">Reduce the manual grind</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Target Deployment -->
+        <section class="bg-surface-bright p-6 ghost-border border-l-4 border-primary">
+          <h3 class="font-headline text-base font-bold uppercase tracking-[0.015em] text-on-surface mb-2">Target Deployment</h3>
+          <p class="font-body font-normal text-sm text-on-surface-variant leading-[1.7]">For teams operating in high-stakes environments.</p>
+          <div class="mt-4 flex gap-2 flex-wrap">
+            <span class="px-2 py-1 bg-surface-container-lowest text-xs text-outline font-mono border border-outline-variant/50">MANUFACTURING</span>
+            <span class="px-2 py-1 bg-surface-container-lowest text-xs text-outline font-mono border border-outline-variant/50">HEALTHCARE</span>
+            <span class="px-2 py-1 bg-surface-container-lowest text-xs text-outline font-mono border border-outline-variant/50">LOGISTICS</span>
+          </div>
+        </section>
+
+        <!-- Leadership Grid -->
+        <section class="bg-surface-container p-6 ghost-border">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="material-symbols-outlined text-primary">groups</span>
+            <h2 class="font-headline text-sm font-bold tracking-[0.015em] uppercase text-on-surface">Command Staff</h2>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="bg-surface-container-lowest p-4 border-l border-outline-variant hover:border-primary transition-colors flex items-center justify-between group">
+              <div>
+                <h4 class="font-headline font-bold text-on-surface text-base uppercase tracking-[0.015em]">Bobby Katoli</h4>
+                <p class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">Co-Founder &amp; CEO</p>
+              </div>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_outward</span>
+            </div>
+            <div class="bg-surface-container-lowest p-4 border-l border-outline-variant hover:border-primary transition-colors flex items-center justify-between group">
+              <div>
+                <h4 class="font-headline font-bold text-on-surface text-base uppercase tracking-[0.015em]">Trey Hoobler</h4>
+                <p class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">Co-Founder</p>
+              </div>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_outward</span>
+            </div>
+            <div class="bg-surface-container-lowest p-4 border-l border-outline-variant hover:border-primary transition-colors flex items-center justify-between group">
+              <div>
+                <h4 class="font-headline font-bold text-on-surface text-base uppercase tracking-[0.015em]">Carlos Amaral</h4>
+                <p class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">EVP &amp; CIO</p>
+              </div>
+              <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_outward</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <section class="machined-gradient p-12 text-center ghost-border mt-4 flex flex-col items-center justify-center gap-6">
+      <h2 class="font-headline text-3xl font-extrabold tracking-[-0.01em] uppercase leading-none text-on-surface">Want to see how Ceres could fit your team?</h2>
+      <p class="font-body font-normal text-base text-on-surface-variant max-w-2xl leading-[1.7]">Stop relying on spreadsheet logic and stale context. Deploy a systematic approach to operational intelligence.</p>
+      <a href="/book-a-demo" class="bg-primary text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 inline-flex items-center gap-2 hover:brightness-110 transition-all mt-4">
+        Book a Demo
+        <span class="material-symbols-outlined text-sm">terminal</span>
+      </a>
+    </section>
+
+  </main>
+</Layout>

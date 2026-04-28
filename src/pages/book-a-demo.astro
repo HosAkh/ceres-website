@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Book a Demo - Ceres Technology">
+  <main class="flex-grow flex flex-col">
+
+    <!-- HERO SECTION -->
+    <section class="bg-surface-container-lowest pt-24 pb-16 px-6 lg:px-12 border-b border-surface-container relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-machined-gradient opacity-20 pointer-events-none"></div>
+      <div class="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <h1 class="text-5xl lg:text-6xl font-extrabold tracking-tighter text-on-surface mb-6 leading-tight">
+            Book a Ceres walkthrough
+          </h1>
+          <p class="text-lg text-on-surface-variant font-medium leading-relaxed max-w-xl">
+            Tell us a little about your business and your current bottlenecks. We will use the conversation to understand your workflows, discuss where decisions are slowing down, and show how Ceres can merge internal records with external signals in a way your team can actually use.
+          </p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="bg-surface-container border border-outline-variant/20 p-8 industrial-shadow relative">
+          <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+          <h2 class="text-xl font-bold text-on-surface mb-6 tracking-tight">Schedule your conversation</h2>
+          <form class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-on-surface-variant mb-2">First Name</label>
+                <input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors text-sm placeholder-outline" placeholder="Enter first name" type="text"/>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-on-surface-variant mb-2">Last Name</label>
+                <input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors text-sm placeholder-outline" placeholder="Enter last name" type="text"/>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-on-surface-variant mb-2">Work Email</label>
+              <input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors text-sm placeholder-outline" placeholder="name@company.com" type="email"/>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-on-surface-variant mb-2">Company Size</label>
+              <select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface px-4 py-3 transition-colors text-sm appearance-none">
+                <option>Select size...</option>
+                <option>1-50 Employees</option>
+                <option>51-200 Employees</option>
+                <option>201-1000 Employees</option>
+                <option>1000+ Employees</option>
+              </select>
+            </div>
+            <div class="pt-4">
+              <button class="w-full bg-primary text-on-primary font-bold py-4 text-center hover:opacity-90 transition-opacity active:scale-95 duration-75 uppercase tracking-wider text-sm flex justify-center items-center gap-2" type="button">
+                Request Walkthrough
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </button>
+            </div>
+            <p class="text-xs text-on-surface-variant/60 text-center mt-4">By submitting, you agree to our Terms of Operation and Privacy Policy.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS DETAILS -->
+    <section class="bg-surface py-20 px-6 lg:px-12 border-b border-surface-container">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="md:col-span-2">
+            <h2 class="text-2xl font-bold tracking-tight text-on-surface mb-8 border-l-4 border-primary pl-4">What to Expect</h2>
+            <div class="space-y-6">
+              <div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 bg-surface-container-lowest flex items-center justify-center font-mono font-bold text-primary text-xl border border-outline-variant/30">01</div>
+                <div>
+                  <h3 class="text-lg font-semibold text-on-surface mb-2">We learn how your team works.</h3>
+                  <p class="text-sm text-on-surface-variant leading-relaxed">Before we show you software, we map your current operational topography. We need to understand the structural realities of your data flow.</p>
+                </div>
+              </div>
+              <div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 bg-surface-container-lowest flex items-center justify-center font-mono font-bold text-primary text-xl border border-outline-variant/30">02</div>
+                <div>
+                  <h3 class="text-lg font-semibold text-on-surface mb-2">We focus on the decision problem.</h3>
+                  <p class="text-sm text-on-surface-variant leading-relaxed">We identify the specific inflection points where your team lacks the merged context required to act definitively.</p>
+                </div>
+              </div>
+              <div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors flex gap-6">
+                <div class="flex-shrink-0 w-12 h-12 bg-surface-container-lowest flex items-center justify-center font-mono font-bold text-primary text-xl border border-outline-variant/30">03</div>
+                <div>
+                  <h3 class="text-lg font-semibold text-on-surface mb-2">We show how Ceres can help.</h3>
+                  <p class="text-sm text-on-surface-variant leading-relaxed">A targeted demonstration mapping your specific bottlenecks to our protocol's capability to ingest, normalize, and surface actionable intelligence.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-1">
+            <div class="bg-surface-container-low p-8 border border-outline-variant/20 h-full flex flex-col justify-center">
+              <h2 class="text-xl font-bold tracking-tight text-on-surface mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">schedule</span>
+                Why Book Time
+              </h2>
+              <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                This is not a standard software pitch. Ceres is a structural implementation designed for complex operational environments.
+              </p>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                A live walkthrough allows us to determine if our architecture aligns with your specific technical debt and analytical requirements before engaging in a proof of concept.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section class="bg-surface-container-lowest py-20 px-6 lg:px-12">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-extrabold tracking-tight text-on-surface mb-4">Built for teams that need clarity, trust, and practical implementation</h2>
+          <p class="text-primary font-mono text-sm tracking-widest uppercase">Verified Deployments</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-surface-container p-8 border border-outline-variant/20 flex flex-col justify-between">
+            <p class="text-on-surface-variant text-base leading-relaxed mb-8 italic">"The initial consultation wasn't about selling licenses; it was a diagnostic of our entire supply chain data model. By the time we saw the console, we already knew it solved our latency issue."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+                <span class="material-symbols-outlined text-secondary">factory</span>
+              </div>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Director of Operations</p>
+                <p class="text-xs text-on-surface-variant font-mono">Global Logistics Firm</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-surface-container p-8 border border-outline-variant/20 flex flex-col justify-between">
+            <p class="text-on-surface-variant text-base leading-relaxed mb-8 italic">"Ceres didn't ask us to change our existing systems. They mapped out how their protocol could sit on top and finally give our analysts a unified, trusted view of risk."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+                <span class="material-symbols-outlined text-secondary">account_balance</span>
+              </div>
+              <div>
+                <p class="text-sm font-bold text-on-surface">Head of Risk Analytics</p>
+                <p class="text-xs text-on-surface-variant font-mono">Tier 1 Financial Institution</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL REASSURANCE -->
+    <section class="bg-machined-gradient py-12 px-6 border-t border-outline-variant/30 text-center">
+      <p class="text-on-surface font-bold tracking-widest uppercase text-sm flex justify-center items-center gap-3">
+        <span class="w-8 h-px bg-primary"></span>
+        Built for serious teams with real operating needs
+        <span class="w-8 h-px bg-primary"></span>
+      </p>
+    </section>
+
+  </main>
+</Layout>

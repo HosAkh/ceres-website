@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Ceres Technology</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary": "#15353c", "on-surface-variant": "#dfc0b2", "on-primary-fixed": "#341100", "on-primary-fixed-variant": "#793100", "inverse-primary": "#9e4200", tertiary: "#acccd5", "on-tertiary-fixed": "#001f26", "on-surface": "#d2e5f2", "secondary-fixed": "#d1e6eb", "secondary-container": "#394c51", "primary-fixed-dim": "#ffb691", "surface-variant": "#253741", "on-primary": "#552000", outline: "#a78b7e", "tertiary-fixed": "#c8e8f1", "on-secondary-fixed": "#0a1e22", surface: "#03151e", secondary: "#b5cacf", "on-secondary-fixed-variant": "#374a4e", "on-primary-container": "#552000", "surface-container-low": "#0b1e27", "outline-variant": "#584237", "on-background": "#d2e5f2", "inverse-on-surface": "#21333c", "surface-bright": "#2a3b45", "on-secondary": "#203337", "primary-fixed": "#ffdbcb", "surface-container-highest": "#253741", "on-tertiary-container": "#15343c", "inverse-surface": "#d2e5f2", primary: "#ffb691", error: "#ffb4ab", "on-secondary-container": "#a7bcc1", "error-container": "#93000a", "surface-container-lowest": "#001019", "surface-tint": "#ffb691", "surface-container": "#10222b", "surface-dim": "#03151e", "surface-container-high": "#1a2c36", background: "#03151e", "on-error": "#690005", "primary-container": "#f37221", "tertiary-container": "#7e9da6", "secondary-fixed-dim": "#b5cacf", "on-tertiary-fixed-variant": "#2d4b53", "tertiary-fixed-dim": "#acccd5", "on-error-container": "#ffdad6"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, fontFamily: {headline: ["Space Grotesk"], body: ["Inter"], label: ["Inter"], mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"], "headline-md": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-lg": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Space Grotesk"], display: ["Space Grotesk"]}, fontSize: {"headline-md": ["24px", {lineHeight: "32px", fontWeight: "500"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "500"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-xl": ["40px", {lineHeight: "48px", fontWeight: "700"}]}, spacing: {md: "16px", xl: "40px", sm: "8px", base: "4px", lg: "24px", xs: "4px", gutter: "16px", margin: "24px"}}}};</script>
+<style>
+        .machined-gradient {
+            background: linear-gradient(145deg, var(--tw-colors-surface-container-high) 0%, var(--tw-colors-surface-container-lowest) 100%);
+        }
+        .industrial-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .ghost-border {
+            border: 1px solid rgba(69, 71, 75, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body antialiased min-h-screen flex flex-col pt-14">
+<!-- ========== NAVIGATION BAR ========== -->
+  <nav class="bg-[#0B0E14] text-[#F37221] font-['Inter'] tracking-tight font-semibold uppercase text-xs fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
+    <div class="text-xl font-black tracking-tighter text-[#F37221]">CERES TECHNOLOGY</div>
+    
+    <div class="hidden md:flex gap-8 items-center">
+      <!-- Example Cases Dropdown -->
+      <div class="relative group">
+        <button class="text-[#8A8D91] hover:text-white transition-colors flex items-center gap-2">
+          EXAMPLE CASES
+          <span class="material-symbols-outlined text-[14px]">expand_more</span>
+        </button>
+        <div class="absolute left-0 mt-0 w-96 bg-[#1D2026] border border-[#363940] hidden group-hover:block">
+          <a href="index.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Home</a>
+          <a href="about_story_leadership.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">About / Story / Leadership</a>
+          <a href="enterprise_decision_console.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Enterprise Decision Console</a>
+          <a href="data_analysis_automation_v2.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Data Analysis Automation</a>
+          <a href="the_automated_planning_layer.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Automated Planning Layer</a>
+          <a href="integrations_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Integrations</a>
+          <a href="security_trust_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Security & Trust</a>
+          <a href="ceres_for_investment_firms_external_signals_for_research_risk_and_portfolio.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Investment Firms</a>
+          <a href="ceres_for_pharma_better_supply_foresight.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Pharma Supply Foresight</a>
+          <a href="PharmaceuticalCompanies.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Pharmaceutical Companies</a>
+          <a href="book_a_demo_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Book a Demo</a>
+        </div>
+      </div>
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Resources</a>
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Company</a>
+    </div>
+    
+    <div class="flex items-center gap-4">
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="https://nxt.cerestech.co">Login</a>
+      <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-bold">REQUEST DEMO</a>
+    </div>
+  </nav>
+<main class="flex-grow flex flex-col gap-4 p-4 md:p-8 max-w-[1600px] mx-auto w-full">
+<!-- Hero Section (Bento Block) -->
+<section class="machined-gradient p-8 md:p-16 flex flex-col gap-6 ghost-border">
+<h1 class="font-headline text-display-lg md:text-5xl font-black tracking-tighter text-on-surface uppercase max-w-4xl leading-tight">
+                We built Ceres to help enterprises turn outside chaos into usable decisions.
+            </h1>
+<p class="font-body text-title-lg text-on-surface-variant max-w-3xl leading-relaxed">
+                Ceres was founded by operators who saw firsthand how hard it was to connect real-world events to the records and systems businesses rely on every day. We built Ceres to close that gap.
+            </p>
+<div class="mt-4">
+<a href="book_a_demo_ceres_technology.html" class="bg-primary text-on-primary font-bold text-sm uppercase px-8 py-4 flex items-center gap-2 hover:brightness-110 transition-all">
+                    Book a Demo
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+<!-- Left Column: Story & Beliefs -->
+<div class="lg:col-span-2 flex flex-col gap-4">
+<!-- Our Story -->
+<section class="bg-surface-container p-8 ghost-border">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">history</span>
+<h2 class="font-headline text-title-lg font-bold tracking-tight uppercase text-on-surface">Built from a real operating problem</h2>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1 text-body-md text-on-surface-variant space-y-4">
+<p>Ceres was born out of sheer frustration. Founders Bobby Katoli and Trey Hoobler were managing complex coffee supply chains when the COVID-19 pandemic hit.</p>
+<p>They quickly realized that while they had plenty of internal data—ERP records, spreadsheets, historical logs—they had zero connected context regarding real-world disruptions affecting their shipments.</p>
+<p>The realization was simple but profound: businesses don't lack records; they lack the situational awareness to act on those records before it's too late.</p>
+</div>
+<div class="flex-1 bg-surface-container-lowest h-48 ghost-border relative overflow-hidden flex items-center justify-center">
+<img alt="Industrial supply chain shipping containers" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="high contrast black and white photo of stacked shipping containers in a massive industrial port facility with sharp geometric shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhMHUeRNT2_VMgAS_aO0j8iJlMq4RySGtt6O3TubXV7JHqgNKDDQ4zN2OqhuVVe33x54CHbNhodWSzOgo5nPT96BRK4iA04927dpN94cWMbyNAJShv5srOaIR5AvDFHSRvtqY2UualhGQNEnVdaxNKGn-qwsSbpNYTIrYd-dMQWKi5ccaSQxqHaTZax8SLIeIld6pGbUslPsulcUwVmmL9Rp1Cg9mUtyPW0gjRqG0ivlioZ9DZGkzWRSKPuXvzIle9nTEQWVY2TDk"/>
+<div class="relative z-10 text-center p-4 border border-outline-variant/30 bg-surface/80 backdrop-blur-sm">
+<span class="font-mono text-xs text-primary block mb-1">INCIDENT_LOG_2020</span>
+<span class="font-bold text-sm tracking-widest text-on-surface">SUPPLY_CHAIN_DISRUPTION_DETECTED</span>
+</div>
+</div>
+</div>
+</section>
+<!-- What We Believe -->
+<section class="bg-surface-container p-8 ghost-border">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<h2 class="font-headline text-title-lg font-bold tracking-tight uppercase text-on-surface">Better decisions come from better context</h2>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6">Organizations suffer from a shortage of connected context, not a shortage of records. We build systems that bridge this gap.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 border-l-2 border-outline-variant">
+<h3 class="font-bold text-on-surface mb-2 text-sm uppercase">The Old Way</h3>
+<p class="text-sm text-on-surface-variant">Relying on stale, disconnected spreadsheets and delayed reporting. Reacting to events after they have already impacted the bottom line.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 border-l-2 border-primary">
+<h3 class="font-bold text-on-surface mb-2 text-sm uppercase text-primary">The Ceres Way</h3>
+<p class="text-sm text-on-surface-variant">Injecting live, contextual intelligence directly into existing operational workflows. Anticipating friction before it becomes failure.</p>
+</div>
+</div>
+</section>
+<!-- What Ceres Does -->
+<section class="bg-surface-container p-8 ghost-border">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">hub</span>
+<h2 class="font-headline text-title-lg font-bold tracking-tight uppercase text-on-surface">System Capabilities</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+<!-- Workflow items -->
+<div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+<span class="material-symbols-outlined text-outline">fact_check</span>
+<span class="font-mono text-xs font-bold text-on-surface">SCORECARDS</span>
+</div>
+<div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+<span class="material-symbols-outlined text-outline">map</span>
+<span class="font-mono text-xs font-bold text-on-surface">EXPOSURE MAPPING</span>
+</div>
+<div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+<span class="material-symbols-outlined text-outline">category</span>
+<span class="font-mono text-xs font-bold text-on-surface">CLASSIFICATION</span>
+</div>
+<div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+<span class="material-symbols-outlined text-outline">trending_up</span>
+<span class="font-mono text-xs font-bold text-on-surface">FORECASTING</span>
+</div>
+<div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+<span class="material-symbols-outlined text-outline">science</span>
+<span class="font-mono text-xs font-bold text-on-surface">SCENARIO ANALYSIS</span>
+</div>
+<div class="bg-surface-container-lowest p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+<span class="font-mono text-xs font-bold text-on-surface">OPERATIONAL MONITORING</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Principles, Target & Leadership -->
+<div class="flex flex-col gap-4">
+<!-- How We Work -->
+<section class="bg-surface-container p-6 ghost-border flex-grow">
+<div class="flex items-center gap-3 mb-6 border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<h2 class="font-headline text-title-md font-bold tracking-tight uppercase text-on-surface">Operating Principles</h2>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="font-mono text-primary text-xs mt-1">01</span>
+<p class="text-sm text-on-surface font-semibold uppercase tracking-wide">Work with what already exists</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="font-mono text-primary text-xs mt-1">02</span>
+<p class="text-sm text-on-surface font-semibold uppercase tracking-wide">Focus on the workflow</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="font-mono text-primary text-xs mt-1">03</span>
+<p class="text-sm text-on-surface font-semibold uppercase tracking-wide">Make outputs easier to explain</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="font-mono text-primary text-xs mt-1">04</span>
+<p class="text-sm text-on-surface font-semibold uppercase tracking-wide">Reduce the manual grind</p>
+</li>
+</ul>
+</section>
+<!-- Target Audience -->
+<section class="bg-surface-bright p-6 ghost-border border-l-4 border-primary">
+<h3 class="font-headline text-sm font-bold uppercase text-on-surface mb-2">Target Deployment</h3>
+<p class="text-sm text-on-surface-variant font-mono">For teams operating in high-stakes environments.</p>
+<div class="mt-4 flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-surface-container-lowest text-xs text-outline font-mono border border-outline-variant/50">MANUFACTURING</span>
+<span class="px-2 py-1 bg-surface-container-lowest text-xs text-outline font-mono border border-outline-variant/50">HEALTHCARE</span>
+<span class="px-2 py-1 bg-surface-container-lowest text-xs text-outline font-mono border border-outline-variant/50">LOGISTICS</span>
+</div>
+</section>
+<!-- Leadership Grid -->
+<section class="bg-surface-container p-6 ghost-border">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">groups</span>
+<h2 class="font-headline text-title-md font-bold tracking-tight uppercase text-on-surface">Command Staff</h2>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container-lowest p-4 border-l border-outline-variant hover:border-primary transition-colors flex items-center justify-between group">
+<div>
+<h4 class="font-bold text-on-surface text-sm uppercase">Bobby Katoli</h4>
+<p class="text-xs text-on-surface-variant font-mono">Co-Founder &amp; CEO</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_outward</span>
+</div>
+<div class="bg-surface-container-lowest p-4 border-l border-outline-variant hover:border-primary transition-colors flex items-center justify-between group">
+<div>
+<h4 class="font-bold text-on-surface text-sm uppercase">Trey Hoobler</h4>
+<p class="text-xs text-on-surface-variant font-mono">Co-Founder</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_outward</span>
+</div>
+<div class="bg-surface-container-lowest p-4 border-l border-outline-variant hover:border-primary transition-colors flex items-center justify-between group">
+<div>
+<h4 class="font-bold text-on-surface text-sm uppercase">Carlos Amaral</h4>
+<p class="text-xs text-on-surface-variant font-mono">EVP &amp; CIO</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_outward</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Bottom CTA -->
+<section class="machined-gradient p-12 text-center ghost-border mt-4 flex flex-col items-center justify-center gap-6">
+<h2 class="font-headline text-display-sm font-black tracking-tighter uppercase text-on-surface">Want to see how Ceres could fit your team?</h2>
+<p class="text-body-md text-on-surface-variant max-w-2xl">Stop relying on spreadsheet logic and stale context. Deploy a systematic approach to operational intelligence.</p>
+<a href="book_a_demo_ceres_technology.html" class="bg-primary text-on-primary font-bold text-sm uppercase px-8 py-4 flex items-center gap-2 hover:brightness-110 transition-all mt-4">
+                Book a Demo
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-12 flex justify-between items-center bg-[#0B0E14] border-t border-[#45474B]/20 mt-12">
+<div class="font-['Inter'] uppercase tracking-widest text-[10px] opacity-60 text-[#F37221]">
+            ©2024 CERES TECHNOLOGY. ALL RIGHTS RESERVED. [SECURE_CONNECTION_ESTABLISHED]
+        </div>
+<div class="flex gap-6 font-['Inter'] uppercase tracking-widest text-[10px] opacity-60">
+<a class="text-slate-500 hover:text-[#F37221]" href="#">LEGAL</a>
+<a class="text-slate-500 hover:text-[#F37221]" href="#">API_DOCS</a>
+<a class="text-slate-500 hover:text-[#F37221]" href="#">SECURITY</a>
+<a class="text-slate-500 hover:text-[#F37221]" href="#">STATUS</a>
+</div>
+</footer>
+</body></html>

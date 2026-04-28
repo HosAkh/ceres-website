@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security &amp; Trust | Ceres Technology</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"tertiary-fixed-dim": "#acccd5", "on-surface-variant": "#dfc0b2", "on-background": "#d2e5f2", "on-secondary-fixed": "#0a1e22", secondary: "#b5cacf", "error-container": "#93000a", "surface-container": "#10222b", "on-tertiary-fixed-variant": "#2d4b53", "on-error": "#690005", error: "#ffb4ab", "on-primary-container": "#552000", "on-secondary-fixed-variant": "#374a4e", tertiary: "#acccd5", "tertiary-fixed": "#c8e8f1", "on-secondary": "#203337", "on-error-container": "#ffdad6", primary: "#ffb691", "surface-container-lowest": "#001019", "on-primary-fixed": "#341100", background: "#03151e", "secondary-fixed-dim": "#b5cacf", "inverse-primary": "#9e4200", "surface-container-high": "#1a2c36", "on-tertiary-fixed": "#001f26", "inverse-surface": "#d2e5f2", "secondary-fixed": "#d1e6eb", "surface-dim": "#03151e", "on-tertiary-container": "#15343c", "on-secondary-container": "#a7bcc1", "primary-fixed": "#ffdbcb", "outline-variant": "#584237", "on-tertiary": "#15353c", "primary-fixed-dim": "#ffb691", outline: "#a78b7e", "inverse-on-surface": "#21333c", "surface-container-low": "#0b1e27", "surface-container-highest": "#253741", surface: "#03151e", "on-primary": "#552000", "surface-variant": "#253741", "primary-container": "#f37221", "on-surface": "#d2e5f2", "surface-tint": "#ffb691", "tertiary-container": "#7e9da6", "on-primary-fixed-variant": "#793100", "surface-bright": "#2a3b45", "secondary-container": "#394c51"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {}, fontFamily: {headline: ["Space Grotesk"], body: ["Inter"], label: ["Inter"], display: ["Space Grotesk"]}, fontSize: {}}}};</script>
+<style>
+          body {
+              font-family: 'Inter', sans-serif;
+              background-color: #10131a;
+              color: #e1e2eb;
+          }
+          .machined-gradient {
+              background: linear-gradient(145deg, #272a31 0%, #0b0e14 100%);
+          }
+          .industrial-shadow {
+              box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+          }
+          .ghost-border {
+              border: 1px solid rgba(69, 71, 75, 0.2);
+          }
+      </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col antialiased">
+<!-- ========== NAVIGATION BAR ========== -->
+  <nav class="bg-[#0B0E14] text-[#F37221] font-['Inter'] tracking-tight font-semibold uppercase text-xs fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
+    <div class="text-xl font-black tracking-tighter text-[#F37221]">CERES TECHNOLOGY</div>
+    
+    <div class="hidden md:flex gap-8 items-center">
+      <!-- Example Cases Dropdown -->
+      <div class="relative group">
+        <button class="text-[#8A8D91] hover:text-white transition-colors flex items-center gap-2">
+          EXAMPLE CASES
+          <span class="material-symbols-outlined text-[14px]">expand_more</span>
+        </button>
+        <div class="absolute left-0 mt-0 w-96 bg-[#1D2026] border border-[#363940] hidden group-hover:block">
+          <a href="index.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Home</a>
+          <a href="about_story_leadership.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">About / Story / Leadership</a>
+          <a href="enterprise_decision_console.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Enterprise Decision Console</a>
+          <a href="data_analysis_automation_v2.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Data Analysis Automation</a>
+          <a href="the_automated_planning_layer.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Automated Planning Layer</a>
+          <a href="integrations_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Integrations</a>
+          <a href="security_trust_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Security & Trust</a>
+          <a href="ceres_for_investment_firms_external_signals_for_research_risk_and_portfolio.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Investment Firms</a>
+          <a href="ceres_for_pharma_better_supply_foresight.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Pharma Supply Foresight</a>
+          <a href="PharmaceuticalCompanies.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Pharmaceutical Companies</a>
+          <a href="book_a_demo_ceres_technology.html" class="block px-4 py-2 text-[#8A8D91] hover:text-white hover:bg-[#363940] transition-colors">Book a Demo</a>
+        </div>
+      </div>
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Resources</a>
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Company</a>
+    </div>
+    
+    <div class="flex items-center gap-4">
+      <a class="text-[#8A8D91] hover:text-white transition-colors" href="https://nxt.cerestech.co">Login</a>
+      <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-bold">REQUEST DEMO</a>
+    </div>
+  </nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col w-full max-w-7xl mx-auto px-6 py-12 gap-16">
+<!-- Hero Section -->
+<section class="flex flex-col gap-6 max-w-4xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold uppercase tracking-widest border border-outline-variant/30 w-fit">
+<span class="material-symbols-outlined text-sm">shield</span>
+                Security &amp; Trust
+            </div>
+<h1 class="text-4xl md:text-5xl font-headline font-bold tracking-tight text-on-surface leading-tight">
+                Enterprise trust starts with clear systems, controlled data flows, and outputs your teams can explain.
+            </h1>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed max-w-3xl">
+                Ceres is built for organizations that need to merge internal records with external signals without creating new bottlenecks, black boxes, or operational risk.
+            </p>
+</section>
+<!-- Bento Grid: Core Concepts -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- What Trust Means -->
+<div class="md:col-span-1 bg-surface-container flex flex-col gap-6 p-8 ghost-border hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3 border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined text-primary text-2xl">verified_user</span>
+<h2 class="text-xl font-headline font-semibold text-on-surface tracking-tight">Trust at Ceres</h2>
+</div>
+<ul class="flex flex-col gap-4 font-body text-sm text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-lg shrink-0 mt-0.5">check_box</span>
+<span>Zero-friction integration with existing operational stacks.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-lg shrink-0 mt-0.5">check_box</span>
+<span>Strict compartmentalization of sensitive enterprise data.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-lg shrink-0 mt-0.5">check_box</span>
+<span>Full auditability of every decision output and model inference.</span>
+</li>
+</ul>
+</div>
+<!-- Enterprise Fit -->
+<div class="md:col-span-2 bg-surface-container flex flex-col gap-6 p-8 ghost-border hover:bg-surface-container-high transition-colors machined-gradient relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">account_tree</span>
+</div>
+<div class="flex items-center gap-3 border-b border-outline-variant/30 pb-4 relative z-10">
+<span class="material-symbols-outlined text-primary text-2xl">architecture</span>
+<h2 class="text-xl font-headline font-semibold text-on-surface tracking-tight">Enterprise Architecture Fit</h2>
+</div>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed relative z-10 max-w-2xl">
+                    Ceres functions as a sovereign decision layer resting atop your existing ERPs, databases, and core infrastructure. It ingests targeted signals without replicating your entire data lake, providing analytical leverage without compounding data gravity.
+                </p>
+<div class="grid grid-cols-2 gap-4 mt-4 relative z-10">
+<div class="bg-surface-container-lowest p-4 border border-outline-variant/20 flex flex-col gap-2">
+<span class="text-xs uppercase tracking-widest text-outline">Layer 1</span>
+<span class="font-semibold text-on-surface">Existing ERP/DB Core</span>
+</div>
+<div class="bg-surface-container-lowest p-4 border border-outline-variant/20 flex flex-col gap-2 border-t-2 border-t-primary">
+<span class="text-xs uppercase tracking-widest text-primary">Layer 2</span>
+<span class="font-semibold text-on-surface">Ceres Decision Engine</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Data Handling Principles -->
+<section class="flex flex-col gap-6">
+<h2 class="text-2xl font-headline font-semibold tracking-tight text-on-surface border-b border-outline-variant/30 pb-4">
+                Data Handling Principles
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-container p-6 flex flex-col gap-4 ghost-border hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-outline text-2xl">input</span>
+<h3 class="font-headline font-semibold text-on-surface">Least-Friction Integration</h3>
+<p class="text-sm font-body text-on-surface-variant">Connects directly to required endpoints without demanding wholesale data migration.</p>
+</div>
+<div class="bg-surface-container p-6 flex flex-col gap-4 ghost-border hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-outline text-2xl">schema</span>
+<h3 class="font-headline font-semibold text-on-surface">Purpose-Built Workflows</h3>
+<p class="text-sm font-body text-on-surface-variant">Data is processed strictly within the context of predefined, authorized analytical tasks.</p>
+</div>
+<div class="bg-surface-container p-6 flex flex-col gap-4 ghost-border hover:bg-surface-container-high transition-colors border-t-2 border-t-outline-variant">
+<span class="material-symbols-outlined text-outline text-2xl">route</span>
+<h3 class="font-headline font-semibold text-on-surface">Clear Input-to-Output Path</h3>
+<p class="text-sm font-body text-on-surface-variant">Every analytical conclusion can be traced back to its specific source vectors.</p>
+</div>
+<div class="bg-surface-container p-6 flex flex-col gap-4 ghost-border hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-outline text-2xl">cycle</span>
+<h3 class="font-headline font-semibold text-on-surface">Repeatable Analysis</h3>
+<p class="text-sm font-body text-on-surface-variant">Consistent models ensure that the same inputs reliably yield the same explainable outputs.</p>
+</div>
+</div>
+</section>
+<!-- High-Stakes & Explainability -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<div class="bg-surface-container p-8 flex flex-col gap-6 ghost-border">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">visibility</span>
+<h2 class="text-xl font-headline font-semibold tracking-tight text-on-surface">Radical Explainability</h2>
+</div>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed">
+                    Black box AI is a liability in enterprise operations. Ceres provides transparent diagnostic tools allowing analysts to interrogate outputs, challenge assumptions, and understand the weight of every variable influencing a decision.
+                </p>
+<div class="bg-surface-container-lowest p-4 border border-outline-variant/30 flex justify-between items-center mt-auto">
+<span class="text-xs uppercase tracking-widest text-outline font-semibold">Diagnostic Confidence</span>
+<span class="text-primary font-mono text-lg">99.9%</span>
+</div>
+</div>
+<div class="bg-surface-container p-8 flex flex-col gap-6 ghost-border">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">gavel</span>
+<h2 class="text-xl font-headline font-semibold tracking-tight text-on-surface">Reliability for High-Stakes</h2>
+</div>
+<ul class="flex flex-col gap-4 text-sm font-body text-on-surface-variant">
+<li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+<span>Operational Risk Reduction</span>
+<span class="material-symbols-outlined text-outline text-sm">arrow_downward</span>
+</li>
+<li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+<span>Compliance Audit Readiness</span>
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+</li>
+<li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+<span>Downtime Mitigation Strategies</span>
+<span class="material-symbols-outlined text-outline text-sm">shield_locked</span>
+</li>
+<li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+<span>Failover Protocol Activation</span>
+<span class="material-symbols-outlined text-primary text-sm">power</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-container-high p-12 flex flex-col items-center text-center gap-6 mt-8 industrial-shadow ghost-border relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;q=80')] bg-cover bg-center opacity-5 data-alt='abstract digital network connecting globally over a dark background'"></div>
+<h2 class="text-3xl font-headline font-bold tracking-tight text-on-surface relative z-10 max-w-2xl">
+                Need a closer look at how Ceres fits your environment?
+            </h2>
+<p class="text-on-surface-variant text-sm font-body relative z-10">
+                Schedule a technical review with our systems architecture team.
+            </p>
+<a href="book_a_demo_ceres_technology.html" class="mt-4 bg-primary text-on-primary px-8 py-3 text-sm font-semibold uppercase tracking-widest hover:bg-primary-fixed transition-colors relative z-10 flex items-center gap-2">
+                Book a Demo
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col md:flex-row justify-between items-center w-full px-6 py-4 border-t border-[#1D2026] bg-[#0B0E14] dark:bg-[#0B0E14] docked full-width bottom-0 border-t-0 tonal-shift bg-[#0B0E14] flat no shadows mt-auto">
+<div class="font-['Inter'] text-[10px] font-medium tracking-widest uppercase text-[#45474B]">
+            © 2024 ENTERPRISE DECISION LAYER. ALL RIGHTS RESERVED.
+        </div>
+<div class="flex gap-6 mt-4 md:mt-0 font-['Inter'] text-[10px] font-medium tracking-widest uppercase">
+<a class="text-[#45474B] hover:text-[#F37221] transition-colors" href="#">System Status: Operational</a>
+<a class="text-[#45474B] hover:text-[#F37221] transition-colors" href="#">Legal</a>
+<a class="text-[#45474B] hover:text-[#F37221] transition-colors" href="#">Security Policy</a>
+<a class="text-[#45474B] hover:text-[#F37221] transition-colors" href="#">API Reference</a>
+</div>
+</footer>
+</body></html>

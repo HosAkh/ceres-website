@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Integrations - Ceres Technology">
+  <main class="flex-grow flex flex-col items-center pt-24 pb-32">
+
+    <!-- HERO -->
+    <header class="w-full max-w-5xl px-6 mb-24 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-headline font-extrabold tracking-[-0.01em] text-on-surface mb-6 leading-none">
+        Connect Ceres to the systems and records you already use
+      </h1>
+      <p class="font-body font-normal text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto leading-[1.7]">
+        Ceres sits on top of existing enterprise environments so teams can merge internal records with external signals, automate analysis, and build scorecards and scenarios without rebuilding their stack.
+      </p>
+    </header>
+
+    <!-- OVERVIEW -->
+    <section class="w-full max-w-5xl px-6 mb-24">
+      <div class="bg-surface-container p-8 md:p-12 border border-outline-variant/20 shadow-[0px_4px_20px_rgba(0,0,0,0.5)]">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="material-symbols-outlined text-primary text-3xl">route</span>
+          <h2 class="text-2xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none">Overview: Removing Friction</h2>
+        </div>
+        <p class="font-body font-normal text-base text-on-surface-variant leading-[1.7]">
+          Deploying powerful AI shouldn't require a multi-year IT restructuring project. Ceres is designed to ingest data as it exists today. We eliminate the friction of data silos, allowing you to rapidly deploy predictive models and generate actionable intelligence across your supply chain, without the massive overhead of traditional integration cycles.
+        </p>
+      </div>
+    </section>
+
+    <!-- COMMON INTEGRATION PATHS -->
+    <section class="w-full max-w-5xl px-6 mb-24">
+      <h2 class="text-2xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none mb-8 border-b-2 border-surface-container pb-2">Common Integration Paths</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-secondary mb-4 text-3xl">hub</span>
+          <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">ERP / Enterprise</h3>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Direct hooks into core operational systems to overlay predictive risk on active orders.</p>
+        </div>
+        <div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-secondary mb-4 text-3xl">api</span>
+          <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">APIs</h3>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">RESTful endpoints for real-time bidirectional sync of signals and scores.</p>
+        </div>
+        <div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-secondary mb-4 text-3xl">database</span>
+          <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Databases</h3>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Secure connections to structured data lakes and warehouses for deep historical analysis.</p>
+        </div>
+        <div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors lg:col-span-2">
+          <span class="material-symbols-outlined text-secondary mb-4 text-3xl">dataset</span>
+          <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">CSV / Flat-file</h3>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">The universal connector. Secure drop zones for bulk processing of legacy or isolated datasets.</p>
+        </div>
+        <div class="bg-surface-container p-6 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-secondary mb-4 text-3xl">document_scanner</span>
+          <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Unstructured</h3>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Ingestion of reports, contracts, and PDFs for NLP-driven risk extraction.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="w-full max-w-5xl px-6 mt-12 text-center">
+      <div class="bg-machined-gradient p-12 border border-outline-variant/20 shadow-[0px_4px_20px_rgba(0,0,0,0.5)]">
+        <h2 class="text-3xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none mb-4">Want to see how Ceres would fit your environment?</h2>
+        <p class="font-body font-normal text-base text-on-surface-variant mb-8 leading-[1.7]">Schedule a technical walkthrough with our integration specialists.</p>
+        <a href="/book-a-demo" class="bg-primary text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 hover:bg-surface-tint transition-colors shadow-[0px_4px_20px_rgba(0,0,0,0.5)] inline-block">
+          Book a Demo
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>
