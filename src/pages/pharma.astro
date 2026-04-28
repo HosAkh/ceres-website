@@ -19,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
           Ceres helps pharmaceutical companies connect purchase orders, SKU records, supplier information, inventory plans, and Excel-based workflows to outside conditions like weather, logistics disruption, raw material changes, geopolitical risk, public supplier signals, and other leading indicators of delay.
         </p>
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <a href={import.meta.env.BASE_URL + "book-a-demo/"} class="bg-primary hover:bg-primary-fixed text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 transition-colors inline-flex items-center gap-2 group">
+          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary hover:bg-primary-fixed text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 transition-colors inline-flex items-center gap-2 group">
             Book a Demo
             <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </a>
@@ -102,7 +102,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Reduce spreadsheet burden with repeatable, automated signal overlay.</p>
         </div>
       </div>
-      <a href={import.meta.env.BASE_URL + "book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
+      <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
         Schedule a Walkthrough
         <span class="material-symbols-outlined text-sm">calendar_today</span>
       </a>
@@ -176,7 +176,7 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-sm md:text-base font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
           In prior pharmaceutical predictive work, Ceres used purchase order data together with external datasets to identify leading indicators of disruption across generic drug product lines. The external signals improved model performance and helped create earlier visibility into delay risk, including forward-looking signal windows measured in months, not just days.
         </p>
-        <a href={import.meta.env.BASE_URL + "book-a-demo/"} class="bg-secondary-container hover:bg-surface-variant text-on-secondary-container font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
+        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-secondary-container hover:bg-surface-variant text-on-secondary-container font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
           Book a Demo
         </a>
       </div>
@@ -219,7 +219,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Make outputs explainable</div>
           </div>
         </div>
-        <a href={import.meta.env.BASE_URL + "book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors self-start">
+        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors self-start">
           Book a Demo
         </a>
       </div>
@@ -231,7 +231,7 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-8 relative z-10">
           If your team is using internal systems and spreadsheets to monitor suppliers, SKUs, purchase orders, inventory, and disruption risk, we can show how Ceres would fit your environment.
         </p>
-        <a href={import.meta.env.BASE_URL + "book-a-demo/"} class="bg-primary hover:bg-primary-fixed text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 transition-colors relative z-10 w-full sm:w-auto text-center">
+        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary hover:bg-primary-fixed text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 transition-colors relative z-10 w-full sm:w-auto text-center">
           Book a Demo
         </a>
       </div>

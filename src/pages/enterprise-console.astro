@@ -20,7 +20,7 @@ import Layout from '../layouts/Layout.astro';
             You have an ERP, but your planning still happens in fragile spreadsheets. Ceres normalizes messy customer data, catches exceptions automatically, and builds accurate AI forecasts—so you stop fighting Excel and start making decisions.
           </p>
           <div class="flex flex-wrap gap-4">
-            <a href={import.meta.env.BASE_URL + "book-a-demo/"} class="bg-primary text-on-primary px-8 py-4 font-bold uppercase tracking-tight text-sm hover:brightness-110 active:scale-95 transition-all">
+            <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary px-8 py-4 font-bold uppercase tracking-tight text-sm hover:brightness-110 active:scale-95 transition-all">
               Book a Custom Demo
             </a>
           </div>
@@ -227,7 +227,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="text-4xl lg:text-5xl font-black tracking-tighter uppercase mb-6 leading-none">Close the gap between <br/> your ERP and your decisions.</h2>
         <p class="text-on-surface-variant font-medium text-lg mb-12 max-w-2xl mx-auto">See how Ceres helps planning teams move faster, catch issues earlier, and make better decisions.</p>
         <div class="flex flex-col md:flex-row justify-center gap-4">
-          <a href={import.meta.env.BASE_URL + "book-a-demo/"} class="bg-primary text-on-primary px-12 py-5 font-black uppercase tracking-tighter text-lg hover:brightness-110 active:scale-95 transition-all">
+          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary px-12 py-5 font-black uppercase tracking-tighter text-lg hover:brightness-110 active:scale-95 transition-all">
             See Ceres in Action — Book a Demo
           </a>
         </div>
