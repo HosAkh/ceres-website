@@ -2,9 +2,12 @@ const navLinkClass =
   "font-['DM_Mono'] text-[11px] tracking-[0.08em] uppercase text-[#8A8D91] hover:text-white transition-colors";
 
 export default function Navigation() {
+  const baseUrl = import.meta.env.BASE_URL;
+  const withBase = (path: string) => `${baseUrl}${path.replace(/^\/+/, '')}`;
+
   return (
     <nav className="bg-[#0B0E14] text-[#F37221] fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
-      <a href="/" className="flex items-center">
+      <a href={baseUrl} className="flex items-center">
         <img
           alt="Ceres Technology"
           className="h-8 w-auto"
@@ -20,21 +23,21 @@ export default function Navigation() {
             <span className="material-symbols-outlined text-[14px]">expand_more</span>
           </button>
           <div className="absolute left-0 mt-0 w-56 bg-[#1D2026] border border-[#363940] hidden group-hover:block z-50">
-            <a href="/pharma" className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+            <a href={withBase('pharma/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
               Pharmaceutical Supply
             </a>
-            <a href="/investment-firms" className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+            <a href={withBase('investment-firms/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
               Investment Firms
             </a>
-            <a href="/enterprise-console" className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+            <a href={withBase('enterprise-console/')} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
               Enterprise Console
             </a>
           </div>
         </div>
-        <a href="/integrations" className={navLinkClass}>
+        <a href={withBase('integrations/')} className={navLinkClass}>
           Integrations
         </a>
-        <a href="/about" className={navLinkClass}>
+        <a href={withBase('about/')} className={navLinkClass}>
           Company
         </a>
       </div>
@@ -44,7 +47,7 @@ export default function Navigation() {
           Login
         </a>
         <a
-          href="/book-a-demo"
+          href={withBase('book-a-demo/')}
           className="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-['DM_Mono'] text-[11px] tracking-[0.14em] uppercase"
         >
           REQUEST DEMO
