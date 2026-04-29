@@ -16,7 +16,7 @@
         .ghost-border { outline: 1px solid rgba(69, 71, 75, 0.2); }
     </style>
 </head>
-<body class="selection:bg-primary selection:text-on-primary">
+<body class="selection:bg-primary selection:text-on-primary overflow-x-hidden">
 <!-- ========== NAVIGATION BAR ========== -->
   <nav class="bg-[#0B0E14] text-[#F37221] font-['Inter'] tracking-tight font-semibold uppercase text-xs fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
     <div class="text-xl font-black tracking-tighter text-[#F37221]">CERES TECHNOLOGY</div>
@@ -46,31 +46,69 @@
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Company</a>
     </div>
     
-    <div class="flex items-center gap-4">
+    <!-- Desktop Login/Demo (hidden on mobile) -->
+    <div class="hidden md:flex items-center gap-4">
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="https://nxt.cerestech.co">Login</a>
       <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-bold">REQUEST DEMO</a>
     </div>
+    <!-- Hamburger Button (visible on mobile only) -->
+    <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 text-[#F37221] focus:outline-none" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+    </button>
   </nav>
+  <!-- ========== MOBILE MENU PANEL ========== -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#0B0E14] z-40 flex flex-col overflow-y-auto pt-14 pb-8 px-6 hidden md:hidden">
+    <!-- Example Cases Section -->
+    <div class="border-b border-[#363940] pb-4 mb-4 pt-6">
+      <button id="mobile-examples-toggle" class="w-full flex items-center justify-between text-[#F37221] font-bold uppercase tracking-widest text-xs py-2" onclick="document.getElementById('mobile-examples-links').classList.toggle('hidden')">
+        EXAMPLE CASES
+        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+      </button>
+      <div id="mobile-examples-links" class="hidden flex flex-col mt-2 space-y-1 pl-2">
+        <a href="index.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Home</a>
+        <a href="about_story_leadership.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">About / Story / Leadership</a>
+        <a href="enterprise_decision_console.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Enterprise Decision Console</a>
+        <a href="data_analysis_automation_v2.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Data Analysis Automation</a>
+        <a href="the_automated_planning_layer.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Automated Planning Layer</a>
+        <a href="integrations_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Integrations</a>
+        <a href="security_trust_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Security &amp; Trust</a>
+        <a href="ceres_for_investment_firms_external_signals_for_research_risk_and_portfolio.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Investment Firms</a>
+        <a href="ceres_for_pharma_better_supply_foresight.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharma Supply Foresight</a>
+        <a href="PharmaceuticalCompanies.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharmaceutical Companies</a>
+        <a href="book_a_demo_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Book a Demo</a>
+      </div>
+    </div>
+    <!-- Top-level links -->
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Resources</a>
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Company</a>
+    <!-- Login and Request Demo -->
+    <div class="mt-8 flex flex-col gap-4">
+      <a class="text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs text-center py-3 border border-[#363940]" href="https://nxt.cerestech.co">Login</a>
+      <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] py-3 text-center hover:bg-[#ffb691] transition-all active:scale-95 font-bold uppercase tracking-widest text-xs">REQUEST DEMO</a>
+    </div>
+  </div>
+
 <main class="pt-14">
 <!-- Hero Section (Option A) -->
 <section class="relative min-h-[819px] flex flex-col justify-center px-8 bg-surface-container-lowest overflow-hidden border-b-2 border-surface-container">
 <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#45474b 1px, transparent 1px); background-size: 32px 32px;"></div>
 <div class="max-w-5xl relative z-10">
-<div class="inline-flex items-center gap-2 px-2 py-1 bg-surface-container border-l-2 border-primary mb-6">
+<div class="inline-flex items-center gap-2 px-2 py-1 bg-surface-container border-l-2 border-primary mb-6 max-w-full overflow-hidden">
 <span class="w-2 h-2 bg-primary animate-pulse"></span>
-<span class="font-mono text-[10px] tracking-widest text-on-surface-variant uppercase">SYSTEM STATUS: ACTIVE_DATA_STREAM</span>
+<span class="font-mono text-[10px] tracking-normal md:tracking-widest text-on-surface-variant uppercase break-all">SYSTEM STATUS: ACTIVE_DATA_STREAM</span>
 </div>
-<h1 class="text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 uppercase">
+<h1 class="text-4xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 uppercase">
                     Turn scattered data<br/>
 <span class="text-primary">into decisions</span><br/>
                     you can act on
                 </h1>
 <p class="text-lg text-on-surface-variant max-w-2xl mb-10 font-medium leading-relaxed">
-                    Deploying high-precision analytics engines for enterprise supply chain visibility. Eliminate uncertainty with industrial-grade data synthesis and predictive modeling.
+                    Ceres connects your supply chain data to live external signals so your team can see problems before they hit.
                 </p>
 <div class="flex flex-wrap gap-4">
-<button class="bg-primary text-on-primary px-8 py-4 font-bold uppercase tracking-widest text-sm hover:brightness-110 active:scale-95 transition-all">Initialize Protocol</button>
-<button class="bg-surface-container text-on-surface border border-outline-variant px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-surface-bright transition-all">Request Audit</button>
+<a href="book_a_demo_ceres_technology.html" class="bg-primary text-on-primary px-4 md:px-8 py-3 md:py-4 font-bold uppercase tracking-widest text-sm hover:brightness-110 active:scale-95 transition-all">Book a Demo</a>
 </div>
 </div>
 <!-- Decorative Visual: Data Matrix -->
@@ -102,28 +140,28 @@
 <!-- Problem Section -->
 <section class="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-surface">
 <div class="p-12 lg:p-24 border-r-2 border-surface-container flex flex-col justify-center">
-<h2 class="text-4xl font-extrabold tracking-tighter text-on-surface uppercase mb-8">The Blindness of Density</h2>
-<p class="text-on-surface-variant mb-12 text-lg">In modern enterprise operations, the problem isn't a lack of data—it's the catastrophic surplus of disconnected signals.</p>
+<h2 class="text-4xl font-extrabold tracking-tighter text-on-surface uppercase mb-8">The Problem: Too Much Data, Too Little Context</h2>
+<p class="text-on-surface-variant mb-12 text-lg">You have plenty of data. The problem is it's scattered across systems that don't talk to each other.</p>
 <ul class="space-y-6">
 <li class="flex items-start gap-4">
 <span class="material-symbols-outlined text-error mt-1">warning</span>
 <div>
 <span class="block font-bold text-on-surface uppercase tracking-wide">Data Silos</span>
-<span class="text-sm text-on-surface-variant">Critical information trapped in proprietary legacy frameworks.</span>
+<span class="text-sm text-on-surface-variant">Critical information trapped in systems that don't connect.</span>
 </div>
 </li>
 <li class="flex items-start gap-4">
 <span class="material-symbols-outlined text-error mt-1">warning</span>
 <div>
 <span class="block font-bold text-on-surface uppercase tracking-wide">Reactive Response</span>
-<span class="text-sm text-on-surface-variant">Managing crises after they manifest, rather than predicting vectors.</span>
+<span class="text-sm text-on-surface-variant">Managing crises after they hit, not before.</span>
 </div>
 </li>
 <li class="flex items-start gap-4">
 <span class="material-symbols-outlined text-error mt-1">warning</span>
 <div>
 <span class="block font-bold text-on-surface uppercase tracking-wide">Operational Static</span>
-<span class="text-sm text-on-surface-variant">High-noise environments masking low-frequency, high-impact risks.</span>
+<span class="text-sm text-on-surface-variant">Too much noise drowning out the signals that actually matter.</span>
 </div>
 </li>
 </ul>
@@ -136,7 +174,7 @@
 <!-- Solution Section (5 Benefit Cards) -->
 <section class="p-8 lg:p-16 bg-surface-container-low">
 <div class="text-center mb-16">
-<h2 class="text-3xl font-black uppercase tracking-tighter mb-4">The Synthesis Engine</h2>
+<h2 class="text-3xl font-black uppercase tracking-tighter mb-4">How It Works</h2>
 <div class="h-1 w-24 bg-primary mx-auto"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -144,31 +182,31 @@
 <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
 <span class="material-symbols-outlined text-primary mb-4 text-3xl">hub</span>
 <h3 class="font-bold uppercase tracking-widest text-xs mb-3 text-on-surface">Unified Fabric</h3>
-<p class="text-[13px] text-on-surface-variant leading-relaxed">Cross-platform integration layer that consolidates heterogeneous data streams into a single source of truth.</p>
+<p class="text-[13px] text-on-surface-variant leading-relaxed">Pulls data from any source — ERP, APIs, flat files — into one place.</p>
 </div>
 <!-- Card 2 -->
 <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
 <span class="material-symbols-outlined text-primary mb-4 text-3xl">analytics</span>
 <h3 class="font-bold uppercase tracking-widest text-xs mb-3 text-on-surface">Predictive Logic</h3>
-<p class="text-[13px] text-on-surface-variant leading-relaxed">Advanced heuristic modeling to forecast supply chain disruptions 48-72 hours before onset.</p>
+<p class="text-[13px] text-on-surface-variant leading-relaxed">Forecasts supply chain disruptions 48–72 hours before they happen.</p>
 </div>
 <!-- Card 3 -->
 <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
 <span class="material-symbols-outlined text-primary mb-4 text-3xl">security</span>
 <h3 class="font-bold uppercase tracking-widest text-xs mb-3 text-on-surface">Hardened Security</h3>
-<p class="text-[13px] text-on-surface-variant leading-relaxed">Sovereign data encryption and military-grade access protocols for enterprise-scale compliance.</p>
+<p class="text-[13px] text-on-surface-variant leading-relaxed">Encrypted data handling and access controls built for enterprise compliance.</p>
 </div>
 <!-- Card 4 -->
 <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
 <span class="material-symbols-outlined text-primary mb-4 text-3xl">speed</span>
-<h3 class="font-bold uppercase tracking-widest text-xs mb-3 text-on-surface">Zero Latency</h3>
+<h3 class="font-bold uppercase tracking-widest text-xs mb-3 text-on-surface">Real-Time Processing</h3>
 <p class="text-[13px] text-on-surface-variant leading-relaxed">Real-time processing of high-frequency transactional data without performance degradation.</p>
 </div>
 <!-- Card 5 -->
 <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
 <span class="material-symbols-outlined text-primary mb-4 text-3xl">settings_input_component</span>
 <h3 class="font-bold uppercase tracking-widest text-xs mb-3 text-on-surface">Modular Core</h3>
-<p class="text-[13px] text-on-surface-variant leading-relaxed">Highly adaptable architecture that scales vertically with organizational complexity.</p>
+<p class="text-[13px] text-on-surface-variant leading-relaxed">Adds modules as your needs grow.</p>
 </div>
 </div>
 </section>
@@ -176,8 +214,7 @@
 <section class="bg-surface-container-lowest p-8 lg:p-24">
 <div class="max-w-7xl mx-auto">
 <div class="flex items-end justify-between mb-16">
-<h2 class="text-4xl font-black uppercase tracking-tighter leading-none">Operational<br/>Deployment</h2>
-<span class="font-mono text-[10px] text-outline mb-1">MODULE_ALPHA_01</span>
+<h2 class="text-4xl font-black uppercase tracking-tighter leading-none">How Ceres Works</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-0 border border-outline-variant/30">
 <div class="p-8 border-r border-outline-variant/30 hover:bg-surface-container transition-colors">
@@ -188,12 +225,12 @@
 <div class="p-8 border-r border-outline-variant/30 hover:bg-surface-container transition-colors">
 <span class="text-4xl font-black text-outline-variant mb-6 block">02</span>
 <h4 class="font-bold text-sm uppercase tracking-widest mb-4">Normalization</h4>
-<p class="text-xs text-on-surface-variant leading-relaxed">Ceres OS harmonizes data formats into a standardized industrial ontological framework.</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Ceres converts every data format into a standardized format your team can work with.</p>
 </div>
 <div class="p-8 border-r border-outline-variant/30 hover:bg-surface-container transition-colors">
 <span class="text-4xl font-black text-outline-variant mb-6 block">03</span>
 <h4 class="font-bold text-sm uppercase tracking-widest mb-4">Synthesis</h4>
-<p class="text-xs text-on-surface-variant leading-relaxed">Our proprietary AI core identifies correlation vectors and anomalous patterns.</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">The AI core surfaces patterns and anomalies across your data.</p>
 </div>
 <div class="p-8 hover:bg-surface-container transition-colors">
 <span class="text-4xl font-black text-outline-variant mb-6 block">04</span>
@@ -206,7 +243,7 @@
 <!-- Why Ceres (4 value props) -->
 <section class="bg-surface grid grid-cols-1 lg:grid-cols-2">
 <div class="p-12 lg:p-24 machined-gradient border-r-2 border-surface-container">
-<h2 class="text-3xl font-black uppercase tracking-tighter mb-12">The Competitive Advantage</h2>
+<h2 class="text-3xl font-black uppercase tracking-tighter mb-12">Why Teams Choose Ceres</h2>
 <div class="space-y-12">
 <div class="flex gap-6">
 <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-bold text-primary">01</div>
@@ -226,7 +263,7 @@
 <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-bold text-primary">03</div>
 <div>
 <h5 class="font-bold uppercase tracking-widest text-xs mb-2">Speed to Intelligence</h5>
-<p class="text-sm text-on-surface-variant">Reduce decision latency from days to milliseconds. Act at the speed of the market.</p>
+<p class="text-sm text-on-surface-variant">Cut the time from data to decision — from days to hours.</p>
 </div>
 </div>
 <div class="flex gap-6">
@@ -265,7 +302,7 @@
 <!-- Use Case Section (Bento Grid) -->
 <section class="p-8 lg:p-16">
 <h2 class="text-2xl font-black uppercase tracking-tighter mb-12 border-l-4 border-primary pl-4">Sector Application</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-[600px]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[600px]">
 <div class="md:col-span-2 bg-surface-container p-8 relative overflow-hidden flex flex-col justify-end group cursor-pointer">
 <img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity" data-alt="Massive shipping container terminal at night with vibrant industrial lights reflecting on water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb3KirbeKk7odgWiNAjTXeSp3thdMGaCfd5YyFpHOlTbSlvONHLkKn5CwgKPepBKldk7kklNfdnzbnCBaeC48QfovYwmUXEOyTCmeMX2bzptjTd3W1Vz3R2XpR0lXbDdUzTmzbJpbCjivbwRx73crvonbCxyh2ottWxjva_rB43ay8USxKT75zMza5JKJuFSNAGMBY0jg52JvJy7EgvJWJd4AyEtXs44TCEZ0TrUMc-LmiHFb4koRYMnILUfjoYH91N26XZ8lvnMs"/>
 <div class="relative z-10">
@@ -319,11 +356,11 @@
 </section>
 <!-- FAQ -->
 <section class="p-8 lg:p-24 bg-surface-container-lowest">
-<h2 class="text-2xl font-black uppercase tracking-tighter mb-12">Technical Inquiries</h2>
+<h2 class="text-2xl font-black uppercase tracking-tighter mb-12">Common Questions</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div>
 <h6 class="font-bold text-sm uppercase mb-3 text-primary">How does Ceres handle legacy ERP data?</h6>
-<p class="text-sm text-on-surface-variant">Our integration layer uses universal connectors and proprietary normalization protocols to extract and synthesize data from any legacy system without modification of the source.</p>
+<p class="text-sm text-on-surface-variant">Ceres uses universal connectors to pull data from any legacy system without modifying the source.</p>
 </div>
 <div>
 <h6 class="font-bold text-sm uppercase mb-3 text-primary">What is the security standard?</h6>
@@ -331,7 +368,7 @@
 </div>
 <div>
 <h6 class="font-bold text-sm uppercase mb-3 text-primary">Is the AI model explainable?</h6>
-<p class="text-sm text-on-surface-variant">Yes. Our "White Box" philosophy ensures every decision output is accompanied by a transparent logic trail, allowing analysts to audit the reasoning behind any predictive signal.</p>
+<p class="text-sm text-on-surface-variant">Yes. Every output includes a transparent logic trail so analysts can audit the reasoning behind any signal.</p>
 </div>
 <div>
 <h6 class="font-bold text-sm uppercase mb-3 text-primary">Can we customize the dashboard?</h6>
@@ -358,4 +395,12 @@
 <span class="material-symbols-outlined text-xs">hub</span>
 </div>
 </footer>
+  <script>
+    // Close mobile menu when a link inside it is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+  </script>
 </body></html>

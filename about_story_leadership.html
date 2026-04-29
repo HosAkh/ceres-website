@@ -21,7 +21,7 @@
         }
     </style>
 </head>
-<body class="bg-surface-container-lowest text-on-surface font-body antialiased min-h-screen flex flex-col pt-14">
+<body class="bg-surface-container-lowest text-on-surface font-body antialiased min-h-screen flex flex-col pt-14 overflow-x-hidden">
 <!-- ========== NAVIGATION BAR ========== -->
   <nav class="bg-[#0B0E14] text-[#F37221] font-['Inter'] tracking-tight font-semibold uppercase text-xs fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
     <div class="text-xl font-black tracking-tighter text-[#F37221]">CERES TECHNOLOGY</div>
@@ -51,11 +51,50 @@
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Company</a>
     </div>
     
-    <div class="flex items-center gap-4">
+    <!-- Desktop Login/Demo (hidden on mobile) -->
+    <div class="hidden md:flex items-center gap-4">
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="https://nxt.cerestech.co">Login</a>
       <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-bold">REQUEST DEMO</a>
     </div>
+    <!-- Hamburger Button (visible on mobile only) -->
+    <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 text-[#F37221] focus:outline-none" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+    </button>
   </nav>
+  <!-- ========== MOBILE MENU PANEL ========== -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#0B0E14] z-40 flex flex-col overflow-y-auto pt-14 pb-8 px-6 hidden md:hidden">
+    <!-- Example Cases Section -->
+    <div class="border-b border-[#363940] pb-4 mb-4 pt-6">
+      <button id="mobile-examples-toggle" class="w-full flex items-center justify-between text-[#F37221] font-bold uppercase tracking-widest text-xs py-2" onclick="document.getElementById('mobile-examples-links').classList.toggle('hidden')">
+        EXAMPLE CASES
+        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+      </button>
+      <div id="mobile-examples-links" class="hidden flex flex-col mt-2 space-y-1 pl-2">
+        <a href="index.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Home</a>
+        <a href="about_story_leadership.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">About / Story / Leadership</a>
+        <a href="enterprise_decision_console.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Enterprise Decision Console</a>
+        <a href="data_analysis_automation_v2.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Data Analysis Automation</a>
+        <a href="the_automated_planning_layer.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Automated Planning Layer</a>
+        <a href="integrations_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Integrations</a>
+        <a href="security_trust_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Security &amp; Trust</a>
+        <a href="ceres_for_investment_firms_external_signals_for_research_risk_and_portfolio.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Investment Firms</a>
+        <a href="ceres_for_pharma_better_supply_foresight.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharma Supply Foresight</a>
+        <a href="PharmaceuticalCompanies.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharmaceutical Companies</a>
+        <a href="book_a_demo_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Book a Demo</a>
+      </div>
+    </div>
+    <!-- Top-level links -->
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Resources</a>
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Company</a>
+    <!-- Login and Request Demo -->
+    <div class="mt-8 flex flex-col gap-4">
+      <a class="text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs text-center py-3 border border-[#363940]" href="https://nxt.cerestech.co">Login</a>
+      <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] py-3 text-center hover:bg-[#ffb691] transition-all active:scale-95 font-bold uppercase tracking-widest text-xs">REQUEST DEMO</a>
+    </div>
+  </div>
+
 <main class="flex-grow flex flex-col gap-4 p-4 md:p-8 max-w-[1600px] mx-auto w-full">
 <!-- Hero Section (Bento Block) -->
 <section class="machined-gradient p-8 md:p-16 flex flex-col gap-6 ghost-border">
@@ -111,7 +150,7 @@
 </div>
 <div class="bg-surface-container-lowest p-6 border-l-2 border-primary">
 <h3 class="font-bold text-on-surface mb-2 text-sm uppercase text-primary">The Ceres Way</h3>
-<p class="text-sm text-on-surface-variant">Injecting live, contextual intelligence directly into existing operational workflows. Anticipating friction before it becomes failure.</p>
+<p class="text-sm text-on-surface-variant">Ceres pipes live external context into your existing workflows so you can act before problems hit.</p>
 </div>
 </div>
 </section>
@@ -179,8 +218,8 @@
 </section>
 <!-- Target Audience -->
 <section class="bg-surface-bright p-6 ghost-border border-l-4 border-primary">
-<h3 class="font-headline text-sm font-bold uppercase text-on-surface mb-2">Target Deployment</h3>
-<p class="text-sm text-on-surface-variant font-mono">For teams operating in high-stakes environments.</p>
+<h3 class="font-headline text-sm font-bold uppercase text-on-surface mb-2">Who It's For</h3>
+<p class="text-sm text-on-surface-variant font-mono">Teams where a missed signal has real consequences.</p>
 <div class="mt-4 flex gap-2 flex-wrap">
 <span class="px-2 py-1 bg-surface-container-lowest text-xs text-outline font-mono border border-outline-variant/50">MANUFACTURING</span>
 <span class="px-2 py-1 bg-surface-container-lowest text-xs text-outline font-mono border border-outline-variant/50">HEALTHCARE</span>
@@ -222,7 +261,7 @@
 <!-- Bottom CTA -->
 <section class="machined-gradient p-12 text-center ghost-border mt-4 flex flex-col items-center justify-center gap-6">
 <h2 class="font-headline text-display-sm font-black tracking-tighter uppercase text-on-surface">Want to see how Ceres could fit your team?</h2>
-<p class="text-body-md text-on-surface-variant max-w-2xl">Stop relying on spreadsheet logic and stale context. Deploy a systematic approach to operational intelligence.</p>
+<p class="text-body-md text-on-surface-variant max-w-2xl">See how Ceres connects your data to the signals your team actually needs.</p>
 <a href="book_a_demo_ceres_technology.html" class="bg-primary text-on-primary font-bold text-sm uppercase px-8 py-4 flex items-center gap-2 hover:brightness-110 transition-all mt-4">
                 Book a Demo
                 <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">terminal</span>
@@ -232,7 +271,7 @@
 <!-- Footer -->
 <footer class="w-full py-8 px-12 flex justify-between items-center bg-[#0B0E14] border-t border-[#45474B]/20 mt-12">
 <div class="font-['Inter'] uppercase tracking-widest text-[10px] opacity-60 text-[#F37221]">
-            ©2024 CERES TECHNOLOGY. ALL RIGHTS RESERVED. [SECURE_CONNECTION_ESTABLISHED]
+            ©2024 CERES TECHNOLOGY. ALL RIGHTS RESERVED.
         </div>
 <div class="flex gap-6 font-['Inter'] uppercase tracking-widest text-[10px] opacity-60">
 <a class="text-slate-500 hover:text-[#F37221]" href="#">LEGAL</a>
@@ -241,4 +280,12 @@
 <a class="text-slate-500 hover:text-[#F37221]" href="#">STATUS</a>
 </div>
 </footer>
+  <script>
+    // Close mobile menu when a link inside it is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+  </script>
 </body></html>

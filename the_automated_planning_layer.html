@@ -45,11 +45,50 @@
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Company</a>
     </div>
     
-    <div class="flex items-center gap-4">
+    <!-- Desktop Login/Demo (hidden on mobile) -->
+    <div class="hidden md:flex items-center gap-4">
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="https://nxt.cerestech.co">Login</a>
       <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-bold">REQUEST DEMO</a>
     </div>
+    <!-- Hamburger Button (visible on mobile only) -->
+    <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 text-[#F37221] focus:outline-none" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+    </button>
   </nav>
+  <!-- ========== MOBILE MENU PANEL ========== -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#0B0E14] z-40 flex flex-col overflow-y-auto pt-14 pb-8 px-6 hidden md:hidden">
+    <!-- Example Cases Section -->
+    <div class="border-b border-[#363940] pb-4 mb-4 pt-6">
+      <button id="mobile-examples-toggle" class="w-full flex items-center justify-between text-[#F37221] font-bold uppercase tracking-widest text-xs py-2" onclick="document.getElementById('mobile-examples-links').classList.toggle('hidden')">
+        EXAMPLE CASES
+        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+      </button>
+      <div id="mobile-examples-links" class="hidden flex flex-col mt-2 space-y-1 pl-2">
+        <a href="index.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Home</a>
+        <a href="about_story_leadership.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">About / Story / Leadership</a>
+        <a href="enterprise_decision_console.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Enterprise Decision Console</a>
+        <a href="data_analysis_automation_v2.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Data Analysis Automation</a>
+        <a href="the_automated_planning_layer.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Automated Planning Layer</a>
+        <a href="integrations_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Integrations</a>
+        <a href="security_trust_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Security &amp; Trust</a>
+        <a href="ceres_for_investment_firms_external_signals_for_research_risk_and_portfolio.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Investment Firms</a>
+        <a href="ceres_for_pharma_better_supply_foresight.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharma Supply Foresight</a>
+        <a href="PharmaceuticalCompanies.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharmaceutical Companies</a>
+        <a href="book_a_demo_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Book a Demo</a>
+      </div>
+    </div>
+    <!-- Top-level links -->
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Resources</a>
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Company</a>
+    <!-- Login and Request Demo -->
+    <div class="mt-8 flex flex-col gap-4">
+      <a class="text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs text-center py-3 border border-[#363940]" href="https://nxt.cerestech.co">Login</a>
+      <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] py-3 text-center hover:bg-[#ffb691] transition-all active:scale-95 font-bold uppercase tracking-widest text-xs">REQUEST DEMO</a>
+    </div>
+  </div>
+
 <main class="min-h-screen">
 <!-- Hero Section -->
 <section class="relative pt-20 pb-12 px-6 lg:px-12 border-b border-outline-variant/10">
@@ -66,9 +105,9 @@
                         You have an ERP, but your planning still happens in fragile spreadsheets. Ceres normalizes messy customer data, catches exceptions automatically, and builds accurate AI forecasts—so you stop fighting Excel and start making decisions.
                     </p>
 <div class="flex flex-wrap gap-4">
-<button class="bg-primary text-on-primary px-8 py-4 font-bold uppercase tracking-tight text-sm hover:brightness-110 active:scale-95 transition-all" style="">
+<a href="book_a_demo_ceres_technology.html" class="bg-primary text-on-primary px-8 py-4 font-bold uppercase tracking-tight text-sm hover:brightness-110 active:scale-95 transition-all" style="">
                             Book a Custom Demo
-                        </button>
+                        </a>
 </div>
 <div class="mt-16 grid grid-cols-3 gap-8 border-t border-outline-variant/20 pt-8">
 <div>
@@ -80,7 +119,7 @@
 <div class="text-[10px] font-bold uppercase tracking-widest text-outline" style="">Planner Productivity</div>
 </div>
 <div>
-<div class="text-2xl font-black data-mono text-on-surface" style="">0ms</div>
+<div class="text-2xl font-black data-mono text-on-surface" style="">Zero</div>
 <div class="text-[10px] font-bold uppercase tracking-widest text-outline" style="">Manual Reconciliation</div>
 </div>
 </div>
@@ -274,21 +313,20 @@
 <!-- Final Call to System -->
 <section class="py-32 px-6 bg-[#0B0E14] text-center border-t border-outline-variant/10">
 <div class="max-w-4xl mx-auto">
-<h2 class="text-4xl lg:text-5xl font-black tracking-tighter uppercase mb-6 leading-none" style="">Close the gap between <br/> your ERP and your decisions.</h2>
+<h2 class="text-2xl lg:text-5xl font-black tracking-tighter uppercase mb-6 leading-none" style="">Close the gap between <br/> your ERP and your decisions.</h2>
 <p class="text-on-surface-variant font-medium text-lg mb-12 max-w-2xl mx-auto" style="">See how Ceres helps planning teams move faster, catch issues earlier, and make better decisions.</p>
 <div class="flex flex-col md:flex-row justify-center gap-4">
 <a href="book_a_demo_ceres_technology.html" class="bg-primary text-on-primary px-12 py-5 font-black uppercase tracking-tighter text-lg hover:brightness-110 active:scale-95 transition-all" style="">
                         See Ceres in Action — Book a Demo
                     </a>
 </div>
-<p class="text-outline uppercase text-[9px] font-bold tracking-[0.4em] mt-12" style="">Authorized Access Only | Industrial Protocol Required</p>
 </div>
 </section>
 </main>
 <!-- Footer -->
 <footer class="bg-[#0B0E14] w-full border-t-2 border-[#1D2026] flex flex-col md:flex-row justify-between items-center px-8 py-6 gap-4">
 <div class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold text-[#45474B]" style="">
-            © 2024 CERES TECHNOLOGY. ALL SYSTEMS OPERATIONAL.
+            © 2024 CERES TECHNOLOGY. ALL RIGHTS RESERVED.
         </div>
 <div class="flex gap-8">
 <a class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold text-[#45474B] hover:text-[#F37221] underline-offset-4 transition-opacity duration-150" href="#" style="">System Status</a>
@@ -297,4 +335,12 @@
 <a class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold text-[#45474B] hover:text-[#F37221] underline-offset-4 transition-opacity duration-150" href="#" style="">Security Shell</a>
 </div>
 </footer>
+  <script>
+    // Close mobile menu when a link inside it is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+  </script>
 </body></html>

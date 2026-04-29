@@ -21,7 +21,7 @@
         }
       </style>
 </head>
-<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body selection:bg-primary selection:text-on-primary">
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body selection:bg-primary selection:text-on-primary overflow-x-hidden">
 <!-- ========== NAVIGATION BAR ========== -->
   <nav class="bg-[#0B0E14] text-[#F37221] font-['Inter'] tracking-tight font-semibold uppercase text-xs fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
     <div class="text-xl font-black tracking-tighter text-[#F37221]">CERES TECHNOLOGY</div>
@@ -51,11 +51,50 @@
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Company</a>
     </div>
     
-    <div class="flex items-center gap-4">
+    <!-- Desktop Login/Demo (hidden on mobile) -->
+    <div class="hidden md:flex items-center gap-4">
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="https://nxt.cerestech.co">Login</a>
       <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-bold">REQUEST DEMO</a>
     </div>
+    <!-- Hamburger Button (visible on mobile only) -->
+    <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 text-[#F37221] focus:outline-none" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+    </button>
   </nav>
+  <!-- ========== MOBILE MENU PANEL ========== -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#0B0E14] z-40 flex flex-col overflow-y-auto pt-14 pb-8 px-6 hidden md:hidden">
+    <!-- Example Cases Section -->
+    <div class="border-b border-[#363940] pb-4 mb-4 pt-6">
+      <button id="mobile-examples-toggle" class="w-full flex items-center justify-between text-[#F37221] font-bold uppercase tracking-widest text-xs py-2" onclick="document.getElementById('mobile-examples-links').classList.toggle('hidden')">
+        EXAMPLE CASES
+        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+      </button>
+      <div id="mobile-examples-links" class="hidden flex flex-col mt-2 space-y-1 pl-2">
+        <a href="index.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Home</a>
+        <a href="about_story_leadership.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">About / Story / Leadership</a>
+        <a href="enterprise_decision_console.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Enterprise Decision Console</a>
+        <a href="data_analysis_automation_v2.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Data Analysis Automation</a>
+        <a href="the_automated_planning_layer.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Automated Planning Layer</a>
+        <a href="integrations_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Integrations</a>
+        <a href="security_trust_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Security &amp; Trust</a>
+        <a href="ceres_for_investment_firms_external_signals_for_research_risk_and_portfolio.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Investment Firms</a>
+        <a href="ceres_for_pharma_better_supply_foresight.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharma Supply Foresight</a>
+        <a href="PharmaceuticalCompanies.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharmaceutical Companies</a>
+        <a href="book_a_demo_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Book a Demo</a>
+      </div>
+    </div>
+    <!-- Top-level links -->
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Resources</a>
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Company</a>
+    <!-- Login and Request Demo -->
+    <div class="mt-8 flex flex-col gap-4">
+      <a class="text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs text-center py-3 border border-[#363940]" href="https://nxt.cerestech.co">Login</a>
+      <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] py-3 text-center hover:bg-[#ffb691] transition-all active:scale-95 font-bold uppercase tracking-widest text-xs">REQUEST DEMO</a>
+    </div>
+  </div>
+
 <!-- Main Content Canvas -->
 <main class="flex-grow flex flex-col items-center justify-start w-full bg-surface-container-lowest">
 <!-- Hero Section -->
@@ -63,7 +102,7 @@
 <div class="w-full md:w-1/2 flex flex-col items-start gap-8 z-10 relative">
 <!-- Abstract decorative element -->
 <div class="absolute -top-12 -left-8 w-24 h-24 border-t border-l border-primary/30 z-0"></div>
-<h1 class="text-5xl md:text-6xl font-black tracking-tighter text-on-surface leading-tight font-headline z-10">
+<h1 class="text-3xl md:text-6xl font-black tracking-tighter text-on-surface leading-tight font-headline z-10">
                     Map external data onto your internal records to automate complex analysis.
                 </h1>
 <p class="text-lg text-on-surface-variant font-medium leading-relaxed max-w-2xl border-l-4 border-primary pl-6 py-2">
@@ -74,9 +113,6 @@
 <span>Book a Demo</span>
 <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
 </a>
-<button class="bg-surface-container text-on-surface border border-outline-variant/50 font-bold uppercase tracking-tight px-8 py-4 hover:bg-surface-container-high transition-colors">
-                        View Architecture
-                    </button>
 </div>
 </div>
 <div class="w-full md:w-1/2 relative min-h-[500px]">
@@ -133,7 +169,7 @@
 <span class="material-symbols-outlined text-on-surface" data-icon="engineering">engineering</span>
 </div>
 <h3 class="text-lg font-bold text-on-surface">Trapped Analysts</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">Analysts are trapped in endless manual cycles of data compilation instead of driving strategic insights.</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">Analysts spend all day compiling data instead of using it.</p>
 <div class="mt-auto pt-4 border-t border-outline-variant/20 font-mono text-[10px] text-error">STATUS: CRITICAL_DRAIN</div>
 </div>
 <!-- Friction Point 2 -->
@@ -220,7 +256,7 @@
 <span class="font-bold text-on-surface">Supply Risk Scorecards</span>
 </div>
 <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">
-                            EVAL_NODE: VENDOR_METRICS
+                            VENDOR_METRICS
                         </div>
 </div>
 <!-- Row 2 -->
@@ -230,7 +266,7 @@
 <span class="font-bold text-on-surface">Portfolio Exposure Mapping</span>
 </div>
 <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">
-                            EVAL_NODE: GEO_RISK
+                            GEO_RISK
                         </div>
 </div>
 <!-- Row 3 -->
@@ -240,7 +276,7 @@
 <span class="font-bold text-on-surface">Geospatial Audience Targeting</span>
 </div>
 <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">
-                            EVAL_NODE: DEMO_OVERLAY
+                            DEMO_OVERLAY
                         </div>
 </div>
 <!-- Row 4 -->
@@ -250,7 +286,7 @@
 <span class="font-bold text-on-surface">Text Categorization</span>
 </div>
 <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">
-                            EVAL_NODE: NLP_CLASSIFY
+                            NLP_CLASSIFY
                         </div>
 </div>
 <!-- Row 5 -->
@@ -260,7 +296,7 @@
 <span class="font-bold text-on-surface">Demand Forecasting</span>
 </div>
 <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">
-                            EVAL_NODE: PREDICTIVE_MOD
+                            PREDICTIVE_MOD
                         </div>
 </div>
 </div>
@@ -288,7 +324,7 @@
 </div>
 <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
 <div class="text-3xl md:text-4xl font-black text-on-surface font-mono mb-2 tracking-tighter">API/DB</div>
-<div class="text-xs text-on-surface-variant font-bold uppercase tracking-widest text-center">Seamless Integration</div>
+<div class="text-xs text-on-surface-variant font-bold uppercase tracking-widest text-center">Direct Integration</div>
 </div>
 </div>
 </div>
@@ -300,7 +336,7 @@
                     Ready to see it work with your data?
                 </h2>
 <p class="text-xl text-on-surface-variant font-medium mb-10 max-w-2xl">
-                    Stop losing days to manual data reconciliation. Initialize your automated planning layer today.
+                    Stop losing days to manual data reconciliation.
                 </p>
 <a href="book_a_demo_ceres_technology.html" class="bg-primary text-on-primary font-black uppercase tracking-widest px-12 py-5 hover:bg-primary-fixed transition-colors text-lg shadow-[0_0_20px_rgba(243,114,33,0.3)] hover:shadow-[0_0_30px_rgba(243,114,33,0.5)]">
                     Book a Demo
@@ -316,8 +352,16 @@
 <a class="font-mono text-[10px] tracking-tight uppercase text-slate-500 hover:text-white transition-colors cursor-crosshair" href="#">API_ENDPOINT</a>
 </nav>
 <div class="font-mono text-[10px] tracking-tight uppercase text-slate-500 cursor-crosshair">
-            SYSTEM_VER_4.9.2_STABLE // LATENCY: 14MS // ©2024_CORE_LOGIC
+            ©2024 CERES TECHNOLOGY. ALL RIGHTS RESERVED.
         </div>
 <div class="hidden text-lg font-black tracking-[0.2em] text-[#F37221]">CORE_COMMAND_OS</div>
 </footer>
+  <script>
+    // Close mobile menu when a link inside it is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+  </script>
 </body></html>

@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#b5cacf", tertiary: "#acccd5", primary: "#ffb691", "on-primary": "#552000", "surface-container-low": "#0b1e27", "surface-container-high": "#1a2c36", "on-primary-fixed-variant": "#793100", "on-secondary": "#203337", "on-primary-container": "#552000", "secondary-fixed": "#d1e6eb", "on-tertiary-container": "#15343c", "inverse-primary": "#9e4200", "on-secondary-fixed": "#0a1e22", outline: "#a78b7e", "on-tertiary-fixed-variant": "#2d4b53", "surface-variant": "#253741", "on-background": "#d2e5f2", secondary: "#b5cacf", "on-secondary-container": "#a7bcc1", "secondary-container": "#394c51", "on-secondary-fixed-variant": "#374a4e", "surface-dim": "#03151e", "surface-container-highest": "#253741", "on-tertiary-fixed": "#001f26", "on-surface-variant": "#dfc0b2", "inverse-surface": "#d2e5f2", "primary-container": "#f37221", surface: "#03151e", "primary-fixed-dim": "#ffb691", "primary-fixed": "#ffdbcb", "error-container": "#93000a", "surface-bright": "#2a3b45", "on-tertiary": "#15353c", "on-primary-fixed": "#341100", background: "#03151e", "surface-container": "#10222b", "inverse-on-surface": "#21333c", "tertiary-fixed": "#c8e8f1", "on-surface": "#d2e5f2", error: "#ffb4ab", "surface-tint": "#ffb691", "on-error": "#690005", "tertiary-fixed-dim": "#acccd5", "outline-variant": "#584237", "on-error-container": "#ffdad6", "surface-container-lowest": "#001019", "tertiary-container": "#7e9da6"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {}, fontFamily: {headline: ["Space Grotesk"], body: ["Inter"], label: ["Inter"], display: ["Space Grotesk"]}, fontSize: {}}}};</script>
 </head>
-<body class="bg-surface-container-lowest text-on-surface font-body antialiased min-h-screen selection:bg-primary selection:text-on-primary">
+<body class="bg-surface-container-lowest text-on-surface font-body antialiased min-h-screen selection:bg-primary selection:text-on-primary overflow-x-hidden">
 <!-- ========== NAVIGATION BAR ========== -->
   <nav class="bg-[#0B0E14] text-[#F37221] font-['Inter'] tracking-tight font-semibold uppercase text-xs fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
     <div class="text-xl font-black tracking-tighter text-[#F37221]">CERES TECHNOLOGY</div>
@@ -40,11 +40,50 @@
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="#">Company</a>
     </div>
     
-    <div class="flex items-center gap-4">
+    <!-- Desktop Login/Demo (hidden on mobile) -->
+    <div class="hidden md:flex items-center gap-4">
       <a class="text-[#8A8D91] hover:text-white transition-colors" href="https://nxt.cerestech.co">Login</a>
       <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-bold">REQUEST DEMO</a>
     </div>
+    <!-- Hamburger Button (visible on mobile only) -->
+    <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 text-[#F37221] focus:outline-none" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+      <span class="block w-6 h-0.5 bg-[#F37221] transition-all"></span>
+    </button>
   </nav>
+  <!-- ========== MOBILE MENU PANEL ========== -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#0B0E14] z-40 flex flex-col overflow-y-auto pt-14 pb-8 px-6 hidden md:hidden">
+    <!-- Example Cases Section -->
+    <div class="border-b border-[#363940] pb-4 mb-4 pt-6">
+      <button id="mobile-examples-toggle" class="w-full flex items-center justify-between text-[#F37221] font-bold uppercase tracking-widest text-xs py-2" onclick="document.getElementById('mobile-examples-links').classList.toggle('hidden')">
+        EXAMPLE CASES
+        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+      </button>
+      <div id="mobile-examples-links" class="hidden flex flex-col mt-2 space-y-1 pl-2">
+        <a href="index.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Home</a>
+        <a href="about_story_leadership.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">About / Story / Leadership</a>
+        <a href="enterprise_decision_console.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Enterprise Decision Console</a>
+        <a href="data_analysis_automation_v2.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Data Analysis Automation</a>
+        <a href="the_automated_planning_layer.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Automated Planning Layer</a>
+        <a href="integrations_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Integrations</a>
+        <a href="security_trust_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Security &amp; Trust</a>
+        <a href="ceres_for_investment_firms_external_signals_for_research_risk_and_portfolio.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Investment Firms</a>
+        <a href="ceres_for_pharma_better_supply_foresight.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharma Supply Foresight</a>
+        <a href="PharmaceuticalCompanies.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Pharmaceutical Companies</a>
+        <a href="book_a_demo_ceres_technology.html" class="block py-2 text-[#8A8D91] hover:text-white transition-colors text-xs uppercase tracking-widest">Book a Demo</a>
+      </div>
+    </div>
+    <!-- Top-level links -->
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Resources</a>
+    <a class="block py-3 text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs border-b border-[#363940]" href="#">Company</a>
+    <!-- Login and Request Demo -->
+    <div class="mt-8 flex flex-col gap-4">
+      <a class="text-[#8A8D91] hover:text-white transition-colors font-bold uppercase tracking-widest text-xs text-center py-3 border border-[#363940]" href="https://nxt.cerestech.co">Login</a>
+      <a href="book_a_demo_ceres_technology.html" class="bg-[#F37221] text-[#0B0E14] py-3 text-center hover:bg-[#ffb691] transition-all active:scale-95 font-bold uppercase tracking-widest text-xs">REQUEST DEMO</a>
+    </div>
+  </div>
+
 <main class="w-full max-w-[1440px] mx-auto border-l border-r border-outline-variant/20">
 <!-- Hero Section -->
 <section class="relative px-6 py-24 md:py-32 lg:px-12 border-b border-outline-variant/20 bg-gradient-to-br from-surface-container-high to-surface-container-lowest">
@@ -144,10 +183,10 @@
 <p class="text-sm text-on-surface-variant">Reduce spreadsheet burden with repeatable, automated signal overlay.</p>
 </div>
 </div>
-<button class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-bold px-6 py-3 uppercase tracking-wider text-sm transition-colors flex items-center gap-2">
+<a href="book_a_demo_ceres_technology.html" class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-bold px-6 py-3 uppercase tracking-wider text-sm transition-colors flex items-center gap-2">
                 Schedule a Walkthrough
                 <span class="material-symbols-outlined text-sm">calendar_today</span>
-</button>
+</a>
 </section>
 <!-- Common Workflows (Bento Grid) -->
 <section class="p-6 lg:p-12 border-b border-outline-variant/20 bg-surface">
@@ -280,4 +319,12 @@
 </div>
 </section>
 </main>
+  <script>
+    // Close mobile menu when a link inside it is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+  </script>
 </body></html>
