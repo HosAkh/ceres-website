@@ -100,10 +100,6 @@ export default function Footer() {
             <span className="font-nav text-[10px] tracking-[0.08em] uppercase text-slate-600">
               © {currentYear} Ceres Technology. All rights reserved.
             </span>
-            <div className="hidden md:block w-px h-3 bg-white/10"></div>
-            <span className="font-nav text-[10px] tracking-[0.15em] uppercase text-primary/60 font-medium">
-              Precision Protocol Active
-            </span>
           </div>
 
           <div className="flex items-center gap-8">
