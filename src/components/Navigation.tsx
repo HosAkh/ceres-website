@@ -61,7 +61,7 @@ export default function Navigation() {
           </a>
           <a
             href={withBase('book-a-demo/')}
-            className="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-['DM_Mono'] text-[11px] tracking-[0.14em] uppercase"
+            className="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-['DM_Mono'] text-[11px] tracking-[0.07em] uppercase"
           >
             REQUEST DEMO
           </a>
