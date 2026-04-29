@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="max-w-5xl relative z-10">
         <div class="inline-flex items-center gap-2 px-2 py-1 bg-surface-container border-l-2 border-primary mb-6">
           <span class="w-2 h-2 bg-primary animate-pulse"></span>
-          <span class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">SYSTEM STATUS: ACTIVE_DATA_STREAM</span>
+          <span class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">Now processing live supply chain data</span>
         </div>
         <h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-8 uppercase">
           Turn scattered data<br/>
@@ -27,14 +27,14 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="absolute right-0 bottom-0 w-1/3 h-full opacity-20 hidden lg:block border-l border-outline-variant/20 p-8">
         <div class="h-full w-full machined-gradient border border-outline-variant/30 flex flex-col p-4 font-mono text-[10px] gap-2 overflow-hidden text-primary">
-          <div class="flex justify-between"><span>RAW_DATA_INPUT</span><span>88.42%</span></div>
+          <div class="flex justify-between"><span>Data ingestion</span><span>88.42%</span></div>
           <div class="w-full bg-surface-container h-1"><div class="bg-primary h-full w-4/5"></div></div>
           <div class="mt-4 space-y-1 opacity-50">
-            <div>&gt; TRACE_LOG: 0x82...FA2</div>
-            <div>&gt; SYNCING_NODE_04... DONE</div>
-            <div>&gt; ANALYZING_VECTORS...</div>
-            <div>&gt; THREAT_DETECTED: FALSE</div>
-            <div>&gt; LATENCY: 12ms</div>
+            <div>&gt; Supply chain signals: connected</div>
+            <div>&gt; External data sources: synced</div>
+            <div>&gt; Risk model: running</div>
+            <div>&gt; Anomalies flagged: 0</div>
+            <div>&gt; Response time: 12ms</div>
           </div>
         </div>
       </div>
@@ -204,7 +204,6 @@ import Layout from '../layouts/Layout.astro';
     <!-- PROOF/OUTCOME SECTION -->
     <section class="bg-surface-container-lowest p-8 lg:p-16 border-y-2 border-surface-container">
       <div class="max-w-4xl mx-auto bg-surface-container p-12 relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-4 font-mono text-[10px] tracking-[0.18em] text-outline-variant uppercase">CASE_REF: 882-X</div>
         <span class="material-symbols-outlined text-primary text-4xl mb-6">format_quote</span>
         <p class="text-xl font-body font-normal italic leading-[1.6] text-on-surface mb-8">"Ceres transformed our logistics operation from a reactive cost center into a strategic asset. We now see bottlenecks before they occur, saving an estimated $4.2M in quarterly transit delays."</p>
         <div>
