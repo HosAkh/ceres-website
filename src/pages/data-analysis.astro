@@ -20,9 +20,6 @@ import Layout from '../layouts/Layout.astro';
             Book a Demo
             <span class="material-symbols-outlined text-lg">arrow_forward</span>
           </a>
-          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container text-on-surface border border-outline-variant/50 font-bold uppercase tracking-tight px-8 py-4 hover:bg-surface-container-high transition-colors inline-flex items-center">
-            View Architecture
-          </a>
         </div>
       </div>
       <div class="w-full md:w-1/2 relative min-h-[500px]">
@@ -74,7 +71,7 @@ import Layout from '../layouts/Layout.astro';
               <span class="material-symbols-outlined text-on-surface">engineering</span>
             </div>
             <h3 class="text-lg font-bold text-on-surface">Trapped Analysts</h3>
-            <p class="text-sm text-on-surface-variant leading-relaxed">Analysts are trapped in endless manual cycles of data compilation instead of driving strategic insights.</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Analysts spend all day compiling data instead of using it.</p>
             <div class="mt-auto pt-4 border-t border-outline-variant/20 font-mono text-[10px] text-error">STATUS: CRITICAL_DRAIN</div>
           </div>
           <div class="bg-surface-container p-6 border-l-2 border-outline-variant hover:border-primary hover:bg-surface-container-high transition-colors flex flex-col gap-4">
@@ -154,35 +151,35 @@ import Layout from '../layouts/Layout.astro';
               <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">inventory</span>
               <span class="font-bold text-on-surface">Supply Risk Scorecards</span>
             </div>
-            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: VENDOR_METRICS</div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">VENDOR_METRICS</div>
           </div>
           <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
             <div class="flex items-center gap-4 mb-2 md:mb-0">
               <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">public</span>
               <span class="font-bold text-on-surface">Portfolio Exposure Mapping</span>
             </div>
-            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: GEO_RISK</div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">GEO_RISK</div>
           </div>
           <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
             <div class="flex items-center gap-4 mb-2 md:mb-0">
               <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">track_changes</span>
               <span class="font-bold text-on-surface">Geospatial Audience Targeting</span>
             </div>
-            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: DEMO_OVERLAY</div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">DEMO_OVERLAY</div>
           </div>
           <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
             <div class="flex items-center gap-4 mb-2 md:mb-0">
               <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">subject</span>
               <span class="font-bold text-on-surface">Text Categorization</span>
             </div>
-            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: NLP_CLASSIFY</div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">NLP_CLASSIFY</div>
           </div>
           <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
             <div class="flex items-center gap-4 mb-2 md:mb-0">
               <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">trending_up</span>
               <span class="font-bold text-on-surface">Demand Forecasting</span>
             </div>
-            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">EVAL_NODE: PREDICTIVE_MOD</div>
+            <div class="font-mono text-xs text-on-surface-variant w-full md:w-1/3 text-left md:text-right">PREDICTIVE_MOD</div>
           </div>
         </div>
       </div>
@@ -212,7 +209,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
             <div class="text-3xl md:text-4xl font-black text-on-surface font-mono mb-2 tracking-tighter">API/DB</div>
-            <div class="text-xs text-on-surface-variant font-bold uppercase tracking-widest text-center">Seamless Integration</div>
+            <div class="text-xs text-on-surface-variant font-bold uppercase tracking-widest text-center">Direct Integration</div>
           </div>
         </div>
       </div>
@@ -225,7 +222,7 @@ import Layout from '../layouts/Layout.astro';
           Ready to see it work with your data?
         </h2>
         <p class="text-xl text-on-surface-variant font-medium mb-10 max-w-2xl">
-          Stop losing days to manual data reconciliation. Initialize your automated planning layer today.
+          Stop losing days to manual data reconciliation.
         </p>
         <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary font-black uppercase tracking-widest px-12 py-5 hover:bg-primary-fixed transition-colors text-lg shadow-[0_0_20px_rgba(243,114,33,0.3)] hover:shadow-[0_0_30px_rgba(243,114,33,0.5)]">
           Book a Demo
