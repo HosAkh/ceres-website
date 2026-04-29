@@ -2,7 +2,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const linkClass =
-    "font-nav text-[11px] tracking-[0.08em] uppercase text-slate-400 hover:text-primary transition-colors";
+    "font-nav text-[12px] tracking-[0.06em] uppercase text-slate-400 hover:text-primary transition-colors";
 
   const sections = [
     {
@@ -33,7 +33,7 @@ export default function Footer() {
             />
 
             <div className="flex flex-col gap-4">
-              <p className="font-nav text-[11px] tracking-[0.08em] uppercase text-slate-500 leading-relaxed max-w-[200px]">
+              <p className="font-nav text-[12px] tracking-[0.06em] uppercase text-slate-500 leading-relaxed max-w-[200px]">
                 Architecting resilience through predictive intelligence and external signal integration.
               </p>
 
@@ -44,7 +44,7 @@ export default function Footer() {
                   </svg>
                 </span>
 
-                <span className="font-nav text-[10px] tracking-[0.08em] uppercase text-slate-400 group-hover:text-white transition-colors">
+                <span className="font-nav text-[12px] tracking-[0.06em] uppercase text-slate-400 group-hover:text-white transition-colors">
                   LinkedIn Connect
                 </span>
               </a>
@@ -53,7 +53,7 @@ export default function Footer() {
 
           {sections.map((section) => (
             <div className="flex flex-col gap-6" key={section.title}>
-              <h4 className="font-nav text-[11px] font-medium tracking-[0.12em] uppercase text-white/40 border-b border-white/10 pb-2">
+              <h4 className="font-nav text-[11px] font-medium tracking-[0.08em] uppercase text-white/40 border-b border-white/10 pb-2">
                 {section.title}
               </h4>
               <ul className="flex flex-col gap-4">
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Resources Column */}
           <div className="flex flex-col gap-6">
-            <h4 className="font-nav text-[11px] font-medium tracking-[0.12em] uppercase text-white/40 border-b border-white/10 pb-2">
+            <h4 className="font-nav text-[11px] font-medium tracking-[0.08em] uppercase text-white/40 border-b border-white/10 pb-2">
               Resources
             </h4>
             <ul className="flex flex-col gap-4">
@@ -97,20 +97,20 @@ export default function Footer() {
         {/* Bottom Section: Meta */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <span className="font-nav text-[10px] tracking-[0.08em] uppercase text-slate-600">
+            <span className="font-nav text-[12px] tracking-[0.06em] uppercase text-slate-400">
               © {currentYear} Ceres Technology. All rights reserved.
             </span>
           </div>
 
           <div className="flex items-center gap-8">
             <a
-              className="font-nav text-[10px] tracking-[0.08em] uppercase text-slate-500 hover:text-white transition-colors"
+              className="font-nav text-[12px] tracking-[0.06em] uppercase text-slate-400 hover:text-white transition-colors"
               href="#"
             >
               Privacy Policy
             </a>
             <a
-              className="font-nav text-[10px] tracking-[0.08em] uppercase text-slate-500 hover:text-white transition-colors"
+              className="font-nav text-[12px] tracking-[0.06em] uppercase text-slate-400 hover:text-white transition-colors"
               href="#"
             >
               Terms of Service
