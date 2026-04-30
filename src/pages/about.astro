@@ -7,10 +7,10 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- HERO -->
     <section class="machined-gradient p-8 md:p-16 flex flex-col gap-6 ghost-border">
-      <h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-[-0.01em] text-on-surface uppercase max-w-4xl leading-none">
+      <h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-[-0.01em] text-on-surface max-w-4xl leading-none">
         We built Ceres to help enterprises turn outside chaos into usable decisions.
       </h1>
-      <p class="font-body font-normal text-lg text-on-surface-variant max-w-3xl leading-[1.7]">
+      <p class="font-body font-normal text-lg text-on-surface-variant max-w-prose leading-[1.7]">
         Ceres was founded by operators who saw firsthand how hard it was to connect real-world events to the records and systems businesses rely on every day. We built Ceres to close that gap.
       </p>
       <div class="mt-4">
@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
         <section class="bg-surface-container p-8 ghost-border">
           <div class="flex items-center gap-3 mb-6">
             <span class="material-symbols-outlined text-primary">history</span>
-            <h2 class="font-headline text-lg font-bold tracking-[0.015em] uppercase text-on-surface">Built from a real operating problem</h2>
+            <h2 class="font-headline text-lg font-bold tracking-[0.015em] text-on-surface">Built from a real operating problem</h2>
           </div>
           <div class="flex flex-col md:flex-row gap-8">
             <div class="flex-1 text-base text-on-surface-variant space-y-4">
@@ -53,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
         <section class="bg-surface-container p-8 ghost-border">
           <div class="flex items-center gap-3 mb-6">
             <span class="material-symbols-outlined text-primary">psychology</span>
-            <h2 class="font-headline text-lg font-bold tracking-[0.015em] uppercase text-on-surface">Better decisions come from better context</h2>
+            <h2 class="font-headline text-lg font-bold tracking-[0.015em] text-on-surface">Better decisions come from better context</h2>
           </div>
           <p class="font-body font-normal text-base text-on-surface-variant mb-6 leading-[1.7]">Organizations suffer from a shortage of connected context, not a shortage of records. We build systems that bridge this gap.</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -178,7 +178,7 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- BOTTOM CTA -->
     <section class="machined-gradient p-12 text-center ghost-border mt-4 flex flex-col items-center justify-center gap-6">
-      <h2 class="font-headline text-3xl font-extrabold tracking-[-0.01em] uppercase leading-none text-on-surface">Want to see how Ceres could fit your team?</h2>
+      <h2 class="font-headline text-3xl font-extrabold tracking-[-0.01em] leading-none text-on-surface">Want to see how Ceres could fit your team?</h2>
       <p class="font-body font-normal text-base text-on-surface-variant max-w-2xl leading-[1.7]">See how Ceres connects your data to the signals your team actually needs.</p>
       <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 inline-flex items-center gap-2 hover:brightness-110 transition-all mt-4">
         Book a Demo

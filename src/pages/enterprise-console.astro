@@ -11,31 +11,31 @@ import Layout from '../layouts/Layout.astro';
         <div class="lg:col-span-7">
           <div class="flex items-center gap-2 mb-6">
             <span class="w-2 h-2 bg-primary"></span>
-            <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-primary">System Ready: Industrial Grade</span>
+            <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary">System Ready: Industrial Grade</span>
           </div>
-          <h1 class="font-extrabold tracking-tighter text-on-surface leading-[0.9] mb-8 uppercase">
-            Automate Demand Planning to Cut <span class="text-primary">Analysis Time by 95%</span>
+          <h1 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-8">
+            Automate demand planning to cut <span class="text-primary">analysis time by 95%</span>
           </h1>
-          <p class="text-lg text-on-surface-variant font-medium leading-tight max-w-2xl mb-10">
-            You have an ERP, but your planning still happens in fragile spreadsheets. Ceres normalizes messy customer data, catches exceptions automatically, and builds accurate AI forecasts—so you stop fighting Excel and start making decisions.
+          <p class="text-lg font-body font-normal text-on-surface-variant leading-[1.7] max-w-prose mb-10">
+            You have an ERP, but your planning still happens in fragile spreadsheets. Ceres normalizes messy customer data, catches exceptions automatically, and builds accurate AI forecasts — so you stop fighting Excel and start making decisions.
           </p>
           <div class="flex flex-wrap gap-4">
-            <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary px-8 py-4 font-bold uppercase tracking-tight text-sm hover:brightness-110 active:scale-95 transition-all">
+            <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary px-8 py-4 font-mono text-[11px] tracking-[0.14em] uppercase hover:brightness-110 active:scale-95 transition-all">
               Book a Custom Demo
             </a>
           </div>
           <div class="mt-16 grid grid-cols-3 gap-8 border-t border-outline-variant/20 pt-8">
             <div>
-              <div class="text-2xl font-black text-on-surface">95%</div>
-              <div class="text-[10px] font-bold uppercase tracking-widest text-outline">Time Compression</div>
+              <div class="font-mono font-light text-2xl text-on-surface data-mono">95%</div>
+              <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant mt-1">Time Compression</div>
             </div>
             <div>
-              <div class="text-2xl font-black text-on-surface">2.5x</div>
-              <div class="text-[10px] font-bold uppercase tracking-widest text-outline">Planner Productivity</div>
+              <div class="font-mono font-light text-2xl text-on-surface data-mono">2.5x</div>
+              <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant mt-1">Planner Productivity</div>
             </div>
             <div>
-              <div class="text-2xl font-black text-on-surface">Zero</div>
-              <div class="text-[10px] font-bold uppercase tracking-widest text-outline">Manual Reconciliation</div>
+              <div class="font-mono font-light text-2xl text-on-surface data-mono">Zero</div>
+              <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant mt-1">Manual Reconciliation</div>
             </div>
           </div>
         </div>
@@ -48,13 +48,13 @@ import Layout from '../layouts/Layout.astro';
                   <div class="w-2 h-2 bg-on-surface-variant/20"></div>
                   <div class="w-2 h-2 bg-on-surface-variant/20"></div>
                 </div>
-                <span class="text-[9px] uppercase font-bold tracking-tighter text-outline">Terminal View: Global_O_Status_Rel_04</span>
+                <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant">Global Order Status</span>
               </div>
               <div class="aspect-square bg-surface relative">
                 <img alt="Complex data visualization screen" class="w-full h-full object-cover opacity-60 mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL_UCIYRIdOGHRAI7klIipZqdWn2_c6OB40-GNULrinhOcyS2tJu80Bp6aRlwWGb4u8ITppmLSpT2TMDMrz7dxc4wv8WiJ1rzyOfuprka5Y2HCFDDqRCKH3I_dTVEYrlrFqmyEITrvJaSGC8lvY-JxoFvGjuCjq0zC1_x7OQCcaBu3jJFSpqsRaqOUWY9bUVzXUv0NFEkhZzYasEhMFgNmuvStol31pMDzub49r4mcDLPfnC6GZxsQZoaVP5EclHbRwUgbHWjCXhk"/>
                 <div class="absolute inset-0 p-4 pointer-events-none">
                   <div class="w-48 bg-surface-container/90 p-3 ghost-border">
-                    <div class="text-[10px] text-primary font-bold uppercase mb-2">Demand Signals</div>
+                    <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-2">Demand Signals</div>
                     <div class="space-y-2">
                       <div class="h-1 w-full bg-primary/20"></div>
                       <div class="h-1 w-2/3 bg-primary/20"></div>
@@ -62,8 +62,8 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                   </div>
                   <div class="absolute bottom-4 right-4 bg-surface-container/90 p-3 ghost-border">
-                    <div class="text-[10px] text-on-surface-variant font-bold uppercase">Forecast Sync</div>
-                    <div class="text-xl font-black text-on-surface">ACTIVE</div>
+                    <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant">Forecast Sync</div>
+                    <div class="font-mono font-light text-xl text-on-surface data-mono">Active</div>
                   </div>
                 </div>
               </div>
@@ -78,41 +78,41 @@ import Layout from '../layouts/Layout.astro';
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 class="text-3xl font-black uppercase tracking-tighter mb-6">The Problem: <span class="text-primary">The Costly Planning Gap</span></h2>
-            <p class="text-on-surface-variant font-medium leading-relaxed mb-8">
+            <h2 class="font-headline font-extrabold tracking-[-0.01em] mb-6">The costly planning gap</h2>
+            <p class="font-body font-normal text-on-surface-variant leading-[1.7] mb-8 max-w-prose">
               Between your SAP system and your actual supply chain decisions lies a massive gap. Right now, your team fills that gap by stitching together data by hand. When you supply multiple OEMs, manual planning breaks down.
             </p>
             <div class="space-y-6">
               <div class="flex gap-4 group">
-                <div class="h-10 w-1 bg-primary group-hover:w-2 transition-all"></div>
+                <div class="h-10 w-1 bg-primary group-hover:w-2 transition-all shrink-0"></div>
                 <div>
-                  <h4 class="font-bold uppercase tracking-tight text-on-surface text-sm">Mismatched Data</h4>
-                  <p class="text-xs text-outline">Every customer sends demand in different formats, cadences, and time horizons.</p>
+                  <h4 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface">Mismatched Data</h4>
+                  <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Every customer sends demand in different formats, cadences, and time horizons.</p>
                 </div>
               </div>
               <div class="flex gap-4 group">
-                <div class="h-10 w-1 bg-primary group-hover:w-2 transition-all"></div>
+                <div class="h-10 w-1 bg-primary group-hover:w-2 transition-all shrink-0"></div>
                 <div>
-                  <h4 class="font-bold uppercase tracking-tight text-on-surface text-sm">High-SKU Complexity</h4>
-                  <p class="text-xs text-outline">Managing thousands of part-customer-plant combinations crashes traditional spreadsheets.</p>
+                  <h4 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface">High-SKU Complexity</h4>
+                  <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Managing thousands of part-customer-plant combinations crashes traditional spreadsheets.</p>
                 </div>
               </div>
               <div class="flex gap-4 group">
-                <div class="h-10 w-1 bg-primary group-hover:w-2 transition-all"></div>
+                <div class="h-10 w-1 bg-primary group-hover:w-2 transition-all shrink-0"></div>
                 <div>
-                  <h4 class="font-bold uppercase tracking-tight text-on-surface text-sm">Constant Fire Drills</h4>
-                  <p class="text-xs text-outline">Unflagged demand shifts and missing data cause severe schedule volatility.</p>
+                  <h4 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface">Constant Fire Drills</h4>
+                  <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Unflagged demand shifts and missing data cause severe schedule volatility.</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="bg-surface-container-highest p-8 ghost-border">
             <div class="aspect-video bg-[#0B0E14] flex flex-col items-center justify-center p-6 border border-outline-variant/30 relative overflow-hidden">
-              <div class="text-[10px] font-black uppercase text-error mb-4">CRITICAL SYSTEM OVERLOAD</div>
+              <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-error mb-4">Critical: System Overload</div>
               <div class="w-full h-2 bg-error-container relative mb-2">
                 <div class="absolute inset-y-0 left-0 bg-error w-full animate-pulse"></div>
               </div>
-              <div class="text-[9px] font-bold text-outline uppercase tracking-widest">Excel Memory Limit Exceeded | Manual Override Required</div>
+              <div class="font-mono text-[10px] text-on-surface-variant uppercase tracking-[0.18em]">Excel memory limit exceeded — manual override required</div>
             </div>
           </div>
         </div>
@@ -123,43 +123,43 @@ import Layout from '../layouts/Layout.astro';
     <section class="py-24 px-6 lg:px-12 bg-surface">
       <div class="max-w-7xl mx-auto">
         <div class="mb-16">
-          <h2 class="text-3xl font-black uppercase tracking-tighter mb-4">The Solution: <span class="text-primary">An Automated Planning Layer</span></h2>
-          <p class="text-on-surface-variant font-medium leading-relaxed max-w-3xl">
+          <h2 class="font-headline font-extrabold tracking-[-0.01em] mb-4">An automated planning layer</h2>
+          <p class="font-body font-normal text-on-surface-variant leading-[1.7] max-w-prose">
             Ceres replaces your manual spreadsheets. We bring customer demand signals, ERP data, and historical demand into one intelligent system.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
             <span class="material-symbols-outlined text-primary mb-6">input</span>
-            <h3 class="text-sm font-bold uppercase tracking-tight text-on-surface mb-3">Ingest &amp; Normalize</h3>
-            <p class="text-xs text-on-surface-variant leading-relaxed mb-6 flex-grow">
+            <h3 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface mb-3">Ingest &amp; Normalize</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Automatically pull in EDI signals, customer releases, and SAP snapshots to create one unified baseline.
             </p>
-            <div class="text-[9px] font-black text-primary uppercase tracking-widest border-t border-outline-variant/20 pt-4">Outcome: Stop manually reconciling files</div>
+            <div class="font-mono text-[10px] text-primary uppercase tracking-[0.18em] border-t border-outline-variant/20 pt-4">Outcome: stop manually reconciling files</div>
           </div>
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
             <span class="material-symbols-outlined text-primary mb-6">warning</span>
-            <h3 class="text-sm font-bold uppercase tracking-tight text-on-surface mb-3">Catch Exceptions</h3>
-            <p class="text-xs text-on-surface-variant leading-relaxed mb-6 flex-grow">
+            <h3 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface mb-3">Catch Exceptions</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Automatically detect new part numbers, double plannings, and anomalous demand shifts that human eyes miss.
             </p>
-            <div class="text-[9px] font-black text-primary uppercase tracking-widest border-t border-outline-variant/20 pt-4">Outcome: Surface critical changes instantly</div>
+            <div class="font-mono text-[10px] text-primary uppercase tracking-[0.18em] border-t border-outline-variant/20 pt-4">Outcome: surface critical changes instantly</div>
           </div>
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
             <span class="material-symbols-outlined text-primary mb-6">psychology</span>
-            <h3 class="text-sm font-bold uppercase tracking-tight text-on-surface mb-3">AI Forecasting</h3>
-            <p class="text-xs text-on-surface-variant leading-relaxed mb-6 flex-grow">
+            <h3 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface mb-3">AI Forecasting</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Build accurate forecasts across every active part, customer, and plant combination at massive scale.
             </p>
-            <div class="text-[9px] font-black text-primary uppercase tracking-widest border-t border-outline-variant/20 pt-4">Outcome: Never skip a planning period</div>
+            <div class="font-mono text-[10px] text-primary uppercase tracking-[0.18em] border-t border-outline-variant/20 pt-4">Outcome: never skip a planning period</div>
           </div>
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
             <span class="material-symbols-outlined text-primary mb-6">science</span>
-            <h3 class="text-sm font-bold uppercase tracking-tight text-on-surface mb-3">Test Scenarios</h3>
-            <p class="text-xs text-on-surface-variant leading-relaxed mb-6 flex-grow">
+            <h3 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface mb-3">Test Scenarios</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Model the exact operational impact of new tariffs, logistics disruptions, or material shortages.
             </p>
-            <div class="text-[9px] font-black text-primary uppercase tracking-widest border-t border-outline-variant/20 pt-4">Outcome: Protect margins from chaos</div>
+            <div class="font-mono text-[10px] text-primary uppercase tracking-[0.18em] border-t border-outline-variant/20 pt-4">Outcome: protect margins from chaos</div>
           </div>
         </div>
       </div>
@@ -170,25 +170,25 @@ import Layout from '../layouts/Layout.astro';
       <div class="max-w-7xl mx-auto">
         <div class="flex items-end justify-between mb-12">
           <div>
-            <h2 class="text-3xl font-black uppercase tracking-tighter mb-2">The Outcomes: <span class="text-primary">Measurable ROI</span></h2>
+            <h2 class="font-headline font-extrabold tracking-[-0.01em] mb-2">Measurable ROI</h2>
             <div class="h-1 w-24 bg-primary"></div>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-surface-container-low p-8 border border-outline-variant/20">
-            <div class="text-4xl font-black text-on-surface mb-4">95%</div>
-            <h4 class="text-sm font-bold uppercase tracking-widest text-primary mb-3">Less Analysis Time</h4>
-            <p class="text-xs text-on-surface-variant leading-relaxed">Eliminate the manual grind of manipulating EDI files and weekly snapshots.</p>
+            <div class="font-mono font-light text-4xl text-on-surface mb-4 data-mono">95%</div>
+            <h4 class="font-headline font-bold uppercase tracking-[0.015em] text-primary mb-3">Less Analysis Time</h4>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Eliminate the manual grind of manipulating EDI files and weekly snapshots.</p>
           </div>
           <div class="bg-surface-container-low p-8 border border-outline-variant/20">
-            <div class="text-4xl font-black text-on-surface mb-4">2.5x</div>
-            <h4 class="text-sm font-bold uppercase tracking-widest text-primary mb-3">Planner Productivity</h4>
-            <p class="text-xs text-on-surface-variant leading-relaxed">Scale your operations and handle massive SKU complexity without adding headcount.</p>
+            <div class="font-mono font-light text-4xl text-on-surface mb-4 data-mono">2.5x</div>
+            <h4 class="font-headline font-bold uppercase tracking-[0.015em] text-primary mb-3">Planner Productivity</h4>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Scale your operations and handle massive SKU complexity without adding headcount.</p>
           </div>
           <div class="bg-surface-container-low p-8 border border-outline-variant/20">
-            <div class="text-4xl font-black text-on-surface mb-4">0</div>
-            <h4 class="text-sm font-bold uppercase tracking-widest text-primary mb-3">Costly Surprises</h4>
-            <p class="text-xs text-on-surface-variant leading-relaxed">Spot changes before they create expedited air freight, excess inventory, or capacity problems.</p>
+            <div class="font-mono font-light text-4xl text-on-surface mb-4 data-mono">0</div>
+            <h4 class="font-headline font-bold uppercase tracking-[0.015em] text-primary mb-3">Costly Surprises</h4>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Spot changes before they create expedited air freight, excess inventory, or capacity problems.</p>
           </div>
         </div>
       </div>
@@ -198,23 +198,19 @@ import Layout from '../layouts/Layout.astro';
     <section class="py-24 px-6 lg:px-12 bg-surface-container-lowest">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
         <div class="w-full md:w-1/2">
-          <img alt="High-precision manufacturing" class="w-full grayscale brightness-50 contrast-125 ghost-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVxOCb7zEnrL4jXs6pqxWLcqNmAPgeMvN3Ciykpu1eeKMtEuCgonvu5ZcTyfMeX-YBerpNzJfp5zLAn4-ZNA5yLZ9g1rx64yZHAftLLe72mZy6XWr5gGcxwsDFaAKNi2tvZMlXEX4FHl76JFVJydW781mCGICDwaWrnkKgWLBP0XO6wIGk977JObDeWq3A1PXfqTJlZShxpf3Fe-eWYxYF4ITHkzNPvIfpsy1tRJ0ygZxPqTfr6alSj7vQVd6EvWI-PueBJ3Li1MQ"/>
+          <img alt="High-precision manufacturing" class="w-full grayscale brightness-50 contrast-125 ghost-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVxOCb7zEnrL4jXs6pqxWLcqNmAPgeMvN3Ciykpu1eeKMtEuCgonvu5ZcxTyfMeX-YBerpNzJfp5zLAn4-ZNA5yLZ9g1rx64yZHAftLLe72mZy6XWr5gGcxwsDFaAKNi2tvZMlXEX4FHl76JFVJydW781mCGICDwaWrnkKgWLBP0XO6wIGk977JObDeWq3A1PXfqTJlZShxpf3Fe-eWYxYF4ITHkzNPvIfpsy1tRJ0ygZxPqTfr6alSj7vQVd6EvWI-PueBJ3Li1MQ"/>
         </div>
         <div class="w-full md:w-1/2 space-y-8">
-          <h2 class="text-4xl font-black uppercase tracking-tighter text-on-surface leading-none">
-            THE FIT: <br/> <span class="text-primary">BUILT FOR COMPLEXITY</span>
+          <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none">
+            Built for complexity
           </h2>
-          <p class="text-on-surface-variant font-medium leading-relaxed">
+          <p class="font-body font-normal text-on-surface-variant leading-[1.7] max-w-prose">
             Ceres is not a generic tool. It is designed specifically for supplier-side manufacturers managing multiple large customers, unpredictable demand formats, and extreme part-count complexity.
           </p>
           <div class="space-y-4">
             <div class="flex items-center gap-4 bg-surface-container-low p-4">
               <span class="material-symbols-outlined text-outline">hub</span>
-              <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface">Multi-OEM Environment Native</span>
-            </div>
-            <div class="hidden flex items-center gap-4 bg-surface-container-low p-4">
-              <span class="material-symbols-outlined text-outline">precision_manufacturing</span>
-              <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface">Tier 1 &amp; 2 supplier compatible</span>
+              <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface">Multi-OEM Environment Native</span>
             </div>
           </div>
         </div>
@@ -224,11 +220,11 @@ import Layout from '../layouts/Layout.astro';
     <!-- FINAL CTA -->
     <section class="py-32 px-6 bg-[#0B0E14] text-center border-t border-outline-variant/10">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl lg:text-5xl font-black tracking-tighter uppercase mb-6 leading-none">Close the gap between <br/> your ERP and your decisions.</h2>
-        <p class="text-on-surface-variant font-medium text-lg mb-12 max-w-2xl mx-auto">See how Ceres helps planning teams move faster, catch issues earlier, and make better decisions.</p>
+        <h2 class="font-headline font-extrabold tracking-[-0.01em] mb-6 leading-none">Close the gap between your ERP and your decisions.</h2>
+        <p class="font-body font-normal text-on-surface-variant text-lg mb-12 max-w-prose mx-auto leading-[1.7]">See how Ceres helps planning teams move faster, catch issues earlier, and make better decisions.</p>
         <div class="flex flex-col md:flex-row justify-center gap-4">
-          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary px-12 py-5 font-black uppercase tracking-tighter text-lg hover:brightness-110 active:scale-95 transition-all">
-            See Ceres in Action — Book a Demo
+          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary px-12 py-5 font-mono text-[11px] tracking-[0.14em] uppercase hover:brightness-110 active:scale-95 transition-all inline-block">
+            See Ceres in action — Book a Demo
           </a>
         </div>
       </div>
