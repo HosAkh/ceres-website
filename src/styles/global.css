@@ -48,13 +48,19 @@ body {
     font-size: clamp(1rem, 0.5vw + 0.75rem, 1.25rem);
     line-height: 1.2;
     letter-spacing: 0.015em;
-    text-transform: uppercase;
+    /* No global uppercase — h4/h5/h6 are used for both short labels
+       (add 'uppercase' class explicitly) and full sentences (questions,
+       statements) that must stay mixed case. */
   }
   p {
     font-family: 'Barlow', sans-serif;
     font-weight: 400;
     line-height: 1.7;
     letter-spacing: 0;
+    /* Hard cap at 65 characters per line — satisfies the ≤75 char/line
+       typographic rule at every font size. Use max-w-none to override
+       on elements that deliberately need wider flow. */
+    max-width: 65ch;
   }
   strong, b {
     font-weight: 500;
