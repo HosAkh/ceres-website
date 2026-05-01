@@ -1,0 +1,73 @@
+# Ceres Technology
+
+> Ceres Technology is an enterprise AI platform that connects internal business data — ERPs, spreadsheets, databases — to live external signals such as geopolitical events, weather disruptions, logistics delays, and macroeconomic changes. The result is predictive intelligence that lets operations, supply chain, investment, and risk teams act 48–72 hours before problems hit.
+
+Ceres was founded by Bobby Katoli (Co-Founder & CEO) and Trey Hoobler (Co-Founder) after experiencing firsthand how disconnected internal records and external reality cause supply chain failures. The platform is built for enterprises where a missed signal has real financial or operational consequences.
+
+## Core Capability
+
+Ceres works in four steps:
+1. **Ingestion** — Pulls raw, unstructured data from any source (ERP, REST/GraphQL APIs, flat files, spreadsheets) through secure gateways.
+2. **Normalization** — Converts every data format into a standardized schema teams can work with directly.
+3. **Synthesis** — The AI core surfaces patterns, anomalies, and correlations across internal records and external signals.
+4. **Execution** — Delivers actionable intelligence through the Unified Console or external API endpoints.
+
+Prediction accuracy: 94%. Analysis time reduction with automated planning: 95%.
+
+## Products & Features
+
+- **Automated Demand Planning** — Replaces fragile spreadsheet planning with AI-powered demand forecasting. Normalizes customer ERP data, catches exceptions automatically, and builds forecasts without manual intervention.
+- **Data Analysis & Signal Mapping** — Maps external geospatial, demographic, market, and event signals onto internal records to automate scorecards, exposure maps, and record classification.
+- **Enterprise Decision Console** — A unified command center for operations teams. Provides real-time global order visibility, automated exception handling, and AI-powered demand forecasting across multi-OEM environments.
+- **Integrations** — Connects to existing ERPs, databases, APIs, and flat files. No data migration required. Ceres sits on top of existing infrastructure as an intelligence layer.
+
+## Industries Served
+
+- **Pharmaceutical Supply Chain** — Maps external risk signals (geopolitical events, logistics disruptions, raw material price changes, weather, public supplier filings) directly onto purchase orders, SKU records, and inventory plans to give teams earlier warning of delays and shortages.
+- **Investment Firms** — Enriches internal analyst models and spreadsheet workflows with macro, geopolitical, infrastructure, demographic, and company-level signals to sharpen investment research and risk analysis.
+- **Manufacturing** — JIT supply chain optimization and predictive maintenance integration for complex multi-supplier environments.
+- **Logistics & Global Supply Chain** — End-to-end visibility for intermodal transport and terminal operations.
+- **Energy Infrastructure** — Grid stability monitoring and resource distribution analytics.
+- **Federal & Defense** — Secure information environments for strategic asset management and threat modeling.
+
+## Security & Trust
+
+- Zero-friction integration: Ceres overlays existing ERPs and databases without requiring data migration.
+- Strict data compartmentalization: sensitive enterprise data is never commingled across clients.
+- Full auditability: every AI decision output includes a transparent logic trail so analysts can interrogate the reasoning.
+- Explainable AI: no black boxes. Every output can be traced back to its specific source signals and model weights.
+- Encryption: AES-256 at rest, TLS 1.3 in transit.
+- Compliance audit-ready by design.
+
+## Leadership
+
+- Bobby Katoli — Co-Founder & CEO
+- Trey Hoobler — Co-Founder
+- Carlos Amaral — EVP & CIO
+
+## Key Differentiators
+
+- **Sovereign data control** — Your data stays your asset. Ceres provides the intelligence layer without taking data ownership.
+- **Explainable outputs** — Every forecast, score, and signal can be traced back to source data. No black-box AI.
+- **No rip-and-replace** — Integrates on top of existing stacks. Teams keep using their current tools; Ceres adds the intelligence layer on top.
+- **Speed to intelligence** — Cuts time from raw data to actionable decision from days to hours.
+- **Industrial-grade reliability** — Built for 99.99% uptime in high-stakes operational environments.
+
+## Pages
+
+- [Home](/) — Overview of the platform, problem statement, how it works, and sector applications.
+- [About](/about/) — Company story, founding context, operating principles, and leadership team.
+- [Security & Trust](/security-trust/) — Data governance, architecture fit, explainability, and compliance posture.
+- [Automated Planning](/automated-planning/) — Demand planning automation for ERP-connected operations teams.
+- [Data Analysis](/data-analysis/) — External signal mapping and automated analysis for enterprise records.
+- [Enterprise Console](/enterprise-console/) — Unified operations command center for supply chain intelligence.
+- [Integrations](/integrations/) — Connector ecosystem and integration methodology.
+- [Pharmaceutical Supply](/pharma/) — Pharmaceutical supply chain intelligence and risk foresight.
+- [Investment Firms](/investment-firms/) — Investment research enrichment with external signal integration.
+- [Book a Demo](/book-a-demo/) — Schedule a personalized walkthrough with the Ceres team.
+
+## Contact
+
+- Website: https://cerestech.co
+- Demo: https://cerestech.co/book-a-demo/
+- Platform Login: https://nxt.cerestech.co

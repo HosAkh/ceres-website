@@ -1,24 +1,38 @@
-import { useState } from 'react';
-
-const navLinkClass =
-  "font-['DM_Mono'] text-[11px] tracking-[0.08em] uppercase text-[#8A8D91] hover:text-white transition-colors";
+import { useState, useEffect } from 'react';
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentPath, setCurrentPath] = useState('');
   const baseUrl = import.meta.env.BASE_URL;
   const withBase = (path: string) => `${baseUrl.replace(/\/?$/, '/')}${path.replace(/^\/+/, '')}`;
 
-  const navLinks = [
-    { label: 'Home', path: '' },
-    { label: 'About Us', path: 'about/' },
-    { label: 'Integrations', path: 'integrations/' },
-    { label: 'Security & Trust', path: 'security-trust/' },
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
+
+  const isActive = (path: string) => {
+    if (!currentPath) return false;
+    if (path === '') {
+      return currentPath === '/' || currentPath === baseUrl || currentPath === baseUrl.replace(/\/$/, '') + '/';
+    }
+    return currentPath.includes(path.replace(/\/$/, ''));
+  };
+
+  const navLinkBase = "font-['DM_Mono'] text-[11px] tracking-[0.08em] uppercase transition-colors";
+  const navLinkClass = (path: string) =>
+    `${navLinkBase} ${isActive(path) ? 'text-[#F37221]' : 'text-[#8A8D91] hover:text-white'}`;
+
+  const dropdownLinks = [
     { label: 'Pharmaceutical Supply', path: 'pharma/' },
     { label: 'Investment Firms', path: 'investment-firms/' },
     { label: 'Enterprise Console', path: 'enterprise-console/' },
     { label: 'Data Analysis', path: 'data-analysis/' },
     { label: 'Automated Planning', path: 'automated-planning/' },
-    { label: 'Contact Us', path: 'book-a-demo/' },
+  ];
+
+  const mobileLinks = [
+    ...dropdownLinks,
+    { label: 'Company', path: 'about/' },
   ];
 
   return (
@@ -35,28 +49,31 @@ export default function Navigation() {
         {/* Desktop nav */}
         <div className="hidden md:flex gap-8 items-center">
           <div className="relative group">
-            <button className={`${navLinkClass} flex items-center gap-2`}>
+            <button className={`${navLinkBase} text-[#8A8D91] hover:text-white flex items-center gap-2`}>
               EXAMPLE CASES
               <span className="material-symbols-outlined text-[14px]">expand_more</span>
             </button>
             <div className="absolute left-0 mt-0 w-72 bg-[#1D2026] border border-[#363940] hidden group-hover:block z-50">
-              {navLinks.map(({ label, path }) => (
-                <a key={path} href={withBase(path)} className={`block px-4 py-2 ${navLinkClass} hover:bg-[#363940]`}>
+              {dropdownLinks.map(({ label, path }) => (
+                <a key={path} href={withBase(path)} className={`block px-4 py-2 ${navLinkClass(path)} hover:bg-[#363940]`}>
                   {label}
                 </a>
               ))}
             </div>
           </div>
-          <a href={withBase('integrations/')} className={navLinkClass}>
+          <a href={withBase('security-trust/')} className={navLinkClass('security-trust/')}>
+            Security &amp; Trust
+          </a>
+          <a href={withBase('integrations/')} className={navLinkClass('integrations/')}>
             Integrations
           </a>
-          <a href={withBase('about/')} className={navLinkClass}>
+          <a href={withBase('about/')} className={navLinkClass('about/')}>
             Company
           </a>
         </div>
 
         <div className="flex items-center gap-4">
-          <a href="https://nxt.cerestech.co" className={navLinkClass}>
+          <a href="https://nxt.cerestech.co" className={`${navLinkBase} text-[#8A8D91] hover:text-white`}>
             Login
           </a>
           <a
@@ -82,11 +99,11 @@ export default function Navigation() {
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-[#0B0E14] pt-14 overflow-y-auto md:hidden">
           <div className="flex flex-col px-6 py-8 gap-1">
-            {navLinks.map(({ label, path }) => (
+            {mobileLinks.map(({ label, path }) => (
               <a
                 key={path}
                 href={withBase(path)}
-                className="block py-3 border-b border-[#1D2026] font-['DM_Mono'] text-[12px] tracking-[0.08em] uppercase text-[#8A8D91] hover:text-white transition-colors"
+                className={`block py-3 border-b border-[#1D2026] font-['DM_Mono'] text-[12px] tracking-[0.08em] uppercase transition-colors ${isActive(path) ? 'text-[#F37221]' : 'text-[#8A8D91] hover:text-white'}`}
                 onClick={() => setMenuOpen(false)}
               >
                 {label}

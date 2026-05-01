@@ -5,9 +5,57 @@ import '../styles/global.css';
 
 interface Props {
   title?: string;
+  description?: string;
+  ogImage?: string;
 }
 
-const { title = 'CERES TECHNOLOGY | INDUSTRIAL DATA SYSTEMS' } = Astro.props;
+const {
+  title = 'Ceres Technology | AI Supply Chain Intelligence Platform',
+  description = 'Ceres connects your ERP and supply chain data to live external signals so your team can predict disruptions before they hit. Enterprise AI with 94% forecast accuracy.',
+  ogImage = 'https://lh3.googleusercontent.com/aida/ADBb0uiHWVC-l6diLbBhrXEhZnVxage5Id5PwQ6JSHPa7L6CQ0zuu4vdGcsm9yJmfE9zDw9xLpytU76UkzUEnLBio1PS__PhKf1d0UE3qGV3g356m07_EV4aqPD3AmexYvCvitHt5AsjhpGh7wZLvbEhsE-_BVtb0UfZi89CDnPDi80QggrRUBRXxAgEoCFKeMtxMz6QLMh6BZsTKtjfXd1okRy7r-sc_RUZX-bENTuKxCwrbC443OFhRflUHsN9RzbivuQDTK7ih0EJ',
+} = Astro.props;
+
+const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Ceres Technology',
+  description: 'Enterprise AI platform that connects internal ERP and supply chain data to live external signals for predictive supply chain intelligence. 94% forecast accuracy.',
+  url: 'https://cerestech.co',
+  logo: ogImage,
+  founder: [
+    { '@type': 'Person', name: 'Bobby Katoli', jobTitle: 'Co-Founder & CEO' },
+    { '@type': 'Person', name: 'Trey Hoobler', jobTitle: 'Co-Founder' },
+  ],
+  employee: [
+    { '@type': 'Person', name: 'Carlos Amaral', jobTitle: 'EVP & CIO' },
+  ],
+  knowsAbout: [
+    'Supply Chain Intelligence',
+    'Predictive Analytics',
+    'Enterprise AI',
+    'Demand Planning Automation',
+    'Risk Modeling',
+    'ERP Integration',
+    'Pharmaceutical Supply Chain',
+    'Investment Research Intelligence',
+  ],
+  areaServed: 'Worldwide',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    url: 'https://cerestech.co/book-a-demo/',
+    contactType: 'sales',
+  },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Ceres Technology',
+  url: 'https://cerestech.co',
+  description: 'Enterprise AI supply chain intelligence platform.',
+};
 ---
 
 <!DOCTYPE html>
@@ -16,6 +64,28 @@ const { title = 'CERES TECHNOLOGY | INDUSTRIAL DATA SYSTEMS' } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ceres Technology" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    {canonicalURL && <meta property="og:url" content={canonicalURL} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500&family=DM+Mono:wght@300;400&display=swap"
       rel="stylesheet"

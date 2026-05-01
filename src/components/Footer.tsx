@@ -6,16 +6,8 @@ export default function Footer() {
 
   const sections = [
     {
-      title: "Solutions",
-      links: ["Investment Firms", "Manufacturing", "Healthcare", "Marketers", "Insurers"],
-    },
-    {
       title: "Platform",
       links: ["Intelligence", "Risk Modeling", "Integrations", "Security"],
-    },
-    {
-      title: "Company",
-      links: ["About Us", "Leadership", "Careers"],
     },
   ];
 
@@ -23,7 +15,7 @@ export default function Footer() {
     <footer className="bg-[#011E24] pt-24 pb-12 px-8 lg:px-16 border-t border-white/5">
       <div className="max-w-screen-2xl mx-auto">
         {/* Top Section: Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 mb-20">
           {/* Brand & Info Column */}
           <div className="lg:col-span-1 flex flex-col gap-8">
             <img
