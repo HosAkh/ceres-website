@@ -103,21 +103,23 @@ import Layout from '../layouts/Layout.astro';
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="md:col-span-2 bg-surface-container p-8 border border-outline-variant/30 group hover:bg-surface-container-high transition-colors">
+          <div class="md:col-span-2 bg-surface-container p-8 border border-outline-variant/30 group hover:bg-surface-container-high transition-colors overflow-hidden">
             <span class="material-symbols-outlined text-primary text-3xl mb-6 block">hub</span>
             <h3 class="text-xl font-headline font-bold text-white tracking-[0.015em] mb-3">Model Integration Engine</h3>
             <p class="font-body font-normal text-on-surface-variant mb-6 text-sm leading-[1.7]">
               Feed structured external signals directly into your proprietary research models via API, eliminating manual data wrangling.
             </p>
-            <div class="h-32 border border-outline-variant/20 bg-surface-container-lowest flex items-center justify-between p-4 font-mono text-[10px] text-outline">
-              <div class="flex flex-col gap-2">
-                <span class="bg-surface px-2 py-1 border border-outline-variant/30">MACRO_DATA</span>
-                <span class="bg-surface px-2 py-1 border border-outline-variant/30">GEO_EVENTS</span>
+            <div class="overflow-x-auto">
+              <div class="min-w-[360px] h-32 border border-outline-variant/20 bg-surface-container-lowest flex items-center justify-between p-4 font-mono text-[10px] text-outline">
+                <div class="flex flex-col gap-2 shrink-0">
+                  <span class="bg-surface px-2 py-1 border border-outline-variant/30">MACRO_DATA</span>
+                  <span class="bg-surface px-2 py-1 border border-outline-variant/30">GEO_EVENTS</span>
+                </div>
+                <span class="material-symbols-outlined text-outline shrink-0">arrow_forward</span>
+                <div class="border border-primary text-primary px-4 py-8 bg-primary/5 shrink-0">CERES_API</div>
+                <span class="material-symbols-outlined text-outline shrink-0">arrow_forward</span>
+                <div class="bg-surface px-4 py-8 border border-outline-variant/30 text-white shrink-0">INTERNAL_MODELS</div>
               </div>
-              <span class="material-symbols-outlined text-outline">arrow_forward</span>
-              <div class="border border-primary text-primary px-4 py-8 bg-primary/5">CERES_API</div>
-              <span class="material-symbols-outlined text-outline">arrow_forward</span>
-              <div class="bg-surface px-4 py-8 border border-outline-variant/30 text-white">INTERNAL_MODELS</div>
             </div>
           </div>
           <div class="bg-surface-container p-8 border border-outline-variant/30 group hover:bg-surface-container-high transition-colors flex flex-col justify-between">
