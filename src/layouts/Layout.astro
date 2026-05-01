@@ -68,6 +68,11 @@ const websiteSchema = {
     <meta name="robots" content="index, follow" />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href={`${import.meta.env.BASE_URL}icons/favicon-32x32.png`} />
+    <link rel="icon" type="image/png" sizes="192x192" href={`${import.meta.env.BASE_URL}icons/favicon-192x192.png`} />
+    <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}icons/apple-touch-icon.png`} />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Ceres Technology" />
@@ -100,22 +105,35 @@ const websiteSchema = {
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
       rel="stylesheet"
     />
-    <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PNFNBQRT');</script>
-    <!-- End Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JQLKBQXHKB"></script>
+    <!-- Google Tag Manager — dataLayer queues events before GTM loads -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-JQLKBQXHKB');
     </script>
+    <!-- GTM and GA4 scripts deferred to after page load so they never block rendering -->
+    <script is:inline>
+      function loadAnalytics() {
+        // GTM
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PNFNBQRT');
+        // GA4
+        var s=document.createElement('script');
+        s.async=true;
+        s.src='https://www.googletagmanager.com/gtag/js?id=G-JQLKBQXHKB';
+        document.head.appendChild(s);
+      }
+      if (document.readyState === 'complete') {
+        loadAnalytics();
+      } else {
+        window.addEventListener('load', loadAnalytics);
+      }
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body class="selection:bg-primary selection:text-on-primary">
     <!-- Google Tag Manager (noscript) -->
