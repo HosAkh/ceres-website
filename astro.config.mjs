@@ -2,13 +2,15 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
-const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+// Use a custom flag so Cloudflare Pages builds (which also run in CI)
+// correctly get base '/' instead of the GitHub Pages sub-path.
+const forGitHubPages = process.env.DEPLOY_FOR_GITHUB_PAGES === 'true';
 const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? '';
 const owner = process.env.GITHUB_REPOSITORY_OWNER ?? '';
 
 export default defineConfig({
-  site: isGitHubActions && owner ? `https://${owner}.github.io` : 'https://cerestech.co',
-  base: isGitHubActions && repo ? `/${repo}` : '/',
+  site: forGitHubPages && owner ? `https://${owner}.github.io` : 'https://cerestech.co',
+  base: forGitHubPages && repo ? `/${repo}` : '/',
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),
