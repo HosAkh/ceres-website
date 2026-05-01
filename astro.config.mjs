@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
 
 const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
 const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? '';
@@ -13,6 +12,5 @@ export default defineConfig({
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),
-    sitemap(),
   ],
 });
