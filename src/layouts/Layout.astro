@@ -154,6 +154,14 @@ const websiteSchema = {
     <Navigation client:idle />
     <slot />
     <Footer />
-    <script src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js" defer></script>
+    <!-- Sienna accessibility widget: desktop only (768px+) -->
+    <script is:inline>
+      if (window.innerWidth >= 768) {
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js';
+        s.defer = true;
+        document.body.appendChild(s);
+      }
+    </script>
   </body>
 </html>
