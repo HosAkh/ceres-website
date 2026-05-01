@@ -1,5 +1,6 @@
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const baseUrl = import.meta.env.BASE_URL;
 
   const linkClass =
     "font-nav text-[12px] tracking-[0.06em] uppercase text-slate-400 hover:text-primary transition-colors";
@@ -21,7 +22,9 @@ export default function Footer() {
             <img
               alt="Ceres Technology"
               className="h-10 w-auto self-start"
-              src="https://lh3.googleusercontent.com/aida/ADBb0uiHWVC-l6diLbBhrXEhZnVxage5Id5PwQ6JSHPa7L6CQ0zuu4vdGcsm9yJmfE9zDw9xLpytU76UkzUEnLBio1PS__PhKf1d0UE3qGV3g356m07_EV4aqPD3AmexYvCvitHt5AsjhpGh7wZLvbEhsE-_BVtb0UfZi89CDnPDi80QggrRUBRXxAgEoCFKeMtxMz6QLMh6BZsTKtjfXd1okRy7r-sc_RUZX-bENTuKxCwrbC443OFhRflUHsN9RzbivuQDTK7ih0EJ"
+              width="179"
+              height="70"
+              src={`${baseUrl}images/logo.png`}
             />
 
             <div className="flex flex-col gap-4">

@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
+import preact from '@astrojs/preact';
 import tailwind from '@astrojs/tailwind';
 
 // Use a custom flag so Cloudflare Pages builds (which also run in CI)
@@ -12,7 +12,7 @@ export default defineConfig({
   site: forGitHubPages && owner ? `https://${owner}.github.io` : 'https://cerestech.co',
   base: forGitHubPages && repo ? `/${repo}` : '/',
   integrations: [
-    react(),
+    preact({ compat: true }),
     tailwind({ applyBaseStyles: false }),
   ],
 });
