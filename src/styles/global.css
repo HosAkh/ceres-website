@@ -70,9 +70,6 @@ body {
   }
 }
 
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
 
 .machined-gradient {
   background: linear-gradient(145deg, #272a31 0%, #0b0e14 100%);

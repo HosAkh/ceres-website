@@ -2,6 +2,7 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import '../styles/global.css';
+import '../styles/fonts.css';
 
 interface Props {
   title?: string;
@@ -91,31 +92,9 @@ const websiteSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
-    <!-- Preconnect to external origins to save DNS + TLS round-trips -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preconnect for remaining third-party origins -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-    <!-- Fonts loaded non-blocking so they never delay FCP/LCP -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500&family=DM+Mono:wght@300;400&display=swap"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500&family=DM+Mono:wght@300;400&display=swap" />
-    </noscript>
-    <!-- Material Symbols restricted to single variation point (wght 400, FILL 0) -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" />
-    </noscript>
     <!-- Google Tag Manager — dataLayer queues events before GTM loads -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
