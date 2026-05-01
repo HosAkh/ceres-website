@@ -130,12 +130,13 @@ const websiteSchema = {
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNFNBQRT"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <Navigation client:idle />
+    <Navigation client:idle currentPath={Astro.url.pathname} />
     <slot />
     <Footer />
     <!-- Sienna accessibility widget: desktop only (768px+) -->
+    <!-- matchMedia does not trigger a layout flush; window.innerWidth does -->
     <script is:inline>
-      if (window.innerWidth >= 768) {
+      if (window.matchMedia('(min-width: 768px)').matches) {
         var s = document.createElement('script');
         s.src = 'https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js';
         s.defer = true;

@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-export default function Navigation() {
+interface Props {
+  currentPath?: string;
+}
+
+export default function Navigation({ currentPath = '' }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [currentPath, setCurrentPath] = useState('');
   const baseUrl = import.meta.env.BASE_URL;
   const withBase = (path: string) => `${baseUrl.replace(/\/?$/, '/')}${path.replace(/^\/+/, '')}`;
-
-  useEffect(() => {
-    setCurrentPath(window.location.pathname);
-  }, []);
 
   const isActive = (path: string) => {
     if (!currentPath) return false;
