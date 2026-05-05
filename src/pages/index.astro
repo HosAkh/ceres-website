@@ -96,31 +96,26 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="text-3xl font-headline font-extrabold uppercase tracking-[-0.01em] mb-4">How It Works</h2>
         <div class="h-1 w-24 bg-primary mx-auto"></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">hub</span>
-          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Unified Fabric</h3>
-          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Pulls data from any source — ERP, APIs, flat files — into one place.</p>
+          <span class="material-symbols-outlined text-primary mb-4 text-3xl">database</span>
+          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Data Vault</h3>
+          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Your EDI, ERP, and OEM data arrives already cleaned, mapped, and versioned. No manual uploads. No missing columns. Ready before your planner sits down.</p>
         </div>
         <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">analytics</span>
-          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Predictive Logic</h3>
-          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Forecasts supply chain disruptions 48–72 hours before they happen.</p>
+          <span class="material-symbols-outlined text-primary mb-4 text-3xl">notification_important</span>
+          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Exception Management</h3>
+          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Flags missing values, quantity changes, and part number mismatches before your planner finds them manually. Your team focuses on decisions, not detective work.</p>
         </div>
         <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">security</span>
-          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Hardened Security</h3>
-          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Encrypted data handling and access controls built for enterprise compliance.</p>
+          <span class="material-symbols-outlined text-primary mb-4 text-3xl">query_stats</span>
+          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Forecasting</h3>
+          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Trained on your historical data, back-tested before it touches live planning. 20% improvement in baseline accuracy. Low-confidence predictions are tagged — so you always know what to trust.</p>
         </div>
         <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">speed</span>
-          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Real-Time Processing</h3>
-          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Real-time processing of high-frequency transactional data without performance degradation.</p>
-        </div>
-        <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">settings_input_component</span>
-          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Modular Core</h3>
-          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Adds modules as your needs grow.</p>
+          <span class="material-symbols-outlined text-primary mb-4 text-3xl">model_training</span>
+          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">What-If Scenarios</h3>
+          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Test a tariff change, a demand ramp, or a supplier delay — and see the downstream impact before you commit. The waterfall view shows exactly where the change lands and by how much.</p>
         </div>
       </div>
     </section>
@@ -134,28 +129,28 @@ import Layout from '../layouts/Layout.astro';
             <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-mono font-light text-primary data-mono">01</div>
             <div>
               <h5 class="font-headline font-bold uppercase tracking-[0.015em] mb-2">We Move Fast</h5>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">What used to take two full days now runs in seconds. Alps Alpine's planning team went from manually reconciling EDI data across spreadsheets to getting results in a click. Bosch saw a 20% improvement in baseline forecasting accuracy within their first proof of concept.</p>
+              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">What used to take two days now runs in seconds. Alps Alpine went from manually reconciling spreadsheets to results in a click. Bosch hit 20% better forecast accuracy in their first proof of concept.</p>
             </div>
           </div>
           <div class="flex gap-6">
             <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-mono font-light text-primary data-mono">02</div>
             <div>
               <h5 class="font-headline font-bold uppercase tracking-[0.015em] mb-2">We Work Alongside Your Team</h5>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">We embed with your planners, learn your workflows, and build to your process — not a template. Alps Alpine's VP of Planning noted our responsiveness directly when presenting to his CEO. Send feedback Tuesday, see it implemented by Thursday.</p>
+              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">We embed with your planners, learn your workflow, and build to your process — not a template. When Alps Alpine's VP presented to his CEO, he called out our speed by name. Send feedback Tuesday. See it live by Thursday.</p>
             </div>
           </div>
           <div class="flex gap-6">
             <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-mono font-light text-primary data-mono">03</div>
             <div>
               <h5 class="font-headline font-bold uppercase tracking-[0.015em] mb-2">Results You Can Validate Yourself</h5>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">11x forecast improvement over existing methods. 99%+ accuracy on planning comparisons validated side-by-side against manual outputs. We show our work and you test it in your own data before anything goes live.</p>
+              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">11x forecast improvement over existing methods. 99%+ accuracy on planning comparisons — checked side-by-side against manual outputs. We show our work. You test it in your own data before anything goes live.</p>
             </div>
           </div>
           <div class="flex gap-6">
             <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-mono font-light text-primary data-mono">04</div>
             <div>
               <h5 class="font-headline font-bold uppercase tracking-[0.015em] mb-2">We Catch What's Slipping Through</h5>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">A $30K air freight bill from a missed supplier signal. A forecast that aged out before anyone noticed. A part number discrepancy buried in a spreadsheet. Ceres surfaces the alerts your current process buries — before they become line-stopping problems.</p>
+              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">A $30K air freight bill because no one flagged the supplier signal. A forecast that aged out before anyone looked. A part number buried in the wrong column. Ceres surfaces what your current process buries — before it stops the line.</p>
             </div>
           </div>
         </div>
@@ -193,14 +188,14 @@ import Layout from '../layouts/Layout.astro';
           <img loading="lazy" width="512" height="512" class="absolute inset-0 w-full h-full object-cover opacity-25" alt="Shipping container terminal at night" src={`${import.meta.env.BASE_URL}images/industry-logistics.jpg`} />
           <div class="relative z-10">
             <h4 class="text-xl font-headline font-bold uppercase tracking-[0.015em] mb-2">Tier 1 Automotive</h4>
-            <p class="text-sm font-body font-normal text-on-surface-variant max-w-md leading-[1.7]">OEM forecast reconciliation across multiplant networks by mapping purchase orders against real time supplier signals, helping teams flag shortages before they hit the line.</p>
+            <p class="text-sm font-body font-normal text-on-surface-variant max-w-md leading-[1.7]">OEM forecast reconciliation across multi-plant networks — mapping purchase orders against real-time supplier signals to flag shortages before they hit the line.</p>
           </div>
         </a>
         <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "pharma/" : import.meta.env.BASE_URL + "/pharma/"} class="bg-surface-container p-8 relative overflow-hidden flex flex-col justify-end group cursor-pointer">
           <img loading="lazy" width="512" height="512" class="absolute inset-0 w-full h-full object-cover opacity-25" alt="Robotic arm in manufacturing facility" src={`${import.meta.env.BASE_URL}images/industry-manufacturing.jpg`} />
           <div class="relative z-10">
             <h4 class="text-xl font-headline font-bold uppercase tracking-[0.015em] mb-2">Pharmaceuticals</h4>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Monitor API and raw material suppliers for disruption and pricing risk, with SKU level signal overlay to anticipate shortages before orders are impacted.</p>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Monitor API and raw material suppliers for disruption and pricing risk, with SKU-level signal overlay to anticipate shortages before orders are impacted.</p>
           </div>
         </a>
         <div class="bg-surface-container p-8 relative overflow-hidden flex flex-col justify-end">
@@ -216,7 +211,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="absolute inset-0 bg-black/30"></div>
           <div class="relative z-10">
             <h4 class="text-xl font-headline font-bold uppercase tracking-[0.015em] mb-2">Federal &amp; Defense</h4>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Map critical material supply chains against geopolitical and trade signals, and track supplier risk across layered, export controlled networks.</p>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Map critical material supply chains against geopolitical and trade signals, and track supplier risk across multi-tier, export-controlled networks.</p>
           </div>
         </div>
       </div>
