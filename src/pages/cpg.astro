@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="CPG Supply Chain Intelligence | Ceres Technology"
+  description="Forecast accuracy stuck at 50–55%? Ceres layers weather patterns, commodity prices, and market signals onto your CPG planning data so your commercial and supply chain teams can finally agree on the right number."
+>
+  <main class="w-full max-w-[1440px] mx-auto border-l border-r border-outline-variant/20">
+
+    <!-- HERO -->
+    <section class="relative px-6 py-24 md:py-32 lg:px-12 border-b border-outline-variant/20 bg-gradient-to-br from-surface-container-high to-surface-container-lowest">
+      <div class="max-w-4xl">
+        <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-6">Consumer Packaged Goods</p>
+        <h1 class="font-headline font-extrabold tracking-[-0.01em] mb-6 leading-none text-on-surface">
+          Break through the forecast accuracy ceiling that's costing you inventory every season
+        </h1>
+        <p class="font-body font-normal text-lg md:text-xl text-on-surface-variant max-w-3xl mb-8 leading-[1.7]">
+          Your commercial teams forecast high to stay safe. Your supply chain locks in inventory to match. By August the gap is visible — and the cost is already there. Ceres layers weather patterns, commodity prices, and market signals onto your planning data so both sides can finally work from the same number.
+        </p>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary hover:bg-primary-fixed text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 transition-colors inline-flex items-center gap-2 group">
+            Book a Demo
+            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none hidden lg:block" style="background-image: repeating-linear-gradient(90deg, #45474b 0px, #45474b 1px, transparent 1px, transparent 40px), repeating-linear-gradient(0deg, #45474b 0px, #45474b 1px, transparent 1px, transparent 40px);"></div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 border-b border-outline-variant/20 bg-surface">
+      <div class="lg:col-span-5 p-6 lg:p-12 border-b lg:border-b-0 lg:border-r border-outline-variant/20 flex flex-col justify-center">
+        <h2 class="text-2xl md:text-3xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
+          Your ERP has three months of history. Your planners have five years of spreadsheets. Neither tells you the season shifted.
+        </h2>
+        <p class="text-sm md:text-base font-body font-normal text-on-surface-variant leading-[1.7]">
+          Commercial teams forecast top-down from last year's number plus a growth target. Supply chain adjusts bottom-up based on what they can get. By the time both sides agree, inventory is already locked in — and the year hasn't started. When monsoon timing shifts or commodity costs spike, no one sees it until August, and the working capital is already spent.
+        </p>
+      </div>
+      <div class="lg:col-span-7 p-6 lg:p-12 bg-surface-container-low">
+        <h3 class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-6 flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">sensors</span>
+          External Signals Your Planning Data Is Missing
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="flex items-start gap-3 p-4 bg-surface-container border border-outline-variant/20">
+            <span class="material-symbols-outlined text-on-surface-variant">water_drop</span>
+            <span class="text-sm font-medium text-on-surface">Monsoon and rainfall pattern shifts</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-surface-container border border-outline-variant/20">
+            <span class="material-symbols-outlined text-on-surface-variant">price_change</span>
+            <span class="text-sm font-medium text-on-surface">Fertilizer and commodity price movement</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-surface-container border border-outline-variant/20">
+            <span class="material-symbols-outlined text-on-surface-variant">agriculture</span>
+            <span class="text-sm font-medium text-on-surface">Crop shift and planting conditions</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-surface-container border border-outline-variant/20">
+            <span class="material-symbols-outlined text-on-surface-variant">public</span>
+            <span class="text-sm font-medium text-on-surface">Geopolitical and trade disruption</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-surface-container border border-outline-variant/20">
+            <span class="material-symbols-outlined text-on-surface-variant">location_on</span>
+            <span class="text-sm font-medium text-on-surface">Territory-level demand variation</span>
+          </div>
+          <div class="flex items-start gap-3 p-4 bg-surface-container border border-outline-variant/20">
+            <span class="material-symbols-outlined text-on-surface-variant">local_gas_station</span>
+            <span class="text-sm font-medium text-on-surface">Oil and feedstock cost volatility</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW CERES HELPS -->
+    <section class="p-6 lg:p-12 border-b border-outline-variant/20 bg-surface-container-lowest">
+      <div class="max-w-4xl mb-12">
+        <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
+          Three things your planning team can do with Ceres that they can't do in Excel
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="p-6 bg-surface-container border-l-2 border-primary hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-primary mb-4 text-3xl">balance</span>
+          <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em] mb-2">Forecast Reconciliation</h4>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Connect your commercial forecast to a signal-adjusted baseline. See where the two diverge, why it's happening, and which SKUs are most at risk before inventory decisions are made.</p>
+        </div>
+        <div class="p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-on-surface-variant mb-4 text-3xl">wb_sunny</span>
+          <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em] mb-2">Seasonal Signal Monitoring</h4>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Monsoon shifts, temperature anomalies, and crop conditions mapped to your SKUs and sales territories — automatically. Know when this season looks different from last year before you're already producing for it.</p>
+        </div>
+        <div class="p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-on-surface-variant mb-4 text-3xl">fact_check</span>
+          <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em] mb-2">Explainable Outputs</h4>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Give planners the analysis to walk into a commercial review and defend a number. Every recommendation shows the signal behind it — data your commercial team can see and respond to.</p>
+        </div>
+      </div>
+      <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
+        Schedule a Walkthrough
+        <span class="material-symbols-outlined text-sm">calendar_today</span>
+      </a>
+    </section>
+
+    <!-- COMMON WORKFLOWS -->
+    <section class="p-6 lg:p-12 border-b border-outline-variant/20 bg-surface">
+      <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-8">Common Workflows</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
+
+        <!-- Large featured card -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 p-6 bg-surface-container-low border border-outline-variant/20 relative overflow-hidden group">
+          <div class="absolute inset-0 bg-gradient-to-br from-surface-container-high/50 to-transparent z-0"></div>
+          <div class="relative z-10 h-full flex flex-col justify-between">
+            <div>
+              <span class="material-symbols-outlined text-primary mb-2 text-2xl">manage_search</span>
+              <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Over-Forecast Detection</h3>
+              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">When commercial teams ask for 120 to feel safe getting 100, your supply chain ends up holding the excess. Ceres surfaces the divergence between commercial targets and signal-adjusted demand before the production decision is made — not after inventory is locked in.</p>
+            </div>
+            <!-- Pseudo divergence viz -->
+            <div class="mt-6 space-y-2">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-[10px] text-on-surface-variant w-28 shrink-0">Commercial target</span>
+                <div class="h-2 bg-primary/30 rounded-sm flex-1"></div>
+                <span class="font-mono text-[10px] text-primary">+24%</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-[10px] text-on-surface-variant w-28 shrink-0">Signal baseline</span>
+                <div class="h-2 bg-secondary-container rounded-sm" style="width: 64%"></div>
+                <span class="font-mono text-[10px] text-on-surface-variant">baseline</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-[10px] text-error w-28 shrink-0">Gap flagged</span>
+                <div class="h-2 bg-error/40 border-l-2 border-error rounded-sm" style="width: 38%"></div>
+                <span class="font-mono text-[10px] text-error">review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-on-surface mb-2">event_available</span>
+          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Seasonal Shift Detection</h3>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Catch when this year's peak has moved. Your historical baseline assumes the season looks the same — Ceres flags when it doesn't.</p>
+        </div>
+
+        <div class="p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-on-surface mb-2">pin_drop</span>
+          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Territory-Level Demand</h3>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Country averages hide the real signal. Ceres resolves demand patterns down to district and sub-district — where the purchasing actually happens.</p>
+        </div>
+
+        <div class="col-span-1 md:col-span-2 p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-1 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">show_chart</span>
+              Input Cost Monitoring
+            </h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Fertilizer prices move with oil. Active ingredient costs follow commodity indices. Ceres tracks these automatically and alerts you when input cost changes are large enough to affect your margin or sourcing decisions.</p>
+          </div>
+          <div class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-xs font-mono text-on-surface shrink-0">
+            35,000+ INDICATORS
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROOF SECTION -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 border-b border-outline-variant/20 bg-surface-container-lowest">
+      <div class="p-6 lg:p-12 border-b lg:border-b-0 lg:border-r border-outline-variant/20">
+        <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-6 border border-outline-variant/50">
+          <span class="material-symbols-outlined text-on-surface">shield</span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
+          Give your planners something defensible.
+        </h2>
+        <p class="text-sm md:text-base font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
+          When the commercial team pushes back on a lower number, your planners need data — not intuition. Ceres shows the signal behind every recommendation so your supply chain team can walk into that conversation with evidence. The same output can be shared with the commercial team directly, so both sides are looking at the same picture.
+        </p>
+        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-secondary-container hover:bg-surface-variant text-on-secondary-container font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
+          Book a Demo
+        </a>
+      </div>
+      <div class="p-6 lg:p-12 bg-surface flex flex-col justify-center">
+        <ul class="space-y-4">
+          <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
+            <span class="text-sm text-on-surface">Flag when commercial targets diverge from signal-adjusted demand</span>
+          </li>
+          <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
+            <span class="text-sm text-on-surface">Identify which SKUs are most exposed to seasonal pattern shifts</span>
+          </li>
+          <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
+            <span class="text-sm text-on-surface">Show the external signal driving each forecast adjustment</span>
+          </li>
+          <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
+            <span class="text-sm text-on-surface">Export analysis your commercial team can read and respond to</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA GRID -->
+    <section class="grid grid-cols-1 md:grid-cols-2 bg-surface">
+      <div class="p-6 lg:p-12 border-b md:border-b-0 md:border-r border-outline-variant/20 flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-4">
+            Forecast accuracy stuck at 50–55%? The signals are there.
+          </h2>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
+            You have years of internal data. What you don't have is a systematic way to overlay what's happening outside — weather, commodity prices, crop conditions, market dynamics — onto your planning records. That's the gap Ceres closes. When seasonal patterns shift, you see it in the data before August tells you.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Catch over-forecasts before inventory locks in</div>
+            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Reduce excess inventory at year-end</div>
+            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Align commercial and supply chain on one number</div>
+            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Explain every recommendation with data</div>
+          </div>
+        </div>
+        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors self-start">
+          Book a Demo
+        </a>
+      </div>
+      <div class="p-6 lg:p-12 bg-surface-container-high flex flex-col justify-center items-start relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+        <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-4 relative z-10">
+          See it against your planning data.
+        </h2>
+        <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-8 relative z-10">
+          Schedule a walkthrough and we'll show you how it works against your SKUs, territories, and forecasting cadence.
+        </p>
+        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary hover:bg-primary-fixed text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 transition-colors relative z-10 w-full sm:w-auto text-center">
+          Book a Demo
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>
