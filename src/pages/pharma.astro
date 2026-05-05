@@ -170,12 +170,10 @@ import Layout from '../layouts/Layout.astro';
           <span class="material-symbols-outlined text-on-surface">verified_user</span>
         </div>
         <h2 class="text-2xl md:text-3xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
-          Make better pharma inventory and procurement decisions.
+          Know which suppliers and SKUs are at risk before the ERP catches up.
         </h2>
         <p class="text-sm md:text-base font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
-          Ceres combines purchase order data with external signals to show which suppliers, items, and regions carry risk. Teams can adjust inventory, spot pricing risk, and understand what outside drivers are changing the forecast.
-          <br /><br />
-          Insights can connect back into your ERP, so teams can act in the system they already use.
+          Your procurement team needs lead time — not a report that confirms what already happened. Ceres layers external signals onto your purchase orders, supplier records, and SKU positions so you can see pricing pressure, supply risk, and lead time changes while there's still room to act. Decisions feed back into your ERP. No separate workflow.
         </p>
         <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-secondary-container hover:bg-surface-variant text-on-secondary-container font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
           Book a Demo
@@ -185,19 +183,19 @@ import Layout from '../layouts/Layout.astro';
         <ul class="space-y-4">
           <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
             <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Support inventory decisions</span>
+            <span class="text-sm text-on-surface">Score suppliers by disruption probability</span>
           </li>
           <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
             <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Identify pricing risk</span>
+            <span class="text-sm text-on-surface">Flag active purchase orders under pricing pressure</span>
           </li>
           <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
             <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Understand external risk drivers</span>
+            <span class="text-sm text-on-surface">Surface the signal behind each risk flag</span>
           </li>
           <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
             <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Send recommendations back to ERP</span>
+            <span class="text-sm text-on-surface">Push risk scores and decisions back to your ERP</span>
           </li>
         </ul>
       </div>
@@ -208,16 +206,16 @@ import Layout from '../layouts/Layout.astro';
       <div class="p-6 lg:p-12 border-b md:border-b-0 md:border-r border-outline-variant/20 flex flex-col justify-between">
         <div>
           <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-4">
-            Better foresight supports better service levels
+            Earlier visibility means more options.
           </h2>
           <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
-            Pharmaceutical supply teams cannot afford to wait for disruption to become obvious in the ERP. Ceres helps teams move from reactive spreadsheet work to more proactive monitoring by merging internal records with the outside conditions shaping supplier and inventory risk.
+            Six weeks of lead time changes what's possible. Your team can qualify a backup supplier, adjust inventory positions, or protect patient-critical SKUs before a shortage develops. Six days doesn't give you that. Ceres gives you the window.
           </p>
           <div class="grid grid-cols-2 gap-4 mb-8">
-            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Improve visibility</div>
-            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Identify disruption earlier</div>
-            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Support earlier mitigation</div>
-            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Make outputs explainable</div>
+            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Surface disruptions weeks earlier</div>
+            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Reduce emergency procurement spend</div>
+            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Prioritize patient-critical SKUs</div>
+            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Explain why each flag was raised</div>
           </div>
         </div>
         <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors self-start">
@@ -227,10 +225,10 @@ import Layout from '../layouts/Layout.astro';
       <div class="p-6 lg:p-12 bg-surface-container-high flex flex-col justify-center items-start relative overflow-hidden">
         <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
         <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-4 relative z-10">
-          Want to see how Ceres fits your pharmaceutical supply workflow?
+          See it in your environment.
         </h2>
         <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-8 relative z-10">
-          If your team is using internal systems and spreadsheets to monitor suppliers, SKUs, purchase orders, inventory, and disruption risk, we can show how Ceres would fit your environment.
+          We'll map it to your suppliers, SKUs, and planning workflow. No generic demo, no slides — just your data.
         </p>
         <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary hover:bg-primary-fixed text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 transition-colors relative z-10 w-full sm:w-auto text-center">
           Book a Demo
