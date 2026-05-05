@@ -16,7 +16,7 @@ import Layout from '../layouts/Layout.astro';
           Break through the forecast accuracy ceiling that's costing you inventory every season
         </h1>
         <p class="font-body font-normal text-lg md:text-xl text-on-surface-variant max-w-3xl mb-8 leading-[1.7]">
-          Your commercial teams forecast high to stay safe. Your supply chain locks in inventory to match. By August the gap is visible — and the cost is already there. Ceres layers weather patterns, commodity prices, and market signals onto your planning data so both sides can finally work from the same number.
+          Commercial teams forecast high to stay safe. Supply chain locks in inventory to match. By August the gap is visible — but the cost is already there. Ceres layers weather patterns, commodity prices, and market signals onto your planning data so both sides work from the same number.
         </p>
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary hover:bg-primary-fixed text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 transition-colors inline-flex items-center gap-2 group">
@@ -35,7 +35,7 @@ import Layout from '../layouts/Layout.astro';
           Your ERP has three months of history. Your planners have five years of spreadsheets. Neither tells you the season shifted.
         </h2>
         <p class="text-sm md:text-base font-body font-normal text-on-surface-variant leading-[1.7]">
-          Commercial teams forecast top-down from last year's number plus a growth target. Supply chain adjusts bottom-up based on what they can get. By the time both sides agree, inventory is already locked in — and the year hasn't started. When monsoon timing shifts or commodity costs spike, no one sees it until August, and the working capital is already spent.
+          Commercial targets get set top-down. Supply plans get built bottom-up. Inventory locks in before anyone agrees. When the season shifts — monsoon timing, commodity costs, crop conditions — no one sees it until August.
         </p>
       </div>
       <div class="lg:col-span-7 p-6 lg:p-12 bg-surface-container-low">
@@ -88,12 +88,12 @@ import Layout from '../layouts/Layout.astro';
         <div class="p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
           <span class="material-symbols-outlined text-on-surface-variant mb-4 text-3xl">wb_sunny</span>
           <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em] mb-2">Seasonal Signal Monitoring</h4>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Monsoon shifts, temperature anomalies, and crop conditions mapped to your SKUs and sales territories — automatically. Know when this season looks different from last year before you're already producing for it.</p>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Monsoon shifts, temperature anomalies, and crop conditions mapped to your SKUs and sales territories — automatically. Know when this season looks different before you're producing for it.</p>
         </div>
         <div class="p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
           <span class="material-symbols-outlined text-on-surface-variant mb-4 text-3xl">fact_check</span>
           <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em] mb-2">Explainable Outputs</h4>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Give planners the analysis to walk into a commercial review and defend a number. Every recommendation shows the signal behind it — data your commercial team can see and respond to.</p>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Every recommendation shows the signal behind it. Your planners can walk into a commercial review and defend a number — and your commercial team can see the same data.</p>
         </div>
       </div>
       <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
@@ -114,7 +114,7 @@ import Layout from '../layouts/Layout.astro';
             <div>
               <span class="material-symbols-outlined text-primary mb-2 text-2xl">manage_search</span>
               <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Over-Forecast Detection</h3>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">When commercial teams ask for 120 to feel safe getting 100, your supply chain ends up holding the excess. Ceres surfaces the divergence between commercial targets and signal-adjusted demand before the production decision is made — not after inventory is locked in.</p>
+              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Surfaces the gap between commercial targets and signal-adjusted demand before the production decision is made — with the data to explain why.</p>
             </div>
             <!-- Pseudo divergence viz -->
             <div class="mt-6 space-y-2">
@@ -138,9 +138,9 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
-          <span class="material-symbols-outlined text-on-surface mb-2">event_available</span>
-          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Seasonal Shift Detection</h3>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Catch when this year's peak has moved. Your historical baseline assumes the season looks the same — Ceres flags when it doesn't.</p>
+          <span class="material-symbols-outlined text-on-surface mb-2">history_toggle_off</span>
+          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-2">When History Misleads</h3>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Your five-year average assumes the pattern repeats. Ceres flags when this year's signal diverges — before you've already planned around last year's data.</p>
         </div>
 
         <div class="p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
@@ -175,7 +175,7 @@ import Layout from '../layouts/Layout.astro';
           Give your planners something defensible.
         </h2>
         <p class="text-sm md:text-base font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
-          When the commercial team pushes back on a lower number, your planners need data — not intuition. Ceres shows the signal behind every recommendation so your supply chain team can walk into that conversation with evidence. The same output can be shared with the commercial team directly, so both sides are looking at the same picture.
+          When the commercial team pushes back on a lower number, your planners need data — not intuition. Ceres shows the signal behind every recommendation, and the output is shareable so both sides are looking at the same picture.
         </p>
         <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-secondary-container hover:bg-surface-variant text-on-secondary-container font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
           Book a Demo
@@ -193,11 +193,11 @@ import Layout from '../layouts/Layout.astro';
           </li>
           <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
             <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Show the external signal driving each forecast adjustment</span>
+            <span class="text-sm text-on-surface">Share the same data with both commercial and supply chain teams</span>
           </li>
           <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
             <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Export analysis your commercial team can read and respond to</span>
+            <span class="text-sm text-on-surface">Push decisions back to your ERP — no separate workflow</span>
           </li>
         </ul>
       </div>
@@ -211,13 +211,13 @@ import Layout from '../layouts/Layout.astro';
             Forecast accuracy stuck at 50–55%? The signals are there.
           </h2>
           <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
-            You have years of internal data. What you don't have is a systematic way to overlay what's happening outside — weather, commodity prices, crop conditions, market dynamics — onto your planning records. That's the gap Ceres closes. When seasonal patterns shift, you see it in the data before August tells you.
+            You have years of internal data. The forecast accuracy ceiling isn't a data problem — it's a signal problem. When you can see what's changing outside before it shows up in your ERP, the conversation with commercial teams changes.
           </p>
           <div class="grid grid-cols-2 gap-4 mb-8">
             <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Catch over-forecasts before inventory locks in</div>
             <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Reduce excess inventory at year-end</div>
             <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Align commercial and supply chain on one number</div>
-            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Explain every recommendation with data</div>
+            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Defend every adjustment with data</div>
           </div>
         </div>
         <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors self-start">
