@@ -9,7 +9,7 @@ const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? '';
 const owner = process.env.GITHUB_REPOSITORY_OWNER ?? '';
 
 export default defineConfig({
-  site: forGitHubPages && owner ? `https://${owner}.github.io` : 'https://cerestech.co',
+  site: forGitHubPages && owner ? `https://${owner}.github.io` : 'https://ceres.majorkeysse.com',
   base: forGitHubPages && repo ? `/${repo}` : '/',
   integrations: [
     preact({ compat: true }),
