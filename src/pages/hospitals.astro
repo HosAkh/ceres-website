@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const demoUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL + "book-a-demo/"
+  : import.meta.env.BASE_URL + "/book-a-demo/";
+---
+
+<Layout
+  title="Hospital Supply Chain Intelligence | Ceres Technology"
+  description="By the time your vendor calls, the shortage is already yours to manage. Ceres gives hospital supply chain teams early warning on supplier disruptions, multi-tier visibility, and automated risk intelligence — before the crisis reaches your formulary."
+>
+  <style>
+    .glass-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .orange-glow {
+      box-shadow: 0 0 20px rgba(243, 114, 33, 0.3);
+    }
+    .orange-glow:hover {
+      box-shadow: 0 0 30px rgba(243, 114, 33, 0.5);
+    }
+    .pulse-ring {
+      position: relative;
+    }
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #f37221;
+      opacity: 0.4;
+      animation: pulse-animation 2s infinite ease-out;
+    }
+    @keyframes pulse-animation {
+      0% { transform: scale(1); opacity: 0.4; }
+      100% { transform: scale(2.5); opacity: 0; }
+    }
+    .accent-gradient {
+      background: linear-gradient(90deg, #f37221 0%, #ffb691 100%);
+    }
+  </style>
+
+  <main class="overflow-x-hidden bg-background text-on-surface">
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-24 px-8 lg:px-12 overflow-hidden">
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="max-w-3xl">
+          <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary-container mb-6">Hospitals &amp; Health Systems</p>
+          <h1 class="font-headline font-bold text-5xl lg:text-6xl leading-tight tracking-tight text-on-surface mb-6">
+            By the time your vendor calls, the shortage is already yours to manage
+          </h1>
+          <p class="font-body text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-10">
+            Ceres gives hospital supply chain teams early warning on supplier disruptions — linking every SKU in your formulary to its manufacturing location, distribution path, and upstream risk factors before the call ever comes.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={demoUrl} class="accent-gradient text-[#03151e] font-bold py-4 px-8 rounded-xl orange-glow hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+              <span>Book a Demo</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Data Vis Element -->
+        <div class="mt-20 relative h-[280px] w-full glass-card rounded-2xl flex items-center justify-center overflow-hidden">
+          <div class="absolute inset-0 opacity-20">
+            <img
+              class="w-full h-full object-cover rounded-2xl"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMo1eJFOs9sVd5RuJcF-UpJzIPQi0tA-AWXkK8eo4--l8XUvfhIG07B3WNbsIWYg0D2W-eh7repc6HwXnrbxe5A9hDRlB9ajfxidf1FCKYPJ1bKybcybGRZv397SKgL2Pha_obQpcYKovPU3svRWgK6Uk4ipsp1hzCF-JH8KCDKAU0hysEzhHGNA6pjDeaxNhnQN2Jgg2J6SlNmMolEk7-5BckAgH9CirFBxpdbdwD-qDwua842BBan1AtntxU71vFLS3a1GYSQU"
+              alt="Hospital supply chain risk intelligence visualization"
+            />
+          </div>
+          <div class="relative flex flex-col items-center">
+            <div class="pulse-ring w-4 h-4 rounded-full bg-primary-container mb-4"></div>
+            <span class="text-primary-container font-headline font-bold text-xl">Supplier Disruption Detected</span>
+            <span class="text-on-surface-variant text-sm mt-1">Upstream Manufacturing Risk · IV Fluids</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="py-20 px-8 lg:px-12 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-12">
+          <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface mb-4 tracking-tight">
+            Your ERP tracks what you ordered. It has no idea what's happening upstream.
+          </h2>
+          <p class="text-on-surface-variant text-lg">The signals that predict a shortage are visible. They're just not inside your four walls.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="glass-card p-8 rounded-xl flex flex-col gap-4 border-l-4 border-primary-container">
+            <span class="material-symbols-outlined text-primary-container text-4xl">storm</span>
+            <h3 class="font-headline font-semibold text-2xl text-on-surface">Natural Disasters</h3>
+            <p class="text-on-surface-variant text-base">Hurricanes, floods, and severe weather events that knock out manufacturing facilities weeks before vendors notify customers.</p>
+          </div>
+          <div class="glass-card p-8 rounded-xl flex flex-col gap-4">
+            <span class="material-symbols-outlined text-primary-container text-4xl">gavel</span>
+            <h3 class="font-headline font-semibold text-2xl text-on-surface">Trade &amp; Tariff Shifts</h3>
+            <p class="text-on-surface-variant text-base">Country-of-origin changes and tariff policy that affect your cost and availability — tracked at the SKU level, not just headlines.</p>
+          </div>
+          <div class="glass-card p-8 rounded-xl flex flex-col gap-4">
+            <span class="material-symbols-outlined text-primary-container text-4xl">hub</span>
+            <h3 class="font-headline font-semibold text-2xl text-on-surface">Concentration Risk</h3>
+            <p class="text-on-surface-variant text-base">SKUs tied to a single manufacturing site or distribution center — the hidden single points of failure in your formulary.</p>
+          </div>
+          <div class="glass-card p-8 rounded-xl flex flex-col gap-4">
+            <span class="material-symbols-outlined text-primary-container text-4xl">visibility_off</span>
+            <h3 class="font-headline font-semibold text-2xl text-on-surface">Vendor Opacity</h3>
+            <p class="text-on-surface-variant text-base">Major distributors and manufacturers don't always share the full picture. Ceres surfaces what they don't volunteer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Ceres Helps -->
+    <section class="py-20 px-8 lg:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface tracking-tight">From reactive to proactive</h2>
+          <p class="text-on-surface-variant text-lg mt-4 max-w-2xl mx-auto">Three capabilities your supply chain team can use today that don't require a vendor to call first.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="glass-card p-10 rounded-2xl">
+            <h3 class="font-headline font-semibold text-2xl text-primary-container mb-4">Supplier-to-SKU Mapping</h3>
+            <p class="text-on-surface-variant text-base mb-6">Automatically link every item in your formulary to its manufacturing location, distribution path, and upstream dependencies. Know which SKUs are exposed before an event hits.</p>
+            <img
+              class="w-full h-40 object-cover rounded-lg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZwiqnOxIG-vUvtovSViIuIU3gmwf-gBiNU4WFv69jb0bbW3nMK8TH7mLNHeOG9RTgq1qi7oMbk_6LtxLrZSzfwuufTQ4IIEjl8EQb24z4qCJhOvWae_jUJY9ZQH_rcoQgDAIYo7-OzDiO899mgzW3okTFHhhoUt8TqbJItzAOmkb6RgMrkFb7CzZOWT5vrTgIioGyHDssLx4kMUPaQwIWIyKrqg7fJ5aEwYUnFL_4GFazgZSjhTGHJDC041gUUMB7JFcLhZx2DKA"
+              alt="Supplier to SKU mapping visualization"
+            />
+          </div>
+          <div class="glass-card p-10 rounded-2xl">
+            <h3 class="font-headline font-semibold text-2xl text-primary-container mb-4">Disruption Early Warning</h3>
+            <p class="text-on-surface-variant text-base mb-6">When a weather event, port shutdown, or facility closure touches your supply chain, Ceres surfaces the alert before your vendor does. Stop waiting on an email that may not come.</p>
+            <img
+              class="w-full h-40 object-cover rounded-lg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh6V_xt6fe4TTp7HiRxBY1oqj8U1tVm208u9aX4ORGqso9qfx1OldFv_Hz5rP0-y80xRRNY0P0UgwLpvXcIVYQi-mRiH5h6t3mwF_Fnr58oxjyPFBzb18yNRpuKM3j-VA-cCe0C7AXTNnj9nyuJ6AIa_gwbx32k1GDcyeoJ16i8i489OLFOEl3fbGPs_D2yZ2Fqnw_CASbCiXrzcLOdB-gqMoADv-bjDmF1BsgaHJjkL5z6txuwH9G_xOe8pTqTMtpTmqK87dPuBM"
+              alt="Early warning disruption visualization"
+            />
+          </div>
+          <div class="glass-card p-10 rounded-2xl">
+            <h3 class="font-headline font-semibold text-2xl text-primary-container mb-4">Tariff &amp; Compliance Tracking</h3>
+            <p class="text-on-surface-variant text-base mb-6">Automatically identify HTS codes, countries of origin, and tariff exposure across your formulary. No more teams of analysts going product by product through boxes and PDFs.</p>
+            <img
+              class="w-full h-40 object-cover rounded-lg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3MjZ_f1Wr_Oj_2A_jNctphr55lhT6cj_gau2v2OMjIjqj9QnefJyCmXB1QuYH6C9xYm3Jt9D4N3OP8BfQlC2y7QUCgzWyb97kTONREmFWag-021T_qgdd3OxwOmZsX19yo05Kmw_mrjl6QuEaN3g07F--cCBPixUW7bQGyTDPJwHQE4sFI-4FAC1MeKPHgGxL1tj4vf-fDmDczs3YTopPHnUu7Oht09vewdZ0zcu_3JKdUsJv0DvTMZe21-y2tLF91uGjhU3ZZ9U"
+              alt="Tariff and compliance tracking visualization"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflows Bento Grid -->
+    <section class="py-20 px-8 lg:px-12 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface mb-12 tracking-tight">Where hospitals are using Ceres today</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(200px,auto)]">
+
+          <!-- SKU Risk Scoring (large) -->
+          <div class="md:col-span-2 md:row-span-2 glass-card p-8 rounded-2xl border border-primary-container/20 flex flex-col justify-between">
+            <div>
+              <span class="material-symbols-outlined text-primary-container mb-4 text-3xl">crisis_alert</span>
+              <h3 class="font-headline font-semibold text-2xl text-on-surface mb-4">Formulary Risk Scoring</h3>
+              <p class="text-on-surface-variant text-lg leading-relaxed">Score every item in your formulary by supplier concentration, geographic risk, and disruption history. When 2,000 SKUs need monitoring, you need to know which 50 are actually exposed today — not after backorders appear.</p>
+            </div>
+            <div class="mt-8 flex gap-2 flex-wrap">
+              <span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full text-xs font-mono flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                Active Risk Flag
+              </span>
+              <span class="bg-surface-container-highest text-on-surface px-3 py-1 rounded-full text-xs font-mono">
+                IV Fluids · Med/Surg
+              </span>
+            </div>
+          </div>
+
+          <!-- Weather & Facility Overlay -->
+          <div class="md:col-span-2 glass-card p-8 rounded-2xl border border-white/5">
+            <span class="material-symbols-outlined text-on-surface-variant mb-2">satellite_alt</span>
+            <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">Weather &amp; Facility Overlay</h3>
+            <p class="text-on-surface-variant text-base">Map severe weather events directly onto your suppliers' manufacturing and distribution sites. See which facilities are in the path before the disruption reaches your dock.</p>
+          </div>
+
+          <!-- Multi-Tier Supplier Visibility -->
+          <div class="glass-card p-8 rounded-2xl border border-white/5">
+            <span class="material-symbols-outlined text-on-surface-variant mb-2">account_tree</span>
+            <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">Multi-Tier Visibility</h3>
+            <p class="text-on-surface-variant text-base">See past your distributors into their suppliers and distribution networks — the tier most health systems have no visibility into at all.</p>
+          </div>
+
+          <!-- OR & Surgical Supply -->
+          <div class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col justify-between">
+            <div>
+              <span class="material-symbols-outlined text-on-surface-variant mb-2">surgical</span>
+              <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">OR &amp; Surgical Supply</h3>
+              <p class="text-on-surface-variant text-base">Bring data-driven planning to the service lines that can't afford a stockout — replacing tribal knowledge with structured, auditable intelligence.</p>
+            </div>
+            <div class="mt-4 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+              <div class="h-full bg-primary-container" style="width: 85%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="py-24 px-8 lg:px-12">
+      <div class="max-w-7xl mx-auto glass-card p-12 rounded-3xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+          <span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+        </div>
+        <div class="relative z-10 max-w-2xl">
+          <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface mb-8 tracking-tight">Stop being dependent on a vendor email that may never come</h2>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+              <p class="text-lg text-on-surface">Get ahead of shortages by monitoring weather, logistics, and financial risk at the facility level — not the headline level.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+              <p class="text-lg text-on-surface">Automatically map SKU exposure to countries of origin and tariff classifications — without analysts working through boxes and PDFs.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+              <p class="text-lg text-on-surface">Replace fragmented point solutions and spreadsheet analysis with a single, integrated risk intelligence layer.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+              <p class="text-lg text-on-surface">Integrates directly with your existing Oracle or SAP environment — no rip-and-replace.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-8 lg:px-12">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="font-headline font-bold text-5xl lg:text-6xl text-on-surface mb-6 tracking-tight leading-tight">Know before the shortage reaches your dock</h2>
+        <p class="text-on-surface-variant text-xl mb-12">See how Ceres maps your formulary to upstream supplier risk — and what's exposed right now.</p>
+        <a href={demoUrl} class="accent-gradient text-[#03151e] font-bold py-6 px-12 rounded-2xl text-2xl orange-glow hover:scale-105 transition-all inline-block">
+          Book a Demo
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>
