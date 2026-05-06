@@ -24,6 +24,7 @@ export default function Navigation({ currentPath = '' }: Props) {
   const dropdownLinks = [
     { label: 'Pharmaceutical Supply', path: 'pharma/' },
     { label: 'Hospitals & Health Systems', path: 'hospitals/' },
+    { label: 'Consumer Packaged Goods', path: 'cpg/' },
     { label: 'Investment Firms', path: 'investment-firms/' },
     { label: 'Enterprise Console', path: 'enterprise-console/' },
     { label: 'Data Analysis', path: 'data-analysis/' },
