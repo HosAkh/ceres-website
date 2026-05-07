@@ -185,38 +185,79 @@ const demoUrl = import.meta.env.BASE_URL.endsWith('/')
       <div class="mx-auto max-w-7xl">
         <div class="mb-12 max-w-3xl">
           <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Example cases</div>
-          <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface">The same intelligence layer, adapted to different decisions.</h2>
+          <h2 class="font-headline font-extrabold uppercase tracking-[-0.01em] text-on-surface">The same intelligence layer, adapted to decisions.</h2>
         </div>
-        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'pharma/' : import.meta.env.BASE_URL + '/pharma/'} class="group bg-surface-container p-6 transition-colors hover:bg-surface-container-high border border-outline-variant/20">
-            <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Pharma</div>
-            <h3 class="mb-2 font-headline font-bold text-on-surface">Map external disruption risk onto suppliers, purchase orders, and SKUs.</h3>
-            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Spot raw material, logistics, and geopolitical risk earlier so your team has more time to respond.</p>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'pharma/' : import.meta.env.BASE_URL + '/pharma/'} class="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-outline-variant/30 bg-surface-container p-8 transition-all duration-300">
+            <div class="absolute inset-0 z-0 scale-100 bg-[url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-[#03151e]/80 to-[#03151e]/95 transition-colors duration-300 group-hover:from-[#03151e]/70 group-hover:to-[#03151e]/90"></div>
+            <div class="relative z-20 flex h-full flex-col justify-between">
+              <span class="mb-6 block font-mono text-xs uppercase tracking-widest text-on-surface-variant">Pharma</span>
+              <div>
+                <h3 class="mb-3 font-headline text-2xl font-bold uppercase leading-tight text-on-surface md:text-3xl">Map external disruption with risk onto orders, and SKUs.</h3>
+                <p class="font-body text-sm leading-relaxed text-on-surface-variant md:text-base">Calculate external shock impact on specific SKUs and coordinate with your team faster than ever to respond.</p>
+              </div>
+            </div>
           </a>
-          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'hospitals/' : import.meta.env.BASE_URL + '/hospitals/'} class="group bg-surface-container p-6 transition-colors hover:bg-surface-container-high border border-outline-variant/20">
-            <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Hospitals</div>
-            <h3 class="mb-2 font-headline font-bold text-on-surface">See upstream supplier and formulary risk before the shortage reaches your floor.</h3>
-            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Connect each item to manufacturing, distribution, and external risk factors instead of waiting on vendor updates.</p>
+
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'hospitals/' : import.meta.env.BASE_URL + '/hospitals/'} class="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-outline-variant/30 bg-surface-container p-8 transition-all duration-300">
+            <div class="absolute inset-0 z-0 scale-100 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-[#03151e]/80 to-[#03151e]/95 transition-colors duration-300 group-hover:from-[#03151e]/70 group-hover:to-[#03151e]/90"></div>
+            <div class="relative z-20 flex h-full flex-col justify-between">
+              <span class="mb-6 block font-mono text-xs uppercase tracking-widest text-on-surface-variant">Industrials</span>
+              <div>
+                <h3 class="mb-3 font-headline text-2xl font-bold uppercase leading-tight text-on-surface md:text-3xl">See upstream supplier and forward resource your floor.</h3>
+                <p class="font-body text-sm leading-relaxed text-on-surface-variant md:text-base">Connect external sensors, manufacturing, distribution, and external risk buffers instead of waiting for vendor updates.</p>
+              </div>
+            </div>
           </a>
-          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'cpg/' : import.meta.env.BASE_URL + '/cpg/'} class="group bg-surface-container p-6 transition-colors hover:bg-surface-container-high border border-outline-variant/20">
-            <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">CPG</div>
-            <h3 class="mb-2 font-headline font-bold text-on-surface">Reconcile planning with weather, commodity, and market signals.</h3>
-            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Help commercial and supply teams work from the same external context instead of defending different assumptions.</p>
+
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'cpg/' : import.meta.env.BASE_URL + '/cpg/'} class="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-outline-variant/30 bg-surface-container p-8 transition-all duration-300">
+            <div class="absolute inset-0 z-0 scale-100 bg-[url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-[#03151e]/80 to-[#03151e]/95 transition-colors duration-300 group-hover:from-[#03151e]/70 group-hover:to-[#03151e]/90"></div>
+            <div class="relative z-20 flex h-full flex-col justify-between">
+              <span class="mb-6 block font-mono text-xs uppercase tracking-widest text-on-surface-variant">CPG</span>
+              <div>
+                <h3 class="mb-3 font-headline text-2xl font-bold uppercase leading-tight text-on-surface md:text-3xl">Reconcile planning with weather/event signals.</h3>
+                <p class="font-body text-sm leading-relaxed text-on-surface-variant md:text-base">Help your teams quickly walk back from the same external context instead of defending different assumptions.</p>
+              </div>
+            </div>
           </a>
-          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'investment-firms/' : import.meta.env.BASE_URL + '/investment-firms/'} class="group bg-surface-container p-6 transition-colors hover:bg-surface-container-high border border-outline-variant/20">
-            <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Investment Firms</div>
-            <h3 class="mb-2 font-headline font-bold text-on-surface">Strengthen internal models with structured external signal overlays.</h3>
-            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Reduce manual research work and keep risk analysis closer to live conditions.</p>
+
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'investment-firms/' : import.meta.env.BASE_URL + '/investment-firms/'} class="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-outline-variant/30 bg-surface-container p-8 transition-all duration-300">
+            <div class="absolute inset-0 z-0 scale-100 bg-[url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-[#03151e]/80 to-[#03151e]/95 transition-colors duration-300 group-hover:from-[#03151e]/70 group-hover:to-[#03151e]/90"></div>
+            <div class="relative z-20 flex h-full flex-col justify-between">
+              <span class="mb-6 block font-mono text-xs uppercase tracking-widest text-on-surface-variant">Investment Firms</span>
+              <div>
+                <h3 class="mb-3 font-headline text-2xl font-bold uppercase leading-tight text-on-surface md:text-3xl">Strengthen internal models with external signal overlays.</h3>
+                <p class="font-body text-sm leading-relaxed text-on-surface-variant md:text-base">Reduce manual research work, and align analysis closer to market conditions.</p>
+              </div>
+            </div>
           </a>
-          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'enterprise-console/' : import.meta.env.BASE_URL + '/enterprise-console/'} class="group bg-surface-container p-6 transition-colors hover:bg-surface-container-high border border-outline-variant/20">
-            <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Enterprise Console</div>
-            <h3 class="mb-2 font-headline font-bold text-on-surface">Give planning teams one place to monitor, catch, and act.</h3>
-            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Replace spreadsheet coordination with a clearer operational control layer.</p>
+
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'enterprise-console/' : import.meta.env.BASE_URL + '/enterprise-console/'} class="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-outline-variant/30 bg-surface-container p-8 transition-all duration-300">
+            <div class="absolute inset-0 z-0 scale-100 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-[#03151e]/80 to-[#03151e]/95 transition-colors duration-300 group-hover:from-[#03151e]/70 group-hover:to-[#03151e]/90"></div>
+            <div class="relative z-20 flex h-full flex-col justify-between">
+              <span class="mb-6 block font-mono text-xs uppercase tracking-widest text-on-surface-variant">Enterprise Console</span>
+              <div>
+                <h3 class="mb-3 font-headline text-2xl font-bold uppercase leading-tight text-on-surface md:text-3xl">Give planning teams one place to monitor, catch, and act.</h3>
+                <p class="font-body text-sm leading-relaxed text-on-surface-variant md:text-base">Replace spreadsheet distribution with a clearer operational view of the truth.</p>
+              </div>
+            </div>
           </a>
-          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'data-analysis/' : import.meta.env.BASE_URL + '/data-analysis/'} class="group bg-surface-container p-6 transition-colors hover:bg-surface-container-high border border-outline-variant/20">
-            <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Data Analysis</div>
-            <h3 class="mb-2 font-headline font-bold text-on-surface">Map external data directly onto internal records for faster analysis.</h3>
-            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Automate blending, scoring, and categorization without keeping analysts stuck in manual review.</p>
+
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'data-analysis/' : import.meta.env.BASE_URL + '/data-analysis/'} class="group relative flex min-h-[280px] flex-col justify-end overflow-hidden border border-outline-variant/30 bg-surface-container p-8 transition-all duration-300">
+            <div class="absolute inset-0 z-0 scale-100 bg-[url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"></div>
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-[#03151e]/80 to-[#03151e]/95 transition-colors duration-300 group-hover:from-[#03151e]/70 group-hover:to-[#03151e]/90"></div>
+            <div class="relative z-20 flex h-full flex-col justify-between">
+              <span class="mb-6 block font-mono text-xs uppercase tracking-widest text-on-surface-variant">Data Analysis</span>
+              <div>
+                <h3 class="mb-3 font-headline text-2xl font-bold uppercase leading-tight text-on-surface md:text-3xl">Map external data directly onto internal records for faster analysis.</h3>
+                <p class="font-body text-sm leading-relaxed text-on-surface-variant md:text-base">Automatic blending, scaling, and categorization without ongoing analysts stuck in manual routine.</p>
+              </div>
+            </div>
           </a>
         </div>
       </div>
