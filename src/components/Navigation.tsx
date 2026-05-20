@@ -26,6 +26,7 @@ export default function Navigation({ currentPath = '' }: Props) {
     { label: 'Hospitals & Health Systems', path: 'hospitals/' },
     { label: 'Consumer Packaged Goods', path: 'cpg/' },
     { label: 'Investment Firms', path: 'investment-firms/' },
+    { label: 'Tier 1 Automotive', path: 'tier-one/' },
     { label: 'Enterprise Console', path: 'enterprise-console/' },
     { label: 'Data Analysis', path: 'data-analysis/' },
     { label: 'Automated Planning', path: 'automated-planning/' },
