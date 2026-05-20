@@ -31,6 +31,7 @@ export default function Navigation({ currentPath = '' }: Props) {
     { label: 'Data Analysis', path: 'data-analysis/' },
     { label: 'Automated Planning', path: 'automated-planning/' },
     { label: 'S&OP Intelligence', path: 'homev3/' },
+    { label: 'S&OP Intelligence V2', path: 'homev3-v2/' },
   ];
 
   const mobileLinks = [
