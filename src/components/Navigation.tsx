@@ -30,6 +30,7 @@ export default function Navigation({ currentPath = '' }: Props) {
     { label: 'Enterprise Console', path: 'enterprise-console/' },
     { label: 'Data Analysis', path: 'data-analysis/' },
     { label: 'Automated Planning', path: 'automated-planning/' },
+    { label: 'S&OP Intelligence', path: 'homev3/' },
   ];
 
   const mobileLinks = [
