@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const demoUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL + 'book-a-demo/'
+  : import.meta.env.BASE_URL + '/book-a-demo/';
+---
+
+<Layout
+  title="Ceres Technology | The AI That Runs Your S&OP — Not Just Watches It"
+  description="Ceres doesn't show you a dashboard. It monitors your demand plan, flags what changed, scores what's at risk, and tells your team exactly where to act — before the gap opens."
+>
+  <main class="pt-14 bg-surface-container-lowest">
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12 lg:py-28">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,rgba(255,182,145,0.07),transparent_40%)]"></div>
+      <div class="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center">
+
+        <div class="lg:col-span-6">
+          <div class="mb-7 inline-flex items-center gap-3 border border-primary/30 bg-primary/5 px-4 py-2">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+            </span>
+            <span class="font-mono text-[9px] uppercase tracking-[0.22em] text-primary">Agentic supply intelligence — active now</span>
+          </div>
+          <h1 class="mb-8 font-headline text-5xl font-extrabold leading-[1.0] tracking-[-0.02em] text-on-surface sm:text-6xl lg:text-7xl">
+            Stop managing your supply chain.<br class="hidden lg:block" /> Let Ceres run it.
+          </h1>
+          <p class="mb-10 max-w-xl text-lg font-body leading-[1.65] text-on-surface-variant">
+            Ceres monitors your demand plan 24/7, tracks what's moving in markets and supply chains, and tells your team exactly where to act — before the gap shows up on a PO.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a href={demoUrl} class="inline-flex w-full justify-center bg-primary px-8 py-4 font-mono text-[11px] uppercase tracking-[0.14em] text-on-primary transition-all hover:brightness-110 active:scale-95 sm:w-auto">
+              Book a Demo
+            </a>
+            <span class="inline-flex w-full items-center justify-center px-6 py-4 font-mono text-[10px] uppercase tracking-[0.14em] text-on-surface-variant sm:w-auto">
+              No rip-and-replace. Works with your ERP.
+            </span>
+          </div>
+        </div>
+
+        <!-- Agent activity feed widget -->
+        <div class="lg:col-span-6">
+          <div class="border border-primary/20 bg-surface-container shadow-[0_0_40px_rgba(243,114,33,0.06)]">
+            <div class="flex items-center justify-between border-b border-outline-variant/25 bg-surface-container-high px-5 py-3">
+              <div class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+                <span class="font-mono text-[9px] uppercase tracking-[0.22em] text-on-surface-variant">Ceres Agent — Running</span>
+              </div>
+              <span class="font-mono text-[9px] uppercase tracking-[0.18em] text-primary">Live</span>
+            </div>
+            <div class="divide-y divide-outline-variant/15 px-5 py-2">
+              <div class="flex items-start gap-4 py-4">
+                <span class="material-symbols-outlined mt-0.5 text-[18px] text-primary">task_alt</span>
+                <div>
+                  <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-primary mb-1">Flagged → Demand exception</div>
+                  <p class="text-sm text-on-surface leading-[1.6]">SKU 4412-B: Port congestion in Rotterdam is adding 11–14 days to lead time. Q3 demand plan needs 3-week pull-forward or safety stock adjustment.</p>
+                  <div class="mt-2 font-mono text-[9px] text-on-surface-variant">Recommended action sent to <span class="text-on-surface">Procurement</span></div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 py-4">
+                <span class="material-symbols-outlined mt-0.5 text-[18px] text-secondary">monitoring</span>
+                <div>
+                  <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-secondary mb-1">Monitoring → Commodity risk</div>
+                  <p class="text-sm text-on-surface leading-[1.6]">Steel (HRC) up 8.3% over 6 weeks. 4 open POs affected. No contract coverage for Q4 categories 7, 12, 15.</p>
+                  <div class="mt-2 font-mono text-[9px] text-on-surface-variant">Escalated to <span class="text-on-surface">S&OP Review</span> — 2 days before cycle closes</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 py-4">
+                <span class="material-symbols-outlined mt-0.5 text-[18px] text-tertiary">check_circle</span>
+                <div>
+                  <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-tertiary mb-1">Resolved → Consensus built</div>
+                  <p class="text-sm text-on-surface leading-[1.6]">Demand and supply aligned on shared external view for Q3 plan review. Competing forecast assumptions eliminated. Meeting time: 34 min.</p>
+                  <div class="mt-2 font-mono text-[9px] text-on-surface-variant">Cycle closed <span class="text-on-surface">4 days early</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THE REAL PROBLEM -->
+    <section class="border-b border-outline-variant/20 bg-surface-container-low px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 max-w-3xl">
+          <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">The actual problem</div>
+          <h2 class="font-headline text-4xl font-extrabold tracking-[-0.01em] text-on-surface lg:text-5xl">You don't have a data problem. You have a &ldquo;someone has to do something with the data&rdquo; problem.</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="border-l-2 border-outline-variant/30 bg-surface-container px-6 py-7 hover:border-primary transition-colors">
+            <div class="mb-4 font-mono text-[9px] uppercase tracking-[0.18em] text-on-surface-variant">Problem 01</div>
+            <h3 class="mb-3 font-headline text-xl font-bold text-on-surface">Analysts chase context. Decisions wait.</h3>
+            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">By the time someone has cleaned the data, built the slide, and sent the email, the window to act has usually closed. Your team is managing information, not making decisions.</p>
+          </div>
+          <div class="border-l-2 border-outline-variant/30 bg-surface-container px-6 py-7 hover:border-primary transition-colors">
+            <div class="mb-4 font-mono text-[9px] uppercase tracking-[0.18em] text-on-surface-variant">Problem 02</div>
+            <h3 class="mb-3 font-headline text-xl font-bold text-on-surface">Demand and procurement work from different realities.</h3>
+            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">No one is wrong — they're just looking at different slices of incomplete information. S&OP meetings become negotiations between assumptions, not alignment on facts.</p>
+          </div>
+          <div class="border-l-2 border-outline-variant/30 bg-surface-container px-6 py-7 hover:border-primary transition-colors">
+            <div class="mb-4 font-mono text-[9px] uppercase tracking-[0.18em] text-on-surface-variant">Problem 03</div>
+            <h3 class="mb-3 font-headline text-xl font-bold text-on-surface">Your ERP records what happened. Not what's about to.</h3>
+            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Every system you have is built to store and report on the past. The risk that's building right now — in a port, a supplier's balance sheet, a commodity market — isn't in any of it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT CERES ACTUALLY DOES (AI-first framing) -->
+    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-4 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">What Ceres does for your team</div>
+        <h2 class="mb-16 max-w-3xl font-headline text-4xl font-extrabold tracking-[-0.01em] text-on-surface lg:text-5xl">Not another layer to stare at. A system that acts.</h2>
+
+        <div class="grid gap-0 lg:grid-cols-2">
+          <div class="border border-outline-variant/20 bg-surface-container p-8 lg:border-r-0">
+            <div class="mb-5 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-3xl">manage_search</span>
+              <h3 class="font-headline text-2xl font-bold text-on-surface">Ceres watches the world so you don't have to.</h3>
+            </div>
+            <p class="mb-6 font-body leading-[1.7] text-on-surface-variant">Commodity prices. Shipping delays. Supplier financial signals. Geopolitical events. Weather events at origin points. Ceres monitors all of it — mapped to your SKUs, your suppliers, your plan — continuously, not once a week.</p>
+            <div class="border-t border-outline-variant/20 pt-5 font-mono text-[10px] uppercase tracking-[0.14em] text-on-surface-variant">35,000+ data categories → mapped to your records</div>
+          </div>
+          <div class="border border-outline-variant/20 bg-surface-container p-8">
+            <div class="mb-5 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-3xl">notification_important</span>
+              <h3 class="font-headline text-2xl font-bold text-on-surface">Ceres tells you what matters. Not everything.</h3>
+            </div>
+            <p class="mb-6 font-body leading-[1.7] text-on-surface-variant">When 2,000 SKUs need monitoring, you don't need 2,000 alerts. Ceres scores risk by SKU, supplier, and category — so your team wakes up to the 12 things that actually need a decision today, not a 400-row report.</p>
+            <div class="border-t border-outline-variant/20 pt-5 font-mono text-[10px] uppercase tracking-[0.14em] text-on-surface-variant">Ranked, prioritized, and routed to the right person</div>
+          </div>
+          <div class="border border-outline-variant/20 border-t-0 bg-surface-container p-8 lg:border-r-0">
+            <div class="mb-5 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-3xl">groups</span>
+              <h3 class="font-headline text-2xl font-bold text-on-surface">Ceres builds the shared view before the meeting.</h3>
+            </div>
+            <p class="mb-6 font-body leading-[1.7] text-on-surface-variant">Demand planning and procurement walk into the S&OP cycle with the same external context. No competing assumptions. No "which dataset are we using?" Ceres resolves the information gap so the meeting is about decisions, not debate.</p>
+            <div class="border-t border-outline-variant/20 pt-5 font-mono text-[10px] uppercase tracking-[0.14em] text-on-surface-variant">One version of external reality. Shared across teams.</div>
+          </div>
+          <div class="border border-outline-variant/20 border-t-0 bg-surface-container p-8">
+            <div class="mb-5 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-3xl">science</span>
+              <h3 class="font-headline text-2xl font-bold text-on-surface">Ceres models the scenario before you commit.</h3>
+            </div>
+            <p class="mb-6 font-body leading-[1.7] text-on-surface-variant">What happens to your Q3 plan if that supplier delays by 3 weeks? What if steel holds at this price through October? Ceres runs the scenario against your actual data — drag, adjust, see the outcome — so you're not guessing when you sign off.</p>
+            <div class="border-t border-outline-variant/20 pt-5 font-mono text-[10px] uppercase tracking-[0.14em] text-on-surface-variant">No analysts required. No spreadsheet. Just your data.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOT AN ERP. NOT A DASHBOARD. -->
+    <section class="border-b border-outline-variant/20 bg-[#0a0f14] px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <div class="mb-4 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">What Ceres is not</div>
+            <h2 class="mb-8 font-headline text-4xl font-extrabold tracking-[-0.01em] text-on-surface lg:text-5xl">Not another ERP module. Not another dashboard to maintain.</h2>
+            <p class="mb-8 font-body leading-[1.7] text-on-surface-variant text-lg">ERPs record transactions. BI tools visualize history. Analytics platforms require analysts. Ceres does the work that falls between all of them — the continuous monitoring, the signal interpretation, the exception surfacing — so your team spends time on decisions, not data prep.</p>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-0.5">check</span>
+                <p class="text-on-surface-variant font-body leading-[1.7]">Connects to your existing ERP, planning tools, and supplier data — no replacement required.</p>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-0.5">check</span>
+                <p class="text-on-surface-variant font-body leading-[1.7]">No code. No analysts needed to configure or maintain it. We set it up around your data model.</p>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-0.5">check</span>
+                <p class="text-on-surface-variant font-body leading-[1.7]">Outputs are decisions and actions — not charts to interpret or reports to distribute.</p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="border border-outline-variant/25 bg-surface-container p-5">
+              <div class="mb-1 font-mono text-[9px] uppercase tracking-[0.18em] text-on-surface-variant">Your ERP</div>
+              <p class="text-sm text-on-surface-variant">Records what happened. Requires your team to interpret it, find the gap, and figure out what to do next.</p>
+            </div>
+            <div class="border border-outline-variant/25 bg-surface-container p-5">
+              <div class="mb-1 font-mono text-[9px] uppercase tracking-[0.18em] text-on-surface-variant">BI / Analytics platforms</div>
+              <p class="text-sm text-on-surface-variant">Visualize history beautifully. Someone still has to build the reports, monitor them, and decide what they mean.</p>
+            </div>
+            <div class="border border-primary/30 bg-primary/5 p-5">
+              <div class="mb-1 font-mono text-[9px] uppercase tracking-[0.18em] text-primary">Ceres</div>
+              <p class="text-sm text-on-surface">Monitors your plan against live external signals, scores what's at risk, flags what needs action, and routes it to the right person — before the cycle closes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT STARTS -->
+    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">How Ceres gets to work</div>
+        <h2 class="mb-16 font-headline text-4xl font-extrabold tracking-[-0.01em] text-on-surface lg:text-5xl">Three steps. Then it runs.</h2>
+        <div class="grid lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-outline-variant/20">
+          <article class="px-0 py-8 lg:px-8 lg:py-0">
+            <div class="mb-4 font-mono text-5xl leading-none text-white/10">01</div>
+            <h3 class="mb-3 font-headline text-3xl font-bold tracking-[-0.01em] text-on-surface">Ceres learns your plan</h3>
+            <p class="font-body text-base leading-[1.65] text-on-surface-variant">We connect to your ERP and planning tools. Ceres maps your SKUs, suppliers, demand cycles, and purchase order patterns — so every signal it monitors is anchored to something that actually matters to your business.</p>
+          </article>
+          <article class="px-0 py-8 lg:px-8 lg:py-0">
+            <div class="mb-4 font-mono text-5xl leading-none text-white/10">02</div>
+            <h3 class="mb-3 font-headline text-3xl font-bold tracking-[-0.01em] text-on-surface">Ceres watches the world</h3>
+            <p class="font-body text-base leading-[1.65] text-on-surface-variant">Commodity markets, logistics networks, supplier signals, geopolitical indicators, weather at origin points — continuously, not quarterly. Every change is evaluated against your plan in real time.</p>
+          </article>
+          <article class="px-0 py-8 lg:px-8 lg:py-0">
+            <div class="mb-4 font-mono text-5xl leading-none text-white/10">03</div>
+            <h3 class="mb-3 font-headline text-3xl font-bold tracking-[-0.01em] text-on-surface">Ceres tells you what to do</h3>
+            <p class="font-body text-base leading-[1.65] text-on-surface-variant">Not a dashboard. Not a report. Ceres flags the exceptions, scores the risk, recommends the action, and routes it to whoever needs to sign off — inside your existing S&OP cycle, not alongside it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-14 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-8 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Where Ceres is running today</div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'pharma/' : import.meta.env.BASE_URL + '/pharma/'} class="group flex items-center justify-between border border-outline-variant/30 bg-surface-container px-6 py-5 transition-all hover:border-primary hover:bg-surface-container-high">
+            <div>
+              <div class="font-mono text-[9px] uppercase tracking-[0.2em] text-on-surface-variant mb-1">Pharma & Life Sciences</div>
+              <div class="font-headline font-bold text-on-surface text-sm">Formulary risk, API supply, delay scoring</div>
+            </div>
+            <span class="material-symbols-outlined text-primary text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'hospitals/' : import.meta.env.BASE_URL + '/hospitals/'} class="group flex items-center justify-between border border-outline-variant/30 bg-surface-container px-6 py-5 transition-all hover:border-primary hover:bg-surface-container-high">
+            <div>
+              <div class="font-mono text-[9px] uppercase tracking-[0.2em] text-on-surface-variant mb-1">Hospitals & Health Systems</div>
+              <div class="font-headline font-bold text-on-surface text-sm">SKU exposure, shortage prevention</div>
+            </div>
+            <span class="material-symbols-outlined text-primary text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'tier-one/' : import.meta.env.BASE_URL + '/tier-one/'} class="group flex items-center justify-between border border-outline-variant/30 bg-surface-container px-6 py-5 transition-all hover:border-primary hover:bg-surface-container-high">
+            <div>
+              <div class="font-mono text-[9px] uppercase tracking-[0.2em] text-on-surface-variant mb-1">Tier 1 Automotive</div>
+              <div class="font-headline font-bold text-on-surface text-sm">Steel, aluminum, EDI gap analysis</div>
+            </div>
+            <span class="material-symbols-outlined text-primary text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+          <a href={import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL + 'cpg/' : import.meta.env.BASE_URL + '/cpg/'} class="group flex items-center justify-between border border-outline-variant/30 bg-surface-container px-6 py-5 transition-all hover:border-primary hover:bg-surface-container-high">
+            <div>
+              <div class="font-mono text-[9px] uppercase tracking-[0.2em] text-on-surface-variant mb-1">Consumer Packaged Goods</div>
+              <div class="font-headline font-bold text-on-surface text-sm">Demand enrichment, commodity exposure</div>
+            </div>
+            <span class="material-symbols-outlined text-primary text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-[#05090f] px-6 py-28 text-center lg:px-12">
+      <div class="mx-auto max-w-4xl">
+        <div class="mb-4 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Next step</div>
+        <h2 class="mb-6 font-headline text-5xl font-extrabold tracking-[-0.01em] text-on-surface leading-[1.05] lg:text-6xl">Bring your ERP data.<br class="hidden lg:block" /> We'll show you what Ceres found.</h2>
+        <p class="mx-auto mb-10 max-w-2xl text-lg font-body leading-[1.7] text-on-surface-variant">
+          In a 30-minute demo, Ceres maps your actual planning data to live market signals — and shows you the gaps your team is currently catching too late, or not catching at all.
+        </p>
+        <a href={demoUrl} class="inline-block bg-primary px-14 py-5 font-mono text-[11px] uppercase tracking-[0.14em] text-on-primary transition-all hover:brightness-110 active:scale-95">
+          Book a Demo
+        </a>
+        <p class="mt-6 font-mono text-[9px] uppercase tracking-[0.18em] text-on-surface-variant">No commitment. No setup required before the call.</p>
+      </div>
+    </section>
+
+  </main>
+</Layout>
