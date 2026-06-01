@@ -92,13 +92,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="p-6 bg-surface-container border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
           <span class="material-symbols-outlined text-on-surface-variant mb-4 text-3xl">table_chart</span>
           <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em] mb-2">Reduce Burden</h4>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Stop rebuilding the same signal research by hand each week. Ceres runs it automatically and surfaces changes when they matter.</p>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Ceres AI surfaces changes when they matter.</p>
         </div>
       </div>
-      <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface hover:text-primary font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
-        Schedule a Walkthrough
-        <span class="material-symbols-outlined text-sm">calendar_today</span>
-      </a>
     </section>
 
     <!-- COMMON WORKFLOWS -->
@@ -110,7 +106,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="relative z-10 h-full flex flex-col justify-between">
             <div>
               <span class="material-symbols-outlined text-primary mb-2 text-2xl">troubleshoot</span>
-              <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Predictive Delay Scoring</h3>
+              <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Delay Scoring</h3>
               <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Use internal purchase order history and external signals to identify patterns before delays occur.</p>
             </div>
             <div class="mt-6 flex items-end gap-2 h-24 border-b border-outline-variant/30 pb-2">
@@ -141,9 +137,7 @@ import Layout from '../layouts/Layout.astro';
             </h3>
             <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Track active supplier and SKU risk across your portfolio. Updated automatically as conditions change.</p>
           </div>
-          <div class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-xs font-mono text-on-surface">
-            ACTIVE: 1,402 NODES
-          </div>
+
         </div>
       </div>
     </section>
@@ -151,18 +145,12 @@ import Layout from '../layouts/Layout.astro';
     <!-- PROOF SECTION -->
     <section class="grid grid-cols-1 lg:grid-cols-2 border-b border-outline-variant/20 bg-surface-container-lowest">
       <div class="p-6 lg:p-12 border-b lg:border-b-0 lg:border-r border-outline-variant/20">
-        <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-6 border border-outline-variant/50">
-          <span class="material-symbols-outlined text-on-surface">verified_user</span>
-        </div>
         <h2 class="text-2xl md:text-3xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
           Know which suppliers and SKUs are at risk before the ERP catches up.
         </h2>
         <p class="text-sm md:text-base font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
           Your procurement team needs lead time — not a report confirming what already happened. Decisions feed back into your ERP. No separate workflow.
         </p>
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-secondary-container hover:bg-surface-variant text-on-secondary-container font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors inline-flex items-center gap-2">
-          Book a Demo
-        </a>
       </div>
       <div class="p-6 lg:p-12 bg-surface flex flex-col justify-center">
         <ul class="space-y-4">
@@ -203,9 +191,6 @@ import Layout from '../layouts/Layout.astro';
             <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Explain why each flag was raised</div>
           </div>
         </div>
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container border border-outline-variant hover:border-primary text-on-surface font-mono text-[11px] tracking-[0.14em] uppercase px-6 py-3 transition-colors self-start">
-          Book a Demo
-        </a>
       </div>
       <div class="p-6 lg:p-12 bg-surface-container-high flex flex-col justify-center items-start relative overflow-hidden">
         <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
