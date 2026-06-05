@@ -10,102 +10,67 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
   title="Hospital Supply Chain Intelligence | Ceres Technology"
   description="By the time your vendor calls, the shortage is already yours to manage. Ceres gives hospital supply chain teams early warning on supplier disruptions, multi-tier visibility, and automated risk intelligence — before the crisis reaches your formulary."
 >
-  <style>
-    .hospitals-bg {
-      background-color: #03151e;
-      background-image:
-        radial-gradient(circle at 0% 0%, rgba(243, 114, 33, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(15, 34, 43, 0.2) 0%, transparent 50%);
-    }
-    .glass-card {
-      background: rgba(15, 34, 43, 0.6);
-      backdrop-filter: blur(24px);
-      border: 1px solid rgba(167, 139, 126, 0.2);
-    }
-    .bloom-glow {
-      box-shadow: 0 0 20px rgba(243, 114, 33, 0.15);
-    }
-    .bloom-glow:hover {
-      box-shadow: 0 0 30px rgba(243, 114, 33, 0.35);
-    }
-    .primary-gradient {
-      background: linear-gradient(90deg, #f37221, #ffb691);
-    }
-    .pulse-dot {
-      animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .5; transform: scale(1.15); }
-    }
-    .card-img-reveal img {
-      filter: grayscale(1);
-      transition: filter 0.5s;
-    }
-    .card-img-reveal:hover img {
-      filter: grayscale(0);
-    }
-  </style>
-
-  <main class="overflow-x-hidden hospitals-bg text-on-surface pt-14">
+  <main class="overflow-x-hidden text-on-surface pt-14">
 
     <!-- Hero Section -->
-    <section class="relative min-h-[620px] flex flex-col justify-center items-center text-center py-24 px-8 lg:px-12 overflow-hidden">
-      <div class="absolute inset-0 -z-10 opacity-30">
+    <section class="relative pt-32 pb-20 px-8 lg:px-12 border-b border-outline-variant/20 overflow-hidden w-full">
+      <div class="absolute inset-0 -z-10 opacity-20 grayscale">
         <img
           class="w-full h-full object-cover"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLR4PMuSWC41VOYweqUHFzmwF3ccGMbPtdv2XeDcwrcNCLlf_Wqu2YzioVLev-Lfa4tKGyKzNuXeBZRaNdHRlctmTNDMR76fHSX_M15nL2Mp0R4r2Of9dLVaKoGvsqlIfjdLSqjlu1usyiXrgLEvlJ8ZI4bQZfUDqTz9bVBDI4L6ydr0EYtkX4TiP-rCyzoGjuVITLtKQr30nQ1gpMq5s_2CD8fuO7wMsVj6MQGBgjMzHPBJGeTkYI-Zxr7Q4xUVpn5IfuqS0v-vtg"
           alt="Hospital supply chain network visualization"
         />
       </div>
-      <div class="space-y-8 max-w-4xl relative z-10">
-        <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary-container">Hospitals &amp; Health Systems</p>
-        <h1 class="font-headline font-bold text-5xl lg:text-6xl leading-tight tracking-tight text-on-surface">
-          By the time your vendor calls, the shortage is already yours to manage
-        </h1>
-        <p class="font-body text-lg lg:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-          Ceres gives hospital supply chain teams early warning on procurement disruptions — linking every SKU in your formulary to its manufacturing location, distribution path, and upstream risk factors before the call ever comes.
-        </p>
-        <div class="pt-4">
-          <a href={demoUrl} class="primary-gradient text-[#03151e] font-bold py-4 px-10 rounded-xl bloom-glow hover:brightness-110 transition-all inline-flex items-center gap-2">
-            Book a Demo
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="space-y-8 max-w-4xl">
+          <p class="font-mono text-[10px] tracking-[0.18em] font-normal uppercase text-primary">Hospitals &amp; Health Systems</p>
+          <h1 class="font-headline font-bold text-5xl lg:text-6xl leading-tight tracking-tight text-on-surface">
+            By the time your vendor calls, the shortage is already yours to manage
+          </h1>
+          <p class="font-body text-lg lg:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+            Ceres gives hospital supply chain teams early warning on procurement disruptions — linking every SKU in your formulary to its manufacturing location, distribution path, and upstream risk factors before the call ever comes.
+          </p>
+          <div class="pt-4">
+            <a href={demoUrl} class="bg-primary text-on-primary px-8 py-4 font-mono text-[11px] tracking-[0.14em] uppercase hover:opacity-90 transition-all inline-flex items-center gap-2">
+              Book a Demo
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- The Problem -->
-    <section class="py-20 px-8 lg:px-12">
+    <section class="py-20 px-8 lg:px-12 bg-surface-container-lowest border-b border-outline-variant/20">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col items-center text-center gap-2 mb-12">
-          <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary">Risk Vectors</span>
+          <span class="font-mono text-[10px] tracking-[0.18em] font-normal uppercase text-primary">Risk Vectors</span>
           <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface tracking-tight">
             Your ERP tracks what you ordered. It has no idea what's happening upstream.
           </h2>
           <p class="text-on-surface-variant text-lg max-w-2xl">The signals that identify a shortage are visible. They're just not inside your four walls.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="glass-card p-8 rounded-xl flex flex-col gap-4 border-l-4 border-primary-container">
+          <div class="bg-surface-container border border-outline-variant/20 border-l-2 border-primary p-8 flex flex-col gap-4">
             <span class="material-symbols-outlined text-primary text-4xl">storm</span>
             <h3 class="font-headline font-semibold text-xl text-on-surface">Natural Disasters</h3>
             <p class="text-on-surface-variant text-sm">Hurricanes, floods, and severe weather events that knock out manufacturing facilities weeks before vendors notify customers.</p>
           </div>
-          <div class="glass-card p-8 rounded-xl flex flex-col gap-4">
+          <div class="bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4">
             <span class="material-symbols-outlined text-primary text-4xl">gavel</span>
             <h3 class="font-headline font-semibold text-xl text-on-surface">Trade &amp; Tariff Shifts</h3>
             <p class="text-on-surface-variant text-sm">Country-of-origin changes and tariff policy that affect your cost and availability — tracked at the SKU level, not just headlines.</p>
           </div>
-          <div class="glass-card p-8 rounded-xl flex flex-col gap-4">
+          <div class="bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4">
             <span class="material-symbols-outlined text-primary text-4xl">hub</span>
             <h3 class="font-headline font-semibold text-xl text-on-surface">Concentration Risk</h3>
             <p class="text-on-surface-variant text-sm">SKUs tied to a single manufacturing site or distribution center — the hidden single points of failure in your formulary.</p>
           </div>
-          <div class="glass-card p-8 rounded-xl flex flex-col gap-4">
+          <div class="bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4">
             <span class="material-symbols-outlined text-primary text-4xl">visibility_off</span>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between gap-4">
               <h3 class="font-headline font-semibold text-xl text-on-surface">Vendor Opacity</h3>
-              <span class="font-mono text-[10px] tracking-widest uppercase text-primary bg-primary/10 px-2 py-1 rounded">10+ Billion Data Points</span>
+              <span class="bg-primary/10 text-primary font-mono text-[10px] tracking-widest uppercase px-2 py-1">10+ Billion Data Points</span>
             </div>
             <p class="text-on-surface-variant text-sm">Data points across geopolitical, economic, raw materials, logistics, and other categories, with over 35,000 data categories to identify risk.</p>
           </div>
@@ -114,7 +79,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
     </section>
 
     <!-- How Ceres Helps -->
-    <section class="py-20 px-8 lg:px-12 bg-surface-container-low">
+    <section class="py-20 px-8 lg:px-12 bg-surface-container-low border-b border-outline-variant/20">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface tracking-tight">From reactive to proactive</h2>
@@ -122,7 +87,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-          <div class="glass-card rounded-xl overflow-hidden card-img-reveal group">
+          <div class="bg-surface-container border border-outline-variant/20 overflow-hidden">
             <div class="h-48 relative">
               <img
                 class="w-full h-full object-cover"
@@ -132,12 +97,12 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
               <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60"></div>
             </div>
             <div class="p-6 space-y-2">
-              <h3 class="font-headline font-semibold text-xl text-primary-container">Supplier-to-SKU Mapping</h3>
+              <h3 class="font-headline font-semibold text-xl text-primary">Supplier-to-SKU Mapping</h3>
               <p class="text-on-surface-variant text-sm">Automatically link every item in your formulary to its manufacturing location, distribution path, and upstream dependencies. Know which SKUs are exposed before an event hits.</p>
             </div>
           </div>
 
-          <div class="glass-card rounded-xl overflow-hidden card-img-reveal group">
+          <div class="bg-surface-container border border-outline-variant/20 overflow-hidden">
             <div class="h-48 relative">
               <img
                 class="w-full h-full object-cover"
@@ -147,12 +112,12 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
               <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60"></div>
             </div>
             <div class="p-6 space-y-2">
-              <h3 class="font-headline font-semibold text-xl text-primary-container">Disruption Early Warning</h3>
+              <h3 class="font-headline font-semibold text-xl text-primary">Disruption Early Warning</h3>
               <p class="text-on-surface-variant text-sm">Receive alerts up to 90 days before your vendor reports a clinical shortage. When a weather event, port shutdown, or facility closure hits your supply chain, Ceres surfaces it first.</p>
             </div>
           </div>
 
-          <div class="glass-card rounded-xl overflow-hidden card-img-reveal group">
+          <div class="bg-surface-container border border-outline-variant/20 overflow-hidden">
             <div class="h-48 relative">
               <img
                 class="w-full h-full object-cover"
@@ -162,7 +127,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
               <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60"></div>
             </div>
             <div class="p-6 space-y-2">
-              <h3 class="font-headline font-semibold text-xl text-primary-container">Tariff &amp; Compliance Tracking</h3>
+              <h3 class="font-headline font-semibold text-xl text-primary">Tariff &amp; Compliance Tracking</h3>
               <p class="text-on-surface-variant text-sm">Automatically identify HTS codes, countries of origin, and tariff exposure across your formulary. No more analysts going product by product through boxes and PDFs.</p>
             </div>
           </div>
@@ -172,7 +137,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
     </section>
 
     <!-- Workflows Bento Grid -->
-    <section class="py-20 px-8 lg:px-12">
+    <section class="py-20 px-8 lg:px-12 bg-surface border-b border-outline-variant/20">
       <div class="max-w-7xl mx-auto">
         <div class="mb-12">
           <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface mb-2 tracking-tight">Where hospitals are using Ceres today</h2>
@@ -181,10 +146,10 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
         <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
 
           <!-- Formulary Risk Scoring — large featured card -->
-          <div class="md:col-span-8 glass-card p-8 rounded-2xl flex flex-col justify-between min-h-[400px] border-l-4 border-primary-container">
+          <div class="md:col-span-8 bg-surface-container border border-outline-variant/20 border-l-2 border-primary p-8 flex flex-col justify-between min-h-[400px]">
             <div class="space-y-4">
               <div class="flex justify-between items-start">
-                <span class="bg-primary/20 text-primary px-3 py-1 rounded-full font-mono text-[10px] tracking-widest bloom-glow">Active Risk Flag</span>
+                <span class="bg-primary/10 text-primary font-mono text-[10px] tracking-widest uppercase px-2 py-1">Active Risk Flag</span>
                 <span class="material-symbols-outlined text-primary">analytics</span>
               </div>
               <h3 class="font-headline font-bold text-4xl text-on-surface">Formulary Risk Scoring</h3>
@@ -192,19 +157,18 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
             </div>
             <div class="mt-8 pt-6 border-t border-outline-variant/30 flex gap-10">
               <div>
-                <div class="font-headline font-bold text-3xl text-primary">300k+</div>
+                <div class="text-primary font-headline font-bold text-3xl">300k+</div>
                 <div class="font-mono text-[10px] tracking-widest uppercase opacity-60 mt-1">SKUs Monitored</div>
               </div>
               <div>
-                <div class="font-headline font-bold text-3xl text-primary">90 days</div>
+                <div class="text-primary font-headline font-bold text-3xl">90 days</div>
                 <div class="font-mono text-[10px] tracking-widest uppercase opacity-60 mt-1">Early Warning Lead</div>
               </div>
             </div>
           </div>
 
-
           <!-- Multi-Tier Supplier Visibility -->
-          <div class="md:col-span-4 glass-card p-6 rounded-2xl space-y-4">
+          <div class="md:col-span-4 bg-surface-container border border-outline-variant/20 p-6 space-y-4">
             <div class="flex items-center gap-2">
               <span class="material-symbols-outlined text-primary">account_tree</span>
               <h4 class="font-headline font-semibold text-xl text-on-surface">Multi-Tier Visibility</h4>
@@ -215,8 +179,8 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
                   <span class="text-on-surface-variant">Tier 1 Direct</span>
                   <span class="text-primary font-mono">100%</span>
                 </div>
-                <div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
-                  <div class="h-full primary-gradient" style="width: 100%"></div>
+                <div class="w-full h-1.5 bg-surface-container-high overflow-hidden">
+                  <div class="h-full bg-primary" style="width: 100%"></div>
                 </div>
               </div>
               <div>
@@ -224,8 +188,8 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
                   <span class="text-on-surface-variant">Tier 2 Components</span>
                   <span class="text-primary font-mono">64%</span>
                 </div>
-                <div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
-                  <div class="h-full primary-gradient" style="width: 64%"></div>
+                <div class="w-full h-1.5 bg-surface-container-high overflow-hidden">
+                  <div class="h-full bg-primary" style="width: 64%"></div>
                 </div>
               </div>
               <p class="text-on-surface-variant text-sm pt-2">See past your distributors into their suppliers — the tier most health systems have zero visibility into.</p>
@@ -233,7 +197,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
           </div>
 
           <!-- OR & Surgical Supply -->
-          <div class="md:col-span-8 glass-card p-6 rounded-2xl flex flex-col md:flex-row gap-6 items-center">
+          <div class="md:col-span-8 bg-surface-container border border-outline-variant/20 p-6 flex flex-col md:flex-row gap-6 items-center">
             <div class="flex-1 space-y-3">
               <h4 class="font-headline font-semibold text-xl text-on-surface">OR &amp; Surgical Supply</h4>
               <p class="text-on-surface-variant text-sm">Bring data-driven planning to the service lines that can't afford a stockout — replacing tribal knowledge with structured, auditable intelligence.</p>
@@ -242,12 +206,12 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
                   <span class="font-mono text-[10px] tracking-widest uppercase text-on-surface-variant">Network Health</span>
                   <span class="font-mono text-[10px] tracking-widest uppercase text-primary">Stable</span>
                 </div>
-                <div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
-                  <div class="h-full primary-gradient" style="width: 88%"></div>
+                <div class="w-full h-2 bg-surface-container-high overflow-hidden">
+                  <div class="h-full bg-primary" style="width: 88%"></div>
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-40 aspect-square bg-surface-container rounded-xl flex items-center justify-center shrink-0">
+            <div class="w-full md:w-40 aspect-square bg-surface-container-low border border-outline-variant/20 flex items-center justify-center shrink-0">
               <span class="material-symbols-outlined text-primary/30 text-7xl">surgical</span>
             </div>
           </div>
@@ -257,8 +221,8 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
     </section>
 
     <!-- Proof Section -->
-    <section class="py-24 px-8 lg:px-12 bg-surface-container-low">
-      <div class="max-w-7xl mx-auto glass-card p-12 rounded-3xl relative overflow-hidden border border-primary/20">
+    <section class="py-24 px-8 lg:px-12 bg-surface-container-lowest border-b border-outline-variant/20">
+      <div class="max-w-7xl mx-auto bg-surface-container border border-outline-variant/20 p-12 relative overflow-hidden">
         <span class="material-symbols-outlined absolute -right-12 -bottom-12 text-[200px] opacity-5 text-primary pointer-events-none" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
         <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="space-y-8">
@@ -284,18 +248,18 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
           </div>
           <!-- Mock compliance report card -->
           <div class="hidden lg:block">
-            <div class="glass-card p-6 rounded-xl border border-outline-variant/30 rotate-3 shadow-xl">
+            <div class="bg-surface-container-low border border-outline-variant/20 p-6 rotate-3">
               <div class="flex items-center gap-3 mb-6">
-                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                <div class="w-8 h-8 bg-primary/20 flex items-center justify-center">
                   <span class="material-symbols-outlined text-primary text-sm">security</span>
                 </div>
                 <span class="font-mono text-[10px] tracking-widest uppercase text-on-surface-variant">Compliance Report v2.4</span>
               </div>
               <div class="space-y-2">
-                <div class="h-2 w-3/4 bg-surface-container-high rounded"></div>
-                <div class="h-2 w-full bg-surface-container-high rounded"></div>
-                <div class="h-2 w-5/6 bg-surface-container-high rounded"></div>
-                <div class="h-2 w-1/2 bg-primary/30 rounded mt-6"></div>
+                <div class="h-2 w-3/4 bg-surface-container-high"></div>
+                <div class="h-2 w-full bg-surface-container-high"></div>
+                <div class="h-2 w-5/6 bg-surface-container-high"></div>
+                <div class="h-2 w-1/2 bg-primary/30 mt-6"></div>
               </div>
             </div>
           </div>
@@ -304,11 +268,11 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 px-8 lg:px-12">
+    <section class="py-24 px-8 lg:px-12" style="background-color: #011E24; background-image: radial-gradient(circle at top right, rgba(243, 114, 33, 0.1), transparent 40%);">
       <div class="max-w-4xl mx-auto text-center space-y-8">
         <h2 class="font-headline font-bold text-5xl lg:text-6xl text-on-surface tracking-tight leading-tight">Know before the shortage reaches your dock</h2>
         <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-          <a href={demoUrl} class="primary-gradient text-[#03151e] font-bold py-5 px-12 rounded-xl bloom-glow hover:scale-105 transition-all inline-block text-lg">
+          <a href={demoUrl} class="bg-primary text-on-primary px-8 py-4 font-mono text-[11px] tracking-[0.14em] uppercase hover:opacity-90 transition-all inline-flex items-center justify-center">
             Book a Demo
           </a>
         </div>

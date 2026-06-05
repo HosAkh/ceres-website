@@ -10,47 +10,13 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
   title="CPG Supply Chain Intelligence | Ceres Technology"
   description="Forecast accuracy stuck at 50–55%? Ceres layers weather patterns, commodity prices, and market signals onto your CPG planning data so your commercial and supply chain teams can finally agree on the right number."
 >
-  <style>
-    .glass-card {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .orange-glow {
-      box-shadow: 0 0 20px rgba(243, 114, 33, 0.3);
-    }
-    .orange-glow:hover {
-      box-shadow: 0 0 30px rgba(243, 114, 33, 0.5);
-    }
-    .pulse-ring {
-      position: relative;
-    }
-    .pulse-ring::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #f37221;
-      opacity: 0.4;
-      animation: pulse-animation 2s infinite ease-out;
-    }
-    @keyframes pulse-animation {
-      0% { transform: scale(1); opacity: 0.4; }
-      100% { transform: scale(2.5); opacity: 0; }
-    }
-    .accent-gradient {
-      background: linear-gradient(90deg, #f37221 0%, #ffb691 100%);
-    }
-  </style>
-
-  <main class="overflow-x-hidden bg-background text-on-surface pt-14">
+  <main class="overflow-x-hidden text-on-surface pt-14">
 
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-20 px-6 lg:px-12 overflow-hidden">
+    <section class="relative pt-32 pb-20 px-8 lg:px-12 border-b border-outline-variant/20 overflow-hidden w-full">
       <div class="max-w-7xl mx-auto relative z-10">
         <div class="max-w-3xl">
-          <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary-container mb-3">Consumer Packaged Goods</p>
+          <p class="font-mono text-[10px] tracking-[0.18em] font-normal text-primary mb-3 uppercase">Consumer Packaged Goods</p>
           <h1 class="font-headline font-bold text-5xl lg:text-6xl leading-tight tracking-tight text-on-surface mb-6">
             Break through the forecast accuracy ceiling that's costing you inventory every season
           </h1>
@@ -58,7 +24,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
             While commercial teams forecast high to hit targets, Ceres layers hyper-local weather, commodity prices, and 35,000+ market signals to deliver defensible supply chain intelligence.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href={demoUrl} class="accent-gradient text-[#03151e] font-bold py-4 px-8 rounded-xl orange-glow hover:brightness-110 transition-all inline-flex items-center justify-center gap-2">
+            <a href={demoUrl} class="bg-primary text-on-primary px-8 py-4 font-mono text-[11px] tracking-[0.14em] uppercase hover:opacity-90 transition-all inline-flex items-center justify-center gap-2">
               <span>Book a Demo</span>
               <span class="material-symbols-outlined">arrow_forward</span>
             </a>
@@ -66,17 +32,17 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
         </div>
 
         <!-- Data Vis Element -->
-        <div class="mt-20 relative h-[280px] w-full glass-card rounded-2xl flex items-center justify-center overflow-hidden">
+        <div class="mt-20 relative h-[280px] w-full bg-surface-container border border-outline-variant/20 flex items-center justify-center overflow-hidden">
           <div class="absolute inset-0 opacity-20">
             <img
-              class="w-full h-full object-cover rounded-2xl"
+              class="w-full h-full object-cover"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMo1eJFOs9sVd5RuJcF-UpJzIPQi0tA-AWXkK8eo4--l8XUvfhIG07B3WNbsIWYg0D2W-eh7repc6HwXnrbxe5A9hDRlB9ajfxidf1FCKYPJ1bKybcybGRZv397SKgL2Pha_obQpcYKovPU3svRWgK6Uk4ipsp1hzCF-JH8KCDKAU0hysEzhHGNA6pjDeaxNhnQN2Jgg2J6SlNmMolEk7-5BckAgH9CirFBxpdbdwD-qDwua842BBan1AtntxU71vFLS3a1GYSQU"
               alt="Global CPG supply chain data visualization"
             />
           </div>
           <div class="relative flex flex-col items-center">
-            <div class="pulse-ring w-4 h-4 rounded-full bg-primary-container mb-4"></div>
-            <span class="text-primary-container font-headline font-bold text-xl">Predictive Risk Detected</span>
+            <div class="w-4 h-4 bg-primary mb-4"></div>
+            <span class="text-primary font-headline font-bold text-xl">Predictive Risk Detected</span>
             <span class="text-on-surface-variant text-sm mt-1">Global CPG Distribution Node</span>
           </div>
         </div>
@@ -84,7 +50,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
     </section>
 
     <!-- The Problem -->
-    <section class="py-20 px-8 lg:px-12 bg-surface-container-low">
+    <section class="py-20 px-8 lg:px-12 bg-surface-container-lowest border-b border-outline-variant/20">
       <div class="max-w-7xl mx-auto">
         <div class="mb-12">
           <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface mb-4 tracking-tight">
@@ -93,23 +59,23 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
           <p class="text-on-surface-variant text-lg">But it's blind to the external signals driving your real demand.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="glass-card p-8 rounded-xl flex flex-col gap-4 border-l-4 border-primary-container">
-            <span class="material-symbols-outlined text-primary-container text-4xl">rainy</span>
+          <div class="bg-surface-container border border-outline-variant/20 border-l-2 border-primary p-8 flex flex-col gap-4">
+            <span class="material-symbols-outlined text-primary text-4xl">rainy</span>
             <h3 class="font-headline font-semibold text-2xl text-on-surface">Weather &amp; Climate</h3>
             <p class="text-on-surface-variant text-base">Seasonal pattern shifts, precipitation anomalies, and temperature changes that move demand before your internal data does.</p>
           </div>
-          <div class="glass-card p-8 rounded-xl flex flex-col gap-4">
-            <span class="material-symbols-outlined text-primary-container text-4xl">price_change</span>
+          <div class="bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4">
+            <span class="material-symbols-outlined text-primary text-4xl">price_change</span>
             <h3 class="font-headline font-semibold text-2xl text-on-surface">Input Cost Volatility</h3>
             <p class="text-on-surface-variant text-base">Raw material, packaging, and ingredient cost movements tracked before they reach your sourcing team.</p>
           </div>
-          <div class="glass-card p-8 rounded-xl flex flex-col gap-4">
-            <span class="material-symbols-outlined text-primary-container text-4xl">public</span>
+          <div class="bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4">
+            <span class="material-symbols-outlined text-primary text-4xl">public</span>
             <h3 class="font-headline font-semibold text-2xl text-on-surface">Geopolitics</h3>
             <p class="text-on-surface-variant text-base">Mapping disruptions across trade lanes and regional conflicts before they surface in your supplier communication.</p>
           </div>
-          <div class="glass-card p-8 rounded-xl flex flex-col gap-4">
-            <span class="material-symbols-outlined text-primary-container text-4xl">oil_barrel</span>
+          <div class="bg-surface-container border border-outline-variant/20 p-8 flex flex-col gap-4">
+            <span class="material-symbols-outlined text-primary text-4xl">oil_barrel</span>
             <h3 class="font-headline font-semibold text-2xl text-on-surface">Energy &amp; Freight</h3>
             <p class="text-on-surface-variant text-base">Oil and logistics cost correlations that flow through into your COGS before your ERP reflects them.</p>
           </div>
@@ -118,36 +84,36 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
     </section>
 
     <!-- How Ceres Helps -->
-    <section class="py-20 px-8 lg:px-12">
+    <section class="py-20 px-8 lg:px-12 bg-surface-container-low border-b border-outline-variant/20">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface tracking-tight">Bridging the Commercial-Supply Gap</h2>
           <p class="text-on-surface-variant text-lg mt-4 max-w-2xl mx-auto">Three things your planning team can do with Ceres that they can't do in Excel.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="glass-card p-10 rounded-2xl flex flex-col">
-            <h3 class="font-headline font-semibold text-2xl text-primary-container mb-4">Forecast Reconciliation</h3>
+          <div class="bg-surface-container border border-outline-variant/20 p-10 flex flex-col">
+            <h3 class="font-headline font-semibold text-2xl text-primary mb-4">Forecast Reconciliation</h3>
             <p class="text-on-surface-variant text-base mb-6 flex-1">Automatically align optimistic sales targets with external market realities and supply constraints. See where commercial and supply chain diverge — before inventory locks in.</p>
             <img
-              class="w-full h-40 object-cover rounded-lg mt-auto"
+              class="w-full h-40 object-cover mt-auto"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZwiqnOxIG-vUvtovSViIuIU3gmwf-gBiNU4WFv69jb0bbW3nMK8TH7mLNHeOG9TTgq1qi7oMbk_6LtxLrZSzfwuufTQ4IIEjl8EQb24z4qCJhOvWae_jUJY9ZQH_rcoQgDAIYo7-OzDiO899mgzW3okTFHhhoUt8TqbJItzAOmkb6RgMrkFb7CzZOWT5vrTgIioGyHDssLx4kMUPaQwIWIyKrqg7fJ5aEwYUnFL_4GFazgZSjhTGHJDC041gUUMB7JFcLhZx2DKA"
               alt="Forecast reconciliation visualization"
             />
           </div>
-          <div class="glass-card p-10 rounded-2xl flex flex-col">
-            <h3 class="font-headline font-semibold text-2xl text-primary-container mb-4">Seasonal Signal Monitoring</h3>
+          <div class="bg-surface-container border border-outline-variant/20 p-10 flex flex-col">
+            <h3 class="font-headline font-semibold text-2xl text-primary mb-4">Seasonal Signal Monitoring</h3>
             <p class="text-on-surface-variant text-base mb-6 flex-1">Early detection of season-shifting anomalies in weather and consumption patterns weeks ahead of time. Know when this season looks different before you're producing for it.</p>
             <img
-              class="w-full h-40 object-cover rounded-lg mt-auto"
+              class="w-full h-40 object-cover mt-auto"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh6V_xt6fe4TTp7HiRxBY1oqj8U1tVm208u9aX4ORGqso9qfx1OldFv_Hz5rP0-y80xRRNY0P0UgwLpvXcIVYQi-mRiH5h6t3mwF_Fnr58oxjyPFBzb18yNRpuKM3j-VA-cCe0C7AXTNnj9nyuJ6AIa_gwbx32k1GDcyeoJ16i8i489OLFOEl3fbGPs_D2yZ2Fqnw_CASbCiXrzcLOdB-gqMoADv-bjDmF1BsgaHJjkL5z6txuwH9G_xOe8pTqTMtpTmqK87dPuBM"
               alt="Seasonal signal monitoring visualization"
             />
           </div>
-          <div class="glass-card p-10 rounded-2xl flex flex-col">
-            <h3 class="font-headline font-semibold text-2xl text-primary-container mb-4">Explainable Outputs</h3>
+          <div class="bg-surface-container border border-outline-variant/20 p-10 flex flex-col">
+            <h3 class="font-headline font-semibold text-2xl text-primary mb-4">Explainable Outputs</h3>
             <p class="text-on-surface-variant text-base mb-6 flex-1">Every forecast comes with a 'why' - linked directly to specific external indicators.</p>
             <img
-              class="w-full h-40 object-cover rounded-lg mt-auto"
+              class="w-full h-40 object-cover mt-auto"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3MjZ_f1Wr_Oj_2A_jNctphr55lhT6cj_gau2v2OMjIjqj9QnefJyCmXB1QuYH6C9xYm3Jt9D4N3OP8BfQlC2y7QUCgzWyb97kTONREmFWag-021T_qgdd3OxwOmZsX19yo05Kmw_mrjl6QuEaN3g07F--cCBPixUW7bQGyTDPJwHQE4sFI-4FAC1MeKPHgGxL1tj4vf-fDmDczs3YTopPHnUu7Oht09vewdZ0zcu_3JKdUsJv0DvTMZe21-y2tLF91uGjhU3ZZ9U"
               alt="Explainable outputs visualization"
             />
@@ -157,52 +123,52 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
     </section>
 
     <!-- Workflows Bento Grid -->
-    <section class="py-20 px-8 lg:px-12 bg-surface-container-low">
+    <section class="py-20 px-8 lg:px-12 bg-surface border-b border-outline-variant/20">
       <div class="max-w-7xl mx-auto">
         <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface mb-12 tracking-tight">Supply Chain Intelligence Workflows</h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(200px,auto)]">
 
           <!-- Over-Forecast Detection (large) -->
-          <div class="md:col-span-2 md:row-span-2 glass-card p-8 rounded-2xl border border-primary-container/20 flex flex-col justify-between">
+          <div class="md:col-span-2 md:row-span-2 bg-surface-container border border-outline-variant/20 border-l-2 border-primary p-8 flex flex-col justify-between">
             <div>
-              <span class="material-symbols-outlined text-primary-container mb-4 text-3xl">warning</span>
+              <span class="material-symbols-outlined text-primary mb-4 text-3xl">warning</span>
               <h3 class="font-headline font-semibold text-2xl text-on-surface mb-4">Over-Forecast Detection</h3>
               <p class="text-on-surface-variant text-lg leading-relaxed">We flag SKU level discrepancies where history doesn't match current market velocity.</p>
             </div>
             <div class="mt-8 flex gap-2 flex-wrap">
-              <span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full text-xs font-mono flex items-center gap-1">
-                <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+              <span class="bg-primary/10 text-primary font-mono text-[10px] tracking-widest uppercase px-2 py-1 flex items-center gap-1">
+                <span class="w-2 h-2 bg-primary"></span>
                 High Confidence
               </span>
-              <span class="bg-surface-container-highest text-on-surface px-3 py-1 rounded-full text-xs font-mono">
+              <span class="bg-primary/10 text-primary font-mono text-[10px] tracking-widest uppercase px-2 py-1">
                 Inventory Risk
               </span>
             </div>
           </div>
 
           <!-- When History Misleads -->
-          <div class="md:col-span-2 glass-card p-8 rounded-2xl border border-white/5">
-            <span class="material-symbols-outlined text-on-surface-variant mb-2">history_toggle_off</span>
+          <div class="md:col-span-2 bg-surface-container border border-outline-variant/20 p-8">
+            <span class="material-symbols-outlined text-primary mb-2">history_toggle_off</span>
             <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">When History Misleads</h3>
             <p class="text-on-surface-variant text-base">See when weather, commodity, and market signals start to break from the assumptions behind your current plan.</p>
           </div>
 
           <!-- Territory-Level Demand -->
-          <div class="glass-card p-8 rounded-2xl border border-white/5">
-            <span class="material-symbols-outlined text-on-surface-variant mb-2">pin_drop</span>
+          <div class="bg-surface-container border border-outline-variant/20 p-8">
+            <span class="material-symbols-outlined text-primary mb-2">pin_drop</span>
             <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">Territory Demand</h3>
             <p class="text-on-surface-variant text-base">Test different what-if scenarios to see how external and internal changes could impact demand.</p>
           </div>
 
           <!-- Input Cost Monitoring -->
-          <div class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col justify-between">
+          <div class="bg-surface-container border border-outline-variant/20 p-8 flex flex-col justify-between">
             <div>
-              <span class="material-symbols-outlined text-on-surface-variant mb-2">show_chart</span>
+              <span class="material-symbols-outlined text-primary mb-2">show_chart</span>
               <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">10B+ Signals</h3>
               <p class="text-on-surface-variant text-base">Analyze over 10B+ signals that can impact your operations.</p>
             </div>
-            <div class="mt-4 h-1 w-full bg-white/10 rounded-full overflow-hidden">
-              <div class="h-full bg-primary-container" style="width: 75%"></div>
+            <div class="mt-4 h-1 w-full bg-surface-container-highest overflow-hidden">
+              <div class="h-full bg-primary" style="width: 75%"></div>
             </div>
           </div>
 
@@ -211,11 +177,11 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 px-8 lg:px-12">
+    <section class="py-24 px-8 lg:px-12" style="background-color: #011E24; background-image: radial-gradient(circle at top right, rgba(243, 114, 33, 0.1), transparent 40%);">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="font-headline font-bold text-5xl lg:text-6xl text-on-surface mb-6 tracking-tight leading-tight">Stop guessing your planning needs</h2>
         <p class="text-on-surface-variant text-xl mb-12">See how Ceres works against your planning data, SKUs, and seasonal cycles.</p>
-        <a href={demoUrl} class="accent-gradient text-[#03151e] font-bold py-6 px-12 rounded-2xl text-2xl orange-glow hover:scale-105 transition-all inline-block">
+        <a href={demoUrl} class="bg-primary text-on-primary px-12 py-5 font-mono text-[11px] tracking-[0.14em] uppercase hover:opacity-90 transition-all inline-flex items-center justify-center">
           Book a Demo
         </a>
       </div>
