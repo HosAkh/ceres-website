@@ -71,6 +71,81 @@ body {
 }
 
 
+/* ─── Button System ──────────────────────────────────────────────────────────
+   Usage:
+     Primary   → class="btn-primary"
+     Secondary → class="btn-secondary"
+     Tertiary  → class="btn-tertiary"
+   All buttons are square (2px radius), DM Mono, 11px, uppercase, tracked.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+@layer components {
+  /* Shared base for primary + secondary */
+  .btn-base {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;           /* py-4 px-8 */
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 0.125rem;      /* 2px — stays square */
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+
+  /* PRIMARY — filled orange */
+  .btn-primary {
+    @apply btn-base;
+    background-color: #ffb691;    /* primary */
+    color: #552000;               /* on-primary */
+    border-color: #ffb691;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+
+  /* SECONDARY — outlined orange */
+  .btn-secondary {
+    @apply btn-base;
+    background-color: transparent;
+    color: #ffb691;               /* primary */
+    border-color: #ffb691;
+  }
+  .btn-secondary:hover {
+    background-color: rgba(255, 182, 145, 0.08);
+  }
+
+  /* TERTIARY — text-only link, no background, no border */
+  .btn-tertiary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffb691;               /* primary */
+    text-decoration: none;
+    text-underline-offset: 4px;
+    transition: opacity 0.15s ease;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .btn-tertiary:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+}
+
 .machined-gradient {
   background: linear-gradient(145deg, #272a31 0%, #0b0e14 100%);
 }
