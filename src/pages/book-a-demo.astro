@@ -9,10 +9,9 @@ import Layout from '../layouts/Layout.astro';
   <main class="flex-grow flex flex-col">
 
     <!-- HERO SECTION -->
-    <section class="bg-surface-container-lowest pt-24 pb-16 px-6 lg:px-12 border-b border-surface-container relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-1/3 h-full bg-machined-gradient opacity-20 pointer-events-none"></div>
-      <div class="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div>
+    <section class="bg-surface-container-lowest pt-24 pb-16 px-6 lg:px-12 border-b border-surface-container relative">
+      <div class="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="pt-4">
           <h1 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
             Book a Ceres walkthrough
           </h1>
@@ -21,18 +20,17 @@ import Layout from '../layouts/Layout.astro';
           </p>
         </div>
 
-          <div class="bg-surface-container border border-outline-variant/20 p-8 industrial-shadow relative">
-            <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
-            <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface mb-6">Schedule your conversation</h2>
-            <!-- Nutshell Form -->
-            <div id="nutshell-form-VANvYW"></div>
-            <script is:inline>
-              (function(n,u,t){n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,'Nutsheller'));
-              Nutsheller('initForm', {form: 'VANvYW', instance: '373019', authToken: '', target: 'nutshell-form-VANvYW'});
-            </script>
-            <script is:inline type="module" src="https://loader.nutshell.com/nutsheller-esm.js"></script>
-            <!-- End Nutshell Form -->
-          </div>
+        <div class="relative">
+          <div class="absolute top-0 left-0 w-full h-1 bg-primary z-10"></div>
+          <!-- Nutshell Form -->
+          <div id="nutshell-form-VANvYW"></div>
+          <script is:inline>
+            (function(n,u,t){n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,'Nutsheller'));
+            Nutsheller('initForm', {form: 'VANvYW', instance: '373019', authToken: '', target: 'nutshell-form-VANvYW'});
+          </script>
+          <script is:inline type="module" src="https://loader.nutshell.com/nutsheller-esm.js"></script>
+          <!-- End Nutshell Form -->
+        </div>
       </div>
     </section>
 
