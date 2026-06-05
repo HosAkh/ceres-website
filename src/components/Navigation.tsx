@@ -27,8 +27,6 @@ export default function Navigation({ currentPath = '' }: Props) {
     { label: 'Consumer Packaged Goods', path: 'cpg/' },
     { label: 'Investment Firms', path: 'investment-firms/' },
     { label: 'Tier 1 Automotive', path: 'tier-one/' },
-    { label: 'S&OP Intelligence', path: 'homev3/' },
-    { label: 'S&OP Intelligence V2', path: 'homev3-v2/' },
     { label: 'S&OP Intelligence V3', path: 'homev4/' },
   ];
 

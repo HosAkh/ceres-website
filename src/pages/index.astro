@@ -1,243 +1,175 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const demoUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL + 'book-a-demo/'
+  : import.meta.env.BASE_URL + '/book-a-demo/';
 ---
 
 <Layout
-  title="Ceres Technology | AI Supply Chain Intelligence Platform"
-  description="Ceres connects your ERP and supply chain data to live external signals so your team can predict disruptions 48–72 hours before they hit. Enterprise AI with 94% forecast accuracy."
+  title="Ceres Technology | AI Intelligence Layer"
+  description="Ceres layers 10 billion+ external signals onto your internal records — surfacing what's at risk, what needs a decision, and who should act. Works on top of your existing ERP. No replacement required."
 >
-  <main class="pt-14">
+  <main class="pt-14 bg-surface-container-lowest">
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex flex-col justify-center px-8 bg-surface-container-lowest overflow-hidden border-b-2 border-surface-container">
-      <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#45474b 1px, transparent 1px); background-size: 32px 32px;"></div>
-      <div class="max-w-5xl relative z-10">
-        <div class="hidden inline-flex items-center gap-2 px-2 py-1 bg-surface-container border-l-2 border-primary mb-6">
-          <span class="w-2 h-2 bg-primary animate-pulse"></span>
-          <span class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">Now processing live supply chain data</span>
+    <!-- HERO -->
+    <section class="relative overflow-hidden border-b border-outline-variant/20 bg-surface px-6 py-24 lg:px-12 lg:py-32">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,182,145,0.07),transparent_40%)]"></div>
+      <div class="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-12 lg:items-center">
+
+        <div class="lg:col-span-5">
+          <h1 class="mb-6 font-headline text-5xl font-extrabold leading-[1.0] tracking-[-0.02em] text-on-surface sm:text-6xl lg:text-7xl">
+            Turn billions of signals into actions that protect your operations.
+          </h1>
+          <p class="mb-10 max-w-lg text-lg font-body leading-[1.65] text-on-surface-variant">
+            We monitor 10 billion+ external signals — geopolitical, logistics, commodity, regulatory — and connect them directly to the decisions your team is already making, so you have the full picture before you act.
+          </p>
+          <a href={demoUrl} class="inline-block bg-primary px-10 py-4 font-mono text-[11px] uppercase tracking-[0.14em] text-on-primary transition-all hover:brightness-110 active:scale-95">
+            Book a Demo
+          </a>
         </div>
-        <h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-8 uppercase">
-          Turn scattered data<br/>
-          <span class="text-primary">into decisions</span><br/>
-          you can act on
-        </h1>
-        <p class="text-lg font-body font-normal text-on-surface-variant max-w-2xl mb-10 leading-[1.7]">
-          Ceres connects your supply chain data to live external signals so your team can see problems before they hit.
+
+        <!-- Live agent feed -->
+        <div class="lg:col-span-7">
+          <div class="border border-primary/20 bg-surface-container shadow-[0_0_40px_rgba(243,114,33,0.06)]">
+            <div class="flex items-center justify-between border-b border-outline-variant/25 bg-surface-container-high px-5 py-3">
+              <div class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+                <span class="font-mono text-[9px] uppercase tracking-[0.22em] text-on-surface-variant">Ceres Agent — Running</span>
+              </div>
+              <span class="font-mono text-[9px] uppercase tracking-[0.18em] text-primary">Live</span>
+            </div>
+            <div class="divide-y divide-outline-variant/15 px-5 py-1">
+              <div class="flex items-start gap-4 py-4">
+                <span class="material-symbols-outlined mt-0.5 text-[18px] text-primary">task_alt</span>
+                <div>
+                  <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-primary mb-1">Flagged — Risk detected upstream</div>
+                  <p class="text-sm text-on-surface leading-[1.6]">Supplier facility in Tier 2 affected by port closure. 6 open orders at risk. Lead time impact: 11–14 days before the next planning cycle.</p>
+                  <div class="mt-1.5 font-mono text-[9px] text-on-surface-variant">Action routed to <span class="text-on-surface">Procurement</span></div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 py-4">
+                <span class="material-symbols-outlined mt-0.5 text-[18px] text-secondary">monitoring</span>
+                <div>
+                  <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-secondary mb-1">Monitoring — Cost exposure</div>
+                  <p class="text-sm text-on-surface leading-[1.6]">Input costs up 8.3% over 6 weeks. 4 open contracts exposed. No coverage locked for Q4 — categories 7, 12, 15.</p>
+                  <div class="mt-1.5 font-mono text-[9px] text-on-surface-variant">Escalated to <span class="text-on-surface">Planning Review</span> — 2 days before cycle closes</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 py-4">
+                <span class="material-symbols-outlined mt-0.5 text-[18px] text-tertiary">check_circle</span>
+                <div>
+                  <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-tertiary mb-1">Resolved — Decision made</div>
+                  <p class="text-sm text-on-surface leading-[1.6]">Teams moved forward with a shared external view. Decision made, action logged. Cycle closed <span class="text-primary font-semibold">4 days early</span>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHAT CERES DOES -->
+    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <h2 class="mb-3 font-headline text-4xl font-extrabold tracking-[-0.01em] text-on-surface lg:text-5xl">Not a dashboard. Not a report. A layer that acts.</h2>
+        <p class="mb-14 max-w-2xl text-lg text-on-surface-variant font-body leading-[1.65]">External signals affect your operations long before they show up internally. Ceres watches them, scores what they mean for your specific records, and routes the decision to the right person before the window closes.</p>
+
+        <div class="grid gap-px lg:grid-cols-2 bg-outline-variant/15">
+          <div class="bg-surface-container p-8">
+            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">manage_search</span>
+            <h3 class="mb-2 font-headline text-xl font-bold text-on-surface">Maps 35,000+ external signals to your internal records</h3>
+            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Commodity prices, port disruptions, supplier facility events, geopolitical shifts, weather — tracked continuously against your live data. Not a generic feed. Matched to your specific suppliers, SKUs, orders, or positions.</p>
+          </div>
+          <div class="bg-surface-container p-8">
+            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">notification_important</span>
+            <h3 class="mb-2 font-headline text-xl font-bold text-on-surface">Surfaces what actually needs a decision today</h3>
+            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Hundreds of signals move every day. Ceres scores and ranks them. Your team sees the handful that require action — not the hundreds that moved but don't matter to you right now.</p>
+          </div>
+          <div class="bg-surface-container p-8">
+            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">troubleshoot</span>
+            <h3 class="mb-2 font-headline text-xl font-bold text-on-surface">Every flag is traceable to its source</h3>
+            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">No black boxes. When Ceres flags something, it shows you the exact signal behind it. Your team can interrogate it, challenge it, or act on it — with a full audit trail.</p>
+          </div>
+          <div class="bg-surface-container p-8">
+            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">sync_alt</span>
+            <h3 class="mb-2 font-headline text-xl font-bold text-on-surface">Decisions feed back into your existing systems</h3>
+            <p class="text-sm font-body leading-[1.7] text-on-surface-variant">Ceres sits on top of your ERP, data warehouse, or internal models. No migration. No new workflow for your team to learn. The output goes back into the systems your teams already use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE CERES FITS -->
+    <section class="border-b border-outline-variant/20 bg-[#0a0f14] px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="mb-3 font-headline text-4xl font-extrabold tracking-[-0.01em] text-on-surface text-center lg:text-5xl">Where Ceres fits</h2>
+        <p class="mb-10 text-center font-body text-on-surface-variant leading-[1.65]">Ceres sits alongside your existing stack — it doesn't replace anything. Here's how the layers work together.</p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-6 border border-outline-variant/25 bg-surface-container px-6 py-5">
+            <div class="w-36 shrink-0 font-mono text-[9px] uppercase tracking-[0.18em] text-on-surface-variant pt-1">ERP</div>
+            <p class="text-sm text-on-surface-variant leading-[1.7]">Designed for internal operations and records — and does that job well. External signals, real-time market conditions, and upstream disruptions aren't in scope by design.</p>
+          </div>
+          <div class="flex items-start gap-6 border border-outline-variant/25 bg-surface-container px-6 py-5">
+            <div class="w-36 shrink-0 font-mono text-[9px] uppercase tracking-[0.18em] text-on-surface-variant pt-1">BI / Analytics</div>
+            <p class="text-sm text-on-surface-variant leading-[1.7]">Turns your internal data into clear trends and views. Powerful for understanding what's happened — external context still needs to be sourced and interpreted separately.</p>
+          </div>
+          <div class="flex items-start gap-6 border border-primary/30 bg-primary/5 px-6 py-5">
+            <div class="w-36 shrink-0 font-mono text-[9px] uppercase tracking-[0.18em] text-primary pt-1">Ceres</div>
+            <p class="text-sm text-on-surface leading-[1.7]">Monitors external signals continuously, maps them to your specific records, scores what's at risk, and routes the decision to the right person — before the impact reaches your internal systems.</p>
+          </div>
+        </div>
+        <div class="mt-8 border border-outline-variant/25 bg-surface-container px-6 py-5">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-8">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
+              <span class="text-sm text-on-surface-variant">Works with SAP, Kinaxis, Blue Yonder, o9, and others — no replacement required.</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
+              <span class="text-sm text-on-surface-variant">No data migration. Connects to the records you already have.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-14 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Example cases</div>
+        <p class="mb-8 text-sm text-on-surface-variant max-w-2xl leading-[1.7]">Ceres applies across any industry where external signals affect internal decisions. Here are some of the examples.</p>
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { label: 'Tier 1 Automotive', sub: 'OEM forecast reconciliation, supplier exceptions, inventory risk', path: 'tier-one/' },
+            { label: 'Hospitals & Health Systems', sub: 'Formulary risk scoring, shortage early warning, tariff tracking', path: 'hospitals/' },
+            { label: 'Pharmaceutical Supply Chain', sub: 'Supplier delay detection, API pricing risk, shortage monitoring', path: 'pharma/' },
+            { label: 'Consumer Packaged Goods', sub: 'Forecast reconciliation, seasonal signal detection, commodity exposure', path: 'cpg/' },
+            { label: 'Investment Research', sub: 'External signal enrichment for internal models, exposure mapping, risk scoring', path: 'investment-firms/' },
+          ].map(({ label, sub, path }) => (
+            <a href={`${import.meta.env.BASE_URL}${path}`} class="group flex items-center justify-between border border-outline-variant/30 bg-surface-container px-5 py-4 transition-all hover:border-primary">
+              <div>
+                <div class="font-mono text-[9px] uppercase tracking-[0.18em] text-primary mb-0.5">{label}</div>
+                <div class="text-sm text-on-surface-variant">{sub}</div>
+              </div>
+              <span class="material-symbols-outlined text-primary text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-[#05090f] px-6 py-28 text-center lg:px-12">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-5 font-headline text-5xl font-extrabold tracking-[-0.01em] text-on-surface leading-[1.05] lg:text-6xl">See how it works in your environment.</h2>
+        <p class="mx-auto mb-10 max-w-xl text-lg font-body leading-[1.7] text-on-surface-variant">
+          We'll show you how Ceres maps to your specific records, suppliers, and risk scenarios in 30 minutes.
         </p>
-        <div class="flex flex-wrap gap-4">
-          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary px-8 py-4 font-mono text-[11px] tracking-[0.14em] uppercase hover:brightness-110 active:scale-95 transition-all">Book a Demo</a>
-        </div>
-      </div>
-      <div class="hidden absolute right-0 bottom-0 w-1/3 h-full opacity-20 border-l border-outline-variant/20 p-8">
-        <div class="h-full w-full machined-gradient border border-outline-variant/30 flex flex-col p-4 font-mono text-[10px] gap-2 overflow-hidden text-primary">
-          <div class="flex justify-between"><span>Data ingestion</span><span>88.42%</span></div>
-          <div class="w-full bg-surface-container h-1"><div class="bg-primary h-full w-4/5"></div></div>
-          <div class="mt-4 space-y-1 opacity-50">
-            <div>&gt; Supply chain signals: connected</div>
-            <div>&gt; External data sources: synced</div>
-            <div>&gt; Risk model: running</div>
-            <div>&gt; Anomalies flagged: 0</div>
-            <div>&gt; Response time: 12ms</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST BAR -->
-    <section class="bg-surface-container px-8 py-6 border-b-2 border-surface-container-lowest">
-      <div class="flex flex-wrap items-center justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
-        <span class="font-mono text-[10px] tracking-[0.18em] font-normal text-outline uppercase">VALIDATED BY:</span>
-        <div class="h-6 w-32 bg-outline-variant/30" title="Global Logistics Corp"></div>
-        <div class="h-6 w-28 bg-outline-variant/30" title="AeroSystems Int"></div>
-        <div class="h-6 w-40 bg-outline-variant/30" title="Federal Resource Management"></div>
-        <div class="h-6 w-24 bg-outline-variant/30" title="Titan Manufacturing"></div>
-        <div class="h-6 w-36 bg-outline-variant/30" title="Ceres Industrial Partners"></div>
-      </div>
-    </section>
-
-    <!-- PROBLEM SECTION -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-surface">
-      <div class="p-12 lg:p-24 border-r-2 border-surface-container flex flex-col justify-center">
-        <h2 class="text-4xl font-headline font-extrabold tracking-[-0.01em] text-on-surface mb-8">The problem: too much data, too little context</h2>
-        <p class="font-body font-normal text-on-surface-variant mb-12 text-lg leading-[1.7] max-w-prose">You have plenty of data. The problem is it's scattered across systems that don't talk to each other.</p>
-        <ul class="space-y-6">
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-error mt-1">warning</span>
-            <div>
-              <span class="block font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Data Silos</span>
-              <span class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Critical information trapped in systems that don't connect.</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-error mt-1">warning</span>
-            <div>
-              <span class="block font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Reactive Response</span>
-              <span class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Managing crises after they hit, not before.</span>
-            </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-error mt-1">warning</span>
-            <div>
-              <span class="block font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Operational Static</span>
-              <span class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Too much noise drowning out the signals that actually matter.</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="bg-surface-container-lowest relative overflow-hidden">
-        <img width="512" height="512" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity" alt="Technical macro shot of glowing computer circuitry" src={`${import.meta.env.BASE_URL}images/hero-circuitry.jpg`} />
-        <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
-      </div>
-    </section>
-
-    <!-- SOLUTION SECTION (5 BENEFIT CARDS) -->
-    <section class="p-8 lg:p-16 bg-surface-container-low">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-headline font-extrabold uppercase tracking-[-0.01em] mb-4">How It Works</h2>
-        <div class="h-1 w-24 bg-primary mx-auto"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">database</span>
-          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Data Vault</h3>
-          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Your EDI, ERP, and OEM data arrives already cleaned, mapped, and versioned. No manual uploads. No missing columns. Ready before your planner sits down.</p>
-        </div>
-        <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">notification_important</span>
-          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Exception Management</h3>
-          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Flags missing values, quantity changes, and part number mismatches before your planner finds them manually. Your team focuses on decisions, not detective work.</p>
-        </div>
-        <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">query_stats</span>
-          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">Forecasting</h3>
-          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Trained on your historical data, back-tested before it touches live planning. 20% improvement in baseline accuracy. Low-confidence predictions are tagged — so you always know what to trust.</p>
-        </div>
-        <div class="bg-surface-container p-6 border-b-4 border-outline-variant hover:border-primary transition-all group">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">model_training</span>
-          <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-on-surface">What-If Scenarios</h3>
-          <p class="text-[13px] font-body font-normal text-on-surface-variant leading-[1.7]">Test a tariff change, a demand ramp, or a supplier delay — and see the downstream impact before you commit. The waterfall view shows exactly where the change lands and by how much.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY CERES (4 VALUE PROPS) -->
-    <section class="bg-surface grid grid-cols-1 lg:grid-cols-2">
-      <div class="p-12 lg:p-24 machined-gradient border-r-2 border-surface-container">
-        <h2 class="text-3xl font-headline font-extrabold uppercase tracking-[-0.01em] mb-12">Why Teams Choose Ceres</h2>
-        <div class="space-y-12">
-          <div class="flex gap-6">
-            <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-mono font-light text-primary data-mono">01</div>
-            <div>
-              <h5 class="font-headline font-bold uppercase tracking-[0.015em] mb-2">We Move Fast</h5>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">What used to take two days now runs in seconds. Alps Alpine went from manually reconciling spreadsheets to results in a click. Bosch hit 20% better forecast accuracy in their first proof of concept.</p>
-            </div>
-          </div>
-          <div class="flex gap-6">
-            <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-mono font-light text-primary data-mono">02</div>
-            <div>
-              <h5 class="font-headline font-bold uppercase tracking-[0.015em] mb-2">We Work Alongside Your Team</h5>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">We embed with your planners, learn your workflow, and build to your process — not a template. When Alps Alpine's VP presented to his CEO, he called out our speed by name. Send feedback Tuesday. See it live by Thursday.</p>
-            </div>
-          </div>
-          <div class="flex gap-6">
-            <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-mono font-light text-primary data-mono">03</div>
-            <div>
-              <h5 class="font-headline font-bold uppercase tracking-[0.015em] mb-2">Results You Can Validate Yourself</h5>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">11x forecast improvement over existing methods. 99%+ accuracy on planning comparisons — checked side-by-side against manual outputs. We show our work. You test it in your own data before anything goes live.</p>
-            </div>
-          </div>
-          <div class="flex gap-6">
-            <div class="shrink-0 w-12 h-12 bg-surface-container-highest flex items-center justify-center font-mono font-light text-primary data-mono">04</div>
-            <div>
-              <h5 class="font-headline font-bold uppercase tracking-[0.015em] mb-2">We Catch What's Slipping Through</h5>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">A $30K air freight bill because no one flagged the supplier signal. A forecast that aged out before anyone looked. A part number buried in the wrong column. Ceres surfaces what your current process buries — before it stops the line.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="p-12 lg:p-24 flex flex-col justify-center items-center text-center">
-        <div class="relative w-64 h-64 mb-8">
-          <div class="absolute inset-0 border-4 border-outline-variant/30 rotate-45"></div>
-          <div class="absolute inset-4 border-2 border-primary/40 rotate-[15deg]"></div>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <span class="font-mono font-light text-6xl text-primary data-mono">94%</span>
-          </div>
-        </div>
-        <h6 class="font-mono text-[10px] tracking-[0.18em] uppercase mb-2">Accuracy Metric</h6>
-        <p class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">Validated prediction success rate</p>
-      </div>
-    </section>
-
-    <!-- PROOF/OUTCOME SECTION -->
-    <section class="bg-surface-container-lowest p-8 lg:p-16 border-y-2 border-surface-container">
-      <div class="max-w-4xl mx-auto bg-surface-container p-12 relative overflow-hidden">
-        <span class="material-symbols-outlined text-primary text-4xl mb-6">format_quote</span>
-        <p class="text-xl font-body font-normal italic leading-[1.6] text-on-surface mb-8">"Ceres transformed our operation from a reactive cost center into a strategic asset. We now see bottlenecks before they occur."</p>
-        <div>
-          <span class="block font-body font-semibold text-sm text-on-surface uppercase tracking-[0.06em]">VP OF SUPPLY CHAIN</span>
-          <span class="block font-mono text-[11px] tracking-[0.12em] text-on-surface-variant uppercase mt-1">Fortune 500 Firm</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- USE CASE SECTION (BENTO GRID) -->
-    <section class="p-8 lg:p-16">
-      <h2 class="text-2xl font-headline font-extrabold uppercase tracking-[-0.01em] mb-12 border-l-4 border-primary pl-4">Across Industries</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-[600px]">
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "tier-one/" : import.meta.env.BASE_URL + "/tier-one/"} class="md:col-span-2 bg-surface-container p-8 relative overflow-hidden flex flex-col justify-end group cursor-pointer">
-          <img loading="lazy" width="512" height="512" class="absolute inset-0 w-full h-full object-cover opacity-25" alt="Shipping container terminal at night" src={`${import.meta.env.BASE_URL}images/industry-logistics.jpg`} />
-          <div class="relative z-10">
-            <h4 class="text-xl font-headline font-bold uppercase tracking-[0.015em] mb-2">Tier 1 Automotive</h4>
-            <p class="text-sm font-body font-normal text-on-surface-variant max-w-md leading-[1.7]">OEM forecast reconciliation across multi-plant networks — mapping purchase orders against real-time supplier signals to flag shortages before they hit the line.</p>
-          </div>
+        <a href={demoUrl} class="inline-block bg-primary px-14 py-5 font-mono text-[11px] uppercase tracking-[0.14em] text-on-primary transition-all hover:brightness-110 active:scale-95">
+          Book a Demo
         </a>
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "pharma/" : import.meta.env.BASE_URL + "/pharma/"} class="bg-surface-container p-8 relative overflow-hidden flex flex-col justify-end group cursor-pointer">
-          <img loading="lazy" width="512" height="512" class="absolute inset-0 w-full h-full object-cover opacity-25" alt="Robotic arm in manufacturing facility" src={`${import.meta.env.BASE_URL}images/industry-manufacturing.jpg`} />
-          <div class="relative z-10">
-            <h4 class="text-xl font-headline font-bold uppercase tracking-[0.015em] mb-2">Pharmaceuticals</h4>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Monitor API and raw material suppliers for disruption and pricing risk, with SKU-level signal overlay to anticipate shortages before orders are impacted.</p>
-          </div>
-        </a>
-        <div class="bg-surface-container p-8 relative overflow-hidden flex flex-col justify-end">
-          <img loading="lazy" width="512" height="512" class="absolute inset-0 w-full h-full object-cover opacity-25" alt="Energy grid control room" src={`${import.meta.env.BASE_URL}images/industry-energy.jpg`} />
-          <div class="relative z-10">
-            <h4 class="text-xl font-headline font-bold uppercase tracking-[0.015em] mb-2">CBG</h4>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Score ingredient and packaging suppliers by risk, track seasonal demand volatility, and surface geopolitical signals that affect shelf-ready supply plans.</p>
-          </div>
-        </div>
-        <div class="md:col-span-2 bg-surface-container p-8 relative overflow-hidden flex flex-col justify-end">
-          <img loading="lazy" width="1024" height="512" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Jets flying in formation" src={`${import.meta.env.BASE_URL}images/federal-defense-jets.jpg`} />
-          <div class="absolute inset-0 bg-primary/25 mix-blend-multiply"></div>
-          <div class="absolute inset-0 bg-black/30"></div>
-          <div class="relative z-10">
-            <h4 class="text-xl font-headline font-bold uppercase tracking-[0.015em] mb-2">Federal &amp; Defense</h4>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Map critical material supply chains against geopolitical and trade signals, and track supplier risk across multi-tier, export-controlled networks.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- FAQ SECTION -->
-    <section class="p-8 lg:p-24 bg-surface-container-lowest">
-      <h2 class="text-2xl font-headline font-extrabold uppercase tracking-[-0.01em] mb-12">Common Questions</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h6 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-primary">How does Ceres handle legacy ERP data?</h6>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Ceres uses universal connectors to pull data from any legacy system without modifying the source.</p>
-        </div>
-        <div>
-          <h6 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-primary">Where do you get your external data sources from?</h6>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">We get external data from a mix of public and private datasets, including government databases, web scraping, purchased/licensed datasets, weather data, and satellite data. All sources are vetted, machine-readable, and assigned confidence levels before being used.</p>
-        </div>
-        <div>
-          <h6 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-primary">Is the AI model explainable?</h6>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Yes. Every output includes a transparent logic trail so analysts can audit the reasoning behind any signal.</p>
-        </div>
-        <div>
-          <h6 class="font-headline font-bold uppercase tracking-[0.015em] mb-3 text-primary">Can we customize the dashboard?</h6>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">The Unified Console is fully modular. Users can build custom views, alert triggers, and reporting templates based on specific operational KPIs and command structures.</p>
-        </div>
       </div>
     </section>
 
