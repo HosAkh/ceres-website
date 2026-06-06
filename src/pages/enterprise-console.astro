@@ -19,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
             You have an ERP, but your planning still happens in fragile spreadsheets. Ceres normalizes messy customer data, catches exceptions automatically, and builds accurate AI forecasts — so you stop fighting Excel and start making decisions.
           </p>
           <div class="flex flex-wrap gap-4">
-            <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary px-8 py-4 font-mono text-[11px] tracking-[0.14em] uppercase hover:brightness-110 active:scale-95 transition-all">
+            <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary">
               Book a Custom Demo
             </a>
           </div>
@@ -53,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
                 <img width="512" height="512" alt="Complex data visualization screen" class="w-full h-full object-cover opacity-60 mix-blend-screen" src={`${import.meta.env.BASE_URL}images/ec-hero-dashboard.jpg`} />
                 <div class="absolute inset-0 p-4 pointer-events-none">
                   <div class="w-48 bg-surface-container/90 p-3 ghost-border">
-                    <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-2">Demand Signals</div>
+                    <div class="section-label mb-2">Demand Signals</div>
                     <div class="space-y-2">
                       <div class="h-1 w-full bg-primary/20"></div>
                       <div class="h-1 w-2/3 bg-primary/20"></div>
@@ -111,7 +111,7 @@ import Layout from '../layouts/Layout.astro';
               <div class="w-full h-2 bg-error-container relative mb-2">
                 <div class="absolute inset-y-0 left-0 bg-error w-full animate-pulse"></div>
               </div>
-              <div class="font-mono text-[10px] text-on-surface-variant uppercase tracking-[0.18em]">Excel memory limit exceeded — manual override required</div>
+              <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant">Excel memory limit exceeded — manual override required</div>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Automatically pull in EDI signals, customer releases, and SAP snapshots to create one unified baseline.
             </p>
-            <div class="font-mono text-[10px] text-primary uppercase tracking-[0.18em] border-t border-outline-variant/20 pt-4">Outcome: stop manually reconciling files</div>
+            <div class="section-label border-t border-outline-variant/20 pt-4">Outcome: stop manually reconciling files</div>
           </div>
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
             <span class="material-symbols-outlined text-primary mb-6">warning</span>
@@ -142,7 +142,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Automatically detect new part numbers, double plannings, and anomalous demand shifts that human eyes miss.
             </p>
-            <div class="font-mono text-[10px] text-primary uppercase tracking-[0.18em] border-t border-outline-variant/20 pt-4">Outcome: surface critical changes instantly</div>
+            <div class="section-label border-t border-outline-variant/20 pt-4">Outcome: surface critical changes instantly</div>
           </div>
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
             <span class="material-symbols-outlined text-primary mb-6">psychology</span>
@@ -150,7 +150,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Build accurate forecasts across every active part, customer, and plant combination at massive scale.
             </p>
-            <div class="font-mono text-[10px] text-primary uppercase tracking-[0.18em] border-t border-outline-variant/20 pt-4">Outcome: never skip a planning period</div>
+            <div class="section-label border-t border-outline-variant/20 pt-4">Outcome: never skip a planning period</div>
           </div>
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
             <span class="material-symbols-outlined text-primary mb-6">science</span>
@@ -158,7 +158,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Model the exact operational impact of new tariffs, logistics disruptions, or material shortages.
             </p>
-            <div class="font-mono text-[10px] text-primary uppercase tracking-[0.18em] border-t border-outline-variant/20 pt-4">Outcome: protect margins from chaos</div>
+            <div class="section-label border-t border-outline-variant/20 pt-4">Outcome: protect margins from chaos</div>
           </div>
         </div>
       </div>
@@ -222,7 +222,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="font-headline font-extrabold tracking-[-0.01em] mb-6 leading-none">Close the gap between your ERP and your decisions.</h2>
         <p class="font-body font-normal text-on-surface-variant text-lg mb-12 max-w-prose mx-auto leading-[1.7]">See how Ceres helps planning teams move faster, catch issues earlier, and make better decisions.</p>
         <div class="flex flex-col md:flex-row justify-center gap-4">
-          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary px-12 py-5 font-mono text-[11px] tracking-[0.14em] uppercase hover:brightness-110 active:scale-95 transition-all inline-block">
+          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary">
             See Ceres in action — Book a Demo
           </a>
         </div>

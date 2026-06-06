@@ -144,6 +144,51 @@ body {
     opacity: 0.7;
     text-decoration: underline;
   }
+
+  /* Section label — mono eyebrow text above headings */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #ffb691; /* primary */
+    display: block;
+  }
+
+  /* Standard card */
+  .card {
+    background-color: #10222b; /* surface-container */
+    border: 1px solid rgba(88, 66, 55, 0.2); /* outline-variant/20 */
+  }
+
+  /* Featured card — card with left orange accent */
+  .card-featured {
+    background-color: #10222b;
+    border: 1px solid rgba(88, 66, 55, 0.2);
+    border-left: 2px solid #ffb691; /* primary */
+  }
+
+  /* Standard full-width page section with border-bottom */
+  .page-section {
+    padding-top: 6rem;    /* py-24 */
+    padding-bottom: 6rem;
+    padding-left: 2rem;   /* px-8 */
+    padding-right: 2rem;
+    border-bottom: 1px solid #584237; /* outline-variant */
+    width: 100%;
+  }
+
+  /* Dark CTA section at page bottom */
+  .cta-section {
+    width: 100%;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: #011E24;
+    background-image: radial-gradient(circle at top right, rgba(243, 114, 33, 0.1), transparent 40%);
+  }
 }
 
 .machined-gradient {

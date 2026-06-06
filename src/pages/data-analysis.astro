@@ -19,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
           We help enterprise operations, risk, and planning teams connect their internal systems to real-world geospatial, demographic, and market signals. Ceres automatically merges your data to build scorecards, map exposures, and classify records without weeks of manual spreadsheet work.
         </p>
         <div class="flex gap-4 pt-4">
-          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 hover:bg-primary-fixed transition-colors inline-flex items-center gap-2">
+          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary">
             Book a Demo
             <span class="material-symbols-outlined text-lg">arrow_forward</span>
           </a>
@@ -49,7 +49,7 @@ import Layout from '../layouts/Layout.astro';
           </svg>
           <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-surface border border-primary p-6 industrial-shadow z-20 flex flex-col items-center">
             <span class="material-symbols-outlined text-primary text-3xl mb-2">hub</span>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary">Ceres Engine</div>
+            <div class="section-label">Ceres Engine</div>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="max-w-7xl mx-auto px-6">
         <div class="mb-12 border-b border-outline-variant/20 pb-6 flex justify-between items-end">
           <div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-2">The bottleneck</div>
+            <div class="section-label mb-2">The bottleneck</div>
             <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface">Manual reconciliation holds teams back</h2>
           </div>
           <p class="text-sm font-body font-normal text-on-surface-variant hidden md:block">ERR: MANUAL_RECONCILIATION</p>
@@ -99,7 +99,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="w-full bg-surface-container-lowest py-24 border-t border-outline-variant/10">
       <div class="max-w-7xl mx-auto px-6">
         <div class="mb-12 border-b border-outline-variant/20 pb-6">
-          <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-2">What Ceres does</div>
+          <div class="section-label mb-2">What Ceres does</div>
           <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface">Connect signals in minutes</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
@@ -139,7 +139,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="max-w-7xl mx-auto px-6">
         <div class="mb-12 border-b border-outline-variant/20 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-2">Use cases</div>
+            <div class="section-label mb-2">Use cases</div>
             <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface">Replacing spreadsheets</h2>
           </div>
           <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container text-on-surface font-mono text-[10px] tracking-[0.18em] uppercase px-4 py-2 hover:bg-surface-container-high transition-colors border border-outline-variant/50 self-start md:self-auto inline-flex items-center">
@@ -190,25 +190,25 @@ import Layout from '../layouts/Layout.astro';
     <section class="w-full bg-surface-container-lowest py-24 border-t border-outline-variant/10">
       <div class="max-w-7xl mx-auto px-6">
         <div class="mb-12 border-b border-outline-variant/20 pb-6 text-center">
-          <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-2">Telemetry</div>
+          <div class="section-label mb-2">Telemetry</div>
           <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface">Measurable results</h2>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
-          <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <div class="card flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-colors">
             <div class="font-mono font-light text-3xl md:text-4xl text-primary mb-2 data-mono">Wk→Min</div>
             <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant text-center">Processing Time</div>
           </div>
-          <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <div class="card flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-colors">
             <div class="font-mono font-light text-3xl md:text-4xl text-on-surface mb-2 data-mono">
               <span class="material-symbols-outlined text-4xl">bolt</span>
             </div>
             <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant text-center">Instant Categorization</div>
           </div>
-          <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <div class="card flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-colors">
             <div class="font-mono font-light text-3xl md:text-4xl text-on-surface mb-2 data-mono">TB+</div>
             <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant text-center">Massive Scale</div>
           </div>
-          <div class="bg-surface-container flex flex-col items-center justify-center p-8 border border-outline-variant/20 hover:bg-surface-container-high transition-colors">
+          <div class="card flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-colors">
             <div class="font-mono font-light text-3xl md:text-4xl text-on-surface mb-2 data-mono">API/DB</div>
             <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant text-center">Direct Integration</div>
           </div>
@@ -225,7 +225,7 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-xl font-body font-normal text-on-surface-variant mb-10 max-w-prose leading-[1.7]">
           Stop losing days to manual data reconciliation.
         </p>
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-12 py-5 hover:bg-primary-fixed transition-colors shadow-[0_0_20px_rgba(243,114,33,0.3)] hover:shadow-[0_0_30px_rgba(243,114,33,0.5)]">
+        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary shadow-[0_0_20px_rgba(243,114,33,0.3)] hover:shadow-[0_0_30px_rgba(243,114,33,0.5)]">
           Book a Demo
         </a>
       </div>

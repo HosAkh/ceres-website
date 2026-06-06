@@ -17,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
         Ceres was founded by operators who saw firsthand how hard it was to connect real-world events to the records and systems businesses rely on every day. We built Ceres to close that gap.
       </p>
       <div class="mt-4">
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 inline-flex items-center gap-2 hover:brightness-110 transition-all">
+        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary">
           Book a Demo
           <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </a>
@@ -45,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="flex-1 bg-surface-container-lowest h-48 ghost-border relative overflow-hidden flex items-center justify-center">
               <img width="512" height="512" alt="Industrial supply chain shipping containers" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity" src={`${import.meta.env.BASE_URL}images/about-hero.jpg`} />
               <div class="relative z-10 text-center p-4 border border-outline-variant/30 bg-surface/80 backdrop-blur-sm">
-                <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary block mb-1">INCIDENT_LOG_2020</span>
+                <span class="section-label block mb-1">INCIDENT_LOG_2020</span>
                 <span class="font-mono font-normal text-[10px] tracking-[0.18em] uppercase text-on-surface">SUPPLY_CHAIN_DISRUPTION_DETECTED</span>
               </div>
             </div>
@@ -156,21 +156,21 @@ import Layout from '../layouts/Layout.astro';
             <a href="https://www.linkedin.com/in/bobbykatoli/" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-4 border-l border-outline-variant hover:border-primary transition-colors flex items-center justify-between group">
               <div>
                 <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Bobby Katoli</h4>
-                <p class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">Co-Founder &amp; CEO</p>
+                <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant">Co-Founder &amp; CEO</p>
               </div>
               <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_outward</span>
             </a>
             <a href="https://www.linkedin.com/in/george-william-hoobler-iii-trey-a57bb17/" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-4 border-l border-outline-variant hover:border-primary transition-colors flex items-center justify-between group">
               <div>
                 <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Trey Hoobler</h4>
-                <p class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">Co-Founder</p>
+                <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant">Co-Founder</p>
               </div>
               <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_outward</span>
             </a>
             <a href="https://www.linkedin.com/in/carlosamaral/" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest p-4 border-l border-outline-variant hover:border-primary transition-colors flex items-center justify-between group">
               <div>
                 <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Carlos Amaral</h4>
-                <p class="font-mono text-[10px] tracking-[0.18em] text-on-surface-variant uppercase">EVP &amp; CIO</p>
+                <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant">EVP &amp; CIO</p>
               </div>
               <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_outward</span>
             </a>
@@ -183,7 +183,7 @@ import Layout from '../layouts/Layout.astro';
     <section class="machined-gradient p-12 text-center ghost-border mt-4 flex flex-col items-center justify-center gap-6">
       <h2 class="font-headline text-3xl font-extrabold tracking-[-0.01em] leading-none text-on-surface">Want to see how Ceres could fit your team?</h2>
       <p class="font-body font-normal text-base text-on-surface-variant max-w-2xl leading-[1.7]">See how Ceres connects your data to the signals your team actually needs.</p>
-      <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-primary text-on-primary font-mono text-[11px] tracking-[0.14em] uppercase px-8 py-4 inline-flex items-center gap-2 hover:brightness-110 transition-all mt-4">
+      <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary mt-4">
         Book a Demo
         <span class="material-symbols-outlined text-sm">terminal</span>
       </a>
