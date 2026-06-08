@@ -97,20 +97,6 @@ export default function Footer() {
             </span>
           </div>
 
-          <div className="flex items-center gap-8">
-            <a
-              className="font-nav text-[12px] tracking-[0.06em] uppercase text-slate-400 hover:text-white transition-colors"
-              href="#"
-            >
-              Privacy Policy
-            </a>
-            <a
-              className="font-nav text-[12px] tracking-[0.06em] uppercase text-slate-400 hover:text-white transition-colors"
-              href="#"
-            >
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </footer>
