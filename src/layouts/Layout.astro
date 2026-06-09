@@ -22,9 +22,9 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Ceres Technology',
-  description: 'Enterprise AI platform that connects internal ERP and supply chain data to live external signals for predictive supply chain intelligence. 94% forecast accuracy.',
-  url: 'https://ceres.majorkeysse.com',
-  logo: ogImage,
+  description: 'AI-powered S&OP planning engine that ingests demand signals, layers on 10B+ external signals, reconciles plans, and flags exceptions before the cycle closes — for Tier 1 Automotive and enterprise supply chain teams.',
+  url: 'https://hosakh.github.io/ceres-website/',
+  logo: 'https://hosakh.github.io/ceres-website/images/logo.png',
   founder: [
     { '@type': 'Person', name: 'Bobby Katoli', jobTitle: 'Co-Founder & CEO' },
     { '@type': 'Person', name: 'Trey Hoobler', jobTitle: 'Co-Founder' },
@@ -33,11 +33,12 @@ const organizationSchema = {
     { '@type': 'Person', name: 'Carlos Amaral', jobTitle: 'EVP & CIO' },
   ],
   knowsAbout: [
+    'S&OP Planning Automation',
+    'Demand Signal Reconciliation',
     'Supply Chain Intelligence',
     'Predictive Analytics',
     'Enterprise AI',
-    'Demand Planning Automation',
-    'Risk Modeling',
+    'Tier 1 Automotive Supply Chain',
     'ERP Integration',
     'Pharmaceutical Supply Chain',
     'Investment Research Intelligence',
@@ -45,17 +46,34 @@ const organizationSchema = {
   areaServed: 'Worldwide',
   contactPoint: {
     '@type': 'ContactPoint',
-    url: 'https://ceres.majorkeysse.com/book-a-demo/',
+    url: 'https://hosakh.github.io/ceres-website/book-a-demo/',
     contactType: 'sales',
   },
+  sameAs: [
+    'https://www.linkedin.com/company/ceres-technology/',
+  ],
 };
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Ceres Technology',
-  url: 'https://ceres.majorkeysse.com',
-  description: 'Enterprise AI supply chain intelligence platform.',
+  url: 'https://hosakh.github.io/ceres-website/',
+  description: 'AI S&OP planning engine for Tier 1 Automotive and enterprise supply chain teams.',
+};
+
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Ceres',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description: 'AI planning engine that sits between your ERP and decisions. Ingests customer demand signals, reconciles against your plan, layers 10B+ external signals, forecasts every grain, and flags exceptions before the cycle closes.',
+  offers: {
+    '@type': 'Offer',
+    url: 'https://hosakh.github.io/ceres-website/book-a-demo/',
+    availability: 'https://schema.org/InStock',
+  },
 };
 ---
 
@@ -91,6 +109,7 @@ const websiteSchema = {
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
 
     <!-- Microsoft Clarity -->
     <script is:inline>

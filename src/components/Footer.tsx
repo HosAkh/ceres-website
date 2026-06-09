@@ -8,7 +8,7 @@ export default function Footer() {
   const sections = [
     {
       title: "Platform",
-      links: ["Intelligence", "Risk Modeling", "Integrations", "Security"],
+      links: ["Integrations", "Security"],
     },
   ];
 
@@ -63,30 +63,7 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Resources Column */}
-          <div className="flex flex-col gap-6">
-            <h4 className="font-nav text-[11px] font-medium tracking-[0.08em] uppercase text-white/40 border-b border-white/10 pb-2">
-              Resources
-            </h4>
-            <ul className="flex flex-col gap-4">
-              <li>
-                <a className={linkClass} href="#">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a className={`${linkClass} flex items-center gap-2`} href="#">
-                  API Status
-                  <span className="w-1 h-1 bg-green-500 rounded-full animate-pulse"></span>
-                </a>
-              </li>
-              <li>
-                <a className={linkClass} href="#">
-                  System Status
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Resources Column removed */}
         </div>
 
         {/* Bottom Section: Meta */}
