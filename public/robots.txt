@@ -1,41 +1,61 @@
 User-agent: *
 Allow: /
+Disallow: /_wordpress/
+Disallow: /automated-planning/
+Disallow: /data-analysis/
+Disallow: /enterprise-console/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
 
 # AI crawlers — explicitly allowed
 User-agent: GPTBot
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: Googlebot
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: meta-externalagent
 Allow: /
+Disallow: /_wordpress/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /_wordpress/
 
-Sitemap: https://cerestech.co/sitemap-index.xml
+Sitemap: https://cerestech.co/sitemap.xml

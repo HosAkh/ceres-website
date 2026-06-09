@@ -8,12 +8,14 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
   title = 'Ceres Technology | AI Supply Chain Intelligence Platform',
   description = 'Ceres connects your ERP and supply chain data to live external signals so your team can predict disruptions before they hit. Enterprise AI with 94% forecast accuracy.',
-  ogImage = 'https://ceres.majorkeysse.com/images/logo.png',
+  ogImage = 'https://cerestech.co/images/logo.png',
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
@@ -23,8 +25,8 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Ceres Technology',
   description: 'AI-powered S&OP planning engine that ingests demand signals, layers on 10B+ external signals, reconciles plans, and flags exceptions before the cycle closes — for Tier 1 Automotive and enterprise supply chain teams.',
-  url: 'https://hosakh.github.io/ceres-website/',
-  logo: 'https://hosakh.github.io/ceres-website/images/logo.png',
+  url: 'https://cerestech.co/',
+  logo: 'https://cerestech.co/images/logo.png',
   founder: [
     { '@type': 'Person', name: 'Bobby Katoli', jobTitle: 'Co-Founder & CEO' },
     { '@type': 'Person', name: 'Trey Hoobler', jobTitle: 'Co-Founder' },
@@ -46,7 +48,7 @@ const organizationSchema = {
   areaServed: 'Worldwide',
   contactPoint: {
     '@type': 'ContactPoint',
-    url: 'https://hosakh.github.io/ceres-website/book-a-demo/',
+    url: 'https://cerestech.co/book-a-demo/',
     contactType: 'sales',
   },
   sameAs: [
@@ -58,7 +60,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Ceres Technology',
-  url: 'https://hosakh.github.io/ceres-website/',
+  url: 'https://cerestech.co/',
   description: 'AI S&OP planning engine for Tier 1 Automotive and enterprise supply chain teams.',
 };
 
@@ -71,7 +73,7 @@ const softwareSchema = {
   description: 'AI planning engine that sits between your ERP and decisions. Ingests customer demand signals, reconciles against your plan, layers 10B+ external signals, forecasts every grain, and flags exceptions before the cycle closes.',
   offers: {
     '@type': 'Offer',
-    url: 'https://hosakh.github.io/ceres-website/book-a-demo/',
+    url: 'https://cerestech.co/book-a-demo/',
     availability: 'https://schema.org/InStock',
   },
 };
@@ -84,7 +86,7 @@ const softwareSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
 
     <!-- Favicon -->
