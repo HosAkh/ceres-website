@@ -1,5 +1,18 @@
 Options -Indexes
 
+# ── Force HTTPS and non-www ───────────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect www to non-www (with HTTPS)
+  RewriteCond %{HTTP_HOST} ^www\.cerestech\.co$ [NC]
+  RewriteRule ^(.*)$ https://cerestech.co/$1 [R=301,L]
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
 # ── Cache headers ─────────────────────────────────────────────
 <IfModule mod_headers.c>
   Header set Cache-Control "no-cache, must-revalidate"
