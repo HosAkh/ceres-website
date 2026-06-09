@@ -1,0 +1,86 @@
+Options -Indexes
+
+# ── Cache headers ─────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-cache, must-revalidate"
+  Header set Pragma "no-cache"
+</IfModule>
+
+# ── Block _wordpress directory completely ──────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Block direct access to _wordpress directory
+  RewriteRule ^_wordpress(/.*)?$ - [F,L]
+</IfModule>
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# ── Redirect WordPress URL patterns to homepage ───────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # WordPress query string patterns (?p=, ?page_id=, ?cat=, etc.)
+  RewriteCond %{QUERY_STRING} ^p=\d+ [OR]
+  RewriteCond %{QUERY_STRING} ^page_id=\d+ [OR]
+  RewriteCond %{QUERY_STRING} ^cat=\d+ [OR]
+  RewriteCond %{QUERY_STRING} ^tag=.+ [OR]
+  RewriteCond %{QUERY_STRING} ^author=\d+ [OR]
+  RewriteCond %{QUERY_STRING} ^s=.+ [OR]
+  RewriteCond %{QUERY_STRING} ^feed=.+
+  RewriteRule .* / [R=301,L]
+
+  # WordPress admin and system paths
+  RewriteRule ^wp-admin(/.*)?$ / [R=301,L]
+  RewriteRule ^wp-login\.php$ / [R=301,L]
+  RewriteRule ^wp-register\.php$ / [R=301,L]
+  RewriteRule ^wp-cron\.php$ / [R=301,L]
+  RewriteRule ^wp-comments-post\.php$ / [R=301,L]
+  RewriteRule ^wp-blog-header\.php$ / [R=301,L]
+  RewriteRule ^wp-activate\.php$ / [R=301,L]
+  RewriteRule ^wp-signup\.php$ / [R=301,L]
+  RewriteRule ^xmlrpc\.php$ / [R=301,L]
+  RewriteRule ^wp-json(/.*)?$ / [R=301,L]
+  RewriteRule ^wp-content(/.*)?$ / [R=301,L]
+  RewriteRule ^wp-includes(/.*)?$ / [R=301,L]
+
+  # Old WordPress page/post slugs (known from old site)
+  RewriteRule ^category(/.*)?$ / [R=301,L]
+  RewriteRule ^tag(/.*)?$ / [R=301,L]
+  RewriteRule ^author(/.*)?$ / [R=301,L]
+  RewriteRule ^feed(/.*)?$ / [R=301,L]
+  RewriteRule ^comments(/.*)?$ / [R=301,L]
+  RewriteRule ^page/\d+(/.*)?$ / [R=301,L]
+
+  # Old product/blog pages from old WordPress site
+  RewriteRule ^nostradamus-ai(/.*)?$ / [R=301,L]
+  RewriteRule ^data-intelligence(/.*)?$ / [R=301,L]
+  RewriteRule ^blog(/.*)?$ / [R=301,L]
+  RewriteRule ^news(/.*)?$ / [R=301,L]
+  RewriteRule ^events(/.*)?$ / [R=301,L]
+  RewriteRule ^partners(/.*)?$ / [R=301,L]
+  RewriteRule ^press(/.*)?$ / [R=301,L]
+  RewriteRule ^resources(/.*)?$ / [R=301,L]
+  RewriteRule ^careers(/.*)?$ / [R=301,L]
+  RewriteRule ^contact(/.*)?$ / [R=301,L]
+  RewriteRule ^solutions(/.*)?$ / [R=301,L]
+  RewriteRule ^products(/.*)?$ / [R=301,L]
+  RewriteRule ^platform(/.*)?$ / [R=301,L]
+  RewriteRule ^services(/.*)?$ / [R=301,L]
+  RewriteRule ^privacy-policy(/.*)?$ / [R=301,L]
+  RewriteRule ^terms-of-service(/.*)?$ / [R=301,L]
+  RewriteRule ^terms(/.*)?$ / [R=301,L]
+  RewriteRule ^sample-page(/.*)?$ / [R=301,L]
+
+  # Catch any remaining unknown slugs that don't match Astro pages
+  # Only redirect if NOT an Astro page or static asset
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !^/(tier-one|pharma|hospitals|cpg|investment-firms|integrations|security-trust|about|book-a-demo|automated-planning|data-analysis|enterprise-console)(/.*)?$
+  RewriteCond %{REQUEST_URI} !^/(images|icons|fonts|_astro)/
+  RewriteCond %{REQUEST_URI} !^/(sitemap\.xml|robots\.txt|favicon\.ico|favicon\.png)$
+  RewriteRule ^.+$ / [R=301,L]
+</IfModule>
