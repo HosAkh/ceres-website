@@ -10,8 +10,8 @@ Options -Indexes
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Block direct access to _wordpress directory
-  RewriteRule ^_wordpress(/.*)?$ - [F,L]
+  # Block _wordpress directory — redirect to homepage
+  RewriteRule ^_wordpress(/.*)?$ / [R=301,L]
 </IfModule>
 
 <FilesMatch "^\.">
@@ -75,10 +75,8 @@ Options -Indexes
   RewriteRule ^terms(/.*)?$ / [R=301,L]
   RewriteRule ^sample-page(/.*)?$ / [R=301,L]
 
-  # Catch any remaining unknown slugs that don't match Astro pages
-  # Only redirect if NOT an Astro page or static asset
+  # Catch any remaining unknown paths — redirect to homepage
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !^/(tier-one|pharma|hospitals|cpg|investment-firms|integrations|security-trust|about|book-a-demo|automated-planning|data-analysis|enterprise-console)(/.*)?$
   RewriteCond %{REQUEST_URI} !^/(images|icons|fonts|_astro)/
   RewriteCond %{REQUEST_URI} !^/(sitemap\.xml|robots\.txt|favicon\.ico|favicon\.png)$
