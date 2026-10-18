@@ -128,6 +128,10 @@ const caseActive = caseLinks.some((l) => isActivePath(currentPath, l.path));
     casesRoot.addEventListener('focusout', function (e) {
       if (!casesRoot.contains(e.relatedTarget)) setCases(false);
     });
+    menu.addEventListener('focusout', function (e) {
+      var next = e.relatedTarget;
+      if (menuOpen() && next && !menu.contains(next) && next !== menuBtn) setMenu(false);
+    });
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       if (casesOpen()) { setCases(false); casesBtn.focus(); }
