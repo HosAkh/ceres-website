@@ -1,78 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const demoUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL + 'book-a-demo/'
+  : import.meta.env.BASE_URL + '/book-a-demo/';
 ---
 
 <Layout
   title="External Signal Intelligence for Investment Research | Ceres"
   description="Ceres enriches investment research with external signal monitoring, exposure mapping, and risk scoring across companies, markets, and operating conditions."
 >
-  <main class="pt-16 min-h-screen flex flex-col">
+  <main id="main" class="pt-14">
 
-    <!-- HERO SECTION -->
-    <section class="machined-gradient border-b border-outline-variant/20 relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(to right, #45474b 1px, transparent 1px), linear-gradient(to bottom, #45474b 1px, transparent 1px); background-size: 24px 24px;"></div>
-      <div class="max-w-7xl mx-auto px-6 py-32 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 space-y-8">
-          <h1 class="font-extrabold font-headline tracking-[-0.01em] text-white leading-none">
-            Merge internal models with external signals to strengthen investment research and risk analysis
-          </h1>
-          <p class="text-lg font-body font-normal text-on-surface-variant max-w-2xl leading-[1.7]">
-            Your proprietary models are only as strong as the context around them. Ceres connects your internal analyst workflows to outside market, macro, geopolitical, and infrastructure signals — automatically, without rebuilding your infrastructure.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
-            <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary">
-              Book a Demo
-              <span class="material-symbols-outlined ml-2 text-lg">arrow_forward</span>
-            </a>
-          </div>
-
-        </div>
-
-        <!-- Technical Hero Visual -->
-        <div class="hidden">
-          <div class="bg-surface-container p-6 border border-outline-variant/30 industrial-shadow relative">
-            <div class="space-y-4">
-              <div class="h-8 bg-surface-container-highest border border-outline-variant/20 flex items-center px-4">
-                <span class="text-xs font-mono text-primary">Portfolio Risk Overview</span>
-              </div>
-              <div class="h-48 bg-surface-container-low border border-outline-variant/20 relative flex items-end overflow-hidden">
-                <svg class="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
-                  <path d="M0,100 L0,70 L20,60 L40,80 L60,40 L80,50 L100,20 L100,100 Z" fill="rgba(69, 71, 75, 0.2)"></path>
-                  <path d="M0,70 L20,60 L40,80 L60,40 L80,50 L100,20" fill="none" stroke="#45474b" stroke-width="2"></path>
-                  <path d="M0,100 L0,90 L20,70 L40,60 L60,30 L80,20 L100,10 L100,100 Z" fill="rgba(243, 114, 33, 0.1)"></path>
-                  <path d="M0,90 L20,70 L40,60 L60,30 L80,20 L100,10" fill="none" stroke="#F37221" stroke-width="2"></path>
-                </svg>
-                <div class="absolute top-4 right-4 flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 bg-primary"></span>
-                  <span class="text-[10px] font-mono text-primary">Live</span>
-                </div>
-              </div>
-              <div class="grid grid-cols-3 gap-2">
-                <div class="bg-surface-container-low p-3 border border-outline-variant/20">
-                  <div class="text-[10px] text-outline mb-1 font-mono">Macro Vol.</div>
-                  <div class="text-sm font-bold text-white">24.5%</div>
-                </div>
-                <div class="bg-surface-container-low p-3 border border-outline-variant/20">
-                  <div class="text-[10px] text-outline mb-1 font-mono">Geo Risk</div>
-                  <div class="text-sm font-bold text-primary">High</div>
-                </div>
-                <div class="bg-surface-container-low p-3 border border-outline-variant/20">
-                  <div class="text-[10px] text-outline mb-1 font-mono">Confidence</div>
-                  <div class="text-sm font-bold text-white">0.92</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- HERO -->
+    <section class="relative overflow-hidden border-b border-outline-variant/20 bg-surface px-6 py-24 lg:px-12 lg:py-32">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,182,145,0.07),transparent_40%)]"></div>
+      <div aria-hidden="true" class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: linear-gradient(to right, #584237 1px, transparent 1px), linear-gradient(to bottom, #584237 1px, transparent 1px); background-size: 24px 24px;"></div>
+      <div class="relative mx-auto max-w-7xl">
+        <span class="section-label mb-4">Investment Research</span>
+        <h1 class="mb-6 font-extrabold font-headline tracking-[-0.01em] text-on-surface leading-none max-w-5xl">
+          Merge internal models with external signals to strengthen investment research and risk analysis
+        </h1>
+        <p class="mb-10 text-lg font-body font-normal text-on-surface-variant max-w-2xl leading-[1.7]">
+          Your proprietary models are only as strong as the context around them. Ceres connects your internal analyst workflows to outside market, macro, geopolitical, and infrastructure signals — automatically, without rebuilding your infrastructure.
+        </p>
+        <a href={demoUrl} class="btn-primary">
+          Book a Demo
+          <span aria-hidden="true" class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
       </div>
     </section>
 
     <!-- THE PROBLEM -->
-    <section class="bg-surface-container-lowest py-24 px-6 border-b border-outline-variant/20">
+    <section class="bg-surface-container-lowest px-6 py-20 lg:px-12 border-b border-outline-variant/20">
       <div class="max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div>
-            <h2 class="text-3xl font-extrabold font-headline tracking-[-0.01em] text-white leading-none mb-6">
+            <span class="section-label">The Challenge</span>
+            <h2 class="mt-4 text-3xl font-extrabold font-headline tracking-[-0.01em] text-on-surface leading-none mb-6">
               Internal models are not enough on their own
             </h2>
             <div class="h-1 w-12 bg-primary mb-8"></div>
@@ -87,65 +52,66 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- HOW CERES HELPS (BENTO GRID) -->
-    <section class="bg-surface py-24 px-6 border-b border-outline-variant/20">
+    <section class="bg-surface px-6 py-20 lg:px-12 border-b border-outline-variant/20">
       <div class="max-w-7xl mx-auto">
         <div class="mb-16">
-          <h2 class="text-3xl font-extrabold font-headline tracking-[-0.01em] text-white leading-none mb-4 max-w-2xl">
+          <span class="section-label">How Ceres Helps</span>
+          <h2 class="mt-4 text-3xl font-extrabold font-headline tracking-[-0.01em] text-on-surface leading-none mb-4 max-w-2xl">
             Connect external signals to the workflows your team already uses
           </h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="md:col-span-2 bg-surface-container p-8 border border-outline-variant/30 group hover:bg-surface-container-high transition-colors overflow-hidden">
-            <span class="material-symbols-outlined text-primary text-3xl mb-6 block">hub</span>
-            <h3 class="text-xl font-headline font-bold text-white tracking-[0.015em] mb-3">Model Integration Engine</h3>
+          <div class="md:col-span-2 card p-8 group hover:bg-surface-container-high transition-colors overflow-hidden">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">hub</span>
+            <h3 class="text-xl font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Model Integration Engine</h3>
             <p class="font-body font-normal text-on-surface-variant mb-6 text-sm leading-[1.7]">
               Feed structured external signals directly into your proprietary research models, eliminating manual data wrangling.
             </p>
             <div class="overflow-x-auto">
-              <div class="min-w-[360px] h-32 border border-outline-variant/20 bg-surface-container-lowest flex items-center justify-between p-4 font-mono text-[10px] text-outline">
+              <div class="min-w-[360px] h-32 border border-outline-variant/20 bg-surface-container-lowest flex items-center justify-between p-4 font-mono text-[11px] text-outline">
                 <div class="flex flex-col gap-2 shrink-0">
                   <span class="bg-surface px-2 py-1 border border-outline-variant/30">MACRO_DATA</span>
                   <span class="bg-surface px-2 py-1 border border-outline-variant/30">GEO_EVENTS</span>
                 </div>
-                <span class="material-symbols-outlined text-outline shrink-0">arrow_forward</span>
+                <span aria-hidden="true" class="material-symbols-outlined text-outline shrink-0">arrow_forward</span>
                 <div class="border border-primary text-primary px-4 py-8 bg-primary/5 shrink-0">CERES_API</div>
-                <span class="material-symbols-outlined text-outline shrink-0">arrow_forward</span>
-                <div class="bg-surface px-4 py-8 border border-outline-variant/30 text-white shrink-0">INTERNAL_MODELS</div>
+                <span aria-hidden="true" class="material-symbols-outlined text-outline shrink-0">arrow_forward</span>
+                <div class="bg-surface px-4 py-8 border border-outline-variant/30 text-on-surface shrink-0">INTERNAL_MODELS</div>
               </div>
             </div>
           </div>
-          <div class="bg-surface-container p-8 border border-outline-variant/30 group hover:bg-surface-container-high transition-colors flex flex-col justify-between">
+          <div class="card p-8 group hover:bg-surface-container-high transition-colors flex flex-col justify-between">
             <div>
-              <span class="material-symbols-outlined text-primary text-3xl mb-6 block">policy</span>
-              <h3 class="text-lg font-headline font-bold text-white tracking-[0.015em] mb-3">Custom Scorecards</h3>
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">policy</span>
+              <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Custom Scorecards</h3>
               <p class="font-body font-normal text-on-surface-variant text-sm leading-[1.7]">
                 Define proprietary weighting for different signal types to generate custom risk and opportunity scorecards for any asset or sector.
               </p>
             </div>
             <div class="mt-6 border-t border-outline-variant/20 pt-4">
-              <div class="flex justify-between items-center text-xs font-mono text-outline">
+              <div class="flex justify-between items-center text-[11px] font-mono text-outline">
                 <span>Customisable</span>
                 <span>Yes</span>
               </div>
             </div>
           </div>
-          <div class="bg-surface-container p-8 border border-outline-variant/30 group hover:bg-surface-container-high transition-colors">
-            <span class="material-symbols-outlined text-primary text-3xl mb-6 block">map</span>
-            <h3 class="text-lg font-headline font-bold text-white tracking-[0.015em] mb-3">Exposure Mapping</h3>
+          <div class="card p-8 group hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">map</span>
+            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Exposure Mapping</h3>
             <p class="font-body font-normal text-on-surface-variant text-sm leading-[1.7]">
               Instantly visualize portfolio exposure to emerging geopolitical or infrastructural events across multiple tiers of the supply chain.
             </p>
           </div>
-          <div class="bg-surface-container p-8 border border-outline-variant/30 group hover:bg-surface-container-high transition-colors">
-            <span class="material-symbols-outlined text-primary text-3xl mb-6 block">analytics</span>
-            <h3 class="text-lg font-headline font-bold text-white tracking-[0.015em] mb-3">Due Diligence Support</h3>
+          <div class="card p-8 group hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">analytics</span>
+            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Due Diligence Support</h3>
             <p class="font-body font-normal text-on-surface-variant text-sm leading-[1.7]">
               Accelerate initial screening with automated dossiers that cross-reference target companies against a broad set of external data.
             </p>
           </div>
-          <div class="bg-surface-container p-8 border border-outline-variant/30 group hover:bg-surface-container-high transition-colors">
-            <span class="material-symbols-outlined text-primary text-3xl mb-6 block">timeline</span>
-            <h3 class="text-lg font-headline font-bold text-white tracking-[0.015em] mb-3">Macro Overlay</h3>
+          <div class="card p-8 group hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">timeline</span>
+            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Macro Overlay</h3>
             <p class="font-body font-normal text-on-surface-variant text-sm leading-[1.7]">
               Stress-test specific investments against shifting macroeconomic scenarios without leaving your core workflow environment.
             </p>
@@ -155,16 +121,16 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- FINAL CTA -->
-    <section class="machined-gradient py-24 px-6 relative border-t border-outline-variant/20">
-      <div class="max-w-4xl mx-auto text-center relative z-10">
-        <span class="section-label block mb-4 border border-primary/30 inline-block px-3 py-1 bg-surface-container-lowest">Deployment Ready</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold font-headline tracking-[-0.01em] text-white leading-none mb-6">
+    <section class="cta-section text-center">
+      <div class="max-w-4xl mx-auto relative z-10">
+        <span class="section-label inline-block mb-4 border border-primary/30 px-3 py-1 bg-surface-container-lowest">Deployment Ready</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-headline tracking-[-0.01em] text-on-surface leading-none mb-6">
           Want to see how Ceres would fit your research process?
         </h2>
         <p class="font-body font-normal text-on-surface-variant mb-10 text-lg max-w-2xl mx-auto leading-[1.7]">
           Automate company and market analysis. Reduce spreadsheet drudgery and keep continuous watch on the signals that matter.
         </p>
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary">
+        <a href={demoUrl} class="btn-primary">
           Book a Demo
         </a>
       </div>

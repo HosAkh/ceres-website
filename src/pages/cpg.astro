@@ -17,7 +17,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
       <div class="max-w-7xl mx-auto relative z-10">
         <div class="max-w-3xl">
           <p class="section-label mb-3">Consumer Packaged Goods</p>
-          <h1 class="font-headline font-bold text-5xl lg:text-6xl leading-tight tracking-tight text-on-surface mb-6">
+          <h1 class="font-headline font-extrabold tracking-[-0.01em] leading-none text-on-surface mb-6">
             Break through the forecast accuracy ceiling that's costing you inventory every season
           </h1>
           <p class="font-body text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-10">
@@ -26,7 +26,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
           <div class="flex flex-col sm:flex-row gap-4">
             <a href={demoUrl} class="btn-primary">
               <span>Book a Demo</span>
-              <span class="material-symbols-outlined">arrow_forward</span>
+              <span aria-hidden="true" class="material-symbols-outlined">arrow_forward</span>
             </a>
           </div>
         </div>
@@ -35,8 +35,9 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
         <div class="mt-20 relative h-[280px] w-full card flex items-center justify-center overflow-hidden">
           <div class="absolute inset-0 opacity-20">
             <img
+              width="1600" height="560" loading="lazy"
               class="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAMo1eJFOs9sVd5RuJcF-UpJzIPQi0tA-AWXkK8eo4--l8XUvfhIG07B3WNbsIWYg0D2W-eh7repc6HwXnrbxe5A9hDRlB9ajfxidf1FCKYPJ1bKybcybGRZv397SKgL2Pha_obQpcYKovPU3svRWgK6Uk4ipsp1hzCF-JH8KCDKAU0hysEzhHGNA6pjDeaxNhnQN2Jgg2J6SlNmMolEk7-5BckAgH9CirFBxpdbdwD-qDwua842BBan1AtntxU71vFLS3a1GYSQU"
+              src={`${import.meta.env.BASE_URL}images/cpg-hero-data.jpg`}
               alt="Global CPG supply chain data visualization"
             />
           </div>
@@ -60,22 +61,22 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div class="card-featured p-8 flex flex-col gap-4">
-            <span class="material-symbols-outlined text-primary text-4xl">rainy</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl">rainy</span>
             <h3 class="font-headline font-semibold text-2xl text-on-surface">Weather &amp; Climate</h3>
             <p class="text-on-surface-variant text-base">Seasonal pattern shifts, precipitation anomalies, and temperature changes that move demand before your internal data does.</p>
           </div>
           <div class="card p-8 flex flex-col gap-4">
-            <span class="material-symbols-outlined text-primary text-4xl">price_change</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl">price_change</span>
             <h3 class="font-headline font-semibold text-2xl text-on-surface">Input Cost Volatility</h3>
             <p class="text-on-surface-variant text-base">Raw material, packaging, and ingredient cost movements tracked before they reach your sourcing team.</p>
           </div>
           <div class="card p-8 flex flex-col gap-4">
-            <span class="material-symbols-outlined text-primary text-4xl">public</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl">public</span>
             <h3 class="font-headline font-semibold text-2xl text-on-surface">Geopolitics</h3>
             <p class="text-on-surface-variant text-base">Mapping disruptions across trade lanes and regional conflicts before they surface in your supplier communication.</p>
           </div>
           <div class="card p-8 flex flex-col gap-4">
-            <span class="material-symbols-outlined text-primary text-4xl">oil_barrel</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl">oil_barrel</span>
             <h3 class="font-headline font-semibold text-2xl text-on-surface">Energy &amp; Freight</h3>
             <p class="text-on-surface-variant text-base">Oil and logistics cost correlations that flow through into your COGS before your ERP reflects them.</p>
           </div>
@@ -95,8 +96,9 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
             <h3 class="font-headline font-semibold text-2xl text-primary mb-4">Forecast Reconciliation</h3>
             <p class="text-on-surface-variant text-base mb-6 flex-1">Automatically align optimistic sales targets with external market realities and supply constraints. See where commercial and supply chain diverge — before inventory locks in.</p>
             <img
+              loading="lazy" width="520" height="160"
               class="w-full h-40 object-cover mt-auto"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZwiqnOxIG-vUvtovSViIuIU3gmwf-gBiNU4WFv69jb0bbW3nMK8TH7mLNHeOG9TTgq1qi7oMbk_6LtxLrZSzfwuufTQ4IIEjl8EQb24z4qCJhOvWae_jUJY9ZQH_rcoQgDAIYo7-OzDiO899mgzW3okTFHhhoUt8TqbJItzAOmkb6RgMrkFb7CzZOWT5vrTgIioGyHDssLx4kMUPaQwIWIyKrqg7fJ5aEwYUnFL_4GFazgZSjhTGHJDC041gUUMB7JFcLhZx2DKA"
+              src={`${import.meta.env.BASE_URL}images/cpg-forecast.jpg`}
               alt="Forecast reconciliation visualization"
             />
           </div>
@@ -104,8 +106,9 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
             <h3 class="font-headline font-semibold text-2xl text-primary mb-4">Seasonal Signal Monitoring</h3>
             <p class="text-on-surface-variant text-base mb-6 flex-1">Early detection of season-shifting anomalies in weather and consumption patterns weeks ahead of time. Know when this season looks different before you're producing for it.</p>
             <img
+              loading="lazy" width="520" height="160"
               class="w-full h-40 object-cover mt-auto"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh6V_xt6fe4TTp7HiRxBY1oqj8U1tVm208u9aX4ORGqso9qfx1OldFv_Hz5rP0-y80xRRNY0P0UgwLpvXcIVYQi-mRiH5h6t3mwF_Fnr58oxjyPFBzb18yNRpuKM3j-VA-cCe0C7AXTNnj9nyuJ6AIa_gwbx32k1GDcyeoJ16i8i489OLFOEl3fbGPs_D2yZ2Fqnw_CASbCiXrzcLOdB-gqMoADv-bjDmF1BsgaHJjkL5z6txuwH9G_xOe8pTqTMtpTmqK87dPuBM"
+              src={`${import.meta.env.BASE_URL}images/cpg-seasonal.jpg`}
               alt="Seasonal signal monitoring visualization"
             />
           </div>
@@ -113,8 +116,9 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
             <h3 class="font-headline font-semibold text-2xl text-primary mb-4">Explainable Outputs</h3>
             <p class="text-on-surface-variant text-base mb-6 flex-1">Every forecast comes with a 'why' - linked directly to specific external indicators.</p>
             <img
+              loading="lazy" width="520" height="160"
               class="w-full h-40 object-cover mt-auto"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3MjZ_f1Wr_Oj_2A_jNctphr55lhT6cj_gau2v2OMjIjqj9QnefJyCmXB1QuYH6C9xYm3Jt9D4N3OP8BfQlC2y7QUCgzWyb97kTONREmFWag-021T_qgdd3OxwOmZsX19yo05Kmw_mrjl6QuEaN3g07F--cCBPixUW7bQGyTDPJwHQE4sFI-4FAC1MeKPHgGxL1tj4vf-fDmDczs3YTopPHnUu7Oht09vewdZ0zcu_3JKdUsJv0DvTMZe21-y2tLF91uGjhU3ZZ9U"
+              src={`${import.meta.env.BASE_URL}images/cpg-explainable.jpg`}
               alt="Explainable outputs visualization"
             />
           </div>
@@ -131,7 +135,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
           <!-- Over-Forecast Detection (large) -->
           <div class="md:col-span-2 md:row-span-2 card-featured p-8 flex flex-col justify-between">
             <div>
-              <span class="material-symbols-outlined text-primary mb-4 text-3xl">warning</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-primary mb-4 text-3xl">warning</span>
               <h3 class="font-headline font-semibold text-2xl text-on-surface mb-4">Over-Forecast Detection</h3>
               <p class="text-on-surface-variant text-lg leading-relaxed">We flag SKU level discrepancies where history doesn't match current market velocity.</p>
             </div>
@@ -148,14 +152,14 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
 
           <!-- When History Misleads -->
           <div class="md:col-span-2 card p-8">
-            <span class="material-symbols-outlined text-primary mb-2">history_toggle_off</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-2">history_toggle_off</span>
             <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">When History Misleads</h3>
             <p class="text-on-surface-variant text-base">See when weather, commodity, and market signals start to break from the assumptions behind your current plan.</p>
           </div>
 
           <!-- Territory-Level Demand -->
           <div class="card p-8">
-            <span class="material-symbols-outlined text-primary mb-2">pin_drop</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-2">pin_drop</span>
             <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">Territory Demand</h3>
             <p class="text-on-surface-variant text-base">Test different what-if scenarios to see how external and internal changes could impact demand.</p>
           </div>
@@ -163,7 +167,7 @@ const demoUrl = import.meta.env.BASE_URL.endsWith("/")
           <!-- Input Cost Monitoring -->
           <div class="card p-8 flex flex-col justify-between">
             <div>
-              <span class="material-symbols-outlined text-primary mb-2">show_chart</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-primary mb-2">show_chart</span>
               <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">10B+ Signals</h3>
               <p class="text-on-surface-variant text-base">Analyze over 10B+ signals that can impact your operations.</p>
             </div>

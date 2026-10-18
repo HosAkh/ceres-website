@@ -1,151 +1,164 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const demoUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL + 'book-a-demo/'
+  : import.meta.env.BASE_URL + '/book-a-demo/';
 ---
 
 <Layout
   title="Security & Trust for Enterprise AI Planning | Ceres"
   description="Learn how Ceres protects enterprise data, separates sensitive records, and keeps AI planning outputs auditable, explainable, and operationally controlled."
 >
-  <main class="flex-grow flex flex-col w-full max-w-7xl mx-auto px-6 py-12 gap-16 pt-24">
+  <main id="main" class="pt-14">
 
     <!-- HERO -->
-    <section class="flex flex-col gap-6 max-w-4xl">
-      <h1 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none">
-        Enterprise trust starts with clear systems, controlled data flows, and outputs your teams can explain.
-      </h1>
-      <p class="font-body font-normal text-lg text-on-surface-variant leading-[1.7] max-w-3xl">
-        Ceres is built for organizations that need to merge internal records with external signals without creating new bottlenecks, black boxes, or operational risk.
-      </p>
+    <section class="relative overflow-hidden border-b border-outline-variant/20 bg-surface px-6 py-24 lg:px-12 lg:py-32">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,182,145,0.07),transparent_40%)]"></div>
+      <div class="relative mx-auto max-w-7xl">
+        <span class="section-label mb-4">Security &amp; Trust</span>
+        <h1 class="mb-6 font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none max-w-5xl">
+          Enterprise trust starts with clear systems, controlled data flows, and outputs your teams can explain.
+        </h1>
+        <p class="font-body font-normal text-lg text-on-surface-variant leading-[1.7] max-w-3xl">
+          Ceres is built for organizations that need to merge internal records with external signals without creating new bottlenecks, black boxes, or operational risk.
+        </p>
+      </div>
     </section>
 
-    <!-- BENTO GRID: CORE CONCEPTS -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="md:col-span-1 bg-surface-container flex flex-col gap-6 p-8 ghost-border hover:bg-surface-container-high transition-colors">
-        <div class="flex items-center gap-3 border-b border-outline-variant/30 pb-4">
-          <span class="material-symbols-outlined text-primary text-2xl">verified_user</span>
-          <h2 class="text-xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none">Trust at Ceres</h2>
-        </div>
-        <ul class="flex flex-col gap-4 text-sm text-on-surface-variant">
-          <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-outline text-lg shrink-0 mt-0.5">check_box</span>
-            <span class="font-body font-normal leading-[1.7]">Zero-friction integration with existing operational stacks.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-outline text-lg shrink-0 mt-0.5">check_box</span>
-            <span class="font-body font-normal leading-[1.7]">Strict compartmentalization of sensitive enterprise data.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-outline text-lg shrink-0 mt-0.5">check_box</span>
-            <span class="font-body font-normal leading-[1.7]">Full auditability of every decision output and model inference.</span>
-          </li>
-        </ul>
-      </div>
-      <div class="md:col-span-2 bg-surface-container flex flex-col gap-6 p-8 ghost-border hover:bg-surface-container-high transition-colors machined-gradient relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-4 opacity-10">
-          <span class="material-symbols-outlined text-9xl">account_tree</span>
-        </div>
-        <div class="flex items-center gap-3 border-b border-outline-variant/30 pb-4 relative z-10">
-          <span class="material-symbols-outlined text-primary text-2xl">architecture</span>
-          <h2 class="text-xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none">Enterprise Architecture Fit</h2>
-        </div>
-        <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] relative z-10 max-w-2xl">
-          Ceres sits on top of your existing ERPs, databases, and core infrastructure. It pulls in the signals you need without requiring a full data migration.
-        </p>
-        <div class="grid grid-cols-2 gap-4 mt-4 relative z-10">
-          <div class="bg-surface-container-lowest p-4 border border-outline-variant/20 flex flex-col gap-2">
-            <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-outline">Layer 1</span>
-            <span class="font-headline font-bold text-on-surface tracking-[0.015em]">Existing ERP/DB Core</span>
+    <!-- CORE CONCEPTS -->
+    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="md:col-span-1 card-featured flex flex-col gap-6 p-8">
+          <div class="flex items-center gap-3 border-b border-outline-variant/30 pb-4">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">verified_user</span>
+            <h2 class="text-xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none">Trust at Ceres</h2>
           </div>
-          <div class="bg-surface-container-lowest p-4 border border-outline-variant/20 flex flex-col gap-2 border-t-2 border-t-primary">
-            <span class="section-label">Layer 2</span>
-            <span class="font-headline font-bold text-on-surface tracking-[0.015em]">Ceres Decision Engine</span>
+          <ul class="flex flex-col gap-4 text-sm text-on-surface-variant">
+            <li class="flex items-start gap-3">
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_box</span>
+              <span class="font-body font-normal leading-[1.7]">Zero-friction integration with existing operational stacks.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_box</span>
+              <span class="font-body font-normal leading-[1.7]">Strict compartmentalization of sensitive enterprise data.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_box</span>
+              <span class="font-body font-normal leading-[1.7]">Full auditability of every decision output and model inference.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="md:col-span-2 card flex flex-col gap-6 p-8 relative overflow-hidden">
+          <div aria-hidden="true" class="absolute top-0 right-0 p-4 opacity-10">
+            <span aria-hidden="true" class="material-symbols-outlined text-9xl">account_tree</span>
+          </div>
+          <div class="flex items-center gap-3 border-b border-outline-variant/30 pb-4 relative z-10">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">architecture</span>
+            <h2 class="text-xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none">Enterprise Architecture Fit</h2>
+          </div>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] relative z-10 max-w-2xl">
+            Ceres sits on top of your existing ERPs, databases, and core infrastructure. It pulls in the signals you need without requiring a full data migration.
+          </p>
+          <div class="grid grid-cols-2 gap-4 mt-4 relative z-10">
+            <div class="bg-surface-container-lowest p-4 border border-outline-variant/20 flex flex-col gap-2">
+              <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-outline">Layer 1</span>
+              <span class="font-headline font-bold text-on-surface tracking-[0.015em]">Existing ERP/DB Core</span>
+            </div>
+            <div class="bg-surface-container-lowest p-4 border border-outline-variant/20 flex flex-col gap-2 border-t-2 border-t-primary">
+              <span class="section-label">Layer 2</span>
+              <span class="font-headline font-bold text-on-surface tracking-[0.015em]">Ceres Decision Engine</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- DATA HANDLING PRINCIPLES -->
-    <section class="flex flex-col gap-6">
-      <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none border-b border-outline-variant/30 pb-4">
-        Data Handling Principles
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-surface-container p-6 flex flex-col gap-4 ghost-border hover:bg-surface-container-high transition-colors">
-          <span class="material-symbols-outlined text-outline text-2xl">input</span>
-          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em]">Least-Friction Integration</h3>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Connects directly to required endpoints without demanding wholesale data migration.</p>
-        </div>
-        <div class="bg-surface-container p-6 flex flex-col gap-4 ghost-border hover:bg-surface-container-high transition-colors">
-          <span class="material-symbols-outlined text-outline text-2xl">schema</span>
-          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em]">Purpose-Built Workflows</h3>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Data is processed strictly within the context of predefined, authorized analytical tasks.</p>
-        </div>
-        <div class="bg-surface-container p-6 flex flex-col gap-4 ghost-border hover:bg-surface-container-high transition-colors border-t-2 border-t-outline-variant">
-          <span class="material-symbols-outlined text-outline text-2xl">route</span>
-          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em]">Clear Input-to-Output Path</h3>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Every analytical conclusion can be traced back to its specific source vectors.</p>
-        </div>
-        <div class="bg-surface-container p-6 flex flex-col gap-4 ghost-border hover:bg-surface-container-high transition-colors">
-          <span class="material-symbols-outlined text-outline text-2xl">cycle</span>
-          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em]">Repeatable Analysis</h3>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Consistent models ensure that the same inputs reliably yield the same explainable outputs.</p>
+    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <span class="section-label">Data Governance</span>
+        <h2 class="mt-4 mb-12 font-headline font-extrabold tracking-[-0.01em] text-on-surface">Data Handling Principles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="card p-6 flex flex-col gap-4 hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">input</span>
+            <h3 class="text-on-surface">Least-Friction Integration</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Connects directly to required endpoints without demanding wholesale data migration.</p>
+          </div>
+          <div class="card p-6 flex flex-col gap-4 hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">schema</span>
+            <h3 class="text-on-surface">Purpose-Built Workflows</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Data is processed strictly within the context of predefined, authorized analytical tasks.</p>
+          </div>
+          <div class="card p-6 flex flex-col gap-4 hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">route</span>
+            <h3 class="text-on-surface">Clear Input-to-Output Path</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Every analytical conclusion can be traced back to its specific source vectors.</p>
+          </div>
+          <div class="card p-6 flex flex-col gap-4 hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">cycle</span>
+            <h3 class="text-on-surface">Repeatable Analysis</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Consistent models ensure that the same inputs reliably yield the same explainable outputs.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- HIGH-STAKES & EXPLAINABILITY -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <div class="bg-surface-container p-8 flex flex-col gap-6 ghost-border">
-        <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-primary text-2xl">visibility</span>
-          <h2 class="text-xl font-headline font-extrabold tracking-[-0.01em] leading-none text-on-surface">Radical Explainability</h2>
+    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="card p-8 flex flex-col gap-6">
+          <div class="flex items-center gap-3">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">visibility</span>
+            <h2 class="text-xl font-headline font-extrabold tracking-[-0.01em] leading-none text-on-surface">Radical Explainability</h2>
+          </div>
+          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">
+            Black box AI is a liability in enterprise operations. Ceres provides transparent diagnostic tools allowing analysts to interrogate outputs, challenge assumptions, and understand the weight of every variable influencing a decision.
+          </p>
+          <div class="bg-surface-container-lowest p-4 border border-outline-variant/30 flex justify-between items-center mt-auto">
+            <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-outline">Every output is traceable to its source</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-sm">verified</span>
+          </div>
         </div>
-        <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">
-          Black box AI is a liability in enterprise operations. Ceres provides transparent diagnostic tools allowing analysts to interrogate outputs, challenge assumptions, and understand the weight of every variable influencing a decision.
-        </p>
-        <div class="bg-surface-container-lowest p-4 border border-outline-variant/30 flex justify-between items-center mt-auto">
-          <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-outline">Every output is traceable to its source</span>
-          <span class="material-symbols-outlined text-primary text-sm">verified</span>
+        <div class="card p-8 flex flex-col gap-6">
+          <div class="flex items-center gap-3">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-2xl">gavel</span>
+            <h2 class="text-xl font-headline font-extrabold tracking-[-0.01em] leading-none text-on-surface">Reliability for High-Stakes</h2>
+          </div>
+          <ul class="flex flex-col gap-4 text-sm font-body font-normal text-on-surface-variant">
+            <li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+              <span>Operational Risk Reduction</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-outline text-sm">arrow_downward</span>
+            </li>
+            <li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+              <span>Compliance Audit Readiness</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-sm">check</span>
+            </li>
+            <li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+              <span>Downtime Mitigation Strategies</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-outline text-sm">shield_locked</span>
+            </li>
+            <li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
+              <span>Failover Protocol Activation</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-sm">power</span>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="bg-surface-container p-8 flex flex-col gap-6 ghost-border">
-        <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-primary text-2xl">gavel</span>
-          <h2 class="text-xl font-headline font-extrabold tracking-[-0.01em] leading-none text-on-surface">Reliability for High-Stakes</h2>
-        </div>
-        <ul class="flex flex-col gap-4 text-sm font-body font-normal text-on-surface-variant">
-          <li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
-            <span>Operational Risk Reduction</span>
-            <span class="material-symbols-outlined text-outline text-sm">arrow_downward</span>
-          </li>
-          <li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
-            <span>Compliance Audit Readiness</span>
-            <span class="material-symbols-outlined text-primary text-sm">check</span>
-          </li>
-          <li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
-            <span>Downtime Mitigation Strategies</span>
-            <span class="material-symbols-outlined text-outline text-sm">shield_locked</span>
-          </li>
-          <li class="flex items-center justify-between border-b border-outline-variant/20 pb-2">
-            <span>Failover Protocol Activation</span>
-            <span class="material-symbols-outlined text-primary text-sm">power</span>
-          </li>
-        </ul>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="bg-surface-container-high p-12 flex flex-col items-center text-center gap-6 mt-8 industrial-shadow ghost-border relative overflow-hidden">
-      <h2 class="text-3xl font-headline font-extrabold tracking-[-0.01em] leading-none text-on-surface relative z-10 max-w-2xl">
-        Need a closer look at how Ceres fits your environment?
-      </h2>
-      <p class="font-body font-normal text-on-surface-variant text-sm leading-[1.7] relative z-10">
-        Schedule a technical review with our systems architecture team.
-      </p>
-      <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="mt-4 btn-primary relative z-10">
-        Book a Demo
-        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-      </a>
+    <section class="cta-section text-center">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-5 font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-[1.05]">Need a closer look at how Ceres fits your environment?</h2>
+        <p class="mx-auto mb-10 font-body font-normal text-lg text-on-surface-variant max-w-xl leading-[1.7]">
+          Schedule a technical review with our systems architecture team.
+        </p>
+        <a href={demoUrl} class="btn-primary">
+          Book a Demo
+          <span aria-hidden="true" class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
     </section>
 
   </main>

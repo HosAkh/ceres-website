@@ -1,208 +1,222 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const demoUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL + 'book-a-demo/'
+  : import.meta.env.BASE_URL + '/book-a-demo/';
 ---
 
 <Layout
   title="AI Pharmaceutical Supply Chain Planning Software | Ceres"
   description="Monitor supplier delays, API pricing risk, shortage signals, and external market events with Ceres AI planning for pharmaceutical supply chains."
 >
-  <main class="w-full min-h-screen pt-14">
+  <main id="main" class="w-full pt-14">
 
     <!-- HERO -->
-    <section class="relative px-6 py-24 md:py-32 lg:px-12 border-b border-outline-variant/20 bg-gradient-to-br from-surface-container-high to-surface-container-lowest">
-      <div class="max-w-4xl">
-        <h1 class="font-headline font-extrabold tracking-[-0.01em] mb-6 leading-none text-on-surface">
+    <section class="relative overflow-hidden border-b border-outline-variant/20 bg-surface px-6 py-24 lg:px-12 lg:py-32">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,182,145,0.07),transparent_40%)]"></div>
+      <div aria-hidden="true" class="absolute top-0 right-0 w-1/2 h-full opacity-[0.07] pointer-events-none hidden lg:block" style="background-image: repeating-linear-gradient(90deg, #584237 0px, #584237 1px, transparent 1px, transparent 40px), repeating-linear-gradient(0deg, #584237 0px, #584237 1px, transparent 1px, transparent 40px);"></div>
+      <div class="relative mx-auto max-w-7xl">
+        <span class="section-label mb-4">Pharmaceutical Supply Chain</span>
+        <h1 class="font-headline font-extrabold tracking-[-0.01em] mb-6 leading-none text-on-surface max-w-4xl">
           Improve pharmaceutical supply decisions by mapping external signals to your internal records
         </h1>
         <p class="font-body font-normal text-lg md:text-xl text-on-surface-variant max-w-3xl mb-8 leading-[1.7]">
           Your ERP shows what happened. Ceres shows what's coming — layering geopolitical risk, logistics disruption, raw material changes, and supplier signals onto your purchase orders and SKU records before delays become visible internally.
         </p>
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary group">
-            Book a Demo
-            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-          </a>
-        </div>
+        <a href={demoUrl} class="btn-primary group">
+          Book a Demo
+          <span aria-hidden="true" class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
       </div>
-      <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none hidden lg:block" style="background-image: repeating-linear-gradient(90deg, #45474b 0px, #45474b 1px, transparent 1px, transparent 40px), repeating-linear-gradient(0deg, #45474b 0px, #45474b 1px, transparent 1px, transparent 40px);"></div>
     </section>
 
     <!-- THE PROBLEM -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 border-b border-outline-variant/20 bg-surface">
-      <div class="lg:col-span-5 p-6 lg:p-12 border-b lg:border-b-0 lg:border-r border-outline-variant/20 flex flex-col justify-center">
-        <h2 class="text-2xl md:text-3xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
-          Internal supply data shows what happened. It does not always show what is coming.
-        </h2>
-        <p class="text-sm md:text-base font-body font-normal text-on-surface-variant leading-[1.7]">
-          The data your team already has — purchase orders, supplier records, SKU positions, delivery dates — tells you what's in the pipeline. It doesn't tell you which of those orders are at risk right now. That's the gap Ceres closes.
-        </p>
-      </div>
-      <div class="lg:col-span-7 p-6 lg:p-12 bg-surface-container-low">
-        <h3 class="section-label mb-6 flex items-center gap-2">
-          <span class="material-symbols-outlined text-sm">sensors</span>
-          External Risk Signals
-        </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="flex items-start gap-3 p-4 card">
-            <span class="material-symbols-outlined text-on-surface-variant">factory</span>
-            <span class="text-sm font-medium text-on-surface">Supplier facility disruption</span>
-          </div>
-          <div class="flex items-start gap-3 p-4 card">
-            <span class="material-symbols-outlined text-on-surface-variant">directions_boat</span>
-            <span class="text-sm font-medium text-on-surface">Port and logistics pressure</span>
-          </div>
-          <div class="flex items-start gap-3 p-4 card">
-            <span class="material-symbols-outlined text-on-surface-variant">thunderstorm</span>
-            <span class="text-sm font-medium text-on-surface">Weather and natural disasters</span>
-          </div>
-          <div class="flex items-start gap-3 p-4 card">
-            <span class="material-symbols-outlined text-on-surface-variant">timeline</span>
-            <span class="text-sm font-medium text-on-surface">Raw material and price movement</span>
-          </div>
-          <div class="flex items-start gap-3 p-4 card">
-            <span class="material-symbols-outlined text-on-surface-variant">public</span>
-            <span class="text-sm font-medium text-on-surface">Geopolitical and trade risk</span>
-          </div>
-          <div class="flex items-start gap-3 p-4 card">
-            <span class="material-symbols-outlined text-on-surface-variant">description</span>
-            <span class="text-sm font-medium text-on-surface">Public filings &amp; recalls</span>
+    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5 flex flex-col justify-center">
+          <span class="section-label">The Gap</span>
+          <h2 class="mt-4 text-2xl md:text-3xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-tight mb-6">
+            Internal supply data shows what happened. It does not always show what is coming.
+          </h2>
+          <p class="text-base font-body font-normal text-on-surface-variant leading-[1.7]">
+            The data your team already has — purchase orders, supplier records, SKU positions, delivery dates — tells you what's in the pipeline. It doesn't tell you which of those orders are at risk right now. That's the gap Ceres closes.
+          </p>
+        </div>
+        <div class="lg:col-span-7">
+          <h3 class="section-label mb-6 flex items-center gap-2">
+            <span aria-hidden="true" class="material-symbols-outlined text-sm">sensors</span>
+            External Risk Signals
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant">factory</span>
+              <span class="text-sm font-medium text-on-surface">Supplier facility disruption</span>
+            </div>
+            <div class="flex items-start gap-3 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant">directions_boat</span>
+              <span class="text-sm font-medium text-on-surface">Port and logistics pressure</span>
+            </div>
+            <div class="flex items-start gap-3 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant">thunderstorm</span>
+              <span class="text-sm font-medium text-on-surface">Weather and natural disasters</span>
+            </div>
+            <div class="flex items-start gap-3 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant">timeline</span>
+              <span class="text-sm font-medium text-on-surface">Raw material and price movement</span>
+            </div>
+            <div class="flex items-start gap-3 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant">public</span>
+              <span class="text-sm font-medium text-on-surface">Geopolitical and trade risk</span>
+            </div>
+            <div class="flex items-start gap-3 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant">description</span>
+              <span class="text-sm font-medium text-on-surface">Public filings &amp; recalls</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- HOW CERES HELPS -->
-    <section class="p-6 lg:p-12 border-b border-outline-variant/20 bg-surface-container-lowest">
-      <div class="max-w-4xl mb-12">
-        <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
+    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <span class="section-label">How Ceres Helps</span>
+        <h2 class="mt-4 mb-12 text-3xl md:text-4xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-tight max-w-4xl">
           Three things your team can do with Ceres that you can't do in a spreadsheet
         </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div class="p-6 bg-surface-container border-l-2 border-primary hover:bg-surface-container-high transition-colors">
-          <span class="material-symbols-outlined text-primary mb-4 text-3xl">query_stats</span>
-          <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em] mb-2">Monitor &amp; Score</h4>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Assign a risk score to every supplier and SKU combination. Know which ones to watch before the ERP flags a problem.</p>
-        </div>
-        <div class="p-6 card hover:bg-surface-container-high transition-colors">
-          <span class="material-symbols-outlined text-on-surface-variant mb-4 text-3xl">price_change</span>
-          <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em] mb-2">Pricing Risk</h4>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Flag price volatility on APIs and raw materials, and surface contract and tariff risks before they escalate.</p>
-        </div>
-        <div class="p-6 card hover:bg-surface-container-high transition-colors">
-          <span class="material-symbols-outlined text-on-surface-variant mb-4 text-3xl">table_chart</span>
-          <h4 class="font-headline font-bold text-on-surface uppercase tracking-[0.015em] mb-2">Reduce Burden</h4>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Ceres AI surfaces changes when they matter.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="card-featured p-8 hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-4 text-3xl">query_stats</span>
+            <h3 class="text-on-surface mb-2">Monitor &amp; Score</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Assign a risk score to every supplier and SKU combination. Know which ones to watch before the ERP flags a problem.</p>
+          </div>
+          <div class="card p-8 hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant mb-4 text-3xl">price_change</span>
+            <h3 class="text-on-surface mb-2">Pricing Risk</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Flag price volatility on APIs and raw materials, and surface contract and tariff risks before they escalate.</p>
+          </div>
+          <div class="card p-8 hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant mb-4 text-3xl">table_chart</span>
+            <h3 class="text-on-surface mb-2">Reduce Burden</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Ceres AI surfaces changes when they matter.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- COMMON WORKFLOWS -->
-    <section class="p-6 lg:p-12 border-b border-outline-variant/20 bg-surface">
-      <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-8">Common Workflows</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
-        <div class="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 p-6 bg-surface-container-low border border-outline-variant/20 relative overflow-hidden group">
-          <div class="absolute inset-0 bg-gradient-to-br from-surface-container-high/50 to-transparent z-0"></div>
-          <div class="relative z-10 h-full flex flex-col justify-between">
+    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <span class="section-label">Workflows</span>
+        <h2 class="mt-4 mb-12 font-headline font-extrabold tracking-[-0.01em] text-on-surface">Common Workflows</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
+          <div class="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 p-6 card relative overflow-hidden group">
+            <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-br from-surface-container-high/50 to-transparent z-0"></div>
+            <div class="relative z-10 h-full flex flex-col justify-between">
+              <div>
+                <span aria-hidden="true" class="material-symbols-outlined text-primary mb-2 text-2xl">troubleshoot</span>
+                <h3 class="text-lg text-on-surface mb-2">Delay Scoring</h3>
+                <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Use internal purchase order history and external signals to identify patterns before delays occur.</p>
+              </div>
+              <div aria-hidden="true" class="mt-6 flex items-end gap-2 h-24 border-b border-outline-variant/30 pb-2">
+                <div class="w-1/6 bg-secondary-container h-1/3"></div>
+                <div class="w-1/6 bg-secondary-container h-1/2"></div>
+                <div class="w-1/6 bg-secondary-container h-1/4"></div>
+                <div class="w-1/6 bg-primary/40 h-2/3 border-t-2 border-primary"></div>
+                <div class="w-1/6 bg-primary/60 h-full border-t-2 border-primary"></div>
+                <div class="w-1/6 bg-error/40 h-4/5 border-t-2 border-error"></div>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 card hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-on-surface mb-2">warning</span>
+            <h3 class="text-on-surface mb-2">Delay Severity Forecasting</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Move beyond yes-or-no; estimate short, moderate, severe delays.</p>
+          </div>
+          <div class="p-6 card hover:bg-surface-container-high transition-colors">
+            <span aria-hidden="true" class="material-symbols-outlined text-on-surface mb-2">inventory_2</span>
+            <h3 class="text-on-surface mb-2">Shortage &amp; Recovery Monitoring</h3>
+            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Track ongoing shortages and monitor signals for recovery indicators.</p>
+          </div>
+          <div class="col-span-1 md:col-span-2 lg:col-span-4 p-6 card hover:bg-surface-container-high transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <span class="material-symbols-outlined text-primary mb-2 text-2xl">troubleshoot</span>
-              <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Delay Scoring</h3>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Use internal purchase order history and external signals to identify patterns before delays occur.</p>
-            </div>
-            <div class="mt-6 flex items-end gap-2 h-24 border-b border-outline-variant/30 pb-2">
-              <div class="w-1/6 bg-secondary-container h-1/3"></div>
-              <div class="w-1/6 bg-secondary-container h-1/2"></div>
-              <div class="w-1/6 bg-secondary-container h-1/4"></div>
-              <div class="w-1/6 bg-primary/40 h-2/3 border-t-2 border-primary"></div>
-              <div class="w-1/6 bg-primary/60 h-full border-t-2 border-primary"></div>
-              <div class="w-1/6 bg-error/40 h-4/5 border-t-2 border-error"></div>
+              <h3 class="text-on-surface mb-1 flex items-center gap-2">
+                <span aria-hidden="true" class="material-symbols-outlined text-sm">visibility</span>
+                Supplier &amp; SKU Risk Monitoring
+              </h3>
+              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Track active supplier and SKU risk across your portfolio. Updated automatically as conditions change.</p>
             </div>
           </div>
-        </div>
-        <div class="p-6 card hover:bg-surface-container-high transition-colors">
-          <span class="material-symbols-outlined text-on-surface mb-2">warning</span>
-          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Delay Severity Forecasting</h3>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Move beyond yes-or-no; estimate short, moderate, severe delays.</p>
-        </div>
-        <div class="p-6 card hover:bg-surface-container-high transition-colors">
-          <span class="material-symbols-outlined text-on-surface mb-2">inventory_2</span>
-          <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Shortage &amp; Recovery Monitoring</h3>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Track ongoing shortages and monitor signals for recovery indicators.</p>
-        </div>
-        <div class="col-span-1 md:col-span-2 lg:col-span-4 p-6 card hover:bg-surface-container-high transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div>
-            <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-1 flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm">visibility</span>
-              Supplier &amp; SKU Risk Monitoring
-            </h3>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Track active supplier and SKU risk across your portfolio. Updated automatically as conditions change.</p>
-          </div>
-
         </div>
       </div>
     </section>
 
     <!-- PROOF SECTION -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 border-b border-outline-variant/20 bg-surface-container-lowest">
-      <div class="p-6 lg:p-12 border-b lg:border-b-0 lg:border-r border-outline-variant/20">
-        <h2 class="text-2xl md:text-3xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
-          Know which suppliers and SKUs are at risk before the ERP catches up.
-        </h2>
-        <p class="text-sm md:text-base font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
-          Your procurement team needs lead time — not a report confirming what already happened. Decisions feed back into your ERP. No separate workflow.
-        </p>
-      </div>
-      <div class="p-6 lg:p-12 bg-surface flex flex-col justify-center">
-        <ul class="space-y-4">
-          <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
-            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Score suppliers by disruption probability</span>
-          </li>
-          <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
-            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Flag active purchase orders under pricing pressure</span>
-          </li>
-          <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
-            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Surface the signal behind each risk flag</span>
-          </li>
-          <li class="flex items-start gap-4 p-4 border border-outline-variant/20 bg-surface-container-low">
-            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
-            <span class="text-sm text-on-surface">Push risk scores and decisions back to your ERP</span>
-          </li>
-        </ul>
+    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="flex flex-col justify-center">
+          <span class="section-label">Lead Time</span>
+          <h2 class="mt-4 text-2xl md:text-3xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-tight mb-6">
+            Know which suppliers and SKUs are at risk before the ERP catches up.
+          </h2>
+          <p class="text-base font-body font-normal text-on-surface-variant leading-[1.7]">
+            Your procurement team needs lead time — not a report confirming what already happened. Decisions feed back into your ERP. No separate workflow.
+          </p>
+        </div>
+        <div class="flex flex-col justify-center">
+          <ul class="space-y-4">
+            <li class="flex items-start gap-4 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
+              <span class="text-sm text-on-surface">Score suppliers by disruption probability</span>
+            </li>
+            <li class="flex items-start gap-4 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
+              <span class="text-sm text-on-surface">Flag active purchase orders under pricing pressure</span>
+            </li>
+            <li class="flex items-start gap-4 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
+              <span class="text-sm text-on-surface">Surface the signal behind each risk flag</span>
+            </li>
+            <li class="flex items-start gap-4 p-4 card">
+              <span aria-hidden="true" class="material-symbols-outlined text-primary text-sm mt-0.5">check_box</span>
+              <span class="text-sm text-on-surface">Push risk scores and decisions back to your ERP</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- CTA GRID -->
-    <section class="grid grid-cols-1 md:grid-cols-2 bg-surface">
-      <div class="p-6 lg:p-12 border-b md:border-b-0 md:border-r border-outline-variant/20 flex flex-col justify-between">
+    <!-- IMPACT + CTA -->
+    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
+      <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-4">
+          <span class="section-label">Impact</span>
+          <h2 class="mt-4 text-2xl md:text-3xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-tight mb-4">
             Earlier visibility means more options.
           </h2>
-          <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
+          <p class="text-base font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
             One pharma client could only manage three weeks of forward visibility internally. Ceres extended that to six months — 8x further out. That gap is the difference between reacting to a shortage and having time to do something about it.
           </p>
-          <div class="grid grid-cols-2 gap-4 mb-8">
-            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Surface disruptions weeks earlier</div>
-            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Reduce emergency procurement spend</div>
-            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Prioritize patient-critical SKUs</div>
-            <div class="text-xs text-on-surface-variant font-mono"><span class="text-primary mr-1">&gt;</span>Explain why each flag was raised</div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="text-sm text-on-surface-variant font-mono flex items-start gap-2"><span aria-hidden="true" class="text-primary">&gt;</span>Surface disruptions weeks earlier</div>
+            <div class="text-sm text-on-surface-variant font-mono flex items-start gap-2"><span aria-hidden="true" class="text-primary">&gt;</span>Reduce emergency procurement spend</div>
+            <div class="text-sm text-on-surface-variant font-mono flex items-start gap-2"><span aria-hidden="true" class="text-primary">&gt;</span>Prioritize patient-critical SKUs</div>
+            <div class="text-sm text-on-surface-variant font-mono flex items-start gap-2"><span aria-hidden="true" class="text-primary">&gt;</span>Explain why each flag was raised</div>
           </div>
         </div>
-      </div>
-      <div class="p-6 lg:p-12 bg-surface-container-high flex flex-col justify-center items-start relative overflow-hidden">
-        <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-        <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-4 relative z-10">
-          See it in your environment.
-        </h2>
-        <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-8 relative z-10">
-          Schedule a walkthrough and we'll show you how it works against your suppliers, SKUs, and planning data.
-        </p>
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary relative z-10 w-full sm:w-auto text-center">
-          Book a Demo
-        </a>
+        <div class="card-featured p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
+          <div aria-hidden="true" class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+          <h2 class="text-2xl font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-tight mb-4 relative z-10">
+            See it in your environment.
+          </h2>
+          <p class="text-base font-body font-normal text-on-surface-variant leading-[1.7] mb-8 relative z-10">
+            Schedule a walkthrough and we'll show you how it works against your suppliers, SKUs, and planning data.
+          </p>
+          <a href={demoUrl} class="btn-primary relative z-10 w-full sm:w-auto justify-center sm:justify-start">
+            Book a Demo
+          </a>
+        </div>
       </div>
     </section>
 

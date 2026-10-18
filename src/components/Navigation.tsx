@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface Props {
   currentPath?: string;
@@ -6,6 +6,8 @@ interface Props {
 
 export default function Navigation({ currentPath = '' }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [casesOpen, setCasesOpen] = useState(false);
+  const casesRef = useRef<HTMLDivElement>(null);
   const baseUrl = import.meta.env.BASE_URL;
   const withBase = (path: string) => `${baseUrl.replace(/\/?$/, '/')}${path.replace(/^\/+/, '')}`;
 
@@ -17,26 +19,49 @@ export default function Navigation({ currentPath = '' }: Props) {
     return currentPath.includes(path.replace(/\/$/, ''));
   };
 
-  const navLinkBase = "font-['DM_Mono'] text-[11px] tracking-[0.08em] uppercase transition-colors";
+  // Close the dropdown on outside click or Escape (keyboard accessibility).
+  useEffect(() => {
+    if (!casesOpen) return;
+    const onDocClick = (e: MouseEvent) => {
+      if (casesRef.current && !casesRef.current.contains(e.target as Node)) setCasesOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setCasesOpen(false);
+    };
+    document.addEventListener('click', onDocClick);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('click', onDocClick);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [casesOpen]);
+
+  // 12px is the legibility floor for interactive mono text.
+  const navLinkBase = "font-nav text-[12px] tracking-[0.08em] uppercase transition-colors";
   const navLinkClass = (path: string) =>
-    `${navLinkBase} ${isActive(path) ? 'text-[#F37221]' : 'text-[#8A8D91] hover:text-white'}`;
+    `${navLinkBase} ${isActive(path) ? 'text-primary' : 'text-outline hover:text-on-surface'}`;
 
   const dropdownLinks = [
+    { label: 'Tier 1 Automotive', path: 'tier-one/' },
     { label: 'Pharmaceutical Supply', path: 'pharma/' },
     { label: 'Hospitals & Health Systems', path: 'hospitals/' },
     { label: 'Consumer Packaged Goods', path: 'cpg/' },
     { label: 'Investment Firms', path: 'investment-firms/' },
-    { label: 'Tier 1 Automotive', path: 'tier-one/' },
   ];
 
   const mobileLinks = [
     ...dropdownLinks,
+    { label: 'Security & Trust', path: 'security-trust/' },
+    { label: 'Integrations', path: 'integrations/' },
     { label: 'Company', path: 'about/' },
   ];
 
   return (
     <>
-      <nav className="bg-[#0B0E14] text-[#F37221] fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b-2 border-[#1D2026]">
+      <nav
+        aria-label="Primary"
+        className="bg-surface-container-lowest fixed top-0 left-0 w-full px-6 h-14 flex justify-between items-center z-50 border-b border-outline-variant/30"
+      >
         <a href={baseUrl} className="flex items-center">
           <img
             alt="Ceres Technology"
@@ -49,14 +74,25 @@ export default function Navigation({ currentPath = '' }: Props) {
 
         {/* Desktop nav */}
         <div className="hidden md:flex gap-8 items-center">
-          <div className="relative group">
-            <button className={`${navLinkBase} text-[#8A8D91] hover:text-white flex items-center gap-2`}>
+          <div className="relative group" ref={casesRef}>
+            <button
+              className={`${navLinkBase} text-outline hover:text-on-surface flex items-center gap-2`}
+              aria-expanded={casesOpen}
+              aria-haspopup="true"
+              onClick={() => setCasesOpen(!casesOpen)}
+            >
               EXAMPLE CASES
-              <span className="material-symbols-outlined text-[14px]">expand_more</span>
+              <span aria-hidden="true" className="material-symbols-outlined text-[14px]">expand_more</span>
             </button>
-            <div className="absolute left-0 mt-0 w-72 bg-[#1D2026] border border-[#363940] hidden group-hover:block z-50">
+            <div
+              className={`absolute left-0 mt-0 w-72 bg-surface-container-high border border-outline-variant/30 z-50 ${casesOpen ? 'block' : 'hidden group-hover:block'}`}
+            >
               {dropdownLinks.map(({ label, path }) => (
-                <a key={path} href={withBase(path)} className={`block px-4 py-2 ${navLinkClass(path)} hover:bg-[#363940]`}>
+                <a
+                  key={path}
+                  href={withBase(path)}
+                  className={`block px-4 py-2.5 ${navLinkClass(path)} hover:bg-surface-container-highest`}
+                >
                   {label}
                 </a>
               ))}
@@ -74,12 +110,13 @@ export default function Navigation({ currentPath = '' }: Props) {
         </div>
 
         <div className="flex items-center gap-4">
-          <a href="https://nxt.cerestech.co" className={`${navLinkBase} text-[#8A8D91] hover:text-white`}>
+          {/* Inline Login is hidden on phones (it lives in the mobile menu) to keep the bar uncrowded */}
+          <a href="https://nxt.cerestech.co" className={`${navLinkBase} text-outline hover:text-on-surface hidden sm:block`}>
             Login
           </a>
           <a
             href={withBase('book-a-demo/')}
-            className="bg-[#F37221] text-[#0B0E14] px-4 py-2 hover:bg-[#ffb691] transition-all active:scale-95 font-['DM_Mono'] text-[11px] tracking-[0.07em] uppercase"
+            className="bg-primary text-on-primary px-4 py-2 hover:opacity-90 transition-all active:scale-95 font-nav text-[12px] tracking-[0.07em] uppercase whitespace-nowrap"
           >
             REQUEST DEMO
           </a>
@@ -87,24 +124,25 @@ export default function Navigation({ currentPath = '' }: Props) {
           <button
             className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-expanded={menuOpen}
             aria-label="Toggle menu"
           >
-            <span className={`block w-5 h-px bg-[#8A8D91] transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block w-5 h-px bg-[#8A8D91] transition-all ${menuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block w-5 h-px bg-[#8A8D91] transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span className={`block w-5 h-px bg-outline transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block w-5 h-px bg-outline transition-all ${menuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block w-5 h-px bg-outline transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </div>
       </nav>
 
       {/* Mobile menu overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#0B0E14] pt-14 overflow-y-auto md:hidden">
+        <div className="fixed inset-0 z-40 bg-surface-container-lowest pt-14 overflow-y-auto md:hidden">
           <div className="flex flex-col px-6 py-8 gap-1">
             {mobileLinks.map(({ label, path }) => (
               <a
                 key={path}
                 href={withBase(path)}
-                className={`block py-3 border-b border-[#1D2026] font-['DM_Mono'] text-[12px] tracking-[0.08em] uppercase transition-colors ${isActive(path) ? 'text-[#F37221]' : 'text-[#8A8D91] hover:text-white'}`}
+                className={`block py-3 border-b border-outline-variant/30 font-nav text-[12px] tracking-[0.08em] uppercase transition-colors ${isActive(path) ? 'text-primary' : 'text-outline hover:text-on-surface'}`}
                 onClick={() => setMenuOpen(false)}
               >
                 {label}
@@ -112,7 +150,7 @@ export default function Navigation({ currentPath = '' }: Props) {
             ))}
             <a
               href="https://nxt.cerestech.co"
-              className="block py-3 border-b border-[#1D2026] font-['DM_Mono'] text-[12px] tracking-[0.08em] uppercase text-[#8A8D91] hover:text-white transition-colors"
+              className="block py-3 border-b border-outline-variant/30 font-nav text-[12px] tracking-[0.08em] uppercase text-outline hover:text-on-surface transition-colors"
             >
               Login
             </a>

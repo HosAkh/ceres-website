@@ -49,22 +49,22 @@ description="Ceres helps Tier 1 automotive suppliers reconcile EDI, OEM releases
         </div>
         <div class="grid grid-cols-12 gap-1 border-t border-l border-outline-variant">
           <div class="col-span-12 md:col-span-6 p-10 border-r border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
-            <span class="material-symbols-outlined text-primary text-4xl mb-6">dynamic_feed</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl mb-6">dynamic_feed</span>
             <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-4">Manual Reconciliation</h3>
             <p class="font-body font-normal text-on-surface-variant leading-[1.7]">Drowning in spreadsheets across thousands of line items from multiple OEM portals.</p>
           </div>
           <div class="col-span-12 md:col-span-6 p-10 border-r border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
-            <span class="material-symbols-outlined text-primary text-4xl mb-6">error</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl mb-6">error</span>
             <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-4">Catching Exceptions</h3>
             <p class="font-body font-normal text-on-surface-variant leading-[1.7]">Identifying demand spikes or supply drops shouldn't take a week of analysis.</p>
           </div>
           <div class="col-span-12 md:col-span-6 p-10 border-r border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
-            <span class="material-symbols-outlined text-primary text-4xl mb-6">query_stats</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl mb-6">query_stats</span>
             <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-4">Forecast Accuracy</h3>
             <p class="font-body font-normal text-on-surface-variant leading-[1.7]">OEM forecasts are notoriously volatile. Without algorithmic reconciliation, your production schedules can be error prone.</p>
           </div>
           <div class="col-span-12 md:col-span-6 p-10 border-r border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
-            <span class="material-symbols-outlined text-primary text-4xl mb-6">warning</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl mb-6">warning</span>
             <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-4">Inventory Risk</h3>
             <p class="font-body font-normal text-on-surface-variant leading-[1.7]">Over-stocking components for uncertain orders or stock-outs. Both kill the bottom line for Tier 1 suppliers.</p>
           </div>
@@ -91,12 +91,12 @@ description="Ceres helps Tier 1 automotive suppliers reconcile EDI, OEM releases
           <!-- 01 Data Vault -->
           <div class="grid grid-cols-12 gap-12 items-center">
             <div class="col-span-12 md:col-span-5 order-2 md:order-1">
-              <span class="font-mono font-light text-6xl text-on-surface-variant/30 font-headline mb-4 block data-mono">01</span>
+              <span class="font-mono font-light text-6xl text-on-surface-variant/50 font-headline mb-4 block data-mono">01</span>
               <h3 class="font-headline font-extrabold tracking-[-0.01em] mb-6 uppercase">Data Vault</h3>
               <p class="font-body font-normal text-on-surface-variant leading-[1.7] text-lg mb-8">AI-driven reliability and continuous data reconciliation. We ingest noisy OEM data and unify it into a single, immutable source of truth that your ERP can actually trust.</p>
             </div>
             <div class="col-span-12 md:col-span-7 order-1 md:order-2">
-              <div class="aspect-video bg-surface-container rounded-lg border border-outline-variant overflow-hidden p-4">
+              <div class="aspect-video bg-surface-container rounded border border-outline-variant overflow-hidden p-4">
                 <img loading="lazy" width="512" height="512" class="w-full h-full object-cover rounded opacity-80" alt="Data visualization dashboard" src={`${import.meta.env.BASE_URL}images/feature-dashboard.jpg`} />
               </div>
             </div>
@@ -105,13 +105,13 @@ description="Ceres helps Tier 1 automotive suppliers reconcile EDI, OEM releases
           <!-- 02 Exception Management -->
           <div class="grid grid-cols-12 gap-12 items-center">
             <div class="col-span-12 md:col-span-7">
-              <div class="aspect-video bg-surface-container rounded-lg border border-outline-variant overflow-hidden relative">
+              <div class="aspect-video bg-surface-container rounded border border-outline-variant overflow-hidden relative">
                 <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
                 <img loading="lazy" width="512" height="512" class="w-full h-full object-cover opacity-80" alt="Circuit board visualization" src={`${import.meta.env.BASE_URL}images/feature-circuit.jpg`} />
               </div>
             </div>
             <div class="col-span-12 md:col-span-5">
-              <span class="font-mono font-light text-6xl text-on-surface-variant/30 font-headline mb-4 block data-mono">02</span>
+              <span class="font-mono font-light text-6xl text-on-surface-variant/50 font-headline mb-4 block data-mono">02</span>
               <h3 class="font-headline font-extrabold tracking-[-0.01em] mb-6 uppercase">Exception Management</h3>
               <p class="font-body font-normal text-on-surface-variant leading-[1.7] text-lg mb-8">Signaling anomalies before damage occurs. Our engine constantly monitors for deviations in lead times, order volumes, and shipping delays, surfacing only the signals that matter.</p>
 
@@ -121,12 +121,12 @@ description="Ceres helps Tier 1 automotive suppliers reconcile EDI, OEM releases
           <!-- 03 AI Forecasting -->
           <div class="grid grid-cols-12 gap-12 items-center">
             <div class="col-span-12 md:col-span-5 order-2 md:order-1">
-              <span class="font-mono font-light text-6xl text-on-surface-variant/30 font-headline mb-4 block data-mono">03</span>
+              <span class="font-mono font-light text-6xl text-on-surface-variant/50 font-headline mb-4 block data-mono">03</span>
               <h3 class="font-headline font-extrabold tracking-[-0.01em] mb-6 uppercase">AI Forecasting</h3>
               <p class="font-body font-normal text-on-surface-variant leading-[1.7] text-lg mb-8">Every single grain gets a forecast. AI reconciles bottom-up SKU demand with top-down product-group totals, ensuring financial targets and operational plans are aligned.</p>
             </div>
             <div class="col-span-12 md:col-span-7 order-1 md:order-2">
-              <div class="aspect-video bg-surface-container rounded-lg border border-outline-variant overflow-hidden">
+              <div class="aspect-video bg-surface-container rounded border border-outline-variant overflow-hidden">
                 <img loading="lazy" width="512" height="512" class="w-full h-full object-cover opacity-80" alt="Predictive analytics visualization" src={`${import.meta.env.BASE_URL}images/feature-analytics.jpg`} />
               </div>
             </div>
@@ -135,12 +135,12 @@ description="Ceres helps Tier 1 automotive suppliers reconcile EDI, OEM releases
           <!-- 04 What-If Scenarios -->
           <div class="grid grid-cols-12 gap-12 items-center">
             <div class="col-span-12 md:col-span-7">
-              <div class="aspect-video bg-surface-container rounded-lg border border-outline-variant overflow-hidden relative">
+              <div class="aspect-video bg-surface-container rounded border border-outline-variant overflow-hidden relative">
                 <img loading="lazy" width="512" height="512" class="w-full h-full object-cover opacity-80" alt="Supply chain network simulation" src={`${import.meta.env.BASE_URL}images/feature-supply-chain.jpg`} />
               </div>
             </div>
             <div class="col-span-12 md:col-span-5">
-              <span class="font-mono font-light text-6xl text-on-surface-variant/30 font-headline mb-4 block data-mono">04</span>
+              <span class="font-mono font-light text-6xl text-on-surface-variant/50 font-headline mb-4 block data-mono">04</span>
               <h3 class="font-headline font-extrabold tracking-[-0.01em] mb-6 uppercase">What-If Scenarios</h3>
               <p class="font-body font-normal text-on-surface-variant leading-[1.7] text-lg mb-8">Stress-test plans against real-world drivers. Instantly see the impact of new tariffs, raw material price shifts, or energy shortages on your Tier 1 margin.</p>
 
@@ -163,9 +163,9 @@ description="Ceres helps Tier 1 automotive suppliers reconcile EDI, OEM releases
           <div class="text-xl font-bold font-headline uppercase tracking-widest">Blue Yonder</div>
           <div class="text-xl font-bold font-headline uppercase tracking-widest">Palantir</div>
         </div>
-        <div class="mt-20 p-12 bg-surface-container-high border border-outline-variant rounded-xl max-w-4xl mx-auto relative overflow-hidden">
+        <div class="mt-20 p-12 bg-surface-container-high border border-outline-variant rounded max-w-4xl mx-auto relative overflow-hidden">
           <div class="absolute top-0 right-0 p-4">
-            <span class="material-symbols-outlined text-primary/20 text-9xl">hub</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary/20 text-9xl">hub</span>
           </div>
           <h4 class="font-headline font-bold uppercase tracking-[0.015em] mb-4 relative z-10">Zero Rip-and-Replace</h4>
           <p class="font-body font-normal text-on-surface-variant leading-[1.7] max-w-prose mx-auto relative z-10">

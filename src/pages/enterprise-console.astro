@@ -107,7 +107,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="bg-surface-container-highest p-8 ghost-border">
-            <div class="aspect-video bg-[#0B0E14] flex flex-col items-center justify-center p-6 border border-outline-variant/30 relative overflow-hidden">
+            <div class="aspect-video bg-surface-container-lowest flex flex-col items-center justify-center p-6 border border-outline-variant/30 relative overflow-hidden">
               <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-error mb-4">Critical: System Overload</div>
               <div class="w-full h-2 bg-error-container relative mb-2">
                 <div class="absolute inset-y-0 left-0 bg-error w-full animate-pulse"></div>
@@ -130,7 +130,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
-            <span class="material-symbols-outlined text-primary mb-6">input</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-6">input</span>
             <h3 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface mb-3">Ingest &amp; Normalize</h3>
             <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Automatically pull in EDI signals, customer releases, and SAP snapshots to create one unified baseline.
@@ -138,7 +138,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="section-label border-t border-outline-variant/20 pt-4">Outcome: stop manually reconciling files</div>
           </div>
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
-            <span class="material-symbols-outlined text-primary mb-6">warning</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-6">warning</span>
             <h3 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface mb-3">Catch Exceptions</h3>
             <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Automatically detect new part numbers, double plannings, and anomalous demand shifts that human eyes miss.
@@ -146,7 +146,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="section-label border-t border-outline-variant/20 pt-4">Outcome: surface critical changes instantly</div>
           </div>
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
-            <span class="material-symbols-outlined text-primary mb-6">psychology</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-6">psychology</span>
             <h3 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface mb-3">AI Forecasting</h3>
             <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Build accurate forecasts across every active part, customer, and plant combination at massive scale.
@@ -154,7 +154,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="section-label border-t border-outline-variant/20 pt-4">Outcome: never skip a planning period</div>
           </div>
           <div class="bg-surface-container p-6 machined-gradient hover:bg-surface-container-high transition-colors group flex flex-col">
-            <span class="material-symbols-outlined text-primary mb-6">science</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-6">science</span>
             <h3 class="font-headline font-bold uppercase tracking-[0.015em] text-on-surface mb-3">Test Scenarios</h3>
             <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6 flex-grow">
               Model the exact operational impact of new tariffs, logistics disruptions, or material shortages.
@@ -209,7 +209,7 @@ import Layout from '../layouts/Layout.astro';
           </p>
           <div class="space-y-4">
             <div class="flex items-center gap-4 bg-surface-container-low p-4">
-              <span class="material-symbols-outlined text-outline">hub</span>
+              <span aria-hidden="true" class="material-symbols-outlined text-outline">hub</span>
               <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface">Multi-OEM Environment Native</span>
             </div>
           </div>
@@ -218,7 +218,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- FINAL CTA -->
-    <section class="py-32 px-6 bg-[#0B0E14] text-center border-t border-outline-variant/10">
+    <section class="py-32 px-6 bg-surface-container-lowest text-center border-t border-outline-variant/10">
       <div class="max-w-4xl mx-auto">
         <h2 class="font-headline font-extrabold tracking-[-0.01em] mb-6 leading-none">Close the gap between your ERP and your decisions.</h2>
         <p class="font-body font-normal text-on-surface-variant text-lg mb-12 max-w-prose mx-auto leading-[1.7]">See how Ceres helps planning teams move faster, catch issues earlier, and make better decisions.</p>

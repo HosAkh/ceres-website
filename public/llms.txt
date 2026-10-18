@@ -9,7 +9,9 @@ Ceres Technology provides an AI planning engine for enterprise supply chain and 
 - Category: AI S&OP planning software; external signal intelligence; supply chain planning engine
 - Primary audience: Tier 1 automotive suppliers, pharmaceutical supply chain teams, hospitals and health systems, consumer packaged goods companies, and investment research teams
 - Core value: Reconcile demand, ERP records, customer releases, and external signals into one planning baseline; flag exceptions before planning cycles close
-- Integrations: SAP, Kinaxis, Blue Yonder, o9, ERP and planning systems
+- Integrations: SAP S/4HANA, SAP IBP, Kinaxis, Blue Yonder, o9 Solutions, Palantir, ERP and planning systems, REST APIs, databases, CSV/flat-file, unstructured documents
+- Founded by: Bobby Katoli (Co-Founder & CEO) and Trey Hoobler (Co-Founder), operators who managed complex coffee supply chains through the COVID-19 pandemic
+- Clients include: Bosch, Alps Alpine
 
 ## Key pages
 
@@ -29,6 +31,44 @@ Ceres Technology provides an AI planning engine for enterprise supply chain and 
 Ceres is the AI planning engine between ERP and decisions. It reads demand signals, reconciles them against the plan, enriches planning with external signals, and flags exceptions that need action before the cycle closes.
 
 For Tier 1 automotive suppliers, Ceres reconciles EDI, OEM releases, SAP snapshots, and actuals into a planning baseline, then forecasts active part-customer-plant combinations and routes exceptions to planning and procurement teams.
+
+For pharmaceutical supply chain teams, Ceres layers geopolitical risk, logistics disruption, raw material changes, and supplier signals onto purchase orders and SKU records — scoring supplier delay risk and API pricing exposure before delays become visible internally.
+
+For hospitals and health systems, Ceres links every SKU in the formulary to its manufacturing location, distribution path, and upstream risk factors — providing shortage early warning up to 90 days before vendor notification, plus tariff and HTS-code exposure tracking.
+
+For consumer packaged goods companies, Ceres reconciles commercial forecasts with external market reality — layering hyper-local weather, commodity prices, and market signals to detect seasonal shifts and over-forecasting before inventory locks in.
+
+For investment research teams, Ceres connects internal analyst models to external market, macro, geopolitical, and infrastructure signals — powering exposure mapping, custom risk scorecards, and due diligence dossiers.
+
+## Proof points
+
+- 10B+ external data points monitored across geopolitical, economic, raw material, logistics, and other categories
+- 35,000+ data categories used to identify risk
+- Planner reconciliation work reduced from 2 days to seconds
+- Forecast accuracy improvements up to 11x over traditional EDI-based planning
+- Early warning up to 90 days before vendor shortage notification (hospital formulary monitoring)
+- One pharmaceutical client extended forward visibility from 3 weeks to 6 months (8x)
+- No rip-and-replace: Ceres feeds results back into existing systems of record
+
+## Frequently asked questions
+
+Q: What is Ceres?
+A: Ceres is an AI planning engine for enterprise supply chain and S&OP teams. It reconciles ERP records, customer demand signals, and 10B+ external signals into one plan, and flags the exceptions that need a decision before the planning cycle closes.
+
+Q: Does Ceres replace our ERP or planning system?
+A: No. Ceres sits alongside SAP, Kinaxis, Blue Yonder, o9, and other systems. It does the reconciliation and forecasting work that otherwise lives in spreadsheets, then feeds the optimized plan back into the system of record. No data migration is required.
+
+Q: What kinds of external signals does Ceres monitor?
+A: Weather and natural disasters, port and logistics pressure, raw material and commodity price movement, geopolitical and trade risk, tariff and country-of-origin changes, supplier facility disruptions, and public filings and recalls.
+
+Q: Who uses Ceres?
+A: Tier 1 automotive suppliers, pharmaceutical manufacturers and CDMOs, hospitals and health systems, consumer packaged goods companies, and investment research teams. Clients include Bosch and Alps Alpine.
+
+Q: How does Ceres explain its outputs?
+A: Every forecast and risk flag is traceable to the specific internal records and external signals behind it. Analysts can interrogate outputs, challenge assumptions, and see the weight of every variable influencing a decision.
+
+Q: How do I evaluate Ceres?
+A: Book a demo at https://cerestech.co/book-a-demo/. The walkthrough maps Ceres to your specific records, suppliers, and risk scenarios in about 30 minutes.
 
 ## Contact
 
