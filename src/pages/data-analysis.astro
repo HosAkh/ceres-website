@@ -1,5 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import ButtonLink from '../components/ButtonLink.astro';
+import Icon from '../components/Icon.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { demoUrl } from '../lib/paths';
+
+const bottlenecks = [
+  { icon: 'engineering', title: 'Trapped Analysts', text: 'Analysts spend all day compiling data instead of using it.', status: 'Status: Critical Drain' },
+  { icon: 'map', title: 'Stale Data Artifacts', text: 'Disconnected data creates bottlenecks, leaving less time for decision-making.' },
+  { icon: 'find_in_page', title: 'Unstructured Grind', text: 'Manual review of unstructured records does not scale.' },
+];
+
+const useCases = [
+  { icon: 'inventory', title: 'Supply Risk Scorecards', meta: 'Vendor data' },
+  { icon: 'public', title: 'Portfolio Exposure Mapping', meta: 'Geo exposure' },
+  { icon: 'track_changes', title: 'Geospatial Audience Targeting', meta: 'Geospatial layer' },
+  { icon: 'subject', title: 'Text Categorization', meta: 'NLP Classify' },
+  { icon: 'trending_up', title: 'Demand Forecasting', meta: 'Predictive model' },
+];
 ---
 
 <Layout
@@ -7,230 +30,131 @@ import Layout from '../layouts/Layout.astro';
   description="Ceres maps geospatial, demographic, and market signals onto your internal records — replacing weeks of manual spreadsheet work with automated scorecards, exposure maps, and record classification."
   noindex={true}
 >
-  <main class="flex-grow flex flex-col items-center justify-start w-full bg-surface-container-lowest">
-
-    <!-- HERO -->
-    <section class="w-full max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-16">
-      <div class="w-full md:w-1/2 flex flex-col items-start gap-8 z-10 relative">
-        <div class="absolute -top-12 -left-8 w-24 h-24 border-t border-l border-primary/30 z-0"></div>
-        <h1 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none z-10">
-          Map external data onto your internal records to automate complex analysis.
-        </h1>
-        <p class="text-lg font-body font-normal text-on-surface-variant leading-[1.7] max-w-prose border-l-4 border-primary pl-6 py-2">
-          We help enterprise operations, risk, and planning teams connect their internal systems to real-world geospatial, demographic, and market signals. Ceres automatically merges your data to build scorecards, map exposures, and classify records without weeks of manual spreadsheet work.
-        </p>
-        <div class="flex gap-4 pt-4">
-          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary">
-            Book a Demo
-            <span aria-hidden="true" class="material-symbols-outlined text-lg">arrow_forward</span>
-          </a>
+  <Hero
+    lead="We help enterprise operations, risk, and planning teams connect their internal systems to real-world geospatial, demographic, and market signals. Ceres automatically merges your data to build scorecards, map exposures, and classify records without weeks of manual spreadsheet work."
+    cta={{ href: demoUrl, label: 'Book a Demo', arrow: true }}
+  >
+    Map external data onto your internal records to automate complex analysis.
+    <div slot="visual" class="panel relative min-h-[26rem] overflow-hidden lg:min-h-[30rem]">
+      <div aria-hidden="true" class="grid-pattern absolute inset-0"></div>
+      <svg aria-hidden="true" class="absolute inset-0 h-full w-full" viewBox="0 0 480 420" preserveAspectRatio="none" fill="none">
+        <path d="M 140 130 C 240 130, 240 300, 340 300" class="stroke-primary-container" stroke-dasharray="4 4" stroke-width="2" opacity="0.6"></path>
+      </svg>
+      <div class="absolute left-[12%] top-[16%] w-44 border border-outline-variant bg-surface-container-high p-4 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+        <div class="meta mb-1">Internal DB</div>
+        <div class="font-headline text-title-sm font-bold text-on-surface">Asset Records</div>
+        <div aria-hidden="true" class="mt-2 h-1 w-full bg-surface-container-low"><div class="h-full w-3/4 bg-primary"></div></div>
+      </div>
+      <div class="absolute bottom-[16%] right-[12%] w-44 border border-outline-variant bg-surface-container-high p-4 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+        <div class="meta mb-1">Ext. Signal: Weather</div>
+        <div class="font-headline text-title-sm font-bold text-on-surface">Weather Data</div>
+        <div aria-hidden="true" class="mt-2 flex gap-1">
+          <span class="h-2 w-2 bg-primary"></span>
+          <span class="h-2 w-2 bg-primary"></span>
+          <span class="h-2 w-2 bg-surface-container-low"></span>
         </div>
       </div>
-      <div class="w-full md:w-1/2 relative min-h-[500px]">
-        <div class="absolute inset-0 machined-gradient border border-outline-variant/30 overflow-hidden flex items-center justify-center">
-          <div class="w-full h-full opacity-20 relative">
-            <div class="absolute inset-0" style="background-image: linear-gradient(#584237 1px, transparent 1px), linear-gradient(90deg, #584237 1px, transparent 1px); background-size: 20px 20px;"></div>
-          </div>
-          <div class="absolute top-1/4 left-1/4 bg-surface-container-high border border-outline-variant p-4 industrial-shadow z-10 w-48">
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant mb-1">Internal DB</div>
-            <div class="text-sm font-headline font-bold text-on-surface">Asset Records</div>
-            <div class="h-1 w-full bg-surface-container-low mt-2"><div class="h-full bg-primary w-3/4"></div></div>
-          </div>
-          <div class="absolute bottom-1/3 right-1/4 bg-surface-container-high border border-outline-variant p-4 industrial-shadow z-10 w-48">
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant mb-1">Ext. Signal: Weather</div>
-            <div class="text-sm font-headline font-bold text-on-surface">Weather Data</div>
-            <div class="flex gap-1 mt-2">
-              <span class="h-2 w-2 bg-primary"></span>
-              <span class="h-2 w-2 bg-primary"></span>
-              <span class="h-2 w-2 bg-surface-container-low"></span>
-            </div>
-          </div>
-          <svg class="absolute inset-0 w-full h-full z-0" pointer-events="none">
-            <path d="M 150 150 C 250 150, 250 350, 350 350" fill="none" opacity="0.6" stroke="#F37221" stroke-dasharray="4 4" stroke-width="2"></path>
-          </svg>
-          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-surface border border-primary p-6 industrial-shadow z-20 flex flex-col items-center">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-2">hub</span>
-            <div class="section-label">Ceres Engine</div>
-          </div>
-        </div>
+      <div class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-primary bg-surface p-6 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+        <Icon name="hub" size={32} class="mb-2 text-primary" />
+        <div class="eyebrow">Ceres Engine</div>
       </div>
-    </section>
+    </div>
+  </Hero>
 
-    <!-- THE PROBLEM -->
-    <section class="w-full bg-surface py-24 border-t border-outline-variant/10">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-12 border-b border-outline-variant/20 pb-6 flex justify-between items-end">
-          <div>
-            <div class="section-label mb-2">The bottleneck</div>
-            <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface">Manual reconciliation holds teams back</h2>
-          </div>
-          <p class="text-sm font-body font-normal text-on-surface-variant hidden md:block">ERR: MANUAL_RECONCILIATION</p>
-        </div>
-        <p class="text-lg font-body font-normal text-on-surface-variant mb-12 max-w-prose leading-[1.7]">
-          Analyzing your records against outside data is a massive manual bottleneck. Your internal assets live in your database, but the external data (weather, demographics, etc.) lives everywhere else.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-surface-container p-6 border-l-2 border-outline-variant hover:border-primary hover:bg-surface-container-high transition-colors flex flex-col gap-4">
-            <div class="bg-surface-container-lowest w-10 h-10 flex items-center justify-center">
-              <span aria-hidden="true" class="material-symbols-outlined text-on-surface">engineering</span>
+  <Section>
+    <div class="flex items-start justify-between gap-6">
+      <SectionHeader eyebrow="The bottleneck" lead="Analyzing your records against outside data is a massive manual bottleneck. Your internal assets live in your database, but the external data (weather, demographics, etc.) lives everywhere else.">
+        Manual reconciliation holds teams back
+      </SectionHeader>
+      <Badge tone="error" class="hidden shrink-0 md:inline-flex">ERR: MANUAL_RECONCILIATION</Badge>
+    </div>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      {
+        bottlenecks.map(({ icon, title, text, status }) => (
+          <Card class="flex flex-col gap-4">
+            <div class="flex h-10 w-10 items-center justify-center bg-surface-container-lowest">
+              <Icon name={icon} size={24} class="text-on-surface" />
             </div>
-            <h3 class="font-headline font-bold text-on-surface tracking-[0.015em]">Trapped Analysts</h3>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Analysts spend all day compiling data instead of using it.</p>
-            <div class="mt-auto pt-4 border-t border-outline-variant/20 font-mono text-[10px] tracking-[0.18em] uppercase text-error">Status: Critical Drain</div>
-          </div>
-          <div class="bg-surface-container p-6 border-l-2 border-outline-variant hover:border-primary hover:bg-surface-container-high transition-colors flex flex-col gap-4">
-            <div class="bg-surface-container-lowest w-10 h-10 flex items-center justify-center">
-              <span aria-hidden="true" class="material-symbols-outlined text-on-surface">map</span>
-            </div>
-            <h3 class="font-headline font-bold text-on-surface tracking-[0.015em]">Stale Data Artifacts</h3>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Disconnected data creates bottlenecks, leaving less time for decision-making.</p>
-          </div>
-          <div class="bg-surface-container p-6 border-l-2 border-outline-variant hover:border-primary hover:bg-surface-container-high transition-colors flex flex-col gap-4">
-            <div class="bg-surface-container-lowest w-10 h-10 flex items-center justify-center">
-              <span aria-hidden="true" class="material-symbols-outlined text-on-surface">find_in_page</span>
-            </div>
-            <h3 class="font-headline font-bold text-on-surface tracking-[0.015em]">Unstructured Grind</h3>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Manual review of unstructured records does not scale.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+            <h3>{title}</h3>
+            <p class="text-body-sm text-on-surface-variant">{text}</p>
+            {status && <div class="meta mt-auto border-t border-outline-variant/20 pt-4 text-error">{status}</div>}
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
 
-    <!-- THE SOLUTION (BENTO GRID) -->
-    <section class="w-full bg-surface-container-lowest py-24 border-t border-outline-variant/10">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-12 border-b border-outline-variant/20 pb-6">
-          <div class="section-label mb-2">What Ceres does</div>
-          <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface">Connect signals in minutes</h2>
+  <Section tone="lowest">
+    <SectionHeader eyebrow="What Ceres does">Connect signals in minutes</SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+      <Card class="relative flex min-h-[16rem] flex-col justify-end md:col-span-2 md:row-span-2">
+        <Icon name="merge_type" size={40} class="absolute right-6 top-6 text-outline" />
+        <h3 class="mb-2">Automate data blending</h3>
+        <p class="text-body-sm text-on-surface-variant">Seamlessly merge disparate internal datasets with complex external feeds without writing custom ETL pipelines.</p>
+      </Card>
+      <Card class="flex flex-col justify-between gap-6 md:col-span-2">
+        <div class="flex items-start justify-between gap-4">
+          <h3>Overlay external signals</h3>
+          <Icon name="layers" size={24} class="text-outline" />
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
-          <div class="md:col-span-2 md:row-span-2 bg-surface-container p-8 relative overflow-hidden group hover:bg-surface-container-high transition-colors">
-            <div class="absolute top-0 right-0 p-4">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-4xl">merge_type</span>
-            </div>
-            <div class="h-full flex flex-col justify-end z-10 relative">
-              <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Automate data blending</h3>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Seamlessly merge disparate internal datasets with complex external feeds without writing custom ETL pipelines.</p>
-            </div>
-            <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-surface-container-high to-transparent opacity-50"></div>
-          </div>
-          <div class="md:col-span-2 bg-surface-container p-6 relative group hover:bg-surface-container-high transition-colors flex flex-col justify-between border-b-2 border-transparent hover:border-primary">
-            <div class="flex justify-between items-start">
-              <h3 class="font-headline font-bold text-on-surface tracking-[0.015em]">Overlay external signals</h3>
-              <span aria-hidden="true" class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">layers</span>
-            </div>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Instantly map demographic, geospatial, and market data onto your existing records.</p>
-          </div>
-          <div class="md:col-span-1 bg-surface-container p-6 relative group hover:bg-surface-container-high transition-colors border-l-2 border-transparent hover:border-primary">
-            <span aria-hidden="true" class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors mb-4 block">score</span>
-            <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Dynamic Scorecards</h3>
-            <p class="text-xs font-body font-normal text-on-surface-variant leading-[1.7]">Generate real-time risk and opportunity scores.</p>
-          </div>
-          <div class="md:col-span-1 bg-surface-container p-6 relative group hover:bg-surface-container-high transition-colors border-l-2 border-transparent hover:border-primary">
-            <span aria-hidden="true" class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors mb-4 block">science</span>
-            <h3 class="font-headline font-bold text-on-surface tracking-[0.015em] mb-2">What-If Scenarios</h3>
-            <p class="text-xs font-body font-normal text-on-surface-variant leading-[1.7]">Run simulations based on shifting external variables.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <p class="text-body-sm text-on-surface-variant">Instantly map demographic, geospatial, and market data onto your existing records.</p>
+      </Card>
+      <Card>
+        <Icon name="score" size={32} class="mb-5 text-primary" />
+        <h3 class="mb-2">Dynamic Scorecards</h3>
+        <p class="text-body-sm text-on-surface-variant">Generate real-time risk and opportunity scores.</p>
+      </Card>
+      <Card>
+        <Icon name="science" size={32} class="mb-5 text-primary" />
+        <h3 class="mb-2">What-If Scenarios</h3>
+        <p class="text-body-sm text-on-surface-variant">Run simulations based on shifting external variables.</p>
+      </Card>
+    </div>
+  </Section>
 
-    <!-- EXAMPLES -->
-    <section class="w-full bg-surface py-24 border-t border-outline-variant/10">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-12 border-b border-outline-variant/20 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div>
-            <div class="section-label mb-2">Use cases</div>
-            <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface">Replacing spreadsheets</h2>
-          </div>
-          <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="bg-surface-container text-on-surface font-mono text-[10px] tracking-[0.18em] uppercase px-4 py-2 hover:bg-surface-container-high transition-colors border border-outline-variant/50 self-start md:self-auto inline-flex items-center">
-            View all cases
-          </a>
-        </div>
-        <div class="flex flex-col gap-2">
-          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
-            <div class="flex items-center gap-4 mb-2 md:mb-0">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline-variant group-hover:text-primary">inventory</span>
-              <span class="font-headline font-bold text-on-surface tracking-[0.015em]">Supply Risk Scorecards</span>
+  <Section>
+    <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <SectionHeader eyebrow="Use cases">Replacing spreadsheets</SectionHeader>
+      <ButtonLink href={demoUrl} variant="secondary" class="mb-12 self-start lg:mb-16">View all cases</ButtonLink>
+    </div>
+    <ul class="flex flex-col gap-2">
+      {
+        useCases.map(({ icon, title, meta }) => (
+          <li class="card flex flex-col gap-2 p-4 md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center gap-4">
+              <Icon name={icon} size={24} class="text-outline" />
+              <span class="font-headline text-title-sm font-bold text-on-surface">{title}</span>
             </div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant hidden w-full md:w-1/3 text-left md:text-right">Vendor data</div>
-          </div>
-          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
-            <div class="flex items-center gap-4 mb-2 md:mb-0">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline-variant group-hover:text-primary">public</span>
-              <span class="font-headline font-bold text-on-surface tracking-[0.015em]">Portfolio Exposure Mapping</span>
-            </div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant hidden w-full md:w-1/3 text-left md:text-right">Geo exposure</div>
-          </div>
-          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
-            <div class="flex items-center gap-4 mb-2 md:mb-0">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline-variant group-hover:text-primary">track_changes</span>
-              <span class="font-headline font-bold text-on-surface tracking-[0.015em]">Geospatial Audience Targeting</span>
-            </div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant hidden w-full md:w-1/3 text-left md:text-right">Geospatial layer</div>
-          </div>
-          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
-            <div class="flex items-center gap-4 mb-2 md:mb-0">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline-variant group-hover:text-primary">subject</span>
-              <span class="font-headline font-bold text-on-surface tracking-[0.015em]">Text Categorization</span>
-            </div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant hidden w-full md:w-1/3 text-left md:text-right">NLP Classify</div>
-          </div>
-          <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-4 flex flex-col md:flex-row items-start md:items-center justify-between border-l-4 border-transparent hover:border-primary group">
-            <div class="flex items-center gap-4 mb-2 md:mb-0">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline-variant group-hover:text-primary">trending_up</span>
-              <span class="font-headline font-bold text-on-surface tracking-[0.015em]">Demand Forecasting</span>
-            </div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant hidden w-full md:w-1/3 text-left md:text-right">Predictive model</div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <span class="meta hidden md:block">{meta}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
 
-    <!-- MEASURABLE RESULTS -->
-    <section class="w-full bg-surface-container-lowest py-24 border-t border-outline-variant/10">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-12 border-b border-outline-variant/20 pb-6 text-center">
-          <div class="section-label mb-2">Telemetry</div>
-          <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface">Measurable results</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
-          <div class="card flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-colors">
-            <div class="font-mono font-light text-3xl md:text-4xl text-primary mb-2 data-mono">Wk→Min</div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant text-center">Processing Time</div>
-          </div>
-          <div class="card flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-colors">
-            <div class="font-mono font-light text-3xl md:text-4xl text-on-surface mb-2 data-mono">
-              <span aria-hidden="true" class="material-symbols-outlined text-4xl">bolt</span>
-            </div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant text-center">Instant Categorization</div>
-          </div>
-          <div class="card flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-colors">
-            <div class="font-mono font-light text-3xl md:text-4xl text-on-surface mb-2 data-mono">TB+</div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant text-center">Massive Scale</div>
-          </div>
-          <div class="card flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-colors">
-            <div class="font-mono font-light text-3xl md:text-4xl text-on-surface mb-2 data-mono">API/DB</div>
-            <div class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant text-center">Direct Integration</div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <Section tone="lowest">
+    <SectionHeader align="center" eyebrow="Telemetry">Measurable results</SectionHeader>
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <Card class="flex flex-col items-center justify-center text-center">
+        <div class="stat mb-2 text-primary">Wk→Min</div>
+        <div class="meta">Processing Time</div>
+      </Card>
+      <Card class="flex flex-col items-center justify-center text-center">
+        <div class="mb-2 flex h-11 items-center"><Icon name="bolt" size={36} class="text-on-surface" /></div>
+        <div class="meta">Instant Categorization</div>
+      </Card>
+      <Card class="flex flex-col items-center justify-center text-center">
+        <div class="stat mb-2">TB+</div>
+        <div class="meta">Massive Scale</div>
+      </Card>
+      <Card class="flex flex-col items-center justify-center text-center">
+        <div class="stat mb-2">API/DB</div>
+        <div class="meta">Direct Integration</div>
+      </Card>
+    </div>
+  </Section>
 
-    <!-- FINAL CTA -->
-    <section class="w-full bg-surface py-32 border-t-4 border-primary">
-      <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-        <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface mb-6 leading-none">
-          Ready to see it work with your data?
-        </h2>
-        <p class="text-xl font-body font-normal text-on-surface-variant mb-10 max-w-prose leading-[1.7]">
-          Stop losing days to manual data reconciliation.
-        </p>
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary shadow-[0_0_20px_rgba(243,114,33,0.3)] hover:shadow-[0_0_30px_rgba(243,114,33,0.5)]">
-          Book a Demo
-        </a>
-      </div>
-    </section>
-
-  </main>
+  <CtaBand href={demoUrl} label="Book a Demo" lead="Stop losing days to manual data reconciliation.">
+    Ready to see it work with your data?
+  </CtaBand>
 </Layout>

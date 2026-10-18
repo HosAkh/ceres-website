@@ -1,13 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-// CERES DESIGN TOKENS — canonical color/type/spacing map.
-// Changes from previous version:
-//   • removed duplicate keys (secondary-container, on-tertiary-fixed were defined twice)
-//   • added 'surface-cta' (#011e24) — the deep-teal footer/CTA band that was
-//     previously a hardcoded hex in Footer.tsx and .cta-section
+// CERES DESIGN TOKENS — canonical color / type / spacing map.
 // Every UI color on the site must come from this map. No raw hex in pages.
+// Type scale: pages use only the named steps below (label, body, lead, title,
+// heading, display, stat); h1–h4 are mapped to them in global.css.
 export default {
   darkMode: 'class',
-  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx,svelte,vue}'],
+  content: ['./src/**/*.{astro,html,js,mjs,ts}'],
   theme: {
     extend: {
       colors: {
@@ -73,39 +71,34 @@ export default {
         DEFAULT: '0.125rem',
         lg: '0.25rem',
         xl: '0.5rem',
-        full: '0.75rem',
       },
       fontFamily: {
-        headline: ['Barlow Condensed', 'sans-serif'],
-        display: ['Barlow Condensed', 'sans-serif'],
-        body: ['Barlow', 'sans-serif'],
-        label: ['DM Mono', 'monospace'],
-        nav: ['DM Mono', 'monospace'],
-        mono: ['DM Mono', 'monospace'],
+        headline: ['"Barlow Condensed"', '"Barlow Condensed Fallback: Arial"', '"Barlow Condensed Fallback: Roboto"', 'Arial', 'sans-serif'],
+        body: ['Barlow', '"Barlow Fallback: Arial"', '"Barlow Fallback: Roboto"', 'Arial', 'sans-serif'],
+        mono: ['"DM Mono"', '"DM Mono Fallback"', '"Courier New"', 'monospace'],
       },
+      /* ── Type scale (px at 16px root) ──────────────────────────
+         label-sm 11 · label 12 · sm 14 · body-sm 15 · base 16 · lead 18 ·
+         lead-lg 20 · title-sm 18 · title 22 · title-lg 28 ·
+         heading 30→44 · display 40→72 · stat 28→40 · stat-lg 40→56 */
       fontSize: {
-        'headline-md': ['24px', { lineHeight: '32px', fontWeight: '500' }],
-        'headline-lg': ['32px', { lineHeight: '40px', fontWeight: '600' }],
-        'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }],
-        'label-md': ['14px', { lineHeight: '20px', letterSpacing: '0.02em', fontWeight: '500' }],
-        'body-md': ['16px', { lineHeight: '24px', fontWeight: '400' }],
-        'headline-xl': ['40px', { lineHeight: '48px', fontWeight: '700' }],
-        /* Mono micro-label scale — 10px is the absolute floor (decorative
-           data labels only); 11px for standard eyebrows/meta; 12px for
-           anything interactive (nav links, buttons). */
-        'label-xs': ['10px', { lineHeight: '14px', letterSpacing: '0.18em', fontWeight: '400' }],
-        'label-sm': ['11px', { lineHeight: '16px', letterSpacing: '0.18em', fontWeight: '400' }],
-        'label-nav': ['12px', { lineHeight: '16px', letterSpacing: '0.08em', fontWeight: '400' }],
+        'label-sm': ['0.6875rem', { lineHeight: '1rem', letterSpacing: '0.12em' }],
+        label: ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.14em' }],
+        sm: ['0.875rem', { lineHeight: '1.5' }],
+        'body-sm': ['0.9375rem', { lineHeight: '1.6' }],
+        base: ['1rem', { lineHeight: '1.65' }],
+        lead: ['1.125rem', { lineHeight: '1.6' }],
+        'lead-lg': ['1.25rem', { lineHeight: '1.55' }],
+        'title-sm': ['1.125rem', { lineHeight: '1.25' }],
+        title: ['1.375rem', { lineHeight: '1.15' }],
+        'title-lg': ['1.75rem', { lineHeight: '1.1' }],
+        heading: ['clamp(1.875rem, 1.375rem + 1.75vw, 2.75rem)', { lineHeight: '1.05', letterSpacing: '-0.01em' }],
+        display: ['clamp(2.5rem, 1.75rem + 3vw, 4.5rem)', { lineHeight: '1', letterSpacing: '-0.01em' }],
+        stat: ['clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem)', { lineHeight: '1.1' }],
+        'stat-lg': ['clamp(2.5rem, 2rem + 2vw, 3.5rem)', { lineHeight: '1' }],
       },
-      spacing: {
-        md: '16px',
-        xl: '40px',
-        sm: '8px',
-        base: '4px',
-        lg: '24px',
-        xs: '4px',
-        gutter: '16px',
-        margin: '24px',
+      maxWidth: {
+        measure: '65ch',
       },
     },
   },

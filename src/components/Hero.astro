@@ -1,0 +1,49 @@
+---
+import ButtonLink from './ButtonLink.astro';
+
+interface Props {
+  eyebrow?: string;
+  lead?: string;
+  cta?: { href: string; label: string; arrow?: boolean };
+  align?: 'center' | 'start';
+  class?: string;
+}
+
+const { eyebrow, lead, cta, align = 'center', class: className } = Astro.props;
+const hasVisual = Astro.slots.has('visual');
+---
+
+<section class:list={['hero relative overflow-hidden border-b border-outline-variant/20 bg-surface', className]}>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div
+    class:list={[
+      'container-x relative mx-auto max-w-7xl',
+      hasVisual && 'grid gap-12 lg:grid-cols-12 lg:gap-16',
+      hasVisual && (align === 'start' ? 'lg:items-start' : 'lg:items-center'),
+    ]}
+  >
+    <div class:list={[hasVisual ? 'lg:col-span-6' : 'max-w-4xl']}>
+      {eyebrow && <span class="eyebrow mb-4">{eyebrow}</span>}
+      <h1><slot /></h1>
+      {lead && <p class="lead lead-hero mt-6">{lead}</p>}
+      {
+        cta && (
+          <div class="mt-8 flex flex-wrap gap-4">
+            <ButtonLink href={cta.href} arrow={cta.arrow}>
+              {cta.label}
+            </ButtonLink>
+            <slot name="actions" />
+          </div>
+        )
+      }
+      <slot name="after" />
+    </div>
+    {
+      hasVisual && (
+        <div class="lg:col-span-6">
+          <slot name="visual" />
+        </div>
+      )
+    }
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import { icons } from './icons';
+
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 24, class: className } = Astro.props;
+const d = icons[name];
+if (!d) throw new Error(`Unknown icon: ${name}`);
+---
+
+<svg
+  aria-hidden="true"
+  focusable="false"
+  width={size}
+  height={size}
+  viewBox="0 -960 960 960"
+  fill="currentColor"
+  class:list={['shrink-0', className]}
+><path d={d}></path></svg>

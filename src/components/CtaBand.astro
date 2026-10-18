@@ -1,0 +1,24 @@
+---
+import Badge from './Badge.astro';
+import ButtonLink from './ButtonLink.astro';
+
+interface Props {
+  href: string;
+  label: string;
+  lead?: string;
+  badge?: string;
+}
+
+const { href, label, lead, badge } = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="container-x mx-auto max-w-3xl text-center">
+    {badge && <Badge class="mb-5">{badge}</Badge>}
+    <h2><slot /></h2>
+    {lead && <p class="lead mx-auto mt-5">{lead}</p>}
+    <div class="mt-10">
+      <ButtonLink href={href}>{label}</ButtonLink>
+    </div>
+  </div>
+</section>

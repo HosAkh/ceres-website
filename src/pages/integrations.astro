@@ -1,91 +1,62 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { demoUrl } from '../lib/paths';
 
-const demoUrl = import.meta.env.BASE_URL.endsWith('/')
-  ? import.meta.env.BASE_URL + 'book-a-demo/'
-  : import.meta.env.BASE_URL + '/book-a-demo/';
+const paths = [
+  { icon: 'hub', title: 'ERP / Enterprise', text: 'Direct hooks into core operational systems to overlay predictive risk on active orders.' },
+  { icon: 'api', title: 'APIs', text: 'RESTful endpoints for real-time bidirectional sync of signals and scores.' },
+  { icon: 'database', title: 'Databases', text: 'Secure connections to structured data lakes and warehouses for deep historical analysis.' },
+  { icon: 'dataset', title: 'CSV / Flat-file', text: 'The universal connector. Secure drop zones for bulk processing of legacy or isolated datasets.', wide: true },
+  { icon: 'document_scanner', title: 'Unstructured', text: 'Ingestion of reports, contracts, and PDFs for NLP-driven risk extraction.' },
+];
 ---
 
 <Layout
   title="Ceres Integrations for SAP, Kinaxis, Blue Yonder & o9"
   description="Connect Ceres to SAP, Kinaxis, Blue Yonder, o9, ERP systems, and planning platforms without replacing your existing operational stack."
 >
-  <main id="main" class="pt-14">
+  <Hero
+    eyebrow="Integrations"
+    lead="Ceres sits on top of existing enterprise environments so teams can merge internal records with external signals, automate analysis, and build scorecards and scenarios without rebuilding their stack."
+    cta={{ href: demoUrl, label: 'Book a Demo' }}
+  >
+    Connect Ceres to the systems and records you already use
+  </Hero>
 
-    <!-- HERO -->
-    <section class="relative overflow-hidden border-b border-outline-variant/20 bg-surface px-6 py-24 lg:px-12 lg:py-32 text-center">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,182,145,0.07),transparent_45%)]"></div>
-      <div class="relative mx-auto max-w-5xl">
-        <span class="section-label mb-4">Integrations</span>
-        <h1 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface mb-6 leading-none">
-          Connect Ceres to the systems and records you already use
-        </h1>
-        <p class="font-body font-normal text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto leading-[1.7]">
-          Ceres sits on top of existing enterprise environments so teams can merge internal records with external signals, automate analysis, and build scorecards and scenarios without rebuilding their stack.
-        </p>
+  <Section tone="lowest" width="narrow">
+    <Card pad="lg">
+      <div class="mb-6 flex items-center gap-4">
+        <Icon name="route" size={32} class="text-primary" />
+        <h2 class="text-title-lg">Overview: Removing Friction</h2>
       </div>
-    </section>
+      <p class="text-on-surface-variant">
+        Deploying powerful AI shouldn't require a multi-year IT restructuring project. Ceres is designed to ingest data as it exists today. We eliminate the friction of data silos, allowing you to rapidly deploy predictive models and generate actionable intelligence across your supply chain, without the massive overhead of traditional integration cycles.
+      </p>
+    </Card>
+  </Section>
 
-    <!-- OVERVIEW -->
-    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-5xl">
-        <div class="card p-8 md:p-12 industrial-shadow">
-          <div class="flex items-center gap-4 mb-6">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl">route</span>
-            <h2 class="text-2xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none">Overview: Removing Friction</h2>
-          </div>
-          <p class="font-body font-normal text-base text-on-surface-variant leading-[1.7]">
-            Deploying powerful AI shouldn't require a multi-year IT restructuring project. Ceres is designed to ingest data as it exists today. We eliminate the friction of data silos, allowing you to rapidly deploy predictive models and generate actionable intelligence across your supply chain, without the massive overhead of traditional integration cycles.
-          </p>
-        </div>
-      </div>
-    </section>
+  <Section width="narrow">
+    <SectionHeader eyebrow="Connectivity">Common Integration Paths</SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {
+        paths.map(({ icon, title, text, wide }) => (
+          <Card class:list={[wide && 'lg:col-span-2']}>
+            <Icon name={icon} size={32} class="mb-5 text-primary" />
+            <h3 class="mb-2">{title}</h3>
+            <p class="text-body-sm text-on-surface-variant">{text}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
 
-    <!-- COMMON INTEGRATION PATHS -->
-    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-5xl">
-        <span class="section-label">Connectivity</span>
-        <h2 class="mt-4 text-2xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none mb-12">Common Integration Paths</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div class="card p-6 hover:bg-surface-container-high transition-colors">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-4 text-3xl">hub</span>
-            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">ERP / Enterprise</h3>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Direct hooks into core operational systems to overlay predictive risk on active orders.</p>
-          </div>
-          <div class="card p-6 hover:bg-surface-container-high transition-colors">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-4 text-3xl">api</span>
-            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">APIs</h3>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">RESTful endpoints for real-time bidirectional sync of signals and scores.</p>
-          </div>
-          <div class="card p-6 hover:bg-surface-container-high transition-colors">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-4 text-3xl">database</span>
-            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Databases</h3>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Secure connections to structured data lakes and warehouses for deep historical analysis.</p>
-          </div>
-          <div class="card p-6 hover:bg-surface-container-high transition-colors lg:col-span-2">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-4 text-3xl">dataset</span>
-            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">CSV / Flat-file</h3>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">The universal connector. Secure drop zones for bulk processing of legacy or isolated datasets.</p>
-          </div>
-          <div class="card p-6 hover:bg-surface-container-high transition-colors">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-4 text-3xl">document_scanner</span>
-            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-2">Unstructured</h3>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Ingestion of reports, contracts, and PDFs for NLP-driven risk extraction.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section text-center">
-      <div class="mx-auto max-w-3xl">
-        <h2 class="text-3xl font-headline font-extrabold text-on-surface tracking-[-0.01em] leading-none mb-5">Want to see how Ceres would fit your environment?</h2>
-        <p class="mx-auto mb-10 font-body font-normal text-lg text-on-surface-variant max-w-xl leading-[1.7]">Schedule a technical walkthrough with our integration specialists.</p>
-        <a href={demoUrl} class="btn-primary">
-          Book a Demo
-        </a>
-      </div>
-    </section>
-
-  </main>
+  <CtaBand href={demoUrl} label="Book a Demo" lead="Schedule a technical walkthrough with our integration specialists.">
+    Want to see how Ceres would fit your environment?
+  </CtaBand>
 </Layout>

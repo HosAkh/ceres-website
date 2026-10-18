@@ -1,195 +1,122 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import Icon from '../components/Icon.astro';
+import Media from '../components/Media.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { demoUrl } from '../lib/paths';
+import heroData from '../images/cpg-hero-data.jpg';
+import forecast from '../images/cpg-forecast.jpg';
+import seasonal from '../images/cpg-seasonal.jpg';
+import explainable from '../images/cpg-explainable.jpg';
 
-const demoUrl = import.meta.env.BASE_URL.endsWith("/")
-  ? import.meta.env.BASE_URL + "book-a-demo/"
-  : import.meta.env.BASE_URL + "/book-a-demo/";
+const drivers = [
+  { icon: 'rainy', title: 'Weather & Climate', text: 'Seasonal pattern shifts, precipitation anomalies, and temperature changes that move demand before your internal data does.' },
+  { icon: 'price_change', title: 'Input Cost Volatility', text: 'Raw material, packaging, and ingredient cost movements tracked before they reach your sourcing team.' },
+  { icon: 'public', title: 'Geopolitics', text: 'Mapping disruptions across trade lanes and regional conflicts before they surface in your supplier communication.' },
+  { icon: 'oil_barrel', title: 'Energy & Freight', text: 'Oil and logistics cost correlations that flow through into your COGS before your ERP reflects them.' },
+];
+
+const capabilities = [
+  { title: 'Forecast Reconciliation', text: 'Automatically align optimistic sales targets with external market realities and supply constraints. See where commercial and supply chain diverge — before inventory locks in.', image: forecast, alt: 'Forecast reconciliation visualization' },
+  { title: 'Seasonal Signal Monitoring', text: 'Early detection of season-shifting anomalies in weather and consumption patterns weeks ahead of time. Know when this season looks different before you\'re producing for it.', image: seasonal, alt: 'Seasonal signal monitoring visualization' },
+  { title: 'Explainable Outputs', text: 'Every forecast comes with a \'why\' - linked directly to specific external indicators.', image: explainable, alt: 'Explainable outputs visualization' },
+];
 ---
 
 <Layout
   title="AI Demand Planning for CPG Supply Chains | Ceres"
   description="Use Ceres to reconcile forecasts, detect seasonal demand signals, monitor commodity exposure, and route supply chain exceptions for consumer packaged goods teams."
 >
-  <main class="overflow-x-hidden text-on-surface pt-14">
-
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 px-8 lg:px-12 border-b border-outline-variant/20 overflow-hidden w-full">
-      <div class="max-w-7xl mx-auto relative z-10">
-        <div class="max-w-3xl">
-          <p class="section-label mb-3">Consumer Packaged Goods</p>
-          <h1 class="font-headline font-extrabold tracking-[-0.01em] leading-none text-on-surface mb-6">
-            Break through the forecast accuracy ceiling that's costing you inventory every season
-          </h1>
-          <p class="font-body text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-10">
-            While commercial teams forecast high to hit targets, Ceres layers hyper-local weather, commodity prices, and 35,000+ market signals to deliver defensible supply chain intelligence.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href={demoUrl} class="btn-primary">
-              <span>Book a Demo</span>
-              <span aria-hidden="true" class="material-symbols-outlined">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Data Vis Element -->
-        <div class="mt-20 relative h-[280px] w-full card flex items-center justify-center overflow-hidden">
-          <div class="absolute inset-0 opacity-20">
-            <img
-              width="1600" height="560" loading="lazy"
-              class="w-full h-full object-cover"
-              src={`${import.meta.env.BASE_URL}images/cpg-hero-data.jpg`}
-              alt="Global CPG supply chain data visualization"
-            />
-          </div>
-          <div class="relative flex flex-col items-center">
-            <div class="w-4 h-4 bg-primary mb-4"></div>
-            <span class="text-primary font-headline font-bold text-xl">Predictive Risk Detected</span>
-            <span class="text-on-surface-variant text-sm mt-1">Global CPG Distribution Node</span>
-          </div>
-        </div>
+  <Hero
+    eyebrow="Consumer Packaged Goods"
+    lead="While commercial teams forecast high to hit targets, Ceres layers hyper-local weather, commodity prices, and 35,000+ market signals to deliver defensible supply chain intelligence."
+    cta={{ href: demoUrl, label: 'Book a Demo', arrow: true }}
+  >
+    Break through the forecast accuracy ceiling that's costing you inventory every season
+    <Media slot="visual" src={heroData} alt="Global CPG supply chain data visualization" class="hidden lg:block">
+      <div class="absolute inset-x-0 bottom-0 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-outline-variant/30 bg-surface/90 px-5 py-4">
+        <span aria-hidden="true" class="h-2.5 w-2.5 bg-primary"></span>
+        <span class="font-headline text-title font-bold text-primary">Predictive Risk Detected</span>
+        <span class="meta">Global CPG Distribution Node</span>
       </div>
-    </section>
+    </Media>
+  </Hero>
 
-    <!-- The Problem -->
-    <section class="py-20 px-8 lg:px-12 bg-surface-container-lowest border-b border-outline-variant/20">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-12">
-          <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface mb-4 tracking-tight">
-            Your ERP shows what happened. Your planners know last year's patterns. Neither tells you the season has shifted.
-          </h2>
-          <p class="text-on-surface-variant text-lg">But it's blind to the external signals driving your real demand.</p>
+  <Section tone="lowest">
+    <SectionHeader lead="But it's blind to the external signals driving your real demand.">
+      Your ERP shows what happened. Your planners know last year's patterns. Neither tells you the season has shifted.
+    </SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {
+        drivers.map(({ icon, title, text }, i) => (
+          <Card featured={i === 0}>
+            <Icon name={icon} size={32} class="mb-5 text-primary" />
+            <h3 class="mb-2">{title}</h3>
+            <p class="text-body-sm text-on-surface-variant">{text}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section tone="low">
+    <SectionHeader align="center" lead="Three things your planning team can do with Ceres that they can't do in Excel.">
+      Bridging the Commercial-Supply Gap
+    </SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      {
+        capabilities.map(({ title, text, image, alt }) => (
+          <Card class="flex flex-col">
+            <h3 class="mb-3">{title}</h3>
+            <p class="mb-6 flex-1 text-body-sm text-on-surface-variant">{text}</p>
+            <Media src={image} alt={alt} aspect="wide" class="mt-auto" sizes="(min-width: 768px) 33vw, 100vw" />
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeader>Supply Chain Intelligence Workflows</SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+      <Card featured class="flex flex-col justify-between md:col-span-2 md:row-span-2">
+        <div>
+          <Icon name="warning" size={32} class="mb-5 text-primary" />
+          <h3 class="mb-3 text-title-lg">Over-Forecast Detection</h3>
+          <p class="text-lead text-on-surface-variant">We flag SKU level discrepancies where history doesn't match current market velocity.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="card-featured p-8 flex flex-col gap-4">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl">rainy</span>
-            <h3 class="font-headline font-semibold text-2xl text-on-surface">Weather &amp; Climate</h3>
-            <p class="text-on-surface-variant text-base">Seasonal pattern shifts, precipitation anomalies, and temperature changes that move demand before your internal data does.</p>
-          </div>
-          <div class="card p-8 flex flex-col gap-4">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl">price_change</span>
-            <h3 class="font-headline font-semibold text-2xl text-on-surface">Input Cost Volatility</h3>
-            <p class="text-on-surface-variant text-base">Raw material, packaging, and ingredient cost movements tracked before they reach your sourcing team.</p>
-          </div>
-          <div class="card p-8 flex flex-col gap-4">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl">public</span>
-            <h3 class="font-headline font-semibold text-2xl text-on-surface">Geopolitics</h3>
-            <p class="text-on-surface-variant text-base">Mapping disruptions across trade lanes and regional conflicts before they surface in your supplier communication.</p>
-          </div>
-          <div class="card p-8 flex flex-col gap-4">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl">oil_barrel</span>
-            <h3 class="font-headline font-semibold text-2xl text-on-surface">Energy &amp; Freight</h3>
-            <p class="text-on-surface-variant text-base">Oil and logistics cost correlations that flow through into your COGS before your ERP reflects them.</p>
-          </div>
+        <div class="mt-8 flex flex-wrap gap-2">
+          <Badge dot>High Confidence</Badge>
+          <Badge>Inventory Risk</Badge>
         </div>
-      </div>
-    </section>
-
-    <!-- How Ceres Helps -->
-    <section class="py-20 px-8 lg:px-12 bg-surface-container-low border-b border-outline-variant/20">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface tracking-tight">Bridging the Commercial-Supply Gap</h2>
-          <p class="text-on-surface-variant text-lg mt-4 max-w-2xl mx-auto">Three things your planning team can do with Ceres that they can't do in Excel.</p>
+      </Card>
+      <Card class="md:col-span-2">
+        <Icon name="history_toggle_off" size={32} class="mb-5 text-primary" />
+        <h3 class="mb-2">When History Misleads</h3>
+        <p class="text-body-sm text-on-surface-variant">See when weather, commodity, and market signals start to break from the assumptions behind your current plan.</p>
+      </Card>
+      <Card>
+        <Icon name="pin_drop" size={32} class="mb-5 text-primary" />
+        <h3 class="mb-2">Territory Demand</h3>
+        <p class="text-body-sm text-on-surface-variant">Test different what-if scenarios to see how external and internal changes could impact demand.</p>
+      </Card>
+      <Card class="flex flex-col justify-between">
+        <div>
+          <Icon name="show_chart" size={32} class="mb-5 text-primary" />
+          <h3 class="mb-2">10B+ Signals</h3>
+          <p class="text-body-sm text-on-surface-variant">Analyze over 10B+ signals that can impact your operations.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="card p-10 flex flex-col">
-            <h3 class="font-headline font-semibold text-2xl text-primary mb-4">Forecast Reconciliation</h3>
-            <p class="text-on-surface-variant text-base mb-6 flex-1">Automatically align optimistic sales targets with external market realities and supply constraints. See where commercial and supply chain diverge — before inventory locks in.</p>
-            <img
-              loading="lazy" width="520" height="160"
-              class="w-full h-40 object-cover mt-auto"
-              src={`${import.meta.env.BASE_URL}images/cpg-forecast.jpg`}
-              alt="Forecast reconciliation visualization"
-            />
-          </div>
-          <div class="card p-10 flex flex-col">
-            <h3 class="font-headline font-semibold text-2xl text-primary mb-4">Seasonal Signal Monitoring</h3>
-            <p class="text-on-surface-variant text-base mb-6 flex-1">Early detection of season-shifting anomalies in weather and consumption patterns weeks ahead of time. Know when this season looks different before you're producing for it.</p>
-            <img
-              loading="lazy" width="520" height="160"
-              class="w-full h-40 object-cover mt-auto"
-              src={`${import.meta.env.BASE_URL}images/cpg-seasonal.jpg`}
-              alt="Seasonal signal monitoring visualization"
-            />
-          </div>
-          <div class="card p-10 flex flex-col">
-            <h3 class="font-headline font-semibold text-2xl text-primary mb-4">Explainable Outputs</h3>
-            <p class="text-on-surface-variant text-base mb-6 flex-1">Every forecast comes with a 'why' - linked directly to specific external indicators.</p>
-            <img
-              loading="lazy" width="520" height="160"
-              class="w-full h-40 object-cover mt-auto"
-              src={`${import.meta.env.BASE_URL}images/cpg-explainable.jpg`}
-              alt="Explainable outputs visualization"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+        <div aria-hidden="true" class="mt-6 h-1 w-full bg-surface-container-highest"><div class="h-full bg-primary" style="width: 75%"></div></div>
+      </Card>
+    </div>
+  </Section>
 
-    <!-- Workflows Bento Grid -->
-    <section class="py-20 px-8 lg:px-12 bg-surface border-b border-outline-variant/20">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="font-headline font-bold text-3xl lg:text-4xl text-on-surface mb-12 tracking-tight">Supply Chain Intelligence Workflows</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(200px,auto)]">
-
-          <!-- Over-Forecast Detection (large) -->
-          <div class="md:col-span-2 md:row-span-2 card-featured p-8 flex flex-col justify-between">
-            <div>
-              <span aria-hidden="true" class="material-symbols-outlined text-primary mb-4 text-3xl">warning</span>
-              <h3 class="font-headline font-semibold text-2xl text-on-surface mb-4">Over-Forecast Detection</h3>
-              <p class="text-on-surface-variant text-lg leading-relaxed">We flag SKU level discrepancies where history doesn't match current market velocity.</p>
-            </div>
-            <div class="mt-8 flex gap-2 flex-wrap">
-              <span class="bg-primary/10 text-primary font-mono text-[10px] tracking-widest uppercase px-2 py-1 flex items-center gap-1">
-                <span class="w-2 h-2 bg-primary"></span>
-                High Confidence
-              </span>
-              <span class="bg-primary/10 text-primary font-mono text-[10px] tracking-widest uppercase px-2 py-1">
-                Inventory Risk
-              </span>
-            </div>
-          </div>
-
-          <!-- When History Misleads -->
-          <div class="md:col-span-2 card p-8">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-2">history_toggle_off</span>
-            <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">When History Misleads</h3>
-            <p class="text-on-surface-variant text-base">See when weather, commodity, and market signals start to break from the assumptions behind your current plan.</p>
-          </div>
-
-          <!-- Territory-Level Demand -->
-          <div class="card p-8">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary mb-2">pin_drop</span>
-            <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">Territory Demand</h3>
-            <p class="text-on-surface-variant text-base">Test different what-if scenarios to see how external and internal changes could impact demand.</p>
-          </div>
-
-          <!-- Input Cost Monitoring -->
-          <div class="card p-8 flex flex-col justify-between">
-            <div>
-              <span aria-hidden="true" class="material-symbols-outlined text-primary mb-2">show_chart</span>
-              <h3 class="font-headline font-semibold text-xl text-on-surface mb-2">10B+ Signals</h3>
-              <p class="text-on-surface-variant text-base">Analyze over 10B+ signals that can impact your operations.</p>
-            </div>
-            <div class="mt-4 h-1 w-full bg-surface-container-highest overflow-hidden">
-              <div class="h-full bg-primary" style="width: 75%"></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section lg:px-12">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="font-headline font-bold text-5xl lg:text-6xl text-on-surface mb-6 tracking-tight leading-tight">Stop guessing your planning needs</h2>
-        <p class="text-on-surface-variant text-xl mb-12">See how Ceres works against your planning data, SKUs, and seasonal cycles.</p>
-        <a href={demoUrl} class="btn-primary">
-          Book a Demo
-        </a>
-      </div>
-    </section>
-
-  </main>
+  <CtaBand href={demoUrl} label="Book a Demo" lead="See how Ceres works against your planning data, SKUs, and seasonal cycles.">
+    Stop guessing your planning needs
+  </CtaBand>
 </Layout>

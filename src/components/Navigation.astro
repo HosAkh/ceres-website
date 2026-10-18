@@ -1,0 +1,140 @@
+---
+import Icon from './Icon.astro';
+import { withBase, isActivePath } from '../lib/paths';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+const base = withBase('');
+
+const caseLinks = [
+  { label: 'Tier 1 Automotive', path: 'tier-one/' },
+  { label: 'Pharmaceutical Supply', path: 'pharma/' },
+  { label: 'Hospitals & Health Systems', path: 'hospitals/' },
+  { label: 'Consumer Packaged Goods', path: 'cpg/' },
+  { label: 'Investment Firms', path: 'investment-firms/' },
+];
+const siteLinks = [
+  { label: 'Security & Trust', path: 'security-trust/' },
+  { label: 'Integrations', path: 'integrations/' },
+  { label: 'Company', path: 'about/' },
+];
+const current = (path: string) => (isActivePath(currentPath, path) ? 'page' : undefined);
+const caseActive = caseLinks.some((l) => isActivePath(currentPath, l.path));
+---
+
+<nav aria-label="Primary" class="fixed inset-x-0 top-0 z-50 h-14 border-b border-outline-variant/30 bg-surface-container-lowest">
+  <div class="mx-auto flex h-full max-w-screen-2xl items-center justify-between px-6">
+    <a href={base} class="flex items-center" aria-label="Ceres Technology home">
+      <img alt="" class="h-8 w-auto" width="179" height="56" src={`${base}images/logo.png`} />
+    </a>
+
+    <ul class="hidden items-center gap-8 md:flex">
+      <li class="relative" id="cases-root">
+        <button
+          type="button"
+          id="cases-toggle"
+          class:list={['nav-link', caseActive && 'text-primary']}
+          aria-expanded="false"
+          aria-controls="cases-menu"
+        >
+          Example cases
+          <Icon name="expand_more" size={16} />
+        </button>
+        <ul id="cases-menu" class="nav-dropdown">
+          {
+            caseLinks.map(({ label, path }) => (
+              <li>
+                <a href={withBase(path)} class="nav-link" aria-current={current(path)}>
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </li>
+      {
+        siteLinks.map(({ label, path }) => (
+          <li>
+            <a href={withBase(path)} class="nav-link" aria-current={current(path)}>
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <a href="https://nxt.cerestech.co" class="nav-link hidden sm:inline-flex">Login</a>
+      <a href={withBase('book-a-demo/')} class="btn-primary min-h-[2.25rem] px-4 py-2 whitespace-nowrap">Request demo</a>
+      <button
+        type="button"
+        id="menu-toggle"
+        class="menu-toggle -mr-2 flex h-11 w-11 items-center justify-center text-outline hover:text-on-surface md:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Open menu"
+      >
+        <Icon name="menu" size={24} class="icon-menu" />
+        <Icon name="close" size={24} class="icon-close" />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu" class="mobile-menu">
+  <ul class="flex flex-col px-6 py-6">
+    {
+      [...caseLinks, ...siteLinks].map(({ label, path }) => (
+        <li>
+          <a href={withBase(path)} class="nav-link" aria-current={current(path)}>
+            {label}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <a href="https://nxt.cerestech.co" class="nav-link">Login</a>
+    </li>
+  </ul>
+</div>
+
+<script is:inline>
+  (function () {
+    var menuBtn = document.getElementById('menu-toggle');
+    var menu = document.getElementById('mobile-menu');
+    var casesBtn = document.getElementById('cases-toggle');
+    var cases = document.getElementById('cases-menu');
+    var casesRoot = document.getElementById('cases-root');
+    function menuOpen() { return menu.classList.contains('is-open'); }
+    function casesOpen() { return cases.classList.contains('is-open'); }
+    function setMenu(open) {
+      menu.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.documentElement.classList.toggle('menu-open', open);
+    }
+    function setCases(open) {
+      cases.classList.toggle('is-open', open);
+      casesBtn.setAttribute('aria-expanded', String(open));
+    }
+    menuBtn.addEventListener('click', function () { setMenu(!menuOpen()); });
+    casesBtn.addEventListener('click', function () { setCases(!casesOpen()); });
+    document.addEventListener('click', function (e) {
+      if (casesOpen() && !casesRoot.contains(e.target)) setCases(false);
+    });
+    casesRoot.addEventListener('focusout', function (e) {
+      if (!casesRoot.contains(e.relatedTarget)) setCases(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      if (casesOpen()) { setCases(false); casesBtn.focus(); }
+      if (menuOpen()) { setMenu(false); menuBtn.focus(); }
+    });
+    window.matchMedia('(min-width: 768px)').addEventListener('change', function (e) {
+      if (e.matches && menuOpen()) setMenu(false);
+    });
+  })();
+</script>

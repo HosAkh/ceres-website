@@ -1,140 +1,97 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { demoUrl } from '../lib/paths';
 
-const demoUrl = import.meta.env.BASE_URL.endsWith('/')
-  ? import.meta.env.BASE_URL + 'book-a-demo/'
-  : import.meta.env.BASE_URL + '/book-a-demo/';
+const capabilities = [
+  { icon: 'map', title: 'Exposure Mapping', text: 'Instantly visualize portfolio exposure to emerging geopolitical or infrastructural events across multiple tiers of the supply chain.' },
+  { icon: 'analytics', title: 'Due Diligence Support', text: 'Accelerate initial screening with automated dossiers that cross-reference target companies against a broad set of external data.' },
+  { icon: 'timeline', title: 'Macro Overlay', text: 'Stress-test specific investments against shifting macroeconomic scenarios without leaving your core workflow environment.' },
+];
 ---
 
 <Layout
   title="External Signal Intelligence for Investment Research | Ceres"
   description="Ceres enriches investment research with external signal monitoring, exposure mapping, and risk scoring across companies, markets, and operating conditions."
 >
-  <main id="main" class="pt-14">
+  <Hero
+    eyebrow="Investment Research"
+    lead="Your proprietary models are only as strong as the context around them. Ceres connects your internal analyst workflows to outside market, macro, geopolitical, and infrastructure signals — automatically, without rebuilding your infrastructure."
+    cta={{ href: demoUrl, label: 'Book a Demo', arrow: true }}
+  >
+    Merge internal models with external signals to strengthen investment research and risk analysis
+  </Hero>
 
-    <!-- HERO -->
-    <section class="relative overflow-hidden border-b border-outline-variant/20 bg-surface px-6 py-24 lg:px-12 lg:py-32">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,182,145,0.07),transparent_40%)]"></div>
-      <div aria-hidden="true" class="absolute inset-0 opacity-[0.07] pointer-events-none" style="background-image: linear-gradient(to right, #584237 1px, transparent 1px), linear-gradient(to bottom, #584237 1px, transparent 1px); background-size: 24px 24px;"></div>
-      <div class="relative mx-auto max-w-7xl">
-        <span class="section-label mb-4">Investment Research</span>
-        <h1 class="mb-6 font-extrabold font-headline tracking-[-0.01em] text-on-surface leading-none max-w-5xl">
-          Merge internal models with external signals to strengthen investment research and risk analysis
-        </h1>
-        <p class="mb-10 text-lg font-body font-normal text-on-surface-variant max-w-2xl leading-[1.7]">
-          Your proprietary models are only as strong as the context around them. Ceres connects your internal analyst workflows to outside market, macro, geopolitical, and infrastructure signals — automatically, without rebuilding your infrastructure.
+  <Section tone="lowest" width="narrow">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+      <div>
+        <span class="eyebrow mb-4">The Challenge</span>
+        <h2>Internal models are not enough on their own</h2>
+      </div>
+      <p class="self-center text-on-surface-variant">
+        Your models are built on internal views. Reconciling them with shifting macro conditions, geopolitical events, and infrastructure changes is a manual, error-prone process that slows every research cycle. Without structured external signal integration, risk analysis stays reactive.
+      </p>
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeader eyebrow="How Ceres Helps">Connect external signals to the workflows your team already uses</SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <Card class="md:col-span-2">
+        <Icon name="hub" size={32} class="mb-5 text-primary" />
+        <h3 class="mb-3">Model Integration Engine</h3>
+        <p class="mb-6 text-body-sm text-on-surface-variant">
+          Feed structured external signals directly into your proprietary research models, eliminating manual data wrangling.
         </p>
-        <a href={demoUrl} class="btn-primary">
-          Book a Demo
-          <span aria-hidden="true" class="material-symbols-outlined text-lg">arrow_forward</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- THE PROBLEM -->
-    <section class="bg-surface-container-lowest px-6 py-20 lg:px-12 border-b border-outline-variant/20">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
-            <span class="section-label">The Challenge</span>
-            <h2 class="mt-4 text-3xl font-extrabold font-headline tracking-[-0.01em] text-on-surface leading-none mb-6">
-              Internal models are not enough on their own
-            </h2>
-            <div class="h-1 w-12 bg-primary mb-8"></div>
-          </div>
-          <div class="text-on-surface-variant space-y-6">
-            <p class="font-body font-normal leading-[1.7]">
-              Your models are built on internal views. Reconciling them with shifting macro conditions, geopolitical events, and infrastructure changes is a manual, error-prone process that slows every research cycle. Without structured external signal integration, risk analysis stays reactive.
-            </p>
+        <div class="overflow-x-auto">
+          <div class="flex min-w-[360px] items-center justify-between gap-3 border border-outline-variant/20 bg-surface-container-lowest p-4 font-mono text-label-sm text-outline">
+            <div class="flex shrink-0 flex-col gap-2">
+              <span class="border border-outline-variant/30 bg-surface px-2 py-1">MACRO_DATA</span>
+              <span class="border border-outline-variant/30 bg-surface px-2 py-1">GEO_EVENTS</span>
+            </div>
+            <Icon name="arrow_forward" size={20} class="text-outline" />
+            <div class="shrink-0 border border-primary bg-primary/5 px-4 py-8 text-primary">CERES_API</div>
+            <Icon name="arrow_forward" size={20} class="text-outline" />
+            <div class="shrink-0 border border-outline-variant/30 bg-surface px-4 py-8 text-on-surface">INTERNAL_MODELS</div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- HOW CERES HELPS (BENTO GRID) -->
-    <section class="bg-surface px-6 py-20 lg:px-12 border-b border-outline-variant/20">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-16">
-          <span class="section-label">How Ceres Helps</span>
-          <h2 class="mt-4 text-3xl font-extrabold font-headline tracking-[-0.01em] text-on-surface leading-none mb-4 max-w-2xl">
-            Connect external signals to the workflows your team already uses
-          </h2>
+      </Card>
+      <Card class="flex flex-col justify-between">
+        <div>
+          <Icon name="policy" size={32} class="mb-5 text-primary" />
+          <h3 class="mb-3">Custom Scorecards</h3>
+          <p class="text-body-sm text-on-surface-variant">
+            Define proprietary weighting for different signal types to generate custom risk and opportunity scorecards for any asset or sector.
+          </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="md:col-span-2 card p-8 group hover:bg-surface-container-high transition-colors overflow-hidden">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">hub</span>
-            <h3 class="text-xl font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Model Integration Engine</h3>
-            <p class="font-body font-normal text-on-surface-variant mb-6 text-sm leading-[1.7]">
-              Feed structured external signals directly into your proprietary research models, eliminating manual data wrangling.
-            </p>
-            <div class="overflow-x-auto">
-              <div class="min-w-[360px] h-32 border border-outline-variant/20 bg-surface-container-lowest flex items-center justify-between p-4 font-mono text-[11px] text-outline">
-                <div class="flex flex-col gap-2 shrink-0">
-                  <span class="bg-surface px-2 py-1 border border-outline-variant/30">MACRO_DATA</span>
-                  <span class="bg-surface px-2 py-1 border border-outline-variant/30">GEO_EVENTS</span>
-                </div>
-                <span aria-hidden="true" class="material-symbols-outlined text-outline shrink-0">arrow_forward</span>
-                <div class="border border-primary text-primary px-4 py-8 bg-primary/5 shrink-0">CERES_API</div>
-                <span aria-hidden="true" class="material-symbols-outlined text-outline shrink-0">arrow_forward</span>
-                <div class="bg-surface px-4 py-8 border border-outline-variant/30 text-on-surface shrink-0">INTERNAL_MODELS</div>
-              </div>
-            </div>
-          </div>
-          <div class="card p-8 group hover:bg-surface-container-high transition-colors flex flex-col justify-between">
-            <div>
-              <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">policy</span>
-              <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Custom Scorecards</h3>
-              <p class="font-body font-normal text-on-surface-variant text-sm leading-[1.7]">
-                Define proprietary weighting for different signal types to generate custom risk and opportunity scorecards for any asset or sector.
-              </p>
-            </div>
-            <div class="mt-6 border-t border-outline-variant/20 pt-4">
-              <div class="flex justify-between items-center text-[11px] font-mono text-outline">
-                <span>Customisable</span>
-                <span>Yes</span>
-              </div>
-            </div>
-          </div>
-          <div class="card p-8 group hover:bg-surface-container-high transition-colors">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">map</span>
-            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Exposure Mapping</h3>
-            <p class="font-body font-normal text-on-surface-variant text-sm leading-[1.7]">
-              Instantly visualize portfolio exposure to emerging geopolitical or infrastructural events across multiple tiers of the supply chain.
-            </p>
-          </div>
-          <div class="card p-8 group hover:bg-surface-container-high transition-colors">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">analytics</span>
-            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Due Diligence Support</h3>
-            <p class="font-body font-normal text-on-surface-variant text-sm leading-[1.7]">
-              Accelerate initial screening with automated dossiers that cross-reference target companies against a broad set of external data.
-            </p>
-          </div>
-          <div class="card p-8 group hover:bg-surface-container-high transition-colors">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-6 block">timeline</span>
-            <h3 class="text-lg font-headline font-bold text-on-surface tracking-[0.015em] mb-3">Macro Overlay</h3>
-            <p class="font-body font-normal text-on-surface-variant text-sm leading-[1.7]">
-              Stress-test specific investments against shifting macroeconomic scenarios without leaving your core workflow environment.
-            </p>
-          </div>
+        <div class="mt-6 flex items-center justify-between border-t border-outline-variant/20 pt-4 font-mono text-label-sm text-outline">
+          <span>Customisable</span>
+          <span>Yes</span>
         </div>
-      </div>
-    </section>
+      </Card>
+      {
+        capabilities.map(({ icon, title, text }) => (
+          <Card>
+            <Icon name={icon} size={32} class="mb-5 text-primary" />
+            <h3 class="mb-3">{title}</h3>
+            <p class="text-body-sm text-on-surface-variant">{text}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
 
-    <!-- FINAL CTA -->
-    <section class="cta-section text-center">
-      <div class="max-w-4xl mx-auto relative z-10">
-        <span class="section-label inline-block mb-4 border border-primary/30 px-3 py-1 bg-surface-container-lowest">Deployment Ready</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold font-headline tracking-[-0.01em] text-on-surface leading-none mb-6">
-          Want to see how Ceres would fit your research process?
-        </h2>
-        <p class="font-body font-normal text-on-surface-variant mb-10 text-lg max-w-2xl mx-auto leading-[1.7]">
-          Automate company and market analysis. Reduce spreadsheet drudgery and keep continuous watch on the signals that matter.
-        </p>
-        <a href={demoUrl} class="btn-primary">
-          Book a Demo
-        </a>
-      </div>
-    </section>
-
-  </main>
+  <CtaBand
+    href={demoUrl}
+    label="Book a Demo"
+    badge="Deployment Ready"
+    lead="Automate company and market analysis. Reduce spreadsheet drudgery and keep continuous watch on the signals that matter."
+  >
+    Want to see how Ceres would fit your research process?
+  </CtaBand>
 </Layout>

@@ -1,0 +1,88 @@
+---
+import { withBase } from '../lib/paths';
+
+const currentYear = new Date().getFullYear();
+const base = withBase('');
+
+const sections = [
+  {
+    title: 'Platform',
+    links: [
+      { label: 'Integrations', path: 'integrations/' },
+      { label: 'Security & Trust', path: 'security-trust/' },
+      { label: 'Book a Demo', path: 'book-a-demo/' },
+    ],
+  },
+  {
+    title: 'Example Cases',
+    links: [
+      { label: 'Tier 1 Automotive', path: 'tier-one/' },
+      { label: 'Pharmaceutical Supply', path: 'pharma/' },
+      { label: 'Hospitals & Health Systems', path: 'hospitals/' },
+      { label: 'Consumer Packaged Goods', path: 'cpg/' },
+      { label: 'Investment Firms', path: 'investment-firms/' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [{ label: 'About', path: 'about/' }],
+  },
+];
+
+// text-secondary (#b5cacf) on surface-cta (#011e24) = 9.8:1
+const linkClass = 'inline-flex min-h-[2.75rem] items-center font-mono text-label uppercase text-secondary transition-colors hover:text-primary';
+---
+
+<footer class="border-t border-outline-variant/20 bg-surface-cta pb-12 pt-16 lg:pt-24">
+  <div class="container-x mx-auto max-w-7xl">
+    <div class="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+      <div class="flex flex-col gap-8">
+        <img alt="Ceres Technology" class="h-10 w-auto self-start" width="179" height="56" src={`${base}images/logo.png`} />
+        <div class="flex flex-col gap-4">
+          <p class="max-w-[220px] font-mono text-label uppercase text-secondary">
+            The AI planning layer between your ERP and your decisions.
+          </p>
+          <a
+            class="group inline-flex items-center gap-2"
+            href="https://www.linkedin.com/company/ceres-technology/posts/?feedView=all"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ceres Technology on LinkedIn (opens in a new tab)"
+          >
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-colors group-hover:bg-primary-container group-hover:text-on-primary">
+              <svg aria-hidden="true" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+              </svg>
+            </span>
+            <span class="font-mono text-label uppercase text-secondary transition-colors group-hover:text-on-surface">LinkedIn Connect</span>
+          </a>
+        </div>
+      </div>
+
+      {
+        sections.map((section) => (
+          <div class="flex flex-col gap-4">
+            <h3 class="border-b border-outline-variant/30 pb-2 font-mono text-label font-normal uppercase text-secondary">
+              {section.title}
+            </h3>
+            <ul class="flex flex-col">
+              {section.links.map((link) => (
+                <li>
+                  <a class={linkClass} href={withBase(link.path)}>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="flex flex-col items-center justify-between gap-6 border-t border-outline-variant/20 pt-10 md:flex-row">
+      <span class="font-mono text-label uppercase text-secondary">
+        © {currentYear} Ceres Technology. All rights reserved.
+      </span>
+    </div>
+  </div>
+</footer>

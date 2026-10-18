@@ -1,222 +1,182 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
+import Panel from '../components/Panel.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { demoUrl, withBase } from '../lib/paths';
 
-const demoUrl = import.meta.env.BASE_URL.endsWith('/')
-  ? import.meta.env.BASE_URL + 'book-a-demo/'
-  : import.meta.env.BASE_URL + '/book-a-demo/';
+const problems = [
+  { icon: 'manage_search', title: 'The Grind', text: 'Demand signals land, and planners spend time reconciling, mapping, and rebuilding comparison reports in Excel before they can plan.' },
+  { icon: 'notification_important', title: 'The Coverage Gap', text: 'Finding an exception is only half the work. The other half — what it does to the inventory you\'re holding and the orders you\'ve already placed — is where time and money quietly slip away.' },
+  { icon: 'troubleshoot', title: 'The Static Scenario Plan', text: 'Plans are built once, on fixed assumptions. When a tariff hits or demand swings, there\'s no fast way to test how internal and external factors play out across S&OP — so you react after the change, not before it.' },
+  { icon: 'sync_alt', title: 'The Reconciliation Problem', text: 'Customer signals say one thing, Sales says another, your ERP a third. Aligning production to the sales forecast means reconciling all three in Excel.' },
+];
+
+const layers = [
+  { label: 'ERP', text: 'Designed for internal operations and records — and does that job well. External signals, real-time market conditions, and upstream disruptions aren\'t in scope by design.' },
+  { label: 'BI / Analytics', text: 'Turns your internal data into historical trends and views. Good for understanding what\'s happened with external context — still needs to be sourced and interpreted separately.' },
+];
+
+const industries = [
+  { label: 'Tier 1 Automotive', sub: 'OEM forecast reconciliation, supplier exceptions, inventory risk', path: 'tier-one/' },
+  { label: 'Hospitals & Health Systems', sub: 'Formulary risk scoring, shortage early warning, tariff tracking', path: 'hospitals/' },
+  { label: 'Pharmaceutical Supply Chain', sub: 'Supplier delay detection, API pricing risk, shortage monitoring', path: 'pharma/' },
+  { label: 'Consumer Packaged Goods', sub: 'Forecast reconciliation, seasonal signal detection, commodity exposure', path: 'cpg/' },
+  { label: 'Investment Research', sub: 'External signal enrichment for internal models, exposure mapping, risk scoring', path: 'investment-firms/' },
+];
+
+const faqs = [
+  { q: 'What is Ceres?', a: 'Ceres is an AI planning engine for enterprise supply chain and S&OP teams. It reconciles ERP records, customer demand signals, and 10B+ external signals into one plan, and flags the exceptions that need a decision before the planning cycle closes.' },
+  { q: 'Does Ceres replace our ERP or planning system?', a: 'No. Ceres works alongside SAP, Kinaxis, Blue Yonder, o9, and others. It does the reconciliation and forecasting work that otherwise lives in spreadsheets, then feeds the plan back into your system of record. No data migration required.' },
+  { q: 'What external signals does Ceres monitor?', a: 'Weather and natural disasters, port and logistics pressure, raw material and commodity price movement, geopolitical and trade risk, tariff and country-of-origin changes, supplier facility disruptions, and public filings and recalls.' },
+  { q: 'How does Ceres explain its outputs?', a: 'Every forecast and risk flag traces back to the specific records and external signals behind it. Analysts can interrogate any output and see the weight of every variable.' },
+];
+
+// FAQPage structured data (matches the on-page FAQ above)
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is Ceres?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Ceres is an AI planning engine for enterprise supply chain and S&OP teams. It reconciles ERP records, customer demand signals, and 10B+ external signals into one plan, and flags the exceptions that need a decision before the planning cycle closes.' } },
+    { '@type': 'Question', name: 'Does Ceres replace our ERP or planning system?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Ceres works alongside SAP, Kinaxis, Blue Yonder, o9, and other systems. It does the reconciliation and forecasting work that otherwise lives in spreadsheets, then feeds the plan back into your system of record. No data migration is required.' } },
+    { '@type': 'Question', name: 'What external signals does Ceres monitor?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Weather and natural disasters, port and logistics pressure, raw material and commodity price movement, geopolitical and trade risk, tariff and country-of-origin changes, supplier facility disruptions, and public filings and recalls.' } },
+    { '@type': 'Question', name: 'How does Ceres explain its outputs?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Every forecast and risk flag is traceable to the specific internal records and external signals behind it. Analysts can interrogate outputs, challenge assumptions, and see the weight of every variable influencing a decision.' } },
+  ],
+};
 ---
 
 <Layout
   title="AI S&OP Planning Software for Supply Chains | Ceres"
   description="Ceres is an AI planning engine that reconciles ERP data, customer demand signals, and 10B+ external signals into one S&OP plan and flags exceptions before cycle close."
+  extraSchema={faqSchema}
 >
-  <main class="pt-14 bg-surface-container-lowest">
-
-    <!-- HERO -->
-    <section class="relative overflow-hidden border-b border-outline-variant/20 bg-surface px-6 py-24 lg:px-12 lg:py-32">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,182,145,0.07),transparent_40%)]"></div>
-      <div class="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-12 lg:items-center">
-
-        <div class="lg:col-span-5">
-          <span class="section-label mb-4">AI Supply Chain Planning Software</span>
-          <h1 class="mb-6 font-headline font-extrabold leading-none tracking-[-0.01em] text-on-surface">
-            S&OP planning done in minutes.
-          </h1>
-          <p class="mb-10 max-w-lg text-lg font-body leading-[1.65] text-on-surface-variant">
-            Ceres is the AI planning engine between your ERP and your decisions. It reads demand signals from every customer, reconciles them against your plan, forecasts every grain — enriched by 10B+ external signals — and flags the exceptions that need a decision, before the cycle closes.
-          </p>
-          <a href={demoUrl} class="btn-primary">
-            Book a Demo
-          </a>
+  <Hero
+    eyebrow="AI Supply Chain Planning Software"
+    lead="Ceres is the AI planning engine between your ERP and your decisions. It reads demand signals from every customer, reconciles them against your plan, forecasts every grain — enriched by 10B+ external signals — and flags the exceptions that need a decision, before the cycle closes."
+    cta={{ href: demoUrl, label: 'Book a Demo' }}
+  >
+    S&OP planning done in minutes.
+    <Panel slot="visual" title="Ceres Agent — Running" status="Live" dot pad={false}>
+      <div class="divide-y divide-outline-variant/15 px-5">
+        <div class="flex items-start gap-4 py-5">
+          <Icon name="task_alt" size={20} class="mt-0.5 text-primary" />
+          <div>
+            <div class="mb-1 font-mono text-label uppercase text-primary">Flagged — Demand Exception</div>
+            <p class="text-body-sm text-on-surface">Customer releases landed 14% above forecast on three programs. Ceres traced the ripple — 6 orders now short on inventory, 4 POs under-committed. Caught before the planning cycle.</p>
+            <div class="mt-2 font-mono text-label-sm text-on-surface-variant">→ <span class="text-on-surface">Routed to Planning & Procurement</span></div>
+          </div>
         </div>
+        <div class="flex items-start gap-4 py-5">
+          <Icon name="monitoring" size={20} class="mt-0.5 text-secondary" />
+          <div>
+            <div class="mb-1 font-mono text-label uppercase text-secondary">Monitoring — External Exposure</div>
+            <p class="text-body-sm text-on-surface">Input costs up 8.3% over six weeks; a key lane slowing. Mapped to your plan: 4 open contracts exposed, no Q4 coverage locked. Margin impact modeled across scenarios.</p>
+            <div class="mt-2 font-mono text-label-sm text-on-surface-variant">→ <span class="text-on-surface">Escalated to S&OP review — 2 days before cycle closes</span></div>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 py-5">
+          <Icon name="check_circle" size={20} class="mt-0.5 text-tertiary" />
+          <div>
+            <div class="mb-1 font-mono text-label uppercase text-tertiary">Resolved — Plan Reconciled</div>
+            <p class="text-body-sm text-on-surface">Customer signals, Sales, and ERP reconciled into one plan everyone could see. Decision logged. Cycle closed <span class="font-medium text-primary">4 days early</span>, within 1% of plan.</p>
+            <div class="mt-2 font-mono text-label-sm text-on-surface-variant">→ <span class="text-on-surface">Consensus reached</span></div>
+          </div>
+        </div>
+      </div>
+    </Panel>
+  </Hero>
 
-        <!-- Live agent feed -->
-        <div class="lg:col-span-7">
-          <div class="border border-primary/20 bg-surface-container shadow-[0_0_40px_rgba(243,114,33,0.06)]">
-            <div class="flex items-center justify-between border-b border-outline-variant/25 bg-surface-container-high px-5 py-3">
-              <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
-                <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-on-surface-variant">Ceres Agent — Running</span>
-              </div>
-              <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-primary">Live</span>
+  <Section>
+    <SectionHeader lead="External signals affect your operations long before they show up internally. Ceres watches them, scores what they mean for your specific records, and routes the decision to the right person before the window closes.">
+      ERP Executes. Excel Reconciles. Neither Scales for S&OP.
+    </SectionHeader>
+    <div class="hairline-grid lg:grid-cols-2">
+      {
+        problems.map(({ icon, title, text }) => (
+          <div class="p-6 lg:p-8">
+            <Icon name={icon} size={32} class="mb-5 text-primary" />
+            <h3 class="mb-2">{title}</h3>
+            <p class="text-on-surface-variant">{text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section tone="lowest" width="narrow">
+    <SectionHeader align="center" lead="Ceres sits alongside your existing stack — it doesn't replace anything. Here's how the layers work together.">
+      Where Ceres fits
+    </SectionHeader>
+    <div class="space-y-3">
+      {
+        layers.map(({ label, text }) => (
+          <div class="card flex flex-col gap-2 px-6 py-5 sm:flex-row sm:gap-6">
+            <div class="meta w-36 shrink-0 pt-1">{label}</div>
+            <p class="text-body-sm text-on-surface-variant">{text}</p>
+          </div>
+        ))
+      }
+      <div class="flex flex-col gap-2 border border-primary/30 bg-primary/5 px-6 py-5 sm:flex-row sm:gap-6">
+        <div class="meta w-36 shrink-0 pt-1 text-primary">Ceres</div>
+        <p class="text-body-sm text-on-surface">Does the planning work. Ingests demand from every customer, layers on 10B+ external signals, reconciles it into one plan, forecasts every grain, and flags the exceptions that need a decision, then feeds the result back into your systems.</p>
+      </div>
+    </div>
+    <div class="card mt-8 px-6 py-5">
+      <ul class="flex flex-col gap-3 sm:flex-row sm:gap-8">
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={20} class="mt-0.5 text-primary" />
+          <span class="text-body-sm text-on-surface-variant">Works with SAP, Kinaxis, Blue Yonder, o9, and others — no replacement required.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={20} class="mt-0.5 text-primary" />
+          <span class="text-body-sm text-on-surface-variant">No data migration. Connects to the records you already have.</span>
+        </li>
+      </ul>
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeader eyebrow="Industries" lead="Ceres applies across any industry where external signals affect internal decisions. Here are some of the examples.">
+      Example cases
+    </SectionHeader>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        industries.map(({ label, sub, path }) => (
+          <Card href={withBase(path)} class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="mb-2">{label}</h3>
+              <p class="text-body-sm text-on-surface-variant">{sub}</p>
             </div>
-            <div class="divide-y divide-outline-variant/15 px-5 py-1">
-              <div class="flex items-start gap-4 py-4">
-                <span aria-hidden="true" class="material-symbols-outlined mt-0.5 text-[18px] text-primary">task_alt</span>
-                <div>
-                  <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-primary mb-1">Flagged — Demand Exception</div>
-                  <p class="text-sm text-on-surface leading-[1.6]">Customer releases landed 14% above forecast on three programs. Ceres traced the ripple — 6 orders now short on inventory, 4 POs under-committed. Caught before the planning cycle.</p>
-                  <div class="mt-1.5 font-mono text-[10px] text-on-surface-variant">→ <span class="text-on-surface italic">Routed to Planning & Procurement</span></div>
-                </div>
-              </div>
-              <div class="flex items-start gap-4 py-4">
-                <span aria-hidden="true" class="material-symbols-outlined mt-0.5 text-[18px] text-secondary">monitoring</span>
-                <div>
-                  <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-secondary mb-1">Monitoring — External Exposure</div>
-                  <p class="text-sm text-on-surface leading-[1.6]">Input costs up 8.3% over six weeks; a key lane slowing. Mapped to your plan: 4 open contracts exposed, no Q4 coverage locked. Margin impact modeled across scenarios.</p>
-                  <div class="mt-1.5 font-mono text-[10px] text-on-surface-variant">→ <span class="text-on-surface italic">Escalated to S&OP review — 2 days before cycle closes</span></div>
-                </div>
-              </div>
-              <div class="flex items-start gap-4 py-4">
-                <span aria-hidden="true" class="material-symbols-outlined mt-0.5 text-[18px] text-tertiary">check_circle</span>
-                <div>
-                  <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-tertiary mb-1">Resolved — Plan Reconciled</div>
-                  <p class="text-sm text-on-surface leading-[1.6]">Customer signals, Sales, and ERP reconciled into one plan everyone could see. Decision logged. Cycle closed <span class="text-primary font-semibold">4 days early</span>, within 1% of plan.</p>
-                  <div class="mt-1.5 font-mono text-[10px] text-on-surface-variant">→ <span class="text-on-surface italic">Consensus reached</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            <Icon name="arrow_forward" size={20} class="card-arrow mt-1 text-outline transition-all" />
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
 
-      </div>
-    </section>
+  <Section tone="lowest" width="narrow">
+    <SectionHeader eyebrow="FAQ">Common questions</SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      {
+        faqs.map(({ q, a }) => (
+          <Card>
+            <h3 class="mb-3">{q}</h3>
+            <p class="text-on-surface-variant">{a}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
 
-    <!-- WHAT CERES DOES -->
-    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-7xl">
-        <h2 class="mb-3 font-headline font-extrabold tracking-[-0.01em] text-on-surface">ERP Executes. Excel Reconciles. Neither Scales for S&OP.</h2>
-        <p class="mb-14 max-w-2xl text-lg text-on-surface-variant font-body leading-[1.65]">External signals affect your operations long before they show up internally. Ceres watches them, scores what they mean for your specific records, and routes the decision to the right person before the window closes.</p>
-
-        <div class="grid gap-px lg:grid-cols-2 bg-outline-variant/15">
-          <div class="bg-surface-container p-8">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-4 block">manage_search</span>
-            <h3 class="mb-2 font-headline text-xl font-bold text-on-surface">The Grind</h3>
-            <p class="font-body leading-[1.7] text-on-surface-variant">Demand signals land, and planners spend time reconciling, mapping, and rebuilding comparison reports in Excel before they can plan.</p>
-          </div>
-          <div class="bg-surface-container p-8">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-4 block">notification_important</span>
-            <h3 class="mb-2 font-headline text-xl font-bold text-on-surface">The Coverage Gap</h3>
-            <p class="font-body leading-[1.7] text-on-surface-variant">Finding an exception is only half the work. The other half — what it does to the inventory you're holding and the orders you've already placed — is where time and money quietly slip away.</p>
-          </div>
-          <div class="bg-surface-container p-8">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-4 block">troubleshoot</span>
-            <h3 class="mb-2 font-headline text-xl font-bold text-on-surface">The Static Scenario Plan</h3>
-            <p class="font-body leading-[1.7] text-on-surface-variant">Plans are built once, on fixed assumptions. When a tariff hits or demand swings, there's no fast way to test how internal and external factors play out across S&OP — so you react after the change, not before it.</p>
-          </div>
-          <div class="bg-surface-container p-8">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-4 block">sync_alt</span>
-            <h3 class="mb-2 font-headline text-xl font-bold text-on-surface">The Reconciliation Problem</h3>
-            <p class="font-body leading-[1.7] text-on-surface-variant">Customer signals say one thing, Sales says another, your ERP a third. Aligning production to the sales forecast means reconciling all three in Excel.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHERE CERES FITS -->
-    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-5xl">
-        <h2 class="mb-3 font-headline font-extrabold tracking-[-0.01em] text-on-surface text-center">Where Ceres fits</h2>
-        <p class="mb-10 text-center font-body text-on-surface-variant leading-[1.65] max-w-2xl mx-auto">Ceres sits alongside your existing stack — it doesn't replace anything. Here's how the layers work together.</p>
-        <div class="space-y-3">
-          <div class="flex items-start gap-6 border border-outline-variant/25 bg-surface-container px-6 py-5">
-            <div class="w-36 shrink-0 font-mono text-[10px] uppercase tracking-[0.18em] text-on-surface-variant pt-1">ERP</div>
-            <p class="text-sm text-on-surface-variant leading-[1.7]">Designed for internal operations and records — and does that job well. External signals, real-time market conditions, and upstream disruptions aren't in scope by design.</p>
-          </div>
-          <div class="flex items-start gap-6 border border-outline-variant/25 bg-surface-container px-6 py-5">
-            <div class="w-36 shrink-0 font-mono text-[10px] uppercase tracking-[0.18em] text-on-surface-variant pt-1">BI / Analytics</div>
-            <p class="text-sm text-on-surface-variant leading-[1.7]">Turns your internal data into historical trends and views. Good for understanding what's happened with external context — still needs to be sourced and interpreted separately.</p>
-          </div>
-          <div class="flex items-start gap-6 border border-primary/30 bg-primary/5 px-6 py-5">
-            <div class="w-36 shrink-0 font-mono text-[10px] uppercase tracking-[0.18em] text-primary pt-1">Ceres</div>
-            <p class="text-sm text-on-surface leading-[1.7]">Does the planning work. Ingests demand from every customer, layers on 10B+ external signals, reconciles it into one plan, forecasts every grain, and flags the exceptions that need a decision, then feeds the result back into your systems.</p>
-          </div>
-        </div>
-        <div class="mt-8 border border-outline-variant/25 bg-surface-container px-6 py-5">
-          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-8">
-            <div class="flex items-center gap-3">
-              <span aria-hidden="true" class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
-              <span class="text-sm text-on-surface-variant">Works with SAP, Kinaxis, Blue Yonder, o9, and others — no replacement required.</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span aria-hidden="true" class="material-symbols-outlined text-primary text-lg shrink-0">check</span>
-              <span class="text-sm text-on-surface-variant">No data migration. Connects to the records you already have.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INDUSTRIES -->
-    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-7xl">
-        <span class="section-label">Industries</span>
-        <h2 class="mt-4 mb-3 font-headline font-extrabold tracking-[-0.01em] text-on-surface">Example cases</h2>
-        <p class="mb-12 text-lg text-on-surface-variant max-w-2xl leading-[1.7]">Ceres applies across any industry where external signals affect internal decisions. Here are some of the examples.</p>
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { label: 'Tier 1 Automotive', sub: 'OEM forecast reconciliation, supplier exceptions, inventory risk', path: 'tier-one/' },
-            { label: 'Hospitals & Health Systems', sub: 'Formulary risk scoring, shortage early warning, tariff tracking', path: 'hospitals/' },
-            { label: 'Pharmaceutical Supply Chain', sub: 'Supplier delay detection, API pricing risk, shortage monitoring', path: 'pharma/' },
-            { label: 'Consumer Packaged Goods', sub: 'Forecast reconciliation, seasonal signal detection, commodity exposure', path: 'cpg/' },
-            { label: 'Investment Research', sub: 'External signal enrichment for internal models, exposure mapping, risk scoring', path: 'investment-firms/' },
-          ].map(({ label, sub, path }) => (
-            <a href={`${import.meta.env.BASE_URL}${path}`} class="group card p-6 flex items-start justify-between gap-4 transition-all hover:border-primary hover:bg-surface-container-high">
-              <div>
-                <h3 class="mb-2 text-on-surface">{label}</h3>
-                <p class="text-base text-on-surface-variant leading-[1.6]">{sub}</p>
-              </div>
-              <span aria-hidden="true" class="material-symbols-outlined text-primary text-base mt-1 shrink-0 transition-transform group-hover:translate-x-1">arrow_forward</span>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-5xl">
-        <span class="section-label">FAQ</span>
-        <h2 class="mt-4 mb-12 font-headline font-extrabold tracking-[-0.01em] text-on-surface">Common questions</h2>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div class="card p-8">
-            <h3 class="mb-3 normal-case text-on-surface">What is Ceres?</h3>
-            <p class="text-base text-on-surface-variant leading-[1.7]">Ceres is an AI planning engine for enterprise supply chain and S&OP teams. It reconciles ERP records, customer demand signals, and 10B+ external signals into one plan, and flags the exceptions that need a decision before the planning cycle closes.</p>
-          </div>
-          <div class="card p-8">
-            <h3 class="mb-3 normal-case text-on-surface">Does Ceres replace our ERP or planning system?</h3>
-            <p class="text-base text-on-surface-variant leading-[1.7]">No. Ceres works alongside SAP, Kinaxis, Blue Yonder, o9, and others. It does the reconciliation and forecasting work that otherwise lives in spreadsheets, then feeds the plan back into your system of record. No data migration required.</p>
-          </div>
-          <div class="card p-8">
-            <h3 class="mb-3 normal-case text-on-surface">What external signals does Ceres monitor?</h3>
-            <p class="text-base text-on-surface-variant leading-[1.7]">Weather and natural disasters, port and logistics pressure, raw material and commodity price movement, geopolitical and trade risk, tariff and country-of-origin changes, supplier facility disruptions, and public filings and recalls.</p>
-          </div>
-          <div class="card p-8">
-            <h3 class="mb-3 normal-case text-on-surface">How does Ceres explain its outputs?</h3>
-            <p class="text-base text-on-surface-variant leading-[1.7]">Every forecast and risk flag traces back to the specific records and external signals behind it. Analysts can interrogate any output and see the weight of every variable.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section text-center">
-      <div class="mx-auto max-w-3xl">
-        <h2 class="mb-5 font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-[1.05]">See how it works in your environment.</h2>
-        <p class="mx-auto mb-10 max-w-xl text-lg font-body leading-[1.7] text-on-surface-variant">
-          We'll show you how Ceres maps to your specific records, suppliers, and risk scenarios in 30 minutes.
-        </p>
-        <a href={demoUrl} class="btn-primary">
-          Book a Demo
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FAQPage structured data (matches the on-page FAQ above) -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'What is Ceres?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Ceres is an AI planning engine for enterprise supply chain and S&OP teams. It reconciles ERP records, customer demand signals, and 10B+ external signals into one plan, and flags the exceptions that need a decision before the planning cycle closes.' } },
-      { '@type': 'Question', name: 'Does Ceres replace our ERP or planning system?',
-        acceptedAnswer: { '@type': 'Answer', text: 'No. Ceres works alongside SAP, Kinaxis, Blue Yonder, o9, and other systems. It does the reconciliation and forecasting work that otherwise lives in spreadsheets, then feeds the plan back into your system of record. No data migration is required.' } },
-      { '@type': 'Question', name: 'What external signals does Ceres monitor?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Weather and natural disasters, port and logistics pressure, raw material and commodity price movement, geopolitical and trade risk, tariff and country-of-origin changes, supplier facility disruptions, and public filings and recalls.' } },
-      { '@type': 'Question', name: 'How does Ceres explain its outputs?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Every forecast and risk flag is traceable to the specific internal records and external signals behind it. Analysts can interrogate outputs, challenge assumptions, and see the weight of every variable influencing a decision.' } },
-    ],
-  })} />
+  <CtaBand href={demoUrl} label="Book a Demo" lead="We'll show you how Ceres maps to your specific records, suppliers, and risk scenarios in 30 minutes.">
+    See how it works in your environment.
+  </CtaBand>
 </Layout>

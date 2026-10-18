@@ -1,0 +1,28 @@
+---
+interface Props {
+  title?: string;
+  status?: string;
+  dot?: boolean;
+  pad?: boolean;
+  class?: string;
+}
+
+const { title, status, dot = false, pad = true, class: className } = Astro.props;
+---
+
+<div class:list={['panel', className]}>
+  {
+    (title || status) && (
+      <div class="panel-bar">
+        <div class="flex items-center gap-2">
+          {dot && <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-primary" />}
+          <span class="meta">{title}</span>
+        </div>
+        {status && <span class="font-mono text-label uppercase text-primary">{status}</span>}
+      </div>
+    )
+  }
+  <div class:list={[pad && 'p-5 lg:p-6']}>
+    <slot />
+  </div>
+</div>

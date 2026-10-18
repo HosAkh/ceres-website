@@ -1,0 +1,18 @@
+---
+interface Props {
+  href?: string;
+  external?: boolean;
+  featured?: boolean;
+  pad?: 'none' | 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const { href, external = false, featured = false, pad = 'md', class: className } = Astro.props;
+const Tag = href ? 'a' : 'div';
+const pads = { none: '', sm: 'p-5', md: 'p-6 lg:p-8', lg: 'p-8 lg:p-10' };
+const linkAttrs = href ? { href, ...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {}) } : {};
+---
+
+<Tag class:list={['card', featured && 'card-featured', href && 'card-link', pads[pad], className]} {...linkAttrs}>
+  <slot />
+</Tag>

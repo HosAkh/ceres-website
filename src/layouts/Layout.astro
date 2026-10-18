@@ -1,14 +1,18 @@
 ---
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import '../styles/fonts.css';
+import barlowCondensed800 from '../fonts/barlow-condensed-800.woff2?url';
+import barlow400 from '../fonts/barlow-400.woff2?url';
+import dmMono400 from '../fonts/dm-mono-400.woff2?url';
 
 interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
   noindex?: boolean;
+  extraSchema?: Record<string, unknown>;
 }
 
 const {
@@ -16,6 +20,7 @@ const {
   description = 'Ceres connects your ERP and supply chain data to live external signals so your team can predict disruptions before they hit. Enterprise AI with 94% forecast accuracy.',
   ogImage = 'https://cerestech.co/images/logo.png',
   noindex = false,
+  extraSchema,
 } = Astro.props;
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
@@ -85,6 +90,11 @@ const breadcrumbSchema = !isHomepage ? {
     <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
 
+    <!-- Fonts used above the fold on every page -->
+    <link rel="preload" href={barlowCondensed800} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={barlow400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={dmMono400} as="font" type="font/woff2" crossorigin />
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href={`${import.meta.env.BASE_URL}icons/favicon-32x32.png`} />
     <link rel="icon" type="image/png" sizes="192x192" href={`${import.meta.env.BASE_URL}icons/favicon-192x192.png`} />
@@ -107,69 +117,56 @@ const breadcrumbSchema = !isHomepage ? {
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(globalSchema)} />
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+    {extraSchema && <script type="application/ld+json" set:html={JSON.stringify(extraSchema)} />}
 
-    <!-- Microsoft Clarity -->
-    <script is:inline>
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "wrkl5jndm6");
-    </script>
-    <!-- End Microsoft Clarity -->
-
-    <!-- Preconnect for remaining third-party origins -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-    <!-- Google Tag Manager — dataLayer queues events before GTM loads -->
+    <!-- Analytics bootstrap: queues are created now; the GTM, GA4, Microsoft Clarity
+         and Sienna scripts themselves load on the first user interaction. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-JQLKBQXHKB');
+      window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments);};
+      (function () {
+        var loaded = false;
+        function add(src, attrs) {
+          var s = document.createElement('script');
+          s.src = src;
+          s.async = true;
+          if (attrs) for (var k in attrs) s.setAttribute(k, attrs[k]);
+          document.head.appendChild(s);
+        }
+        function load() {
+          if (loaded) return;
+          loaded = true;
+          // Google Tag Manager
+          window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          add('https://www.googletagmanager.com/gtm.js?id=GTM-PNFNBQRT');
+          // GA4
+          add('https://www.googletagmanager.com/gtag/js?id=G-JQLKBQXHKB');
+          // Microsoft Clarity
+          add('https://www.clarity.ms/tag/wrkl5jndm6');
+          // Sienna accessibility widget: desktop only (768px+)
+          if (window.matchMedia('(min-width: 768px)').matches) {
+            add('https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js', { defer: '' });
+          }
+        }
+        ['scroll', 'pointerdown', 'pointermove', 'keydown', 'touchstart'].forEach(function (type) {
+          window.addEventListener(type, load, { once: true, passive: true });
+        });
+      })();
     </script>
-    <!-- GTM and GA4 scripts deferred to after page load so they never block rendering -->
-    <script is:inline>
-      function loadAnalytics() {
-        // GTM
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PNFNBQRT');
-        // GA4
-        var s=document.createElement('script');
-        s.async=true;
-        s.src='https://www.googletagmanager.com/gtag/js?id=G-JQLKBQXHKB';
-        document.head.appendChild(s);
-      }
-      if (document.readyState === 'complete') {
-        loadAnalytics();
-      } else {
-        window.addEventListener('load', loadAnalytics);
-      }
-    </script>
-    <!-- End Google Tag Manager -->
   </head>
-  <body class="selection:bg-primary selection:text-on-primary">
-    <!-- Skip link — first focusable element (WCAG 2.4.1). Each page's <main> has id="main". -->
+  <body>
     <a href="#main" class="skip-link">Skip to content</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNFNBQRT"
     height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <Navigation client:idle currentPath={Astro.url.pathname} />
-    <slot />
+    <Navigation currentPath={Astro.url.pathname} />
+    <main id="main" tabindex="-1" class="pt-14">
+      <slot />
+    </main>
     <Footer />
-    <!-- Sienna accessibility widget: desktop only (768px+) -->
-    <!-- matchMedia does not trigger a layout flush; window.innerWidth does -->
-    <script is:inline>
-      if (window.matchMedia('(min-width: 768px)').matches) {
-        var s = document.createElement('script');
-        s.src = 'https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js';
-        s.defer = true;
-        document.body.appendChild(s);
-      }
-    </script>
   </body>
 </html>

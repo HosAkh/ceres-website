@@ -1,4 +1,4 @@
-/* Self-hosted fonts — eliminates all Google Fonts external requests */
+/* Self-hosted fonts — no external font requests. */
 
 @font-face {
   font-family: 'Barlow';
@@ -66,24 +66,47 @@
     U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* Metric-matched local fallbacks (capsize): text set in the fallback occupies
+   the same space as the web font, so the swap causes no layout shift. */
+
 @font-face {
-  font-family: 'Material Symbols Outlined';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/material-symbols-outlined.woff2') format('woff2');
+  font-family: 'Barlow Fallback: Arial';
+  src: local('Arial'), local('ArialMT');
+  ascent-override: 103.4341%;
+  descent-override: 20.6868%;
+  line-gap-override: 0%;
+  size-adjust: 96.68%;
 }
 
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
+@font-face {
+  font-family: 'Barlow Fallback: Roboto';
+  src: local('Roboto Regular'), local('Roboto-Regular');
+  ascent-override: 103.2075%;
+  descent-override: 20.6415%;
+  size-adjust: 96.8922%;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed Fallback: Arial';
+  src: local('Arial'), local('ArialMT');
+  ascent-override: 130.7334%;
+  descent-override: 26.1467%;
+  line-gap-override: 0%;
+  size-adjust: 76.4916%;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed Fallback: Roboto';
+  src: local('Roboto Regular'), local('Roboto-Regular');
+  ascent-override: 130.447%;
+  descent-override: 26.0894%;
+  size-adjust: 76.6595%;
+}
+
+@font-face {
+  font-family: 'DM Mono Fallback';
+  src: local('Courier New'), local('CourierNewPSMT');
+  ascent-override: 99.2161%;
+  descent-override: 31.005%;
+  size-adjust: 99.9837%;
 }

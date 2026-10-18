@@ -1,185 +1,146 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import Icon from '../components/Icon.astro';
+import Media from '../components/Media.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { demoUrl } from '../lib/paths';
+import aboutHero from '../images/about-hero.jpg';
 
-const demoUrl = import.meta.env.BASE_URL.endsWith('/')
-  ? import.meta.env.BASE_URL + 'book-a-demo/'
-  : import.meta.env.BASE_URL + '/book-a-demo/';
+const capabilities = [
+  { icon: 'fact_check', label: 'SCORECARDS' },
+  { icon: 'map', label: 'EXPOSURE MAPPING' },
+  { icon: 'category', label: 'CLASSIFICATION' },
+  { icon: 'trending_up', label: 'FORECASTING' },
+  { icon: 'science', label: 'SCENARIO ANALYSIS' },
+  { icon: 'monitoring', label: 'OPERATIONAL MONITORING', accent: true },
+];
+
+const principles = [
+  'Work with what already exists',
+  'Focus on the workflow',
+  'Make outputs easier to explain',
+  'Reduce the manual grind',
+];
+
+const leaders = [
+  { name: 'Bobby Katoli', role: 'Co-Founder & CEO', href: 'https://www.linkedin.com/in/bobbykatoli/' },
+  { name: 'Trey Hoobler', role: 'Co-Founder', href: 'https://www.linkedin.com/in/george-william-hoobler-iii-trey-a57bb17/' },
+  { name: 'Carlos Amaral', role: 'EVP & CIO', href: 'https://www.linkedin.com/in/carlosamaral/' },
+];
 ---
 
 <Layout
   title="About Ceres Technology | AI Planning Engine for Enterprise Supply Chains"
   description="Ceres Technology builds AI planning software that helps enterprise teams reconcile ERP records, demand signals, and external events into decision-ready supply chain plans."
 >
-  <main id="main" class="pt-14">
+  <Hero
+    eyebrow="Company"
+    lead="Ceres was founded by operators who saw firsthand how hard it was to connect real-world events to the records and systems businesses rely on every day. We built Ceres to close that gap."
+    cta={{ href: demoUrl, label: 'Book a Demo', arrow: true }}
+  >
+    We built Ceres to help enterprises turn outside chaos into usable decisions.
+  </Hero>
 
-    <!-- HERO -->
-    <section class="relative overflow-hidden border-b border-outline-variant/20 bg-surface px-6 py-24 lg:px-12 lg:py-32">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,182,145,0.07),transparent_40%)]"></div>
-      <div class="relative mx-auto max-w-7xl">
-        <span class="section-label mb-4">Company</span>
-        <h1 class="mb-6 font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none max-w-4xl">
-          We built Ceres to help enterprises turn outside chaos into usable decisions.
-        </h1>
-        <p class="mb-10 font-body font-normal text-lg text-on-surface-variant max-w-prose leading-[1.7]">
-          Ceres was founded by operators who saw firsthand how hard it was to connect real-world events to the records and systems businesses rely on every day. We built Ceres to close that gap.
-        </p>
-        <a href={demoUrl} class="btn-primary">
-          Book a Demo
-          <span aria-hidden="true" class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
+  <Section tone="lowest">
+    <SectionHeader eyebrow="Our Story">Built from a real operating problem</SectionHeader>
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div class="space-y-4 text-on-surface-variant">
+        <p>Ceres was born out of sheer frustration. Founders Bobby Katoli and Trey Hoobler were managing complex coffee supply chains when the COVID-19 pandemic hit.</p>
+        <p>They quickly realized that while they had plenty of internal data—ERP records, spreadsheets, historical logs—they had zero connected context regarding real-world disruptions affecting their shipments.</p>
+        <p>The realization was simple but profound: businesses don't lack records; they lack the situational awareness to act on those records before it's too late.</p>
       </div>
-    </section>
-
-    <!-- OUR STORY -->
-    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-7xl">
-        <span class="section-label">Our Story</span>
-        <h2 class="mt-4 mb-12 font-headline font-extrabold tracking-[-0.01em] text-on-surface">Built from a real operating problem</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="text-base font-body text-on-surface-variant space-y-4 leading-[1.7]">
-            <p>Ceres was born out of sheer frustration. Founders Bobby Katoli and Trey Hoobler were managing complex coffee supply chains when the COVID-19 pandemic hit.</p>
-            <p>They quickly realized that while they had plenty of internal data—ERP records, spreadsheets, historical logs—they had zero connected context regarding real-world disruptions affecting their shipments.</p>
-            <p>The realization was simple but profound: businesses don't lack records; they lack the situational awareness to act on those records before it's too late.</p>
-          </div>
-          <div class="card relative h-64 lg:h-72 overflow-hidden flex items-center justify-center">
-            <img loading="lazy" width="512" height="512" alt="Industrial supply chain shipping containers" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity" src={`${import.meta.env.BASE_URL}images/about-hero.jpg`} />
-            <div class="relative z-10 text-center p-4 border border-outline-variant/30 bg-surface/80 backdrop-blur-sm">
-              <span class="section-label block mb-1">INCIDENT_LOG_2020</span>
-              <span class="font-mono font-normal text-[11px] tracking-[0.18em] uppercase text-on-surface">SUPPLY_CHAIN_DISRUPTION_DETECTED</span>
-            </div>
+      <Media src={aboutHero} alt="Industrial supply chain shipping containers" sizes="(min-width: 1024px) 50vw, 100vw">
+        <div class="absolute inset-0 flex items-center justify-center p-6">
+          <div class="border border-outline-variant/30 bg-surface/90 p-4 text-center">
+            <span class="eyebrow mb-1">INCIDENT_LOG_2020</span>
+            <span class="font-mono text-label-sm uppercase text-on-surface">SUPPLY_CHAIN_DISRUPTION_DETECTED</span>
           </div>
         </div>
-      </div>
-    </section>
+      </Media>
+    </div>
+  </Section>
 
-    <!-- WHAT WE BELIEVE -->
-    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-7xl">
-        <span class="section-label">What We Believe</span>
-        <h2 class="mt-4 mb-3 font-headline font-extrabold tracking-[-0.01em] text-on-surface">Better decisions come from better context</h2>
-        <p class="mb-12 font-body font-normal text-lg text-on-surface-variant max-w-2xl leading-[1.7]">Organizations suffer from a shortage of connected context, not a shortage of records. We build systems that bridge this gap.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="card p-8 border-l-2 border-l-outline-variant">
-            <h3 class="mb-3 text-on-surface">The Old Way</h3>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Relying on stale, disconnected spreadsheets and delayed reporting. Reacting to events after they have already impacted the bottom line.</p>
-          </div>
-          <div class="card-featured p-8">
-            <h3 class="mb-3 text-primary">The Ceres Way</h3>
-            <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Ceres pipes live external context into your existing workflows so you can act before problems hit.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <Section>
+    <SectionHeader eyebrow="What We Believe" lead="Organizations suffer from a shortage of connected context, not a shortage of records. We build systems that bridge this gap.">
+      Better decisions come from better context
+    </SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <Card class="border-l-2 border-l-outline-variant">
+        <h3 class="mb-3">The Old Way</h3>
+        <p class="text-body-sm text-on-surface-variant">Relying on stale, disconnected spreadsheets and delayed reporting. Reacting to events after they have already impacted the bottom line.</p>
+      </Card>
+      <Card featured>
+        <h3 class="mb-3 text-primary">The Ceres Way</h3>
+        <p class="text-body-sm text-on-surface-variant">Ceres pipes live external context into your existing workflows so you can act before problems hit.</p>
+      </Card>
+    </div>
+  </Section>
 
-    <!-- SYSTEM CAPABILITIES + OPERATING PRINCIPLES -->
-    <section class="border-b border-outline-variant/20 bg-surface-container-lowest px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div>
-          <span class="section-label">System Capabilities</span>
-          <h2 class="mt-4 mb-10 font-headline font-extrabold tracking-[-0.01em] text-on-surface text-3xl lg:text-4xl">What the platform does</h2>
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-            <div class="card p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline">fact_check</span>
-              <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-on-surface">SCORECARDS</span>
-            </div>
-            <div class="card p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline">map</span>
-              <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-on-surface">EXPOSURE MAPPING</span>
-            </div>
-            <div class="card p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline">category</span>
-              <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-on-surface">CLASSIFICATION</span>
-            </div>
-            <div class="card p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline">trending_up</span>
-              <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-on-surface">FORECASTING</span>
-            </div>
-            <div class="card p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
-              <span aria-hidden="true" class="material-symbols-outlined text-outline">science</span>
-              <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-on-surface">SCENARIO ANALYSIS</span>
-            </div>
-            <div class="card p-4 flex flex-col gap-2 hover:bg-surface-container-high transition-colors cursor-default">
-              <span aria-hidden="true" class="material-symbols-outlined text-primary">monitoring</span>
-              <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-on-surface">OPERATIONAL MONITORING</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <span class="section-label">Operating Principles</span>
-          <h2 class="mt-4 mb-10 font-headline font-extrabold tracking-[-0.01em] text-on-surface text-3xl lg:text-4xl">How we work</h2>
-          <ul class="space-y-3">
-            <li class="card p-5 flex items-center gap-4">
-              <span class="font-mono text-[11px] tracking-[0.18em] text-primary data-mono">01</span>
-              <p class="font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Work with what already exists</p>
-            </li>
-            <li class="card p-5 flex items-center gap-4">
-              <span class="font-mono text-[11px] tracking-[0.18em] text-primary data-mono">02</span>
-              <p class="font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Focus on the workflow</p>
-            </li>
-            <li class="card p-5 flex items-center gap-4">
-              <span class="font-mono text-[11px] tracking-[0.18em] text-primary data-mono">03</span>
-              <p class="font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Make outputs easier to explain</p>
-            </li>
-            <li class="card p-5 flex items-center gap-4">
-              <span class="font-mono text-[11px] tracking-[0.18em] text-primary data-mono">04</span>
-              <p class="font-headline font-bold text-on-surface uppercase tracking-[0.015em]">Reduce the manual grind</p>
-            </li>
-          </ul>
-          <div class="card-featured p-6 mt-8">
-            <h3 class="mb-2 text-on-surface">Who It's For</h3>
-            <p class="font-body font-normal text-sm text-on-surface-variant leading-[1.7]">Teams where a missed signal has real consequences.</p>
-            <div class="mt-4 flex gap-2 flex-wrap">
-              <span class="px-2 py-1 bg-surface-container-lowest text-[11px] text-outline font-mono tracking-[0.1em] border border-outline-variant/50">MANUFACTURING</span>
-              <span class="px-2 py-1 bg-surface-container-lowest text-[11px] text-outline font-mono tracking-[0.1em] border border-outline-variant/50">HEALTHCARE</span>
-              <span class="px-2 py-1 bg-surface-container-lowest text-[11px] text-outline font-mono tracking-[0.1em] border border-outline-variant/50">LOGISTICS</span>
-            </div>
-          </div>
-        </div>
+  <Section tone="lowest">
+    <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
+      <div>
+        <span class="eyebrow mb-4">System Capabilities</span>
+        <h2 class="mb-10">What the platform does</h2>
+        <ul class="grid grid-cols-2 gap-2 md:grid-cols-3">
+          {
+            capabilities.map(({ icon, label, accent }) => (
+              <li class="card flex flex-col gap-3 p-4">
+                <Icon name={icon} size={24} class={accent ? 'text-primary' : 'text-outline'} />
+                <span class="font-mono text-label uppercase text-on-surface">{label}</span>
+              </li>
+            ))
+          }
+        </ul>
       </div>
-    </section>
+      <div>
+        <span class="eyebrow mb-4">Operating Principles</span>
+        <h2 class="mb-10">How we work</h2>
+        <ol class="space-y-3">
+          {
+            principles.map((item, i) => (
+              <li class="card flex items-center gap-4 p-5">
+                <span class="font-mono text-label text-primary">{String(i + 1).padStart(2, '0')}</span>
+                <span class="font-headline text-title-sm font-bold uppercase text-on-surface">{item}</span>
+              </li>
+            ))
+          }
+        </ol>
+        <Card featured class="mt-8">
+          <h3 class="mb-2">Who It's For</h3>
+          <p class="text-body-sm text-on-surface-variant">Teams where a missed signal has real consequences.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <Badge tone="muted">MANUFACTURING</Badge>
+            <Badge tone="muted">HEALTHCARE</Badge>
+            <Badge tone="muted">LOGISTICS</Badge>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </Section>
 
-    <!-- LEADERSHIP -->
-    <section class="border-b border-outline-variant/20 bg-surface px-6 py-20 lg:px-12">
-      <div class="mx-auto max-w-7xl">
-        <span class="section-label">Leadership</span>
-        <h2 class="mt-4 mb-12 font-headline font-extrabold tracking-[-0.01em] text-on-surface">Command Staff</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <a href="https://www.linkedin.com/in/bobbykatoli/" target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-primary transition-colors flex items-center justify-between group">
+  <Section>
+    <SectionHeader eyebrow="Leadership">Command Staff</SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      {
+        leaders.map(({ name, role, href }) => (
+          <Card href={href} external class="flex items-center justify-between gap-4">
             <div>
-              <h3 class="text-on-surface mb-1">Bobby Katoli</h3>
-              <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-on-surface-variant">Co-Founder &amp; CEO</p>
+              <h3 class="mb-1">{name}</h3>
+              <p class="meta">{role}</p>
             </div>
-            <span aria-hidden="true" class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
-          </a>
-          <a href="https://www.linkedin.com/in/george-william-hoobler-iii-trey-a57bb17/" target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-primary transition-colors flex items-center justify-between group">
-            <div>
-              <h3 class="text-on-surface mb-1">Trey Hoobler</h3>
-              <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-on-surface-variant">Co-Founder</p>
-            </div>
-            <span aria-hidden="true" class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
-          </a>
-          <a href="https://www.linkedin.com/in/carlosamaral/" target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-primary transition-colors flex items-center justify-between group">
-            <div>
-              <h3 class="text-on-surface mb-1">Carlos Amaral</h3>
-              <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-on-surface-variant">EVP &amp; CIO</p>
-            </div>
-            <span aria-hidden="true" class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
-          </a>
-        </div>
-      </div>
-    </section>
+            <Icon name="arrow_outward" size={22} class="card-arrow text-outline transition-all" />
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
 
-    <!-- CTA -->
-    <section class="cta-section text-center">
-      <div class="mx-auto max-w-3xl">
-        <h2 class="mb-5 font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-[1.05]">Want to see how Ceres could fit your team?</h2>
-        <p class="mx-auto mb-10 font-body font-normal text-lg text-on-surface-variant max-w-xl leading-[1.7]">See how Ceres connects your data to the signals your team actually needs.</p>
-        <a href={demoUrl} class="btn-primary">
-          Book a Demo
-          <span aria-hidden="true" class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-      </div>
-    </section>
-
-  </main>
+  <CtaBand href={demoUrl} label="Book a Demo" lead="See how Ceres connects your data to the signals your team actually needs.">
+    Want to see how Ceres could fit your team?
+  </CtaBand>
 </Layout>

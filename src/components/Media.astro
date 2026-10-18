@@ -1,0 +1,47 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Picture } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  sizes?: string;
+  priority?: boolean;
+  aspect?: 'video' | 'photo' | 'square' | 'wide' | 'none';
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  sizes = '(min-width: 1024px) 40vw, 100vw',
+  priority = false,
+  aspect = 'photo',
+  class: className,
+} = Astro.props;
+const aspects = {
+  video: 'aspect-video',
+  photo: 'aspect-[4/3]',
+  square: 'aspect-square',
+  wide: 'aspect-[16/7]',
+  none: '',
+};
+const widths = [320, Math.min(512, src.width)];
+---
+
+<div class:list={['media-frame', aspects[aspect], className]}>
+  <Picture
+    src={src}
+    alt={alt}
+    widths={widths}
+    sizes={sizes}
+    formats={['avif', 'webp']}
+    fallbackFormat="jpeg"
+    quality={62}
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    decoding="async"
+    class="media-img"
+  />
+  <slot />
+</div>

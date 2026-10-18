@@ -1,4 +1,14 @@
 Options -Indexes
+AddDefaultCharset UTF-8
+
+# ── MIME types the host may not know ─────────────────────────
+<IfModule mod_mime.c>
+  AddType image/avif .avif
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+  AddType application/manifest+json .webmanifest
+</IfModule>
 
 # ── Force HTTPS and non-www ───────────────────────────────────
 <IfModule mod_rewrite.c>
@@ -13,16 +23,33 @@ Options -Indexes
   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 </IfModule>
 
-# ── Cache headers — force fresh content ───────────────────────
-<IfModule mod_headers.c>
-  Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-  Header set Pragma "no-cache"
-  Header set Expires "0"
+# ── Compression (brotli when available, gzip otherwise) ───────
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml application/manifest+json
 </IfModule>
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresDefault "access plus 0 seconds"
-  ExpiresByType text/html "access plus 0 seconds"
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml application/manifest+json
+</IfModule>
+
+# ── Cache headers ─────────────────────────────────────────────
+# Astro writes hashed filenames into /_astro/, so build output, images,
+# icons and fonts can be cached for a year. HTML is always revalidated.
+<IfModule mod_headers.c>
+  Header unset Pragma
+  Header unset Expires
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(xml|txt|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(css|js|mjs|woff|woff2|avif|webp|png|jpg|jpeg|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 </IfModule>
 
 # ── Block _wordpress directory completely ──────────────────────

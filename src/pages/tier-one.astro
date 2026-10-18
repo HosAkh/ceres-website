@@ -1,189 +1,113 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import Icon from '../components/Icon.astro';
+import Media from '../components/Media.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { demoUrl } from '../lib/paths';
+import heroAutomotive from '../images/hero-automotive.jpg';
+import featureDashboard from '../images/feature-dashboard.jpg';
+import featureCircuit from '../images/feature-circuit.jpg';
+import featureAnalytics from '../images/feature-analytics.jpg';
+import featureSupplyChain from '../images/feature-supply-chain.jpg';
+
+const challenges = [
+  { icon: 'dynamic_feed', title: 'Manual Reconciliation', text: 'Drowning in spreadsheets across thousands of line items from multiple OEM portals.' },
+  { icon: 'error', title: 'Catching Exceptions', text: 'Identifying demand spikes or supply drops shouldn\'t take a week of analysis.' },
+  { icon: 'query_stats', title: 'Forecast Accuracy', text: 'OEM forecasts are notoriously volatile. Without algorithmic reconciliation, your production schedules can be error prone.' },
+  { icon: 'warning', title: 'Inventory Risk', text: 'Over-stocking components for uncertain orders or stock-outs. Both kill the bottom line for Tier 1 suppliers.' },
+];
+
+const layers = [
+  { n: '01', title: 'Data Vault', text: 'AI-driven reliability and continuous data reconciliation. We ingest noisy OEM data and unify it into a single, immutable source of truth that your ERP can actually trust.', image: featureDashboard, alt: 'Data visualization dashboard' },
+  { n: '02', title: 'Exception Management', text: 'Signaling anomalies before damage occurs. Our engine constantly monitors for deviations in lead times, order volumes, and shipping delays, surfacing only the signals that matter.', image: featureCircuit, alt: 'Circuit board visualization' },
+  { n: '03', title: 'AI Forecasting', text: 'Every single grain gets a forecast. AI reconciles bottom-up SKU demand with top-down product-group totals, ensuring financial targets and operational plans are aligned.', image: featureAnalytics, alt: 'Predictive analytics visualization' },
+  { n: '04', title: 'What-If Scenarios', text: 'Stress-test plans against real-world drivers. Instantly see the impact of new tariffs, raw material price shifts, or energy shortages on your Tier 1 margin.', image: featureSupplyChain, alt: 'Supply chain network simulation' },
+];
+
+const systems = ['SAP S/4HANA', 'SAP IBP', 'o9 Solutions', 'Kinaxis', 'Blue Yonder', 'Palantir'];
 ---
 
-<Layout title="Tier 1 Automotive Supply Chain Planning Software | Ceres"
-description="Ceres helps Tier 1 automotive suppliers reconcile EDI, OEM releases, SAP snapshots, and actuals into one planning baseline, then forecast part-customer-plant demand and flag exceptions.">
-  <main class="flex-grow flex flex-col items-center justify-start w-full pt-14">
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 px-8 border-b border-outline-variant overflow-hidden w-full">
-      <div class="absolute inset-0 z-0 opacity-20">
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-transparent"></div>
-        <img width="512" height="512" class="w-full h-full object-cover grayscale" alt="Modern automotive manufacturing line" src={`${import.meta.env.BASE_URL}images/hero-automotive.jpg`} />
+<Layout
+  title="Tier 1 Automotive Supply Chain Planning Software | Ceres"
+  description="Ceres helps Tier 1 automotive suppliers reconcile EDI, OEM releases, SAP snapshots, and actuals into one planning baseline, then forecast part-customer-plant demand and flag exceptions."
+>
+  <Hero
+    eyebrow="Tier 1 Automotive Supply Chain Planning"
+    lead="Ceres is the AI planning engine that sits between your ERP and your critical decisions, reconciling OEM forecasts with supplier reality in real-time."
+    cta={{ href: demoUrl, label: 'Schedule a Demo' }}
+  >
+    Your planners spend days doing what takes us minutes.
+    <Media slot="visual" src={heroAutomotive} alt="Modern automotive manufacturing line" class="hidden lg:block" />
+  </Hero>
+
+  <section class="border-b border-outline-variant/20 bg-surface-container-lowest">
+    <div class="container-x mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 py-8">
+      <span class="meta">Clients</span>
+      <div class="flex flex-wrap items-center gap-10">
+        <span class="font-headline text-title-lg font-extrabold text-on-surface-variant">Bosch</span>
+        <span class="font-headline text-title-lg font-extrabold text-on-surface-variant">Alps Alpine</span>
       </div>
-      <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-12 gap-6">
-        <div class="col-span-12 md:col-span-8 flex flex-col justify-center">
-          <span class="section-label mb-4">Tier 1 Automotive Supply Chain Planning</span>
-          <h1 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-8">
-            Your planners spend days doing what takes us minutes.
-          </h1>
-          <p class="text-lg font-body font-normal text-on-surface-variant leading-[1.7] max-w-prose mb-10">
-            Ceres is the AI planning engine that sits between your ERP and your critical decisions, reconciling OEM forecasts with supplier reality in real-time.
-          </p>
-          <div class="flex gap-4">
-            <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary">
-              Schedule a Demo
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Trusted By -->
-    <section class="py-12 px-8 border-b border-outline-variant bg-surface-container-lowest w-full">
-      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
-        <span class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant">Clients</span>
-        <div class="flex gap-16 items-center">
-          <div class="text-2xl font-extrabold text-on-surface-variant font-headline tracking-[-0.01em]">Bosch</div>
-          <div class="text-2xl font-extrabold text-on-surface-variant font-headline tracking-[-0.01em] italic">Alps Alpine</div>
-        </div>
-      </div>
-    </section>
+  <Section>
+    <SectionHeader eyebrow="The Challenge">Manual reconciliation doesn't scale across dozens of OEMs.</SectionHeader>
+    <div class="hairline-grid md:grid-cols-2">
+      {
+        challenges.map(({ icon, title, text }) => (
+          <div class="p-6 lg:p-8">
+            <Icon name={icon} size={32} class="mb-5 text-primary" />
+            <h3 class="mb-2">{title}</h3>
+            <p class="text-on-surface-variant">{text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
 
-    <!-- The Problem (Bento Grid Style) -->
-    <section class="page-section">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-16">
-          <span class="section-label">The Challenge</span>
-          <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface mt-4">Manual reconciliation doesn't scale across dozens of OEMs.</h2>
-        </div>
-        <div class="grid grid-cols-12 gap-1 border-t border-l border-outline-variant">
-          <div class="col-span-12 md:col-span-6 p-10 border-r border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl mb-6">dynamic_feed</span>
-            <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-4">Manual Reconciliation</h3>
-            <p class="font-body font-normal text-on-surface-variant leading-[1.7]">Drowning in spreadsheets across thousands of line items from multiple OEM portals.</p>
-          </div>
-          <div class="col-span-12 md:col-span-6 p-10 border-r border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl mb-6">error</span>
-            <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-4">Catching Exceptions</h3>
-            <p class="font-body font-normal text-on-surface-variant leading-[1.7]">Identifying demand spikes or supply drops shouldn't take a week of analysis.</p>
-          </div>
-          <div class="col-span-12 md:col-span-6 p-10 border-r border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl mb-6">query_stats</span>
-            <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-4">Forecast Accuracy</h3>
-            <p class="font-body font-normal text-on-surface-variant leading-[1.7]">OEM forecasts are notoriously volatile. Without algorithmic reconciliation, your production schedules can be error prone.</p>
-          </div>
-          <div class="col-span-12 md:col-span-6 p-10 border-r border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary text-4xl mb-6">warning</span>
-            <h3 class="font-headline font-bold uppercase tracking-[0.015em] mb-4">Inventory Risk</h3>
-            <p class="font-body font-normal text-on-surface-variant leading-[1.7]">Over-stocking components for uncertain orders or stock-outs. Both kill the bottom line for Tier 1 suppliers.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- The Platform (Layered Focus) -->
-    <section class="page-section border-b-0 bg-surface-container-lowest overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div class="max-w-2xl">
-            <span class="section-label">Architectural Advantage</span>
-            <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface mt-4">Four layers that SAP and Excel don't give you.</h2>
-          </div>
-          <div class="text-right">
-            <div class="flex items-center gap-2 mb-2 justify-end">
-              <div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-              <span class="font-mono text-[11px] tracking-[0.08em] text-primary uppercase">System Health: Optimal</span>
+  <Section tone="lowest">
+    <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <SectionHeader eyebrow="Architectural Advantage">Four layers that SAP and Excel don't give you.</SectionHeader>
+      <Badge dot class="mb-12 self-start lg:mb-16">System Health: Optimal</Badge>
+    </div>
+    <div class="space-y-16 lg:space-y-24">
+      {
+        layers.map(({ n, title, text, image, alt }, i) => (
+          <div class="grid items-center gap-8 lg:grid-cols-12 lg:gap-16">
+            <div class:list={['lg:col-span-5', i % 2 === 1 && 'lg:order-2']}>
+              <span class="stat mb-4 block text-primary">{n}</span>
+              <h3 class="mb-4 text-title-lg">{title}</h3>
+              <p class="text-lead text-on-surface-variant">{text}</p>
             </div>
+            <Media src={image} alt={alt} aspect="video" class:list={['lg:col-span-7', i % 2 === 1 && 'lg:order-1']} sizes="(min-width: 1024px) 50vw, 100vw" />
           </div>
-        </div>
-        <div class="space-y-32">
-          <!-- 01 Data Vault -->
-          <div class="grid grid-cols-12 gap-12 items-center">
-            <div class="col-span-12 md:col-span-5 order-2 md:order-1">
-              <span class="font-mono font-light text-6xl text-on-surface-variant/50 font-headline mb-4 block data-mono">01</span>
-              <h3 class="font-headline font-extrabold tracking-[-0.01em] mb-6 uppercase">Data Vault</h3>
-              <p class="font-body font-normal text-on-surface-variant leading-[1.7] text-lg mb-8">AI-driven reliability and continuous data reconciliation. We ingest noisy OEM data and unify it into a single, immutable source of truth that your ERP can actually trust.</p>
-            </div>
-            <div class="col-span-12 md:col-span-7 order-1 md:order-2">
-              <div class="aspect-video bg-surface-container rounded border border-outline-variant overflow-hidden p-4">
-                <img loading="lazy" width="512" height="512" class="w-full h-full object-cover rounded opacity-80" alt="Data visualization dashboard" src={`${import.meta.env.BASE_URL}images/feature-dashboard.jpg`} />
-              </div>
-            </div>
-          </div>
+        ))
+      }
+    </div>
+  </Section>
 
-          <!-- 02 Exception Management -->
-          <div class="grid grid-cols-12 gap-12 items-center">
-            <div class="col-span-12 md:col-span-7">
-              <div class="aspect-video bg-surface-container rounded border border-outline-variant overflow-hidden relative">
-                <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
-                <img loading="lazy" width="512" height="512" class="w-full h-full object-cover opacity-80" alt="Circuit board visualization" src={`${import.meta.env.BASE_URL}images/feature-circuit.jpg`} />
-              </div>
-            </div>
-            <div class="col-span-12 md:col-span-5">
-              <span class="font-mono font-light text-6xl text-on-surface-variant/50 font-headline mb-4 block data-mono">02</span>
-              <h3 class="font-headline font-extrabold tracking-[-0.01em] mb-6 uppercase">Exception Management</h3>
-              <p class="font-body font-normal text-on-surface-variant leading-[1.7] text-lg mb-8">Signaling anomalies before damage occurs. Our engine constantly monitors for deviations in lead times, order volumes, and shipping delays, surfacing only the signals that matter.</p>
+  <Section>
+    <SectionHeader align="center" eyebrow="System Compatibility">An intelligence layer that works alongside your stack</SectionHeader>
+    <ul class="grid grid-cols-2 gap-6 text-center md:grid-cols-3 lg:grid-cols-6">
+      {
+        systems.map((name) => (
+          <li class="font-headline text-title font-bold uppercase tracking-widest text-on-surface-variant">{name}</li>
+        ))
+      }
+    </ul>
+    <Card pad="lg" class="relative mx-auto mt-16 max-w-4xl overflow-hidden text-center">
+      <Icon name="hub" size={160} class="pointer-events-none absolute -right-8 -top-8 text-primary/10" />
+      <h3 class="relative mb-4">Zero Rip-and-Replace</h3>
+      <p class="relative mx-auto text-on-surface-variant">
+        Ceres doesn't replace your ERP. It fixes the messy data and complex forecasting logic that lives in spreadsheets, then feeds the optimized plan back into your system of record.
+      </p>
+    </Card>
+  </Section>
 
-            </div>
-          </div>
-
-          <!-- 03 AI Forecasting -->
-          <div class="grid grid-cols-12 gap-12 items-center">
-            <div class="col-span-12 md:col-span-5 order-2 md:order-1">
-              <span class="font-mono font-light text-6xl text-on-surface-variant/50 font-headline mb-4 block data-mono">03</span>
-              <h3 class="font-headline font-extrabold tracking-[-0.01em] mb-6 uppercase">AI Forecasting</h3>
-              <p class="font-body font-normal text-on-surface-variant leading-[1.7] text-lg mb-8">Every single grain gets a forecast. AI reconciles bottom-up SKU demand with top-down product-group totals, ensuring financial targets and operational plans are aligned.</p>
-            </div>
-            <div class="col-span-12 md:col-span-7 order-1 md:order-2">
-              <div class="aspect-video bg-surface-container rounded border border-outline-variant overflow-hidden">
-                <img loading="lazy" width="512" height="512" class="w-full h-full object-cover opacity-80" alt="Predictive analytics visualization" src={`${import.meta.env.BASE_URL}images/feature-analytics.jpg`} />
-              </div>
-            </div>
-          </div>
-
-          <!-- 04 What-If Scenarios -->
-          <div class="grid grid-cols-12 gap-12 items-center">
-            <div class="col-span-12 md:col-span-7">
-              <div class="aspect-video bg-surface-container rounded border border-outline-variant overflow-hidden relative">
-                <img loading="lazy" width="512" height="512" class="w-full h-full object-cover opacity-80" alt="Supply chain network simulation" src={`${import.meta.env.BASE_URL}images/feature-supply-chain.jpg`} />
-              </div>
-            </div>
-            <div class="col-span-12 md:col-span-5">
-              <span class="font-mono font-light text-6xl text-on-surface-variant/50 font-headline mb-4 block data-mono">04</span>
-              <h3 class="font-headline font-extrabold tracking-[-0.01em] mb-6 uppercase">What-If Scenarios</h3>
-              <p class="font-body font-normal text-on-surface-variant leading-[1.7] text-lg mb-8">Stress-test plans against real-world drivers. Instantly see the impact of new tariffs, raw material price shifts, or energy shortages on your Tier 1 margin.</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Ecosystem -->
-    <section class="page-section border-t">
-      <div class="max-w-7xl mx-auto text-center">
-        <span class="section-label">System Compatibility</span>
-        <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface mt-4 mb-16">An intelligence layer that works alongside your stack</h2>
-        <div class="grid grid-cols-2 md:grid-cols-6 gap-8 items-center opacity-70">
-          <div class="text-xl font-bold font-headline uppercase tracking-widest">SAP S/4HANA</div>
-          <div class="text-xl font-bold font-headline uppercase tracking-widest">SAP IBP</div>
-          <div class="text-xl font-bold font-headline uppercase tracking-widest">o9 Solutions</div>
-          <div class="text-xl font-bold font-headline uppercase tracking-widest">Kinaxis</div>
-          <div class="text-xl font-bold font-headline uppercase tracking-widest">Blue Yonder</div>
-          <div class="text-xl font-bold font-headline uppercase tracking-widest">Palantir</div>
-        </div>
-        <div class="mt-20 p-12 bg-surface-container-high border border-outline-variant rounded max-w-4xl mx-auto relative overflow-hidden">
-          <div class="absolute top-0 right-0 p-4">
-            <span aria-hidden="true" class="material-symbols-outlined text-primary/20 text-9xl">hub</span>
-          </div>
-          <h4 class="font-headline font-bold uppercase tracking-[0.015em] mb-4 relative z-10">Zero Rip-and-Replace</h4>
-          <p class="font-body font-normal text-on-surface-variant leading-[1.7] max-w-prose mx-auto relative z-10">
-            Ceres doesn't replace your ERP. It fixes the messy data and complex forecasting logic that lives in spreadsheets, then feeds the optimized plan back into your system of record.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="cta-section">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="font-headline font-extrabold tracking-[-0.01em] mb-8 text-primary">See how Ceres replaces the spreadsheet layer in 20 minutes.</h2>
-        <a href={import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL + "book-a-demo/" : import.meta.env.BASE_URL + "/book-a-demo/"} class="btn-primary shadow-xl">
-          Schedule a Demo
-        </a>
-
-      </div>
-    </section>
-  </main>
+  <CtaBand href={demoUrl} label="Schedule a Demo">See how Ceres replaces the spreadsheet layer in 20 minutes.</CtaBand>
 </Layout>

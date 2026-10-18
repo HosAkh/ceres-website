@@ -1,0 +1,23 @@
+---
+interface Props {
+  tone?: 'surface' | 'lowest' | 'low';
+  width?: 'wide' | 'narrow';
+  border?: boolean;
+  id?: string;
+  class?: string;
+}
+
+const { tone = 'surface', width = 'wide', border = true, id, class: className } = Astro.props;
+const tones = {
+  surface: 'bg-surface',
+  lowest: 'bg-surface-container-lowest',
+  low: 'bg-surface-container-low',
+};
+const widths = { wide: 'max-w-7xl', narrow: 'max-w-5xl' };
+---
+
+<section id={id} class:list={['section', tones[tone], border && 'border-b border-outline-variant/20', className]}>
+  <div class:list={['container-x mx-auto', widths[width]]}>
+    <slot />
+  </div>
+</section>

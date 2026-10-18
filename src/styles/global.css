@@ -3,259 +3,243 @@
 @tailwind utilities;
 
 /* ════════════════════════════════════════════════════════════════════════════
-   CERES DESIGN SYSTEM — single source of truth for color, type, and spacing.
-   Token values live in tailwind.config.mjs. This file maps them to base
-   elements and shared components. Pages must use token classes (bg-surface,
-   text-on-surface, …) — never raw hex values.
-   Full spec: /design-review/DESIGN-SYSTEM.md
+   CERES DESIGN SYSTEM — base elements and shared component classes.
+   Token values live in tailwind.config.mjs. Pages use token classes only
+   (bg-surface, text-on-surface, text-title …) — never raw hex or ad-hoc sizes.
    ════════════════════════════════════════════════════════════════════════════ */
 
-body {
-  font-family: 'Barlow', sans-serif;
-  font-size: clamp(1rem, 0.25vw + 0.875rem, 1.125rem);
-  line-height: 1.7;
-  background-color: #03151e; /* token: surface — was #10131a (off-system gray) */
-  color: #d2e5f2;            /* token: on-surface — was #e1e2eb (off-system) */
-  font-kerning: normal;
-  font-variant-ligatures: common-ligatures;
-  text-rendering: optimizeLegibility;
-}
-
-/* Visible keyboard focus everywhere (WCAG 2.4.7). Uses primary token. */
-:focus-visible {
-  outline: 2px solid #ffb691; /* token: primary */
-  outline-offset: 2px;
-}
-
-/* Skip link — first focusable element in <body> (WCAG 2.4.1).
-   Add <a href="#main" class="skip-link">Skip to content</a> in Layout.astro
-   and id="main" on each page's <main>. */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  z-index: 100;
-  padding: 0.75rem 1.5rem;
-  background-color: #ffb691; /* token: primary */
-  color: #552000;            /* token: on-primary */
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.skip-link:focus {
-  left: 0;
-}
-
 @layer base {
+  html {
+    scroll-padding-top: 3.5rem; /* fixed 56px nav */
+  }
+  html.menu-open {
+    overflow: hidden;
+  }
+  body {
+    @apply bg-surface font-body text-base text-on-surface antialiased;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizeLegibility;
+  }
   h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2.5rem, 5vw + 1rem, 5.5rem);
-    line-height: 1;
-    letter-spacing: -0.01em;
-    /* No global uppercase — sentences and long phrases need mixed case */
+    @apply font-headline text-display font-extrabold text-on-surface;
     text-wrap: balance;
   }
   h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: clamp(1.75rem, 3vw + 0.75rem, 3.25rem);
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    /* No global uppercase — sentences and long phrases need mixed case */
+    @apply font-headline text-heading font-extrabold text-on-surface;
     text-wrap: balance;
   }
   h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: clamp(1.25rem, 1.5vw + 0.75rem, 1.75rem);
-    line-height: 1.1;
-    letter-spacing: 0.015em;
-    /* Uppercase for short card titles (2–4 words). Override per element if needed. */
-    text-transform: uppercase;
+    @apply font-headline text-title font-bold text-on-surface;
     text-wrap: balance;
   }
   h4, h5, h6 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: clamp(1rem, 0.5vw + 0.75rem, 1.25rem);
-    line-height: 1.2;
-    letter-spacing: 0.015em;
-    /* No global uppercase — h4/h5/h6 are used for both short labels
-       (add 'uppercase' class explicitly) and full sentences (questions,
-       statements) that must stay mixed case. */
+    @apply font-headline text-title-sm font-bold text-on-surface;
   }
   p {
-    font-family: 'Barlow', sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-    letter-spacing: 0;
-    /* Hard cap at 65 characters per line — satisfies the ≤75 char/line
-       typographic rule at every font size. Use max-w-none to override
-       on elements that deliberately need wider flow. */
+    /* 65 characters per line keeps every paragraph inside the readable range. */
     max-width: 65ch;
   }
-  strong, b {
-    font-weight: 500;
-  }
-  footer {
-    font-variant-numeric: tabular-nums;
-  }
-  /* A capped paragraph (max-width: 65ch) inside an explicitly centered block
-     would otherwise pin to the left edge and read as misaligned. Auto-center
-     it so centered CTA/section copy actually sits in the middle. */
   .text-center p,
   .items-center p {
     margin-left: auto;
     margin-right: auto;
   }
+  strong, b {
+    font-weight: 500;
+  }
+  footer, .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  /* Visible keyboard focus everywhere (WCAG 2.4.7) */
+  :focus-visible {
+    outline: 2px solid theme('colors.primary');
+    outline-offset: 2px;
+  }
+  /* The skip-link target is focused programmatically; it is not a control. */
+  main:focus {
+    outline: none;
+  }
+  ::selection {
+    background-color: theme('colors.primary');
+    color: theme('colors.on-primary');
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
-
-
-/* ─── Button System ──────────────────────────────────────────────────────────
-   Usage:
-     Primary   → class="btn-primary"
-     Secondary → class="btn-secondary"
-     Tertiary  → class="btn-tertiary"
-   All buttons are square (2px radius), DM Mono, 12px, uppercase, tracked.
-   12px is the legibility floor for mono microtype — do not go below it
-   for interactive text.
-   ──────────────────────────────────────────────────────────────────────────── */
 
 @layer components {
-  /* Shared base for primary + secondary */
-  .btn-base {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;           /* py-4 px-8 */
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;              /* was 11px — raised for legibility */
-    font-weight: 400;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    border-radius: 0.125rem;      /* 2px — stays square */
-    transition: opacity 0.15s ease, background-color 0.15s ease;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: nowrap;
-    border: 1px solid transparent;
+  /* ─── Layout rhythm ─────────────────────────────────────────────────── */
+  .container-x {
+    @apply px-6 lg:px-12;
   }
-
-  /* PRIMARY — filled orange */
-  .btn-primary {
-    @apply btn-base;
-    background-color: #ffb691;    /* token: primary */
-    color: #552000;               /* token: on-primary */
-    border-color: #ffb691;
+  .section {
+    @apply py-16 lg:py-24;
   }
-  .btn-primary:hover {
-    opacity: 0.9;
+  .hero {
+    @apply pb-16 pt-16 lg:pb-24 lg:pt-28;
   }
-
-  /* SECONDARY — outlined orange */
-  .btn-secondary {
-    @apply btn-base;
-    background-color: transparent;
-    color: #ffb691;               /* token: primary */
-    border-color: #ffb691;
+  .hero-glow {
+    @apply pointer-events-none absolute inset-0;
+    background-image:
+      radial-gradient(circle at 80% 20%, rgba(255, 182, 145, 0.07), transparent 40%),
+      repeating-linear-gradient(90deg, rgba(88, 66, 55, 0.14) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(0deg, rgba(88, 66, 55, 0.14) 0 1px, transparent 1px 48px);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 85%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 85%);
   }
-  .btn-secondary:hover {
-    background-color: rgba(255, 182, 145, 0.08);
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(88, 66, 55, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(88, 66, 55, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
-
-  /* TERTIARY — text-only link, no background, no border */
-  .btn-tertiary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;              /* was 11px — raised for legibility */
-    font-weight: 400;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #ffb691;               /* token: primary */
-    text-decoration: none;
-    text-underline-offset: 4px;
-    transition: opacity 0.15s ease;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
+  .section-header {
+    @apply mb-12 max-w-3xl lg:mb-16;
   }
-  .btn-tertiary:hover {
-    opacity: 0.7;
-    text-decoration: underline;
-  }
-
-  /* Section label — mono eyebrow text above headings.
-     11px is the floor for non-interactive micro-labels. */
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;              /* was 10px — raised for legibility */
-    font-weight: 400;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #ffb691; /* token: primary */
-    display: block;
-  }
-
-  /* Standard card */
-  .card {
-    background-color: #10222b; /* token: surface-container */
-    border: 1px solid rgba(88, 66, 55, 0.2); /* token: outline-variant/20 */
-  }
-
-  /* Featured card — card with left orange accent */
-  .card-featured {
-    background-color: #10222b;
-    border: 1px solid rgba(88, 66, 55, 0.2);
-    border-left: 2px solid #ffb691; /* token: primary */
-  }
-
-  /* Standard full-width page section with border-bottom */
-  .page-section {
-    padding-top: 6rem;    /* py-24 */
-    padding-bottom: 6rem;
-    padding-left: 2rem;   /* px-8 */
-    padding-right: 2rem;
-    border-bottom: 1px solid #584237; /* token: outline-variant */
-    width: 100%;
-  }
-
-  /* Dark CTA section at page bottom */
-  .cta-section {
-    width: 100%;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    background-color: #011e24; /* token: surface-cta */
+  .cta-band {
+    @apply bg-surface-cta py-20 lg:py-28;
     background-image: radial-gradient(circle at top right, rgba(243, 114, 33, 0.1), transparent 40%);
   }
-}
 
-/* Soft teal panel gradient — replaces the old graphite "machined" gradient
-   (#272a31 → #0b0e14) that clashed with the teal surface palette. Same
-   industrial feel, now inside the token hue family. */
-.machined-gradient {
-  background: linear-gradient(145deg, #1a2c36 0%, #001019 100%); /* tokens: surface-container-high → surface-container-lowest */
-}
+  /* ─── Text roles ────────────────────────────────────────────────────── */
+  .eyebrow {
+    @apply block font-mono text-label uppercase text-primary;
+  }
+  .lead {
+    @apply max-w-2xl text-lead text-on-surface-variant;
+  }
+  .lead-hero {
+    @apply lg:text-lead-lg;
+  }
+  .muted {
+    @apply text-on-surface-variant;
+  }
+  .meta {
+    @apply font-mono text-label uppercase text-on-surface-variant;
+  }
+  .meta-sm {
+    @apply font-mono text-label-sm uppercase text-on-surface-variant;
+  }
+  .stat {
+    @apply font-mono text-stat font-light tabular text-on-surface;
+  }
+  .stat-lg {
+    @apply font-mono text-stat-lg font-light tabular text-on-surface;
+  }
 
-.bg-machined-gradient {
-  background: linear-gradient(145deg, #1a2c36 0%, #001019 100%);
-}
+  /* ─── Buttons: 12px mono, square, 44px tall ─────────────────────────── */
+  .btn-base {
+    @apply inline-flex min-h-[2.75rem] items-center justify-center gap-2 rounded border px-6 py-3 font-mono text-label uppercase no-underline transition-colors;
+  }
+  .btn-primary {
+    @apply btn-base border-primary bg-primary text-on-primary hover:border-primary-fixed hover:bg-primary-fixed;
+  }
+  .btn-secondary {
+    @apply btn-base border-primary bg-transparent text-primary hover:bg-primary/10;
+  }
+  .btn-tertiary {
+    @apply inline-flex min-h-[2.75rem] items-center gap-2 font-mono text-label uppercase text-primary underline-offset-4 hover:underline;
+  }
 
-.ghost-border {
-  outline: 1px solid rgba(88, 66, 55, 0.25); /* token: outline-variant/25 — was off-system gray */
-}
+  /* ─── Surfaces ──────────────────────────────────────────────────────── */
+  .card {
+    @apply border border-outline-variant/20 bg-surface-container;
+  }
+  .card-featured {
+    @apply border-l-2 border-l-primary;
+  }
+  .card-link {
+    @apply block transition-colors hover:border-primary/60 hover:bg-surface-container-high;
+  }
+  .card-link:hover .card-arrow {
+    @apply translate-x-1 text-primary;
+  }
+  .hairline-grid {
+    @apply grid gap-px border border-outline-variant/20 bg-outline-variant/20;
+  }
+  .hairline-grid > * {
+    @apply bg-surface-container;
+  }
+  .panel {
+    @apply border border-primary/20 bg-surface-container shadow-[0_0_40px_rgba(243,114,33,0.06)];
+  }
+  .panel-bar {
+    @apply flex items-center justify-between gap-4 border-b border-outline-variant/25 bg-surface-container-high px-5 py-3;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 border px-2 py-1 font-mono text-label-sm uppercase;
+  }
+  .badge-primary {
+    @apply border-primary/20 bg-primary/10 text-primary;
+  }
+  .badge-muted {
+    @apply border-outline-variant/40 bg-surface-container-lowest text-outline;
+  }
+  .badge-error {
+    @apply border-error/20 bg-error/10 text-error;
+  }
 
-.industrial-shadow {
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-}
+  /* ─── Imagery: one treatment everywhere ─────────────────────────────── */
+  .media-frame {
+    @apply relative overflow-hidden border border-outline-variant/30 bg-surface-container;
+  }
+  .media-img {
+    @apply h-full w-full object-cover;
+    filter: saturate(0.35) contrast(1.05) brightness(0.9);
+  }
+  .media-frame::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0;
+    background: linear-gradient(180deg, rgba(3, 21, 30, 0.1) 0%, rgba(3, 21, 30, 0.55) 100%);
+  }
+  .media-frame > :not(img):not(picture) {
+    @apply z-10;
+  }
 
-.data-mono {
-  font-family: 'DM Mono', monospace;
-  font-variant-numeric: tabular-nums;
+  /* ─── Navigation ────────────────────────────────────────────────────── */
+  .nav-link {
+    @apply inline-flex min-h-[2.75rem] items-center gap-1 font-mono text-label uppercase text-outline transition-colors hover:text-on-surface;
+  }
+  .nav-link[aria-current='page'] {
+    @apply text-primary;
+  }
+  .nav-dropdown {
+    @apply absolute left-0 top-full hidden w-72 border border-outline-variant/30 bg-surface-container-high;
+  }
+  .nav-dropdown.is-open {
+    @apply block;
+  }
+  .nav-dropdown .nav-link {
+    @apply flex w-full px-4 py-2.5 hover:bg-surface-container-highest;
+  }
+  .mobile-menu {
+    @apply fixed inset-x-0 bottom-0 top-14 z-40 hidden overflow-y-auto bg-surface-container-lowest md:!hidden;
+  }
+  .mobile-menu.is-open {
+    @apply block;
+  }
+  .mobile-menu .nav-link {
+    @apply flex w-full border-b border-outline-variant/30 py-3;
+  }
+  .menu-toggle .icon-close {
+    display: none;
+  }
+  .menu-toggle[aria-expanded='true'] .icon-close {
+    display: block;
+  }
+  .menu-toggle[aria-expanded='true'] .icon-menu {
+    display: none;
+  }
+
+  /* ─── Skip link: first focusable element in <body> (WCAG 2.4.1) ─────── */
+  .skip-link {
+    @apply fixed left-0 top-0 z-[100] -translate-y-full bg-primary px-6 py-3 font-mono text-label uppercase text-on-primary transition-transform focus:translate-y-0;
+  }
 }

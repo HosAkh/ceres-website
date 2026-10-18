@@ -1,136 +1,139 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
+
+const steps = [
+  { title: 'We learn how your team works.', text: 'Before we show you software, we map your current operational topography. We need to understand the structural realities of your data flow.' },
+  { title: 'We focus on the decision problem.', text: 'We identify the specific inflection points where your team lacks the merged context required to act definitively.' },
+  { title: 'We show how Ceres can help.', text: 'A targeted demonstration mapping your specific bottlenecks to our protocol\'s capability to ingest, normalize, and surface actionable intelligence.' },
+];
+
+const testimonials = [
+  { quote: '"The initial consultation wasn\'t about selling licenses; it was a diagnostic of our entire supply chain data model. By the time we saw the console, we already knew it solved our latency issue."', icon: 'factory', name: 'Director of Operations', org: 'Global Logistics Firm' },
+  { quote: '"Ceres didn\'t ask us to change our existing systems. They mapped out how their protocol could sit on top and finally give our analysts a unified, trusted view of risk."', icon: 'account_balance', name: 'Head of Risk Analytics', org: 'Tier 1 Financial Institution' },
+];
 ---
 
 <Layout
   title="Book a Ceres Demo | AI S&OP Planning Software"
   description="See how Ceres maps to your records, suppliers, demand signals, and planning workflows in a customized demo for your enterprise environment."
 >
-  <main id="main" class="flex-grow flex flex-col pt-14 overflow-x-hidden">
-
-    <!-- HERO SECTION -->
-    <section class="bg-surface-container-lowest pt-24 pb-16 px-6 lg:px-12 border-b border-surface-container relative">
-      <div class="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start [&>*]:min-w-0">
-        <div class="pt-4">
-          <h1 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface leading-none mb-6">
-            Book a Ceres walkthrough
-          </h1>
-          <p class="text-lg font-body font-normal text-on-surface-variant leading-[1.7] max-w-prose">
-            A live walkthrough allows us to determine if our architecture aligns with your specific technical debt and analytical requirements before engaging in a proof of concept.
-          </p>
-        </div>
-
-        <div class="relative bg-surface-container-high border border-surface-container-high">
-          <div class="absolute top-0 left-0 w-full h-1 bg-primary z-10"></div>
-          <!-- Nutshell Form -->
-          <div id="nutshell-form-VANvYW" class="p-8 pt-10"></div>
-          <script is:inline>
-            (function(n,u,t){n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,'Nutsheller'));
-            Nutsheller('initForm', {form: 'VANvYW', instance: '373019', authToken: '', target: 'nutshell-form-VANvYW'});
-            (function() {
-              var s = document.createElement('script');
-              s.type = 'module';
-              s.src = 'https://loader.nutshell.com/nutsheller-esm.js';
-              document.head.appendChild(s);
-            })();
-          </script>
-          <!-- End Nutshell Form -->
+  <Hero
+    lead="A live walkthrough allows us to determine if our architecture aligns with your specific technical debt and analytical requirements before engaging in a proof of concept."
+    align="start"
+  >
+    Book a Ceres walkthrough
+    <div slot="visual" class="panel relative">
+      <div aria-hidden="true" class="absolute left-0 top-0 h-0.5 w-full bg-primary"></div>
+      <!-- Nutshell Form: the loader (and its hCaptcha) is fetched on the first user interaction -->
+      <div class="relative min-h-[36rem] p-6 lg:p-8">
+        <div id="nutshell-form-VANvYW"></div>
+        <div id="nutshell-form-skeleton" aria-hidden="true" class="absolute inset-6 space-y-6 lg:inset-8">
+          <div class="h-3 w-28 bg-surface-container-high"></div>
+          <div class="h-10 w-full border border-outline-variant/30 bg-surface-container-highest/40"></div>
+          <div class="h-3 w-24 bg-surface-container-high"></div>
+          <div class="h-10 w-full border border-outline-variant/30 bg-surface-container-highest/40"></div>
+          <div class="h-3 w-20 bg-surface-container-high"></div>
+          <div class="h-10 w-full border border-outline-variant/30 bg-surface-container-highest/40"></div>
+          <div class="h-3 w-32 bg-surface-container-high"></div>
+          <div class="h-10 w-full border border-outline-variant/30 bg-surface-container-highest/40"></div>
         </div>
       </div>
-    </section>
+      <script is:inline>
+        (function(n,u,t){n[u]=n[u]||function(){(n[u].q=n[u].q||[]).push(arguments)}}(window,'Nutsheller'));
+        Nutsheller('initForm', {form: 'VANvYW', instance: '373019', authToken: '', target: 'nutshell-form-VANvYW'});
+        (function () {
+          var loaded = false;
+          var target = document.getElementById('nutshell-form-VANvYW');
+          var skeleton = document.getElementById('nutshell-form-skeleton');
+          new MutationObserver(function () {
+            if (target.childNodes.length && skeleton) { skeleton.remove(); skeleton = null; }
+          }).observe(target, { childList: true });
+          function load() {
+            if (loaded) return;
+            loaded = true;
+            var s = document.createElement('script');
+            s.type = 'module';
+            s.src = 'https://loader.nutshell.com/nutsheller-esm.js';
+            document.head.appendChild(s);
+          }
+          ['scroll', 'pointerdown', 'pointermove', 'keydown', 'touchstart'].forEach(function (type) {
+            window.addEventListener(type, load, { once: true, passive: true });
+          });
+        })();
+      </script>
+      <!-- End Nutshell Form -->
+    </div>
+  </Hero>
 
-    <!-- PROCESS DETAILS -->
-    <section class="bg-surface py-20 px-6 lg:px-12 border-b border-surface-container">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="md:col-span-2">
-            <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface mb-8 border-l-4 border-primary pl-4">What to expect</h2>
-            <div class="space-y-6">
-              <div class="card p-6 hover:bg-surface-container-high transition-colors flex gap-6">
-                <div class="flex-shrink-0 w-12 h-12 bg-surface-container-lowest flex items-center justify-center font-mono font-light text-primary text-xl border border-outline-variant/30 data-mono">01</div>
-                <div>
-                  <h3 class="font-headline font-bold tracking-[0.015em] text-on-surface mb-2">We learn how your team works.</h3>
-                  <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">Before we show you software, we map your current operational topography. We need to understand the structural realities of your data flow.</p>
+  <Section width="narrow">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div class="md:col-span-2">
+        <SectionHeader class="mb-8 lg:mb-10">What to expect</SectionHeader>
+        <div class="space-y-4">
+          {
+            steps.map(({ title, text }, i) => (
+              <Card class="flex gap-6">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center border border-outline-variant/30 bg-surface-container-lowest font-mono text-lead font-light text-primary">
+                  {String(i + 1).padStart(2, '0')}
                 </div>
-              </div>
-              <div class="card p-6 hover:bg-surface-container-high transition-colors flex gap-6">
-                <div class="flex-shrink-0 w-12 h-12 bg-surface-container-lowest flex items-center justify-center font-mono font-light text-primary text-xl border border-outline-variant/30 data-mono">02</div>
                 <div>
-                  <h3 class="font-headline font-bold tracking-[0.015em] text-on-surface mb-2">We focus on the decision problem.</h3>
-                  <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">We identify the specific inflection points where your team lacks the merged context required to act definitively.</p>
+                  <h3 class="mb-2">{title}</h3>
+                  <p class="text-body-sm text-on-surface-variant">{text}</p>
                 </div>
-              </div>
-              <div class="card p-6 hover:bg-surface-container-high transition-colors flex gap-6">
-                <div class="flex-shrink-0 w-12 h-12 bg-surface-container-lowest flex items-center justify-center font-mono font-light text-primary text-xl border border-outline-variant/30 data-mono">03</div>
-                <div>
-                  <h3 class="font-headline font-bold tracking-[0.015em] text-on-surface mb-2">We show how Ceres can help.</h3>
-                  <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">A targeted demonstration mapping your specific bottlenecks to our protocol's capability to ingest, normalize, and surface actionable intelligence.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="md:col-span-1">
-            <div class="bg-surface-container-low p-8 border border-outline-variant/20 h-full flex flex-col justify-center">
-              <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface mb-6 flex items-center gap-2">
-                <span aria-hidden="true" class="material-symbols-outlined text-primary">schedule</span>
-                Why book time
-              </h2>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7] mb-6">
-                Ceres is a structural implementation designed for complex operational environments.
-              </p>
-              <p class="text-sm font-body font-normal text-on-surface-variant leading-[1.7]">
-                Thirty minutes against your own records — suppliers, SKUs, demand feeds — tells both teams more than a slide deck ever could. You leave knowing exactly what Ceres would catch in your environment.
-              </p>
-            </div>
-          </div>
+              </Card>
+            ))
+          }
         </div>
       </div>
-    </section>
+      <div class="flex h-full flex-col justify-center border border-outline-variant/20 bg-surface-container-low p-6 lg:p-8">
+        <h2 class="mb-6 flex items-center gap-2 text-title-lg">
+          <Icon name="schedule" size={24} class="text-primary" />
+          Why book time
+        </h2>
+        <p class="mb-6 text-body-sm text-on-surface-variant">
+          Ceres is a structural implementation designed for complex operational environments.
+        </p>
+        <p class="text-body-sm text-on-surface-variant">
+          Thirty minutes against your own records — suppliers, SKUs, demand feeds — tells both teams more than a slide deck ever could. You leave knowing exactly what Ceres would catch in your environment.
+        </p>
+      </div>
+    </div>
+  </Section>
 
-    <!-- TRUST SECTION -->
-    <section class="bg-surface-container-lowest py-20 px-6 lg:px-12">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="font-headline font-extrabold tracking-[-0.01em] text-on-surface mb-4">Built for teams that need clarity, trust, and practical implementation</h2>
-          <span class="section-label">Verified Deployments</span>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="card p-8 flex flex-col justify-between">
-            <p class="font-body font-normal text-on-surface-variant text-base leading-[1.7] mb-8 italic">"The initial consultation wasn't about selling licenses; it was a diagnostic of our entire supply chain data model. By the time we saw the console, we already knew it solved our latency issue."</p>
+  <Section tone="lowest" width="narrow">
+    <SectionHeader align="center" eyebrow="Verified Deployments">Built for teams that need clarity, trust, and practical implementation</SectionHeader>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      {
+        testimonials.map(({ quote, icon, name, org }) => (
+          <Card class="flex flex-col justify-between">
+            <blockquote class="mb-8">
+              <p class="text-on-surface-variant">{quote}</p>
+            </blockquote>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-surface-container-highest border border-outline-variant flex items-center justify-center">
-                <span aria-hidden="true" class="material-symbols-outlined text-secondary">factory</span>
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center border border-outline-variant bg-surface-container-highest">
+                <Icon name={icon} size={22} class="text-secondary" />
               </div>
               <div>
-                <p class="text-sm font-body font-medium text-on-surface">Director of Operations</p>
-                <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant">Global Logistics Firm</p>
+                <p class="text-body-sm font-medium text-on-surface">{name}</p>
+                <p class="meta">{org}</p>
               </div>
             </div>
-          </div>
-          <div class="card p-8 flex flex-col justify-between">
-            <p class="font-body font-normal text-on-surface-variant text-base leading-[1.7] mb-8 italic">"Ceres didn't ask us to change our existing systems. They mapped out how their protocol could sit on top and finally give our analysts a unified, trusted view of risk."</p>
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-surface-container-highest border border-outline-variant flex items-center justify-center">
-                <span aria-hidden="true" class="material-symbols-outlined text-secondary">account_balance</span>
-              </div>
-              <div>
-                <p class="text-sm font-body font-medium text-on-surface">Head of Risk Analytics</p>
-                <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-on-surface-variant">Tier 1 Financial Institution</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
 
-    <!-- FINAL REASSURANCE -->
-    <section class="bg-machined-gradient py-12 px-6 border-t border-outline-variant/30 text-center">
-      <p class="font-mono text-[11px] tracking-[0.14em] uppercase text-on-surface flex justify-center items-center gap-3 mx-auto">
-        <span class="w-8 h-px bg-primary"></span>
-        Built for serious teams with real operating needs
-        <span class="w-8 h-px bg-primary"></span>
-      </p>
-    </section>
-
-  </main>
+  <section class="border-t border-outline-variant/20 bg-surface-cta py-10">
+    <p class="container-x mx-auto flex max-w-none items-center justify-center gap-3 text-center font-mono text-label uppercase text-on-surface">
+      <span aria-hidden="true" class="h-px w-8 shrink-0 bg-primary"></span>
+      Built for serious teams with real operating needs
+      <span aria-hidden="true" class="h-px w-8 shrink-0 bg-primary"></span>
+    </p>
+  </section>
 </Layout>
