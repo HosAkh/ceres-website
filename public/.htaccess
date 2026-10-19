@@ -1,5 +1,10 @@
 Options -Indexes
 
+# The host's default error pages don't exist in this folder, so the catch-all
+# below turned every "not found" into a redirect to the homepage. Use our own.
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
 # ── MIME types the host may not know ─────────────────────────
 <IfModule mod_mime.c>
   AddType image/avif .avif
