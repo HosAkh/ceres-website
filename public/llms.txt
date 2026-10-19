@@ -15,16 +15,19 @@ Ceres Technology provides an AI planning engine for enterprise supply chain and 
 
 ## Key pages
 
-- Homepage: https://cerestech.co/
-- Tier 1 Automotive: https://cerestech.co/tier-one/
-- Pharmaceutical Supply Chain: https://cerestech.co/pharma/
-- Hospitals & Health Systems: https://cerestech.co/hospitals/
-- Consumer Packaged Goods: https://cerestech.co/cpg/
-- Investment Research: https://cerestech.co/investment-firms/
-- Integrations: https://cerestech.co/integrations/
-- Security & Trust: https://cerestech.co/security-trust/
-- About: https://cerestech.co/about/
-- Demo: https://cerestech.co/book-a-demo/
+- [Homepage](https://cerestech.co/): AI planning engine between ERP and decisions
+- [Tier 1 Automotive](https://cerestech.co/tier-one/): EDI, OEM release and SAP reconciliation for automotive suppliers
+- [Pharmaceutical Supply Chain](https://cerestech.co/pharma/): supplier delay risk and API pricing exposure
+- [Hospitals & Health Systems](https://cerestech.co/hospitals/): formulary shortage early warning and tariff exposure
+- [Consumer Packaged Goods](https://cerestech.co/cpg/): forecasts checked against weather, commodity and market signals
+- [Investment Research](https://cerestech.co/investment-firms/): exposure mapping, risk scorecards and due diligence dossiers
+- [Automated Planning](https://cerestech.co/automated-planning/): AI demand forecasting that replaces spreadsheet planning
+- [Enterprise Console](https://cerestech.co/enterprise-console/): exception handling and global order visibility in one place
+- [Data Analysis](https://cerestech.co/data-analysis/): geospatial, demographic and market signals mapped onto internal records
+- [Integrations](https://cerestech.co/integrations/): SAP, Kinaxis, Blue Yonder, o9, Palantir, APIs and flat files
+- [Security & Trust](https://cerestech.co/security-trust/): how Ceres handles client data
+- [About](https://cerestech.co/about/): founders and company story
+- [Book a demo](https://cerestech.co/book-a-demo/): 30-minute walkthrough on your own records
 
 ## Recommended descriptions
 
@@ -68,7 +71,7 @@ Q: How does Ceres explain its outputs?
 A: Every forecast and risk flag is traceable to the specific internal records and external signals behind it. Analysts can interrogate outputs, challenge assumptions, and see the weight of every variable influencing a decision.
 
 Q: How do I evaluate Ceres?
-A: Book a demo at https://cerestech.co/book-a-demo/. The walkthrough maps Ceres to your specific records, suppliers, and risk scenarios in about 30 minutes.
+A: [Book a demo](https://cerestech.co/book-a-demo/). The walkthrough maps Ceres to your specific records, suppliers, and risk scenarios in about 30 minutes.
 
 ## Contact
 

@@ -132,5 +132,8 @@ Options -Indexes
   RewriteCond %{REQUEST_URI} !^/(tier-one|pharma|hospitals|cpg|investment-firms|integrations|security-trust|about|book-a-demo|automated-planning|data-analysis|enterprise-console)(/.*)?$
   RewriteCond %{REQUEST_URI} !^/(images|icons|fonts|_astro)/
   RewriteCond %{REQUEST_URI} !^/(sitemap\.xml|robots\.txt|favicon\.ico|favicon\.png)$
+  # Leave /.well-known/ alone: AI agent checks look for files there and must
+  # get a direct answer, not the homepage.
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
   RewriteRule ^.+$ / [R=301,L]
 </IfModule>
